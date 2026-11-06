@@ -459,13 +459,8 @@ $ (v / c)^2 = (9 times 10^6) / (9 times 10^16) = 1 times 10^(-10) $
     #plainfig((fig-rev-8-8(width: 8.5cm), [（第 8 题）]))
 ]
 
-// 单元检查题（第 6～8 章）：与复习题同样式，标题为“单元检查题（第 6～8 章）”。
-#block(above: 2em, below: 1em, sticky: true, width: 100%, {
-  set par(first-line-indent: 0em)
-  text(font: fonts.hei, size: 12pt, weight: "bold", fill: colors.primary)[单元检查题（第 6～8 章）]
-  v(-0.6em)
-  line(length: 100%, stroke: 0.8pt + colors.rule)
-})
+// 单元检查题（第 6～8 章）：样式 unit-check 见 common/series.typ。
+#unit-check[单元检查题（第 6～8 章）][
 
 + 在匀速直线运动的火车中，当我们向上跳起再落下来时，能否落回火车中的原地？为什么？
 + 有一个人站在台秤上，然后很快地举起双手，当他开始举起和举起之末时，台秤上的读数怎样改变？如果很快地放下双手，又将怎样？试解释为什么？
@@ -491,3 +486,4 @@ $ (v / c)^2 = (9 times 10^6) / (9 times 10^16) = 1 times 10^(-10) $
 + 升降机质量为 $M$，其中有一个质量为 $m$ 的人，如图所示，人通过窗口用力拉外面的绳子。欲使升降机有向上的加速度 $a$，问人拉绳子的力 $T$ 应为多少？人对升降机地板的压力是多少？
 
   #plainfig((fig-unit-8-8(width: 4.5cm), [（第 8 题）]))
+]
