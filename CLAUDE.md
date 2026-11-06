@@ -68,6 +68,8 @@ build/                     编译产物（不提交）
 
 ## 工作流程（每次处理一段内容）
 
+> 核对扫描、改订（原书错误与旧用词）、整书版面通读、发版的操作经验和判断标准，见项目 skill `.claude/skills/digitize-book/`（`SKILL.md` 入口）；配套脚本 `scripts/audit-pdf.py`、`scripts/replace-terms.py`。
+
 1. 用脚本把要处理的原书页渲染成 PNG（150–200 dpi，放到 scratchpad 或 `build/pages/`），**逐页看图**再录入。不要凭记忆或"常识"补写内容。
 2. 按页录入为 Typst：文字、公式、表格逐字核对；遇到识别不清的字，写 `#unclear[猜测]` 并在提交说明里列出页码。
 3. 在源码中用注释标出原书页码边界：`// p.96`，便于日后校对。
