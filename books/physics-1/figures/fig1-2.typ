@@ -3,10 +3,10 @@
 // 坐标是原书 p.3 的页面像素坐标（render-pages.py --dpi 200 的显示图，宽 1568）。
 #import "/common/series.typ": *
 
-// TODO: 原扫描里各刻度的指数很模糊，下面的写法按"-10 到 10、步长 2"的规律定，其中
-//   · 第 2、3 个刻度（扫描上像 10^-6、10^-6，推断为 -8、-6）
-//   · 第 6 个刻度（扫描上只有"0"，推断为 10^0）
-//   用 #unclear 标出，其余 -2、2、6、8 也是由规律推断，待对照纸质书核实。
+// 刻度标注：10^-10 … 10^10，每隔 10^2（指数步长 2）标一个，中间每个指数（10^1 步长）画一条小刻度。
+// 扫描里这些指数很模糊，具体值由项目负责人确认：第 6 个刻度是 10^0，各标注按步长 2 排列。
+// 光的波长按实际数量级放在 10^-7 处（两个标注 10^-8 与 10^-6 的正中，即一条小刻度上），
+// 不是扫描里的位置（原图画在第 2 个标注下面）——这是对原图的更正。
 #let fig-1-2(width: 12.5cm) = px-canvas(1180, 555, origin: (320, 495), width: width, (p, u) => {
   import cetz.draw: *
   let label(x, y, body, anchor: "center") = content(p(x, y), anchor: anchor,
@@ -18,16 +18,13 @@
   line(p(333, ax), p(1368, ax), stroke: 1.1pt, mark: (end: "stealth", fill: black, scale: 0.5))
   line(p(333, ax), p(362, ax), stroke: 2.4pt)
 
-  // 11 个刻度：10^-10 … 10^10，步长 2
-  let flag(body) = box(fill: rgb("#ffe58f"), inset: (x: 1pt, y: 2pt), body)  // 同 #unclear，但公式里 highlight 不起作用
-  let exps = (
-    $10^(-10)$, flag($10^(-8)$), flag($10^(-6)$), $10^(-4)$, $10^(-2)$,
-    flag($10^0$), $10^2$, $10^4$, $10^6$, $10^8$, $10^(10)$,
-  )
-  for (k, e) in exps.enumerate() {
-    let x = 383 + 89.6 * k
-    line(p(x, ax), p(x, ax - 7), stroke: 0.6pt)
-    content(p(x + 6, 834), anchor: "center", text(size: 8pt, e))
+  // 刻度：指数 e = -10 … 10，每个指数一条小刻度，偶数指数处标注
+  let ex(e) = 383 + 44.8 * (e + 10)      // 指数 e 对应的 x
+  for e in range(-10, 11) {
+    line(p(ex(e), ax), p(ex(e), ax - if calc.even(e) { 14 } else { 8 }), stroke: 0.8pt)
+    if calc.even(e) {
+      content(p(ex(e) + 6, 834), anchor: "center", text(size: 8pt, $10^#e$))
+    }
   }
 
   // 各实例：标注文字、图标、指向数轴的竖线
@@ -55,8 +52,9 @@
   icon("fig1-2-orbit.png", 117, 1296.5, 670)
   line(p(1298, 738), p(1298, 773), stroke: 0.8pt)
 
-  // 光的波长：指在数轴下方
-  line(p(473, 858), p(473, 898), stroke: 1pt)
-  icon("fig1-2-wave.png", 123, 476.5, 914)
-  label(475, 940, [光的波长])
+  // 光的波长：10^-7，指在数轴下方
+  let wx = ex(-7)
+  line(p(wx, 858), p(wx, 898), stroke: 1pt)
+  icon("fig1-2-wave.png", 123, wx + 3.5, 914)
+  label(wx + 2, 940, [光的波长])
 })
