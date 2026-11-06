@@ -147,7 +147,8 @@
 
   // ── 目录（两级） ──
   set outline(depth: 2, indent: auto)
-  show outline.entry.where(level: 1): set block(above: 1.2em)
+  show outline.entry.where(level: 1): set block(above: 1.0em)
+  show outline.entry.where(level: 2): set block(above: 0.5em)
   show outline.entry.where(level: 1): set text(font: fonts.hei, weight: "bold")
 
   // ── 插图 ──

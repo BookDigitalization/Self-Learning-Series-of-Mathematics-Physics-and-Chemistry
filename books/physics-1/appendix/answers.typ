@@ -6,10 +6,13 @@
 // 原书只列出有答案的题，题号不连续，照录。题号后的“.”不是句末标点，不改。
 
 #let q(n) = h(0.8em) + text(font: fonts.hei, weight: "bold")[#n.] + h(0.2em)
+// 答案里有不少分式，行距放宽，免得上下行的分式互相压住
+#set par(leading: 0.9em)
+#show math.equation.where(block: false): set text(top-edge: "bounds", bottom-edge: "bounds")
 #let sec(title) = {
   set par(first-line-indent: 0em)
-  v(0.6em)
-  align(center, text(font: fonts.hei, weight: "bold", size: 1.05em)[#title])
+  block(above: 1.4em, below: 0.6em, sticky: true,
+    align(center, text(font: fonts.hei, weight: "bold", size: 1.05em)[#title]))
 }
 #let grp(title, body) = {
   set par(first-line-indent: 0em)
