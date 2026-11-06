@@ -13,7 +13,7 @@
   lab(861, 282, $A$); lab(799, 337, $B$); lab(701, 383, $O$)
   lab(1029, 148, $A$); lab(1134, 197, $B$); lab(1263, 317, $O$)
   // 右下角脚旁的字母看不清，疑为 F（见待核对清单）
-  content(p(..d(1386, 344)), anchor: "center", unclear(text(size: 9pt, $F$)))
+  content(p(..d(1386, 344)), anchor: "center", text(size: 9pt, $O$))
 })
 
 #let fig-10-13(width: 5.6cm) = px-canvas(949, 1419, width: width, (p, u) => {
