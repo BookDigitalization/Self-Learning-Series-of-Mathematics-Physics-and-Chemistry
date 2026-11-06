@@ -37,11 +37,12 @@ build/                     编译产物（不提交）
 
 ## 技术栈
 
-- **Typst 0.15**（本机 `typst` 已在 PATH）。构建：`typst compile books/物理第一册/main.typ build/物理第一册.pdf --root .`；写作时用 `typst watch`。
+- **Typst 0.15**（本机 `typst` 已在 PATH）。构建：`typst compile books/物理第一册/main.typ build/物理第一册.pdf --root . --font-path fonts --ignore-system-fonts`；写作时用 `typst watch`。
   `--root .` 是为了让各书能 `#import "/common/sxzx.typ": *`。
 - 图书模板：主选 `@preview/bookly`，备选 `orange-book`、`concise-history`（理由见 README）。模板只在 `common/sxzx.typ` 中引用，各书不得直接 import 模板。
-- 字体（本机已有）：正文 `SimSun`（宋体），标题/粗体 `SimHei`（黑体），边注与图题可用 `KaiTi`（楷体）；西文与数字用 Typst 默认或 `Times New Roman`。
-  中文粗体用黑体替代，不要依赖宋体伪粗体。字体选择集中在 `common/sxzx.typ`。
+- 字体**只用开源免费字体**（OFL），避免版权纠纷：正文宋体 `Noto Serif SC`，标题/强调黑体 `Noto Sans SC`，边注与图题楷体 `霞鶩文楷`（LXGW WenKai，Typst 只认这个中文族名），西文与公式用 Typst 内置 `New Computer Modern`。
+  **禁止使用** SimSun、SimHei、KaiTi、Microsoft YaHei、Times New Roman 等商业/系统字体。
+  字体文件在 `fonts/`（不入库，`scripts/get-fonts.ps1` 下载），编译必须带 `--font-path fonts --ignore-system-fonts`。字体选择集中在 `common/sxzx.typ`。
 - 公式用 Typst 原生数学（`$ v = s / t $`）。中文单位写在公式外或用 `"米/秒"` 文本；三角函数照原书写 `"tg"`。
 - 编号：章节、图、习题的编号格式统一用 `·` 分隔，在 `sxzx.typ` 里用自定义 `numbering` 函数实现（如 `(..n) => n.pos().map(str).join("·")`）。
 - 插图优先用 **CeTZ**（`@preview/cetz`）重绘示意图、受力图、坐标图、几何图；写实插画（人物、器械）用原扫描裁剪 + 去底色/二值化后的 PNG，放到 `figures/`，并在源码注释里记录来源页。首次使用 `@preview` 包需联网下载。

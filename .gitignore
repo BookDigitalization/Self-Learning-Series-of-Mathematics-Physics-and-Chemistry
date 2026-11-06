@@ -3,6 +3,9 @@
 original/
 build/
 
+# 字体文件体积大，由 scripts/get-fonts.ps1 下载
+fonts/
+
 # 本机私有配置
 CLAUDE.local.md
 .claude/settings.local.json

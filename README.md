@@ -20,7 +20,8 @@ books/<书名>/        每本书的 Typst 源码
   figures/           插图（CeTZ 源码或清理后的位图）
   appendix/          总复习题、习题答案、附录
 common/sxzx.typ      全丛书共用样式：封装图书模板，定义习题、复习题、边注等组件
-scripts/             辅助脚本（渲染原书页面等）
+fonts/               开源字体（不入库，由脚本下载）
+scripts/             辅助脚本（下载字体、渲染原书页面等）
 build/               编译产物（不入库）
 ```
 
@@ -31,12 +32,30 @@ build/               编译产物（不入库）
 需要 Typst 0.15 及以上版本。首次编译时会从 Typst Universe 下载所需的包，需要联网。
 
 ```powershell
-typst compile books/物理第一册/main.typ build/物理第一册.pdf --root .
+# 首次：下载字体到 fonts/
+./scripts/get-fonts.ps1
+
+typst compile books/物理第一册/main.typ build/物理第一册.pdf --root . --font-path fonts --ignore-system-fonts
 # 写作时自动重新编译
-typst watch   books/物理第一册/main.typ build/物理第一册.pdf --root .
+typst watch   books/物理第一册/main.typ build/物理第一册.pdf --root . --font-path fonts --ignore-system-fonts
 ```
 
+`--ignore-system-fonts` 保证只使用项目指定的开源字体，不会误用系统里的商业字体。
+
 `--root .` 让各分册可以用 `#import "/common/sxzx.typ": *` 引用共用样式。
+
+## 字体
+
+为避免版权纠纷，全部使用开源免费字体（SIL Open Font License 1.1，可免费商用、可嵌入 PDF）：
+
+| 用途 | 字体 | Typst 中的字体名 | 来源 |
+|---|---|---|---|
+| 宋体（正文） | Noto Serif SC（思源宋体） | `Noto Serif SC` | [notofonts/noto-cjk](https://github.com/notofonts/noto-cjk) |
+| 黑体（标题、强调） | Noto Sans SC（思源黑体） | `Noto Sans SC` | [notofonts/noto-cjk](https://github.com/notofonts/noto-cjk) |
+| 楷体（边注、图题） | 霞鹜文楷 LXGW WenKai | `霞鶩文楷` | [lxgw/LxgwWenKai](https://github.com/lxgw/LxgwWenKai) |
+| 西文、公式 | New Computer Modern | `New Computer Modern` | Typst 内置 |
+
+字体文件不入库，用 `scripts/get-fonts.ps1` 下载到 `fonts/`。使用静态字重的 OTF/TTF，不用系统自带的可变字体版本（Typst 会嵌入最细字重）。
 
 ## 图书模板
 
