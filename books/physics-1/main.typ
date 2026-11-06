@@ -7,8 +7,6 @@
 
 #show: front-matter
 
-// TODO: 原扫描缺失——封面、"第二版出版说明"、"编者的话"（目录中列出，扫描本中没有）。不要补写。
-
 #tableofcontents
 
 #show: main-matter
