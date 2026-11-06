@@ -19,7 +19,7 @@ books/<书名>/        每本书的 Typst 源码
   chapters/          每章一个 .typ 文件
   figures/           插图（CeTZ 源码或清理后的位图）
   appendix/          总复习题、习题答案、附录
-common/sxzx.typ      全丛书共用样式：封装图书模板，定义习题、复习题、边注等组件
+common/series.typ      全丛书共用样式：封装图书模板，定义习题、复习题、边注等组件
 fonts/               开源字体（不入库，由脚本下载）
 scripts/             辅助脚本（下载字体、渲染原书页面等）
 build/               编译产物（不入库）
@@ -42,7 +42,7 @@ typst watch   books/物理第一册/main.typ build/物理第一册.pdf --root . 
 
 `--ignore-system-fonts` 保证只使用项目指定的开源字体，不会误用系统里的商业字体。
 
-`--root .` 让各分册可以用 `#import "/common/sxzx.typ": *` 引用共用样式。
+`--root .` 让各分册可以用 `#import "/common/series.typ": *` 引用共用样式。
 
 ## 字体
 
@@ -59,7 +59,7 @@ typst watch   books/物理第一册/main.typ build/物理第一册.pdf --root . 
 
 ## 图书模板
 
-各分册只引用 `common/sxzx.typ`，由它调用具体的模板。更换模板只需要改这一个文件。
+各分册只引用 `common/series.typ`，由它调用具体的模板。更换模板只需要改这一个文件。
 
 ### 主选：[bookly](https://typst.app/universe/package/bookly)
 
@@ -69,7 +69,7 @@ typst watch   books/物理第一册/main.typ build/物理第一册.pdf --root . 
 - 支持页边注版式（基于 marginalia），原书正文旁的要点提示可以放进页边
 - 有多套主题，包括仿 Legrand Orange Book 的主题
 - 持续维护中
-- 需要注意：这是西文模板，中文字体、首行缩进、标点挤压等可能需要在 `sxzx.typ` 中补充设置
+- 需要注意：这是西文模板，中文字体、首行缩进、标点挤压等可能需要在 `series.typ` 中补充设置
 
 ### 备选
 

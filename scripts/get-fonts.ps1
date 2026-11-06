@@ -6,7 +6,7 @@ $ProgressPreference = 'SilentlyContinue'
 
 $root  = Split-Path $PSScriptRoot -Parent
 $fonts = Join-Path $root 'fonts'
-$tmp   = Join-Path ([IO.Path]::GetTempPath()) "sxzx-fonts-$PID"
+$tmp   = Join-Path ([IO.Path]::GetTempPath()) "series-fonts-$PID"
 New-Item -ItemType Directory -Force $fonts, $tmp | Out-Null
 
 $proxy = @{}
