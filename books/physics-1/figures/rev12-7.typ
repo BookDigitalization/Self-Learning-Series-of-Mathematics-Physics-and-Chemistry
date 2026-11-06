@@ -26,7 +26,12 @@
   // 初速度 v0 与抛射角 60°
   line(p(650, 930), p(692, 845), stroke: 1.2pt, mark: (end: "stealth", fill: black, scale: 0.5))
   txt(642, 872, $v_0$)
-  arc(p(620, 976), start: 0deg, stop: 60deg, radius: 62 * k * u, stroke: 0.6pt)
+  // 页面坐标 y 向下：以抛出点 (620,976) 为圆心，从水平方向向上转 60°
+  let pts = range(0, 21).map(i => {
+    let a = i / 20 * 60deg
+    p(620 + 62 * calc.cos(a), 976 - 62 * calc.sin(a))
+  })
+  line(..pts, stroke: 0.6pt)
   txt(722, 943, $60°$)
   // 高度 h
   line(p(905, 770), p(905, 985), stroke: (thickness: 1pt, dash: "dashed"))
