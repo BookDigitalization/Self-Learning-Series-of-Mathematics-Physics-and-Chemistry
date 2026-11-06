@@ -11,7 +11,12 @@
   line(p(1330, 297), p(1330, 520), stroke: dash)
   line(p(1330, 520), p(1330, 545), stroke: 1pt)
   // 四分之一圆弧：圆心 (1330, 305)，半径 200
-  arc(p(1130, 305), start: 180deg, stop: 270deg, radius: 200 * u, anchor: "origin", name: "a", stroke: 1.1pt)
+  // 页面坐标 y 向下：从 (1130,305) 起，向右下弯到 (1330,505)，圆心在 (1330,305)
+  let pts = range(0, 31).map(i => {
+    let a = i / 30 * 90deg
+    p(1330 - 200 * calc.cos(a), 305 + 200 * calc.sin(a))
+  })
+  line(..pts, stroke: 1.1pt)
   rect(p(1131, 297), p(1146, 312), fill: black, stroke: none)
   lab(1122, 272, $A$)
   lab(1350, 388, $R$)
