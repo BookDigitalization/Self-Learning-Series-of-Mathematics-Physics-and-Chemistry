@@ -448,11 +448,13 @@ $ y = h + v_0 sin theta dot t - display(1 / 2) g t^2 $
 
 $ 0 = 80 + 20 times sin (- 15 degree) times t - display(1 / 2) times 10 times t^2 $
 
-#eqn(none, $5 t^2 - 5.176 t - 80 = 0$, pre: [或])
+#eqn(none, $5 t^2 + 5.176 t - 80 = 0$, pre: [或])
 
-#eqn(none, $t_1 = 4.55 "秒", quad t_2 = - 3.52 "秒（舍去）"$, pre: [解出])
+// 原书此例（扫描确印）方程 5t²−5.176t−80=0，t₁=4.55 秒，t₂=−3.52 秒，OB=87.9 米，这套数对应向上抛（θ=+15°）；
+// 题文、图 13·18 均为向下（θ=−15°），故改为 5t²+5.176t−80=0，t₁=3.52 秒，t₂=−4.55 秒，OB=68.0 米（两处方程、本行、下文 t₁、OB 同改）
+#eqn(none, $t_1 = 3.52 "秒", quad t_2 = - 4.55 "秒（舍去）"$, pre: [解出])
 
-#eqn(none, $O B = v_0 cos theta dot t_1 = 20 times cos 15 degree times 4.55 "米" = 87.9 "米"$, pre: [故得])
+#eqn(none, $O B = v_0 cos theta dot t_1 = 20 times cos 15 degree times 3.52 "米" = 68.0 "米"$, pre: [故得])
 
 本题如把坐标原点放在 $A$ 点，则由（13·4）式
 
@@ -462,11 +464,11 @@ $ y = v_0 sin theta dot t - display(1 / 2) g t^2 $
 
 $ - 80 = 20 times sin (- 15 degree) dot t - display(1 / 2) times 10 times t^2 $
 
-#eqn(none, $5 t^2 - 5.176 t - 80 = 0$, pre: [或])
+#eqn(none, $5 t^2 + 5.176 t - 80 = 0$, pre: [或])
 
 与前相同，可得
 
-$ t_1 = 4.55 "秒" $
+$ t_1 = 3.52 "秒" $
 
 #exercise("13·3")[
   + 子弹从 60° 的投射角由枪中射出，离开枪口时的速度是 200 米/秒。求（$a$）子弹在最高点时的速度和方向；（$b$）最高点的高度；（$c$）射程；（$d$）与它有同样的射程的另一个投射角；（$e$）第二条抛物线的最高点的高度。
