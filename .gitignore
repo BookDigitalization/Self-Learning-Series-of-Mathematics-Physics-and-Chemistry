@@ -1,0 +1,13 @@
+# 原书扫描与所有 PDF 产物不入库
+*.pdf
+original/
+build/
+
+# 本机私有配置
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
