@@ -36,6 +36,9 @@ def main() -> None:
     ap.add_argument("--raw", action="store_true", help="范围按 PDF 页序（0 起计）解释")
     ap.add_argument("--dpi", type=int, default=150)
     ap.add_argument("--out", default="build/pages")
+    ap.add_argument("--grid", type=int, default=0, metavar="N",
+                    help="每隔 N 像素（按 --dpi 的像素算）画一条带坐标标注的网格线，输出文件名加 -grid。"
+                         "用来给 crop-figure.py 量裁剪框：标注的数字就是真实像素坐标，不受看图工具缩放影响")
     args = ap.parse_args()
 
     out = pathlib.Path(args.out)
@@ -46,9 +49,24 @@ def main() -> None:
         if not 0 <= idx < doc.page_count:
             print(f"跳过：PDF 页序 {idx} 超出范围（共 {doc.page_count} 页）")
             continue
-        name = f"pdf{idx:04d}.png" if args.raw else f"p{p:04d}.png"
-        doc[idx].get_pixmap(dpi=args.dpi).save(out / name)
-        print(out / name)
+        stem = f"pdf{idx:04d}" if args.raw else f"p{p:04d}"
+        page = doc[idx]
+        if args.grid:
+            step = args.grid * 72 / args.dpi  # 网格间距（PDF 点）
+            red = (0.85, 0.1, 0.1)
+            for i in range(1, int(page.rect.width / step) + 1):
+                x = i * step
+                page.draw_line((x, 0), (x, page.rect.height), color=red, width=0.3)
+                for j in range(0, int(page.rect.height / (step * 5)) + 1):
+                    page.insert_text((x + 1, j * step * 5 + 8), str(i * args.grid), fontsize=6, color=red)
+            for j in range(1, int(page.rect.height / step) + 1):
+                y = j * step
+                page.draw_line((0, y), (page.rect.width, y), color=red, width=0.3)
+                for i in range(0, int(page.rect.width / (step * 5)) + 1):
+                    page.insert_text((i * step * 5 + 1, y - 1), str(j * args.grid), fontsize=6, color=red)
+            stem += "-grid"
+        page.get_pixmap(dpi=args.dpi).save(out / f"{stem}.png")
+        print(out / f"{stem}.png")
 
 
 if __name__ == "__main__":

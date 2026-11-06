@@ -13,6 +13,7 @@
 
 #import "@preview/bookly:3.1.0" as bookly
 #import "@preview/marginalia:0.3.1" as marginalia
+#import "@preview/cetz:0.5.3"
 
 // ───────────────────────── 字体 ─────────────────────────
 // 只用开源字体（见 README）。西文与数字统一用 New Computer Modern，
@@ -224,6 +225,18 @@
     let got = dot-numbering(ch, n)
     assert(got == number, message: "图号不符：源码写 图 " + number + "，自动编号为 图 " + got)
   }
+}
+
+// CeTZ 重绘插图的画布：坐标直接用原扫描页上量出的像素坐标（原点在左上，y 向下），
+// 这样描图时不用换算。`draw` 是 (p, u) => { import cetz.draw: *; … }：
+//   p(x, y)  把像素坐标换成 CeTZ 坐标     u  一个像素对应的排版长度（给 image 定宽用：width: 80 * u）
+// w、h：画布的像素宽高；origin：画布左上角在页面像素坐标里的位置；width：图在页面上的实际宽度。
+//   #px-canvas(1180, 555, origin: (320, 495), width: 12cm, (p, u) => { import cetz.draw: *; line(p(0, 0), p(50, 80)) })
+#let px-canvas(w, h, width: 10cm, origin: (0, 0), draw) = {
+  let u = width / w
+  let p = (x, y) => (x - origin.at(0), h - (y - origin.at(1)))
+  set par(first-line-indent: 0em, justify: false, leading: 0.4em)
+  cetz.canvas(length: u, draw(p, u))
 }
 
 // 不编号的小图（如习题插图"（第 4 题）"），可多幅并排：
