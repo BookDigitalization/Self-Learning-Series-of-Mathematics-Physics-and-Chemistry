@@ -112,3 +112,18 @@ python scripts/render-pages.py original/数理化自学丛书物理第一册.pdf
 - **许可证**：本项目贡献者编写的部分（Typst 排版源码、样式、重绘插图源码、脚本、文档）采用 [知识共享 署名-非商业性使用-相同方式共享 4.0 国际许可协议（CC BY-NC-SA 4.0）](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans) 授权，全文见 [LICENSE](LICENSE)。该许可证**不适用于原书内容本身**，原书内容的权利仍归原权利人。
 - **字体**：`fonts/` 中的字体由各自作者以 SIL Open Font License 1.1 授权，不受本项目许可证约束。
 - **权利人联系**：如果您是相关权利人，认为本项目侵犯了您的合法权益，请通过 GitHub Issues 联系我们，我们会及时处理或删除相关内容。
+
+## 常用命令（just）
+
+装好 [just](https://github.com/casey/just) 后，在仓库根目录运行 `just` 列出全部命令。常用：
+
+```powershell
+just fonts            # 下载字体（只需一次）
+just build            # 整书编译到 build/physics-1.pdf
+just check            # 整书编译，有错误或警告就失败（提交前用）
+just chapter 7        # 只编译第 7 章，很快（输出 build/solo/ch07.pdf）
+just png 20-24        # 把成书 PDF 的 20–24 页导出成 PNG 核对
+just scan 7-9         # 渲染原书第 7–9 页（带坐标网格），用来量图
+just crop 8 "520,900,1155,1275" books/physics-1/figures/x.png   # 从原书页裁图
+just todo             # 列出 #unclear 和 TODO 的位置
+```
