@@ -293,6 +293,27 @@
   body
 }
 
+// 表格：表号写在第一个参数，表题在表上方居中。`body` 是 table(...)。
+#let tab(number, caption, body) = block(width: 100%, breakable: false, above: 1em, below: 1em, {
+  set par(first-line-indent: 0em)
+  align(center, text(font: fonts.kai, size: 9.5pt)[
+    #text(font: fonts.hei, weight: "bold")[表 #number]#h(1em)#caption])
+  v(0.4em)
+  align(center, body)
+})
+
+// 例题与解：`#example("例 1")[题目]`、`#solution[解答]`。
+#let example(label, body) = block(above: 1.2em, below: 0.5em, width: 100%, {
+  set par(first-line-indent: 0em)
+  text(font: fonts.hei, weight: "bold")[#label]
+  h(0.8em)
+  body
+})
+#let solution(body) = block(above: 0.5em, below: 0.5em, width: 100%, {
+  text(font: fonts.hei, weight: "bold")[［解］]
+  h(0.5em)
+  body
+})
 // 习题答案中的一组："习题 1·1"，编号必须对应正文中已有的习题。
 #let answers(number, body) = {
   set par(first-line-indent: 0em)
