@@ -618,17 +618,7 @@ $ 25.5 = 0.8 times V $
   + 如果物体的比重比水轻，你能用什么方法测出它的比重？写出需要的器材（尽可能是容易办到的）和测定的简要步骤。
 ]
 
-// 单元检查题（第 1~3 章）：原书印在第三章末，本地定义标题样式，同“本章提要”“复习题”。
-#let unit-check(title, body) = {
-  set par(first-line-indent: 0em)
-  block(above: 2em, below: 1em, sticky: true, width: 100%, {
-    text(font: fonts.hei, size: 12pt, weight: "bold", fill: colors.primary)[#title]
-    v(-0.6em)
-    line(length: 100%, stroke: 0.8pt + colors.rule)
-  })
-  body
-}
-
+// 单元检查题（第 1~3 章）：原书印在第三章末，样式 unit-check 见 common/series.typ。
 #unit-check[单元检查题（第 1~3 章）][
   1. 选择题（在正确的答案上作“√”号）：
 

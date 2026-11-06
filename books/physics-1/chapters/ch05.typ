@@ -17,16 +17,6 @@
 #import "../figures/fig5-15.typ": fig-5-15
 #import "../figures/ex5-unit.typ": fig-unit-2-5, fig-unit-2-6, fig-unit-3-1
 
-// 章末“单元检查题（第 4～5 章）”：样式同“复习题”，标题不同。本章自定义，供并入 series.typ 时参考。
-#let unit-check(body) = {
-  set par(first-line-indent: 0em)
-  block(above: 2em, below: 1em, sticky: true, width: 100%, {
-    text(font: fonts.hei, size: 12pt, weight: "bold", fill: colors.primary)[单元检查题（第 4～5 章）]
-    v(-0.6em)
-    line(length: 100%, stroke: 0.8pt + colors.rule)
-  })
-  body
-}
 #import "../figures/ex5-6.typ": fig-ex-5-6-1, fig-ex-5-6-2
 
 // 带式号的独立公式：原书公式右侧有编号，如 (5·1)。本章自定义，供并入 series.typ 时参考。
@@ -857,7 +847,7 @@ $ s_5 = "△" O C A + (-"△" C 5 F) = 20 - 1 / 2 times 3 times 30 = -25 ("米")
   + 两个物体从不同的高度落下，但同时到达地面。已知第一个物体降落的时间是 1 秒钟，第二个物体原来离地面的高度是 30 米。求第二个物体降落了多少时间后第一个物体才开始降落。
 ]
 
-#unit-check[
+#unit-check[单元检查题（第 4～5 章）][
   + 在下列各题中，在你认为是正确的答案上作“√”号：
 
     （1）地球上空的人造同步卫星（同步卫星绕地球转动的周期和地球自转周期相同）；以地球为参照物它是 ① 运/* p.157 */动的，② 静止的；以太阳为参照物它是 ③ 运动的，④ 静止的；以月亮为参照物它是 ⑤ 运动的，⑥ 静止的。

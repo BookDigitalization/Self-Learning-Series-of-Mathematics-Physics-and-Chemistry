@@ -282,6 +282,17 @@
   body
 }
 
+// 章末"单元检查题（第 x～y 章）"：原书印在若干章之后，样式同"复习题"，标题照原书逐次传入。
+#let unit-check(title, body) = {
+  set par(first-line-indent: 0em)
+  block(above: 2em, below: 1em, sticky: true, width: 100%, {
+    text(font: fonts.hei, size: 12pt, weight: "bold", fill: colors.primary)[#title]
+    v(-0.6em)
+    line(length: 100%, stroke: 0.8pt + colors.rule)
+  })
+  body
+}
+
 // 章末"本章提要"：与复习题同样的小标题样式。
 #let summary(body) = {
   set par(first-line-indent: 0em)
