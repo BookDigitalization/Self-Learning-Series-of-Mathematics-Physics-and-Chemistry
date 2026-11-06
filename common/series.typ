@@ -282,6 +282,17 @@
   body
 }
 
+// 章末"本章提要"：与复习题同样的小标题样式。
+#let summary(body) = {
+  set par(first-line-indent: 0em)
+  block(above: 2em, below: 1em, sticky: true, width: 100%, {
+    text(font: fonts.hei, size: 12pt, weight: "bold", fill: colors.primary)[本章提要]
+    v(-0.6em)
+    line(length: 100%, stroke: 0.8pt + colors.rule)
+  })
+  body
+}
+
 // 习题答案中的一组："习题 1·1"，编号必须对应正文中已有的习题。
 #let answers(number, body) = {
   set par(first-line-indent: 0em)
