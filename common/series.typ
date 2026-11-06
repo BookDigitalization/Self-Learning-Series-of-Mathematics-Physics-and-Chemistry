@@ -158,7 +158,7 @@
     set par(first-line-indent: 0em)
     if it.numbering != none {
       text(font: fonts.hei, weight: "bold")[#it.supplement~#context it.counter.display(it.numbering)]
-      it.separator
+      if it.body != [] { it.separator }   // 原书有的图只有图号，没有图题
     }
     it.body
   }
@@ -215,6 +215,7 @@
 
 // 插图：number 为原书图号（如 "1·1"），与自动编号核对，不一致时编译报错，防止漏图、错号。
 //   #fig("1·1", image("figures/1-1.png", width: 40%))[国际米原器]
+//   #fig("1·2", image(...))[]          原书只有图号、没有图题时，图题留空
 #let fig(number, body, caption, label: none) = {
   [#figure(body, kind: image, caption: caption) #if label != none { label }]
   context {
@@ -227,6 +228,7 @@
 
 // 不编号的小图（如习题插图"（第 4 题）"），可多幅并排：
 //   #plainfig((image(...), [（第 4 题）]), (image(...), [（第 5 题）]))
+// 也用于编号插图内部的分图小标题（如图 1·6 的"眼睛的位置放得正确"）。
 #let plainfig(..items) = {
   let items = items.pos()
   block(width: 100%, breakable: false, above: 1em, below: 1em, grid(
