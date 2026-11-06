@@ -22,7 +22,7 @@
   let d(x, y) = ((x - 350) * 2.1314, (y - 1495) * 2.1314)
   let lab(x, y, body) = content(p(..d(x, y)), anchor: "center", text(font: fonts.kai, size: 8.5pt, body))
   lab(460, 1620, [螺钉])
-  lab(460, 1862, [螺栓和螺帽])
+  lab(460, 1862, [螺栓和螺母])
   lab(745, 1862, [举重螺旋])
   lab(1150, 1862, [压榨螺旋])
 })
