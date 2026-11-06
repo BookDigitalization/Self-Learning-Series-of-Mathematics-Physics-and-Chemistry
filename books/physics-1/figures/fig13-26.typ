@@ -12,9 +12,9 @@
   // （a）
   content(p(385, 1325), anchor: "north-west", image("fig13-26a.png", width: 510 * u))
   lab(703, 1277, $Q$)
-  lab(655, 1517, $O$)
-  lab(690, 1517, $F$)
-  lab(678, 1887, $G$)
+  lab(657, 1515, $O$)
+  lab(692, 1495, $F$)
+  lab(676, 1760, $G$)
   lab(643, 1868, $(a)$)
   // （b）倾斜的轨道（斜线填充）
   line(p(930, 1650), p(1318, 1740), p(1318, 1785), p(930, 1695), close: true, stroke: 1pt)

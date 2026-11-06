@@ -11,6 +11,13 @@
   let txt(x, y, body) = content(q(x, y), anchor: "center", text(size: 8pt, body))
   let arr(a, b) = line(q(..a), q(..b), stroke: 1pt, mark: (end: "stealth", fill: black, scale: 0.5))
   content(p(0, 0), anchor: "north-west", image("fig12-14.png", width: 1167 * u))
+  // 仰角 α 的弧线与水平虚线：位图里这一小块已涂去（残留线条），用 CeTZ 重画（坐标为裁剪图像素）
+  line(p(480, 460), p(825, 460), stroke: (thickness: 0.7pt, dash: "dashed"))
+  let arcpts = range(0, 9).map(i => {
+    let t = i * 22.5deg / 8
+    p(361 + 250 * calc.cos(t), 458 - 250 * calc.sin(t))
+  })
+  line(..arcpts, stroke: 0.8pt, mark: (start: "stealth", end: "stealth", fill: black, scale: 0.4))
   // 补回位图上涂掉的字母
   txt(1272, 1305, $m$)
   txt(1393, 1258, $v$)

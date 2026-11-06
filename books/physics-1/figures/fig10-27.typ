@@ -48,4 +48,6 @@
   lab(1376, 1382, $h$)
   lab(1020, 1471, $theta$)
   lab(1130, 1546, $G$)
+  content(p(514, 484), anchor: "center", text(size: 9pt, $theta$)) // 斜面上方、G 线与法线之间的第二个 θ（像素坐标）
 })
+

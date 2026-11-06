@@ -5,6 +5,13 @@
 #let _arrow(p, a, b, th: 1.4pt) = cetz.draw.line(p(..a), p(..b), stroke: th, mark: (end: "stealth", fill: black, scale: 0.5))
 #let _lab(p, x, y, body) = cetz.draw.content(p(x, y), anchor: "center", text(size: 8.5pt, body))
 
+// 第 3 题：位图（ex9-1-3.png，已涂去“45°”），文字用 CeTZ 补回；坐标是该 png 的像素坐标（1355×1237）。
+#let fig-ex-9-1-3(width: 7cm) = px-canvas(1355, 1237, width: width, (p, u) => {
+  import cetz.draw: *
+  content(p(0, 0), anchor: "north-west", image("ex9-1-3.png", width: 1355 * u))
+  content(p(294, 432), anchor: "center", text(size: 9pt, [45°]))
+})
+
 // 第 2 题：两只弹簧与两个物体
 #let spring(p, x, y0, y1, w: 14, n: 6) = {
   import cetz.draw: *

@@ -1,5 +1,5 @@
 // 图 1·7 游标卡尺（原书 p.5）、图 1·8 被测零件的宽度是 5.2 毫米（原书 p.6）
-// 卡尺本体是写实插画，沿用原扫描裁剪（fig1-7-body.png、fig1-8-body.png，已涂去放大刻度和文字标注）；
+// 卡尺本体是写实插画，沿用原扫描裁剪（fig1-7-body.png、fig1-8-body.png，已涂去放大刻度、文字标注和尺身上的刻度数字、"0.1mm"）；
 // 右下角放大的尺身/游标刻度、各处文字标注用 CeTZ 重绘。
 // 坐标是原书页面像素坐标（render-pages.py --dpi 200 的显示图，宽 1568）。
 #import "/common/series.typ": *
@@ -28,12 +28,28 @@
   }
 }
 
+// 卡尺本体位图上原有的刻度数字（0–6、9–15）和"0.1mm"已涂掉，这里补回。
+//   (ox, oy)：位图左上角在画布坐标里的位置；png-w：位图像素宽；cw：位图在画布里的宽（页面像素）
+//   xs：各数字在位图里的 x（像素）；y：数字在位图里的 y；mm：“0.1mm”在位图里的位置
+//   其中 9（原图是一团墨，按前后刻度推定）和 0.1mm（原图字迹模糊）用 unclear 标出。
+#let body-scale(p, ox, oy, k, xs, y, mm) = {
+  import cetz.draw: *
+  let q(x, y) = p(ox + x * k, oy + y * k)
+  let labels = (0, 1, 2, 3, 4, 5, 6, 9, 10, 11, 12, 13, 14, 15)
+  for (i, n) in labels.enumerate() {
+    let t = text(size: 7.5pt, str(n))
+    content(q(xs.at(i), y), anchor: "center", if n == 9 { unclear(t) } else { t })
+  }
+  content(q(..mm), anchor: "center", unclear(text(size: 7pt, [0.1mm])))
+}
+
 // 图 1·7：游标卡尺。尺身、游标、卡脚三部分；游标零线与尺身零线重合
 #let fig-1-7(width: 12cm) = px-canvas(760, 340, origin: (485, 1255), width: width, (p, u) => {
   import cetz.draw: *
   let lab(x, y, body, anchor: "center") = content(p(x, y), anchor: anchor,
     text(font: fonts.hei, size: 8pt, weight: "medium", body))
   content(p(485, 1255), anchor: "north-west", image("fig1-7-body.png", width: 760 * u))
+  body-scale(p, 485, 1255, 760 / 1621, (260, 348, 440, 530, 620, 712, 805, 942, 1030, 1120, 1210, 1300, 1390, 1482), 262, (425, 220))
   lab(1122, 1333, [尺身])
   lab(803, 1508, [游标])
   lab(652, 1527, [卡脚])
@@ -51,6 +67,7 @@
   let lab(x, y, body, anchor: "center") = content(p(x, y), anchor: anchor,
     text(font: fonts.hei, size: 8pt, weight: "medium", body))
   content(p(435, 432), anchor: "north-west", image("fig1-8-body.png", width: 795 * u))
+  body-scale(p, 435, 432, 795 / 1695, (263, 350, 445, 540, 628, 727, 818, 957, 1050, 1142, 1236, 1330, 1420, 1520), 263, (458, 218))
   vernier-scale(p, 880, 693, 13.6, 18, 5.2)
   lab(1130, 677, [（尺身）], anchor: "west")
   lab(1104, 739, [（游标）], anchor: "west")

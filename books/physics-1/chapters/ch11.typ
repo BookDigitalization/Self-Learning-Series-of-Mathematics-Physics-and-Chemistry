@@ -20,6 +20,7 @@
 #import "../figures/fig11-24.typ": fig-11-24
 #import "../figures/fig11-25.typ": fig-11-25
 #import "../figures/fig11-26.typ": fig-11-26
+#import "../figures/fig11-27.typ": fig-11-27
 #import "../figures/ex11-8.typ": fig-ex-11-8-4, fig-ex-11-8-6, fig-ex-11-8-7
 
 // 带编号的独立公式：公式居中，编号靠右（本章自定义，供并入 series.typ 参考）
@@ -811,7 +812,7 @@ $ m g h = display(1/2) m v^2 $
 #eqn("11·12", $(F - m g sin theta - f) l = display(1/2) m v_2^2 - display(1/2) m v_1^2$)
 
 // p.369
-#fig("11·27", image("../figures/fig11-27.png", width: 11cm))[]
+#fig("11·27", fig-11-27(width: 11cm))[]
 
 由图知道 #h(4em) $sin theta = (h_2 - h_1) / l$
 

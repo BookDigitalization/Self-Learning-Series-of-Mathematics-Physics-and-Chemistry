@@ -3,6 +3,18 @@
 
 #let _arrow(p, a, b, th: 1.3pt) = cetz.draw.line(p(..a), p(..b), stroke: th, mark: (end: "stealth", fill: black, scale: 0.5))
 #let _lab(p, x, y, body, size: 9pt) = cetz.draw.content(p(x, y), anchor: "center", text(size: size, body))
+// 第 6 题起重机：位图（ex9-5-6.png，已涂去 G、G₁、G₂、45°、A、B 和尺寸 0.5/2/1.8/1.8 米），文字用 CeTZ 补回。
+// 坐标是该 png 的像素坐标（1898×1444）。第二个 1.8 在扫描里像“1.9”，按重物 G₁ 在起重臂中点推算为 1.8，见 checklist/figtext-ch9.md。
+#let fig-ex-9-5-6(width: 11cm) = px-canvas(1898, 1444, width: width, (p, u) => {
+  import cetz.draw: *
+  content(p(0, 0), anchor: "north-west", image("ex9-5-6.png", width: 1898 * u))
+  let m(x, y, body) = content(p(x, y), anchor: "center", text(size: 10pt, body))
+  let dim(x, y, body) = content(p(x, y), anchor: "center", frame: "rect", fill: white, stroke: none, padding: 8 * u, text(size: 10pt, body))
+  m(392, 930, $G$); m(1507, 640, $G_1$); m(1810, 1032, $G_2$); m(1210, 1035, [45°])
+  m(100, 1325, $A$); m(976, 1337, $B$)
+  m(240, 1340, [0.5 米]); dim(645, 1392, [2 米]); dim(1183, 1400, [1.8 米]); dim(1625, 1404, [1.8 米])
+})
+
 #let _dim(p, a, b) = cetz.draw.line(p(..a), p(..b), stroke: 0.6pt, mark: (start: "stealth", end: "stealth", fill: black, scale: 0.35))
 #let _dash(p, a, b) = cetz.draw.line(p(..a), p(..b), stroke: (thickness: 0.6pt, dash: "dashed"))
 

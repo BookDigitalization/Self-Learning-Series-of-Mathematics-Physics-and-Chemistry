@@ -1,4 +1,4 @@
-// 图 9·17（c）（d）与图 9·18（b）的线条图（原书 p.254）。（a）（b）是写实插画，用位图 fig9-17a/b.png、fig9-18a.png。
+// 图 9·17（c）（d）与图 9·18（b）的线条图（原书 p.254）。（a）（b）是写实插画，用位图 fig9-17a/b.png、fig9-18a.png（字母已涂去，用 CeTZ 补回）。
 // 坐标取自页面显示图。
 #import "/common/series.typ": *
 
@@ -27,6 +27,25 @@
   _arrow(p, (1305, 798), (1160, 798), th: 1.8pt)
   _lab(p, 1214, 778, $F$); _lab(p, 1137, 803, $C$); _lab(p, 1318, 795, $A$)
   _lab(p, 1153, 640, $O'$); _lab(p, 1153, 945, $O$)
+})
+
+// （a）（b）与图 9·18（a）：写实插画，位图已涂去字母 O'、O、F，用 CeTZ 补回。
+// 坐标是各 png 的像素坐标。
+#let _bmp-lab(p, x, y, body) = cetz.draw.content(p(x, y), anchor: "center", text(size: 9pt, body))
+#let fig-9-17a(width: 4.3cm) = px-canvas(704, 924, width: width, (p, u) => {
+  import cetz.draw: *
+  content(p(0, 0), anchor: "north-west", image("fig9-17a.png", width: 704 * u))
+  _bmp-lab(p, 225, 92, $O'$); _bmp-lab(p, 185, 853, $O$); _bmp-lab(p, 635, 522, $F$)
+})
+#let fig-9-17b(width: 6.4cm) = px-canvas(1131, 860, width: width, (p, u) => {
+  import cetz.draw: *
+  content(p(0, 0), anchor: "north-west", image("fig9-17b.png", width: 1131 * u))
+  _bmp-lab(p, 212, 45, $O'$); _bmp-lab(p, 178, 787, $O$); _bmp-lab(p, 402, 322, $F$)
+})
+#let fig-9-18a(width: 4.3cm) = px-canvas(725, 828, width: width, (p, u) => {
+  import cetz.draw: *
+  content(p(0, 0), anchor: "north-west", image("fig9-18a.png", width: 725 * u))
+  _bmp-lab(p, 207, 40, $O'$); _bmp-lab(p, 175, 790, $O$); _bmp-lab(p, 688, 327, $F$)
 })
 
 // 图 9·18（b）

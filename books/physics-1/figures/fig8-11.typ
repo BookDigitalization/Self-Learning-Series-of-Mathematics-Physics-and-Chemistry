@@ -8,6 +8,9 @@
 #let fig-8-11(width: 10cm) = px-canvas(1429, 470, width: width, (p, u) => {
   import cetz.draw: *
   content(p(0, 0), anchor: "north-west", image("fig8-11.png", width: 1429 * u))
+  // 涂字后残留的小墨迹
+  rect(p(895, 315), p(925, 335), fill: white, stroke: none)
+  rect(p(1038, 318), p(1062, 338), fill: white, stroke: none)
   let m(x, y, body) = content(p(x, y), anchor: "center", text(size: 8pt, body))
   m(168, 130, $N_1$)
   m(407, 175, $T_1$)

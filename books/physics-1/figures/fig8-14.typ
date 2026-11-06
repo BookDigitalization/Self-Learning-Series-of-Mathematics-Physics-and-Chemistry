@@ -8,6 +8,9 @@
   import cetz.draw: *
   content(p(0, 0), anchor: "north-west", image("fig8-14.png", width: 598 * u))
   line(p(447, 412), p(447, 512), stroke: 0.8pt)
+  // 涂字后残留的小墨迹
+  rect(p(355, 722), p(392, 740), fill: white, stroke: none)
+  rect(p(468, 730), p(498, 746), fill: white, stroke: none)
   let m(x, y, body) = content(p(x, y), anchor: "center", text(size: 8pt, body))
   m(484, 465, $+a$)
   m(548, 740, $a$)
