@@ -7,6 +7,7 @@
   import cetz.draw: *
   content(p(0, 0), anchor: "north-west", image("fig7-3.png", width: 1152 * u))
   content(p(655, 107), anchor: "west", text(size: 8pt)[$G = 1.003$ 公斤])
-  content(p(750, 661), anchor: "west", text(size: 8pt)[$G approx 0.997$ 公斤])
+  content(p(750, 661), anchor: "west", text(size: 8pt)[$G approx 0.998$ 公斤])
+  // 原书作 0.997（扫描确印；9.78÷9.80=0.998），与正文同改
   content(p(490, 512), anchor: "center", text(size: 8pt, fill: black)[地球])
 })
