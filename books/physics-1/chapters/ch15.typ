@@ -4,10 +4,6 @@
 #import "../figures/fig15-3.typ": fig-15-3
 
 // 带公式号的独立公式（本章局部组件，式号靠右）
-#let eqn(num, body) = block(width: 100%, above: 1em, below: 1em, grid(
-  columns: (1fr, auto, 1fr), align: (left, center, right + horizon),
-  [], body, [（#num）],
-))
 
 // p.491
 = 流体的流动

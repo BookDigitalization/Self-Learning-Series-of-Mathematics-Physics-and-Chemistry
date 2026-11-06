@@ -31,9 +31,6 @@
 })
 
 // 带公式号的独立公式（原书公式号写在右侧）
-#let eqn(no, body) = block(width: 100%, above: 0.8em, below: 0.8em, grid(
-  columns: (1fr, auto, 1fr), align: (left, center, right + horizon),
-  [], math.equation(block: true, body), [(#no)]))
 
 // p.295
 = 简单机械

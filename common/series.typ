@@ -293,6 +293,16 @@
   body
 }
 
+// 带公式号的独立公式：公式居中，右侧写原书公式号，如 #eqn("4·1", $ v = s / t $) → （4·1）。
+#let eqn(n, body) = block(width: 100%, above: 1em, below: 1em, {
+  set par(first-line-indent: 0em)
+  grid(
+    columns: (1fr, auto, 1fr),
+    align: (left, center + horizon, right + horizon),
+    [], math.equation(block: true, numbering: none, body), [（#n）],
+  )
+})
+
 // 表格：表号写在第一个参数，表题在表上方居中。`body` 是 table(...)。
 #let tab(number, caption, body) = block(width: 100%, breakable: false, above: 1em, below: 1em, {
   set par(first-line-indent: 0em)

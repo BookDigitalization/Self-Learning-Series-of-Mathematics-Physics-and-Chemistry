@@ -23,8 +23,6 @@
 #import "../figures/ex11-8.typ": fig-ex-11-8-4, fig-ex-11-8-6, fig-ex-11-8-7
 
 // 带编号的独立公式：公式居中，编号靠右（本章自定义，供并入 series.typ 参考）
-#let eqn(n, body) = grid(columns: (1fr, auto, 1fr), align: horizon,
-  [], body, align(right)[（#n）])
 
 // p.329
 = 机械能

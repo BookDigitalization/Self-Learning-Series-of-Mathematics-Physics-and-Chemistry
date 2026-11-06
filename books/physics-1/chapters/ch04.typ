@@ -25,10 +25,6 @@
 #import "../figures/ex4-4.typ": fig-ex-2
 
 // 带原书公式号的行间公式：#eqn("4·1", $ … $)
-#let eqn(number, body) = block(above: 1em, below: 1em, width: 100%, grid(
-  columns: (1fr, auto, 1fr),
-  [], body, align(right + horizon)[(#number)],
-))
 
 // p.84
 = 匀速直线运动

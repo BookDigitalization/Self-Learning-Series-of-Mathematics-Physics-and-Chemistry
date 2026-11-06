@@ -30,11 +30,6 @@
 #import "../figures/ex5-6.typ": fig-ex-5-6-1, fig-ex-5-6-2
 
 // 带式号的独立公式：原书公式右侧有编号，如 (5·1)。本章自定义，供并入 series.typ 时参考。
-#let eqn(number, body) = block(width: 100%, above: 1em, below: 1em, {
-  set par(first-line-indent: 0em)
-  grid(columns: (1fr, auto, 1fr), align: (left, center + horizon, right + horizon),
-    [], body, text("(" + number + ")"))
-})
 
 // 逐秒速度列表：每项 (说明文字, 公式)，公式可含多行（用 & 对齐）。本章自定义。
 #let vlist(..rows) = block(width: 100%, above: 0.8em, below: 0.8em, {

@@ -8,10 +8,6 @@
 #import "../figures/ex7-1.typ": fig-ex-7-1-9
 
 // 带原书公式号的行间公式：#eqn("7·1", $ … $)
-#let eqn(num, body) = block(above: 1em, below: 1em, width: 100%, grid(
-  columns: (1fr, auto, 1fr),
-  [], body, align(right + horizon)[（#num）],
-))
 
 // p.190
 = 牛顿第二运动定律

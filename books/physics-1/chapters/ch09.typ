@@ -9,8 +9,6 @@
 #import "../figures/fig9-44.typ": fig-9-44, fig-ex-9-7-4, fig-ex-9-7-6
 #import "../figures/ex9-6.typ": fig-ex-9-6-3
 // 带编号的行间公式：#eqn("9·8", $ … $)，编号在右侧
-#let eqn(n, body) = grid(columns: (1fr, auto, 1fr), align: horizon,
-  [], body, align(right)[（#n）])
 #import "../figures/fig9-4.typ": fig-9-4
 #import "../figures/fig9-5.typ": fig-9-5
 #import "../figures/fig9-6.typ": fig-9-6

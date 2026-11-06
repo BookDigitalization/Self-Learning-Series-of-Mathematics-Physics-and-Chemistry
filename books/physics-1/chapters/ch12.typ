@@ -21,10 +21,6 @@
 #import "../figures/rev12-7.typ": fig-rev-12-7
 
 // 带原书公式号的行间公式：#eqn(12·1)[公式]（本章局部定义）
-#let eqn(n, body) = block(width: 100%, above: 0.9em, below: 0.9em, grid(
-  columns: (1fr, auto, 1fr), align: (left, center, right + horizon),
-  [], math.equation(block: true, numbering: none, body), [（#n）],
-))
 // 无框小表（本章 p.378–379 的列表）
 #let ctab(..args) = align(center, table(
   stroke: none, align: center + horizon, inset: (x: 0.9em, y: 0.4em),

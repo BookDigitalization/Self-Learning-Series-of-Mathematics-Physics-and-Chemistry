@@ -7,10 +7,6 @@
 #import "../figures/fig14-5.typ": fig-14-5
 #import "../figures/fig14-6.typ": fig-14-6
 // 带原书公式号的行间公式：#eqn("14·1", 公式)（本章局部定义，同 ch12）
-#let eqn(n, body) = block(width: 100%, above: 0.9em, below: 0.9em, grid(
-  columns: (1fr, auto, 1fr), align: (left, center, right + horizon),
-  [], math.equation(block: true, numbering: none, body), [（#n）],
-))
 
 // p.474
 = 万有引力
