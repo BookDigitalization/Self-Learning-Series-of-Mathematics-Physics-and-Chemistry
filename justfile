@@ -71,6 +71,15 @@ stats book=book:
 find word book=book:
     python -c "import pymupdf; d=pymupdf.open('build/{{book}}.pdf'); [print('第', i+1, '页') for i in range(len(d)) if '{{word}}' in d[i].get_text()]"
 
+# ───────────── 发版 ─────────────
+
+# 发版：检查无误后在本地打 tag（不推送），如 `just tag 0.1.0`。推送 tag 后由 GitHub Actions（.github/workflows/release.yml）编译并发布 Release
+tag version book=book:
+    just check {{book}}
+    $s = git status --porcelain; if ($s) { "有未提交的改动，先提交再发版"; exit 1 }
+    git tag -a {{book}}-v{{version}} -m "{{book}} v{{version}}"
+    "已创建 tag {{book}}-v{{version}}。确认无误后推送：git push origin {{book}}-v{{version}}"
+
 # ───────────── 环境与清理 ─────────────
 
 # 下载开源字体到 fonts/（不入库）

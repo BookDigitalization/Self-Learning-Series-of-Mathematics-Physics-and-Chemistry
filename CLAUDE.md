@@ -22,7 +22,7 @@ scripts/                   辅助脚本（渲染原书页、比对、构建）
 build/                     编译产物（不提交）
 ```
 
-- `.gitignore` 排除所有 `*.pdf`、`original/`、`build/`。**只提交源码。**
+- `.gitignore` 排除所有 `*.pdf`、`original/`、`build/`。**只提交源码**；成书 PDF 不入库，通过 GitHub Release 发布（见"发版"一节）。
 - 永远不要修改、移动、删除 `original/` 下的文件。
 
 ## 原书情况（物理第一册，已核对）
@@ -94,8 +94,22 @@ build/                     编译产物（不提交）
 - 习题答案与习题编号一致，建议用 label/ref 交叉引用核对。
 - 风格统一：同一丛书的所有分册共用 `common/series.typ`，新书开始前先看已有分册的做法。
 
+## 发版
+
+成书 PDF 由 GitHub Actions 编译并作为 **GitHub Release 附件**发布，PDF 本身不进 git。原书扫描件永远不发布。
+
+- 工作流：`.github/workflows/release.yml`；Release 说明模板：`.github/release-notes.md`（含"仅供非商业学习"的使用声明，不得删除）。
+- tag 格式：`<分册>-v<版本>`，分册名即 `books/` 下的目录名，例如 `physics-1-v0.1.0`。
+- 发版前：
+  1. `just check` 无错误、无警告；`just todo` 里没有遗留的 `#unclear` 和 TODO（有就先说明）；
+  2. `books/<分册>/REVISIONS.md`、`common/TERMINOLOGY.md` 已更新，与源码一致；
+  3. 工作区干净，所有改动已提交。
+- 发版步骤：`just tag 0.1.0`（检查并在本地打 tag，不推送）→ 项目负责人确认 → `git push origin physics-1-v0.1.0`（推送 tag 触发发布）。也可在 Actions 页手动运行 release 工作流，手动运行默认只生成草稿。
+- 推送 tag、公开 Release 属于对外发布，**必须先得到项目负责人明确同意**，不得自行 push。
+- 工作流产出：`<分册>-v<版本>.pdf`、`.pdf.sha256`、`-REVISIONS.md`；构建时会检查页数、书签、文本层。
+
 ## 不要做的事
 
-- 不要提交任何 PDF 或扫描图片原件（裁剪重制的插图 PNG 除外）。
+- 不要把 PDF 或扫描图片原件提交进 git（裁剪重制的插图 PNG 除外）；成书 PDF 只通过 Release 发布。
 - 不要一次性批量 OCR 后不加校对就入库。
 - 不要为了排版好看而改动原书的章节结构、编号或措辞（版式可以自由，内容不能动）。

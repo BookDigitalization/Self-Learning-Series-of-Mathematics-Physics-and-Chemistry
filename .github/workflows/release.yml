@@ -1,0 +1,112 @@
+# 发版：编译成书 PDF，作为 GitHub Release 附件发布（PDF 不入库）。
+#
+# 触发方式
+#   1. 推送 tag：<分册>-v<版本>，例如 physics-1-v0.1.0（分册名即 books/ 下的目录名）
+#        git tag -a physics-1-v0.1.0 -m "物理第一册 v0.1.0" ; git push origin physics-1-v0.1.0
+#   2. 手动运行（Actions → release → Run workflow）：填 tag，默认只生成草稿（draft），确认后再在 Release 页面发布。
+#
+# 发版前先在本机 `just check`，并确认 books/<分册>/REVISIONS.md 与 common/TERMINOLOGY.md 已更新。
+
+name: release
+
+on:
+  push:
+    tags:
+      - '*-v[0-9]*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 版本号 tag，如 physics-1-v0.1.0
+        required: true
+        type: string
+      draft:
+        description: 只生成草稿，不公开
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.inputs.tag || github.ref_name }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 解析分册与版本
+        id: meta
+        shell: bash
+        run: |
+          book="${TAG%-v*}"
+          version="${TAG##*-v}"
+          if [ ! -f "books/${book}/main.typ" ]; then
+            echo "::error::tag ${TAG} 对应的分册 books/${book}/main.typ 不存在"
+            exit 1
+          fi
+          echo "book=${book}" >> "$GITHUB_OUTPUT"
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+
+      - uses: typst-community/setup-typst@v4
+        with:
+          typst-version: 0.15.1
+
+      - uses: extractions/setup-just@v2
+
+      - name: 缓存字体
+        id: fonts-cache
+        uses: actions/cache@v4
+        with:
+          path: fonts
+          key: fonts-${{ hashFiles('scripts/get-fonts.ps1') }}
+
+      - name: 下载开源字体
+        if: steps.fonts-cache.outputs.cache-hit != 'true'
+        shell: pwsh
+        run: ./scripts/get-fonts.ps1
+
+      - name: 编译（有任何错误或警告就失败）
+        run: just check ${{ steps.meta.outputs.book }}
+
+      - name: 检查成书 PDF（页数、书签、可检索文本）
+        shell: bash
+        run: |
+          python3 -m pip install --quiet pymupdf
+          python3 - <<'PY'
+          import os, sys, pymupdf
+          book = "${{ steps.meta.outputs.book }}"
+          d = pymupdf.open(f"build/{book}.pdf")
+          toc = d.get_toc()
+          text = "".join(d[i].get_text() for i in range(min(10, len(d))))
+          print("页数", len(d), "书签", len(toc), "前 10 页文字数", len(text))
+          if len(d) < 100 or len(toc) < 15 or len(text) < 500:
+              sys.exit("成书 PDF 检查未通过：页数、书签或文本层异常")
+          PY
+
+      - name: 整理发布文件
+        id: pack
+        shell: bash
+        run: |
+          book="${{ steps.meta.outputs.book }}"
+          name="${book}-v${{ steps.meta.outputs.version }}"
+          mkdir -p dist
+          cp "build/${book}.pdf" "dist/${name}.pdf"
+          cp "books/${book}/REVISIONS.md" "dist/${name}-REVISIONS.md"
+          (cd dist && sha256sum "${name}.pdf" > "${name}.pdf.sha256")
+          echo "name=${name}" >> "$GITHUB_OUTPUT"
+          ls -l dist
+
+      - name: 发布 Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG }}
+          name: ${{ steps.pack.outputs.name }}
+          draft: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.draft == 'true' }}
+          body_path: .github/release-notes.md
+          generate_release_notes: false
+          files: |
+            dist/${{ steps.pack.outputs.name }}.pdf
+            dist/${{ steps.pack.outputs.name }}.pdf.sha256
+            dist/${{ steps.pack.outputs.name }}-REVISIONS.md
