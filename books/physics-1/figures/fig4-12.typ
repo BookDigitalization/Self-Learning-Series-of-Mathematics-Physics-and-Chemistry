@@ -21,7 +21,7 @@
     lab(ox + t * sx, oy + 22, str(t))
   }
   lab(ox - 8, oy + 22, [0])
-  lab(938, 1157, [$s$（公里）])
+  lab(938, 1157, [$s$（千米）])
   lab(1328, oy + 22, [$t$（小时）])
   // A 车：OA，v = 40 公里/小时
   line(p(ox, oy), p(..pt(5.1, 204)), stroke: 1.3pt)

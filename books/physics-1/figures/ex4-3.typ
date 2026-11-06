@@ -13,11 +13,11 @@
   // 上排：120 公里、战斗舰所走的路程
   line(p(490, 1700), p(798, 1700), stroke: 0.7pt, mark: (end: "stealth", fill: black, scale: 0.35))
   line(p(798, 1700), p(1202, 1700), stroke: 0.7pt, mark: (end: "stealth", fill: black, scale: 0.35))
-  lab(630, 1700, [120 公里])
+  lab(630, 1700, [120 千米])
   lab(1000, 1700, [战列舰所走的路程])
   // 中间的基线
   line(p(490, 1743), p(1202, 1743), stroke: 0.8pt)
   // 下排：轻巡洋舰所走的路程
   line(p(490, 1798), p(1202, 1798), stroke: 0.7pt, mark: (end: "stealth", fill: black, scale: 0.35))
-  lab(846, 1798, [轻巡洋舰所走的路程（270 公里）])
+  lab(846, 1798, [轻巡洋舰所走的路程（270 千米）])
 })

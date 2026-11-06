@@ -15,7 +15,7 @@
   lab(1110, 1790, [$B$ 车所走路程 $S_B$])
   line(p(523, 1822), p(1235, 1822), stroke: 0.8pt)
   line(p(523, 1878), p(1235, 1878), stroke: 0.7pt, mark: (start: "stealth", end: "stealth", fill: black, scale: 0.35))
-  lab(880, 1878, [220 公里])
+  lab(880, 1878, [220 千米])
   content(p(525, 1745), anchor: "center", text(size: 8.5pt)[甲地])
   content(p(1232, 1755), anchor: "center", text(size: 8.5pt)[乙地])
   // 速度箭头
