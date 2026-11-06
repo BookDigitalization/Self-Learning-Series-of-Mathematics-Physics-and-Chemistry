@@ -10,7 +10,7 @@
 
 ```
 original/                  原书扫描 PDF（只读，不提交 git）
-books/<书名>/              每本书一个目录，例如 books/物理第一册/
+books/<分册>/              每本书一个目录，用"英文学科名-册号"，例如 books/physics-1/（物理第一册）
   main.typ                 主文件：导入样式、目录、#include 各章
   chapters/ch01.typ …      每章一个文件（按原书章号）
   figures/                 插图：CeTZ 源码（.typ）或清理后的位图
@@ -30,14 +30,16 @@ build/                     编译产物（不提交）
 - PDF 页码与原书页码对应：PDF 第 0–4 页（0 起计）= 目录 i–v；**PDF 第 n 页 = 原书第 n−4 页**（n ≥ 5）。
 - 扫描缺封面、"第二版出版说明"、"编者的话"（目录里有，扫描里没有）。不要编造这些内容，在源码里留 `// TODO: 原扫描缺失` 注释。
 - 结构：15 章，章 → 节（`§1·1` 形式）→ 小标题（粗体无编号）。
-  每节后有"习题 x·y"（左侧带框的标签），每章末有"复习题"，书末有"总复习题""习题答案""附录一 物理量和单位""附录二 重要常数"。
+  每节后有"习题 x·y"（左侧带框的标签），每章末有"复习题"，书末有"总复习题""习题答案""附录一 本书主要物理量和单位""附录二 本书重要常数"。
+  `books/physics-1/chapters/` 里的章、节标题暂取自原书目录，录入时以正文为准。
 - 内容元素（需保留其语义，具体呈现方式由模板决定）：正文旁的**边注**（要点提示，如"量度就是将待测量与标准量进行比较"，可做成页边注或提示框）、粗体关键词、图号"图 1·10"＋图题、表格、行内及行间公式。
 - 编号用中间点 `·`（§1·1、图 4·6、习题 1·2），保持原样，不要改成 `.`。
 - 单位和术语为当年用法（公斤、公里、尔格、马力、tg、"米/秒"等），**一律照原书**，不要现代化；若要注释只能用脚注并标明"数字版注"。
 
 ## 技术栈
 
-- **Typst 0.15**（本机 `typst` 已在 PATH）。构建：`typst compile books/物理第一册/main.typ build/物理第一册.pdf --root . --font-path fonts --ignore-system-fonts`；写作时用 `typst watch`。
+- **Typst 0.15**（本机 `typst` 已在 PATH）。构建：`typst compile books/physics-1/main.typ build/physics-1.pdf --root . --font-path fonts --ignore-system-fonts`；写作时用 `typst watch`。
+  导出某几页 PNG 核对：在上述命令里把输出改成 `"build/check-{p}.png"` 并加 `--pages 5-8 --ppi 150`。
   `--root .` 是为了让各书能 `#import "/common/series.typ": *`。
 - 图书模板：主选 `@preview/bookly`，备选 `orange-book`、`concise-history`（理由见 README）。模板只在 `common/series.typ` 中引用，各书不得直接 import 模板。
 - 字体**只用开源免费字体**（OFL），避免版权纠纷：正文宋体 `Noto Serif SC`，标题/强调黑体 `Noto Sans SC`，边注与图题楷体 `霞鶩文楷`（LXGW WenKai，Typst 只认这个中文族名），西文与公式用 Typst 内置 `New Computer Modern`。
@@ -46,8 +48,19 @@ build/                     编译产物（不提交）
 - 公式用 Typst 原生数学（`$ v = s / t $`）。中文单位写在公式外或用 `"米/秒"` 文本；三角函数照原书写 `"tg"`。
 - 编号：章节、图、习题的编号格式统一用 `·` 分隔，在 `series.typ` 里用自定义 `numbering` 函数实现（如 `(..n) => n.pos().map(str).join("·")`）。
 - 插图优先用 **CeTZ**（`@preview/cetz`）重绘示意图、受力图、坐标图、几何图；写实插画（人物、器械）用原扫描裁剪 + 去底色/二值化后的 PNG，放到 `figures/`，并在源码注释里记录来源页。首次使用 `@preview` 包需联网下载。
-- 共用组件放在 `common/series.typ`：`#sidenote[…]`（边注框，可用 `@preview/marginalia` 或 `place` 实现）、`#exercise("1·2")[…]`（带框标签的习题块）、`#review[…]`（复习题）、图号图题等。各书只调用组件，不重复写样式。
-- Python 3.10 + PyMuPDF（`import pymupdf`）用于渲染原书页面。
+- 共用组件在 `common/series.typ`，各书只调用组件，不重复写样式：
+  - 标题：`= 章名`（章号自动），`== 节名`（自动编号 §1·1），`=== 小标题`（不编号、不进书签）。
+  - `#sidenote[…]`：边注，放在右侧页边。写在正文中对应的位置。
+  - `#fig("1·1", image(...))[图题]`：编号插图。第一个参数写原书图号，和自动编号不一致时编译报错。
+  - `#plainfig((图, [（第 4 题）]), …)`：不编号的小图，可多幅并排。
+  - `#exercise("1·1")[+ … + …]`：习题，自动加标签 `<ex-1·1>`。
+  - `#review[+ …]`：章末复习题。
+  - `#answers("1·1")[+ …]`：习题答案，引用了不存在的习题时编译报错。
+  - `#unclear[猜测]`：识别不清的字，用黄底标出。`#dnote[…]`：数字版注（脚注）。
+  - `main.typ` 分区：`front-matter` → `tableofcontents` → `main-matter` → 各章 → `back-matter` → 总复习题、答案、附录（这几部分的一级标题不编号，照原书写全称）。
+- Python 3.10 + PyMuPDF（`import pymupdf`）用于渲染原书页面：
+  `python scripts/render-pages.py original/数理化自学丛书物理第一册.pdf 1-6` 按原书页码渲染到 `build/pages/p0001.png…`（默认 offset 4、150 dpi）；
+  加 `--raw` 时按 PDF 页序（0 起计），用于目录页。
 
 ## 工作流程（每次处理一段内容）
 

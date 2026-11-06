@@ -8,15 +8,15 @@
 
 ## 进度
 
-| 分册 | 原书页数 | 状态 |
-|---|---|---|
-| 物理 第一册 | 536 | 准备中 |
+| 分册 | 目录 | 原书页数 | 状态 |
+|---|---|---|---|
+| 物理 第一册 | `books/physics-1` | 536 | 骨架已建，录入中 |
 
 ## 目录结构
 
 ```
 original/            原书扫描 PDF（不入库）
-books/<书名>/        每本书的 Typst 源码
+books/<分册>/        每本书的 Typst 源码，目录名为"英文学科名-册号"，如 physics-1
   main.typ           主文件
   chapters/          每章一个 .typ 文件
   figures/           插图（CeTZ 源码或清理后的位图）
@@ -37,9 +37,12 @@ build/               编译产物（不入库）
 # 首次：下载字体到 fonts/
 ./scripts/get-fonts.ps1
 
-typst compile books/物理第一册/main.typ build/物理第一册.pdf --root . --font-path fonts --ignore-system-fonts
+typst compile books/physics-1/main.typ build/physics-1.pdf --root . --font-path fonts --ignore-system-fonts
 # 写作时自动重新编译
-typst watch   books/物理第一册/main.typ build/物理第一册.pdf --root . --font-path fonts --ignore-system-fonts
+typst watch   books/physics-1/main.typ build/physics-1.pdf --root . --font-path fonts --ignore-system-fonts
+
+# 把原书第 1–6 页渲染成 PNG（build/pages/），录入时对照看图
+python scripts/render-pages.py original/数理化自学丛书物理第一册.pdf 1-6
 ```
 
 `--ignore-system-fonts` 保证只使用项目指定的开源字体，不会误用系统里的商业字体。
