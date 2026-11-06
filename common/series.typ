@@ -47,7 +47,7 @@
 #let dot-numbering = (..n) => n.pos().map(str).join("·")
 
 // ───────────────────────── 整书设置 ─────────────────────────
-#let title-page(title, volume, publisher) = {
+#let title-page(title, volume) = {
   set page(header: none, footer: none, numbering: none)
   marginalia.wideblock(side: "both", align(center)[
     #v(18%)
@@ -57,9 +57,7 @@
     #v(1em)
     #text(font: fonts.hei, size: 22pt, tracking: 0.2em)[#volume]
     #v(1fr)
-    #text(font: fonts.song, size: 13pt)[#publisher]
-    #v(1em)
-    #text(font: fonts.kai, size: 10pt, fill: luma(90))[数字重排版]
+    #text(font: fonts.kai, size: 12pt, fill: luma(70))[数字重排改订版（非官方）]
     #v(8%)
   ])
   pagebreak()
@@ -69,7 +67,6 @@
   title: "物理",
   volume: "第一册",
   author: "数理化自学丛书编委会",
-  publisher: "上海科学技术出版社",
   body,
 ) = {
   show: bookly.bookly.with(
@@ -80,7 +77,7 @@
     tufte: true,                       // 右侧留宽页边，放原书边注
     fonts: (body: fonts.song, math: fonts.math, raw: fonts.raw),
     colors: (primary: colors.primary, header: luma(80)),
-    title-page: title-page(title, volume, publisher),
+    title-page: title-page(title, volume),
     config-options: (open-right: false, alt-margins: false),
   )
 
