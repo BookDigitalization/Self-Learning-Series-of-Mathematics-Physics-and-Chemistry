@@ -360,10 +360,13 @@
     set par(first-line-indent: 0em)
     solution(body, label: label, brackets: "【】")
   } else {
-    block(above: 0.5em, below: 0em, sticky: true, width: 100%, {
+    // 公式前的引导语：去掉末尾的空白和分段，免得粘住块里多出一个空段
+    let head = kids.slice(0, idx)
+    while head.len() > 0 and head.last().func() in ([ ].func(), parbreak) { head = head.slice(0, head.len() - 1) }
+    block(above: 0.5em, below: 0.6em, sticky: true, width: 100%, {
       set par(first-line-indent: 0em)
       text(font: fonts.hei, weight: "bold")[【#label】]
-      if idx > 0 { h(0.5em); kids.slice(0, idx).join() }
+      if head.len() > 0 { h(0.5em); head.join() }
     })
     kids.slice(idx).join()
   }
@@ -409,13 +412,22 @@
   columns: (1fr,) * items.pos().len(), column-gutter: 1em, row-gutter: 0.8em, ..items.pos())
 // 答句：靠右，如“答：……”
 #let answer-line(body) = align(right, text(size: 9.8pt, body))
-// 方程组：左大括号 + 每行一个方程，行末带序号。
+// 带序号的单个独立公式：公式居中，右侧写半角括号序号（数学册原书印 (1)(2)，与物理册的 eqn“（4·1）”不同）。
+//   #eqno([(3)], $y = 2 - 3x dou$)
+#let eqno(tag, body) = block(width: 100%, above: 1em, below: 1em, {
+  set par(first-line-indent: 0em)
+  grid(
+    columns: (1fr, auto, 1fr),
+    align: (left, center + horizon, right + horizon),
+    [], math.equation(block: true, numbering: none, body), tag,
+  )
+})// 方程组：左大括号 + 每行一个方程，行末带序号。
 //   #eqsys(($x - y + 2 = 0 dou$, [(1)]), ($2x + y + 1 = 0 ju$, [(2)]))
 // 方程末尾的标点写在公式里；没有序号的行第二项写 [] 。
 #let eqsys(..rows) = {
   let rs = rows.pos()
   let n = rs.len()
-  block(width: 100%, above: 1em, below: 1em, align(center, grid(
+  block(width: 100%, above: 1em, below: 1em, breakable: false, align(center, grid(
     columns: (auto, auto, 3em),
     column-gutter: 0.4em, row-gutter: 0.7em,
     align: (left + horizon, left + horizon, left + horizon),
