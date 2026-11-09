@@ -72,13 +72,20 @@
   show: bookly.bookly.with(
     title: "数理化自学丛书 " + title + " " + volume,
     author: author,
-    theme: bookly.classic,
+    theme: bookly.modern,
     lang: "zh",
-    tufte: true,                       // 右侧留宽页边，放原书边注
+    tufte: false,                      // 不用 bookly 的 tufte 开关，页边由下面的 marginalia.setup 自己管
     fonts: (body: fonts.song, math: fonts.math, raw: fonts.raw),
     colors: (primary: colors.primary, header: luma(80)),
     title-page: title-page(title, volume),
     config-options: (open-right: false, alt-margins: false),
+  )
+
+  // 页边：右侧留宽边放原书边注（数值同 bookly tufte 的默认，现在可在此自行调整）
+  show: marginalia.setup.with(
+    inner: (far: 1.25cm, width: 0cm, sep: 0cm),
+    outer: (far: 1.25cm, width: 3.6cm, sep: 0.4cm),
+    book: false,
   )
 
   // 中文正文
