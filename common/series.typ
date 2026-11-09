@@ -45,6 +45,8 @@
   else { none }
 }
 #let dot-numbering = (..n) => n.pos().map(str).join("·")
+// 原书带 * 的选学节：#heading(level: 2, numbering: star-heading-numbering)[节名]，节号显示为 *§3·6，目录同步。
+#let star-heading-numbering = (..n) => "*" + heading-numbering(..n)
 
 // ───────────────────────── 整书设置 ─────────────────────────
 #let title-page(title, volume) = {
@@ -258,19 +260,19 @@
   ))
 }
 
-// 习题：每节后的"习题 x·y"，题目用 + 编号列表。
+// 习题：每节后的"习题 x·y"（原书带 * 的选学习题加 star: true），题目用 + 编号列表。
 // 自动加标签 <ex-1·1>，供习题答案交叉引用核对。
 //   #exercise("1·1")[
 //     + 第一题 …
 //     + 第二题 …
 //   ]
 #let exercise-label(number) = label("ex-" + number)
-#let exercise(number, body) = {
+#let exercise(number, body, star: false) = {
   set par(first-line-indent: 0em)
   block(above: 1.6em, below: 0.8em, sticky: true, box(
     stroke: (top: 1.2pt + colors.rule, bottom: 1.2pt + colors.rule),
     inset: (x: 0.4em, y: 0.35em),
-    text(font: fonts.hei, weight: "bold", fill: colors.primary)[习题 #number],
+    text(font: fonts.hei, weight: "bold", fill: colors.primary)[#if star [\*]习题 #number],
   ))
   [#metadata(number) #exercise-label(number)]
   block(above: 0em, body)
