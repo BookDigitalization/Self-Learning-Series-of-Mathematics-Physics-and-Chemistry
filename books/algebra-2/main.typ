@@ -32,3 +32,4 @@
 
 #include "appendix/review.typ"
 #include "appendix/answers.typ"
+#include "appendix/answers-b.typ"
