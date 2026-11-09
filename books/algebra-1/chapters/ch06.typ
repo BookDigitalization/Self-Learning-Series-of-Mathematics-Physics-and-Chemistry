@@ -692,7 +692,7 @@ $ a_1 rt a_2 = b_2 rt b_1, quad a_1 rt a_3 = b_3 rt b_1, quad dots class("normal
 ]
 
 // p.277
-#review[
+#review(title: [复习题六])[
   1. 写出两个比，并说明它们的前项、后项和比值，写出它们的反比。
 
   2. 写出两个比例，并说明每个比例的内项和外项。
