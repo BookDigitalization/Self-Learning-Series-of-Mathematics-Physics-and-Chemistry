@@ -276,11 +276,11 @@
   block(above: 0em, body)
 }
 
-// 复习题：每章末。
-#let review(body) = {
+// 复习题：每章末。数学册原书印“复习题一”等，用 title 传入：#review(title: [复习题一])[…]
+#let review(body, title: [复习题]) = {
   set par(first-line-indent: 0em)
   block(above: 2em, below: 1em, sticky: true, width: 100%, {
-    text(font: fonts.hei, size: 12pt, weight: "bold", fill: colors.primary)[复习题]
+    text(font: fonts.hei, size: 12pt, weight: "bold", fill: colors.primary)[#title]
     v(-0.6em)
     line(length: 100%, stroke: 0.8pt + colors.rule)
   })
