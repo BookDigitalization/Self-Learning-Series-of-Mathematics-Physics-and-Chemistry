@@ -25,4 +25,8 @@
 #include "chapters/ch05.typ"
 #include "chapters/ch06.typ"
 
-// 以下尚未录入：总复习题（p.279）、习题答案（p.285）、附英语字母表及常用希腊字母表（p.303）
+#show: back-matter
+
+#include "appendix/review.typ"
+#include "appendix/answers.typ"
+#include "appendix/appendix1.typ"
