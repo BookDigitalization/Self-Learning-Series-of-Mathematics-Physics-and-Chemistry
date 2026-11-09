@@ -1,0 +1,16 @@
+# 数学册整词替换表（对应 common/TERMINOLOGY.md 4.5，已定）。用法见 scripts/replace-terms.py：
+#   python scripts/replace-terms.py --book algebra-1 --map common/math-terms.tsv
+# “做”表示“称为、当作、成为”时改“作”；表示“进行、做题”时（先做、不能做、做乘除）不改，所以只列固定搭配。
+叫做	叫作
+读做	读作
+写做	写作
+化做	化作
+记做	记作
+看做	看作
+当做	当作
+做除数	作除数
+做被除数	作被除数
+做为	作为
+那末	那么
+一划	一横
+不确当	不恰当
