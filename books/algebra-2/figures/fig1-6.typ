@@ -44,7 +44,7 @@
   line(p(261, 785), p(621, 785), stroke: 0.5pt, mark: arr2)
   line(p(621, 785), p(780, 785), stroke: 0.5pt, mark: arr2)
   line(p(780, 777), p(780, 793), stroke: 0.5pt)
-  rect(p(400, 777), p(505, 793), stroke: none, fill: white)
+  rect(p(385, 777), p(520, 793), stroke: none, fill: white)
   lab(p, 452, 785, [$36(1+x)$ 公里])
   rect(p(670, 777), p(745, 793), stroke: none, fill: white)
   lab(p, 705, 785, [$46x$ 公里])
