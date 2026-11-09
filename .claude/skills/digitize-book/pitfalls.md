@@ -28,3 +28,16 @@
 - git 提示 "LF will be replaced by CRLF" 是无害警告。
 - 子 agent 在后台改文件时，主会话不要同时改同一批文件；并行 agent 都不要编译（共用 `build/` 会冲突）。
 - 汇总子 agent 报告时，**它们写的页码和结论要抽查**；我自己也曾写过估计的页码，务必从源码标记取。
+
+## 数学册（合集）与并行录入
+
+- **合集的书签页码不可全信，且是合集页码**：原书页码 = 合集页码 − 偏移。先用 `scripts/split-volume.py` 切出单册，核对印刷页码再登记 `scripts/math-volumes.json`（解析几何的书签就落在错位的页）。注意区分“合集页码（1 起）”“切出 PDF 的页序（0 起）”“原书页码”，三者别混。
+- `justfile` 的 `book` 默认是 physics-1：`just chapter 3` 会编到物理册，要写 `just chapter 3 algebra-1`；导出图片 `just chapter-png 3 1-4 70 algebra-1`（ppi 在册名之前）。并行 agent 更稳妥的做法是各自建 `build/solo-<代号>/main.typ`。
+- 并行分章：**按节标题分界，不按页**（节可以从页中间开始，页首可能还是上一节的习题）；续篇文件不写章标题，测试时用 `#counter(heading).update((章, 节-1))` 和 `#counter(figure.where(kind: image)).update(K)` 对号。
+- 分工：录入 agent 与核对 agent **必须是不同的**；核对 agent 直接改能确定的录入错误，其余只上报。录入时汇报“已核对”不算数，要独立再核一遍。
+- **3 与 8、2 与 3 在低分辨率扫描里常混**：放大加算式自洽往往不够，用**书末答案反推**最可靠（本册靠它订正了十余处）。答案没有的题（习题 1·16/1·18/1·19、3·10 部分、复习题四 42–65）要在 CHECKLIST 里单列。油墨糊住时 3 的开口会闭合像 8，对照同页别处的 3 与 8。
+- 共享 scratchpad 里的临时脚本会被别的 agent 覆盖：让每个 agent 用自己的子目录。
+- `text(emphasis: ...)` 不存在；着重点用点状下划线 `underline(stroke: (dash: (array: (0pt, 1em), phase: 0.5em), cap: "round", ...))`。逐字 `box` 会破坏 CJK 断行和两端对齐。
+- 解答的“【解】”标签放在页底、算式在下一页：用 sticky 块把标签与第一个块（独立公式、竖式、表格）粘住（见 `sol`、`ex`）；物理册的 `solution`/`example` 保持原样，数学册用自己的变体，避免改动已发版册的排版。
+- Typst 数学：`(a+b)h/2` 会被解析成 (a+b)·(h/2)，要写 `((a+b)h)/2`；负分数写 `-frac(1,2)`；`#h(3em)` 或 `#edot[…]` 后面紧跟 `(` 会被当成函数参数，写成 `\(`；独立公式末尾的句号写 `class("normal", "。")`（在代码上下文里要写 `math.class`）。
+- 提交说明里不要出现弯引号“”（PowerShell 会当成引号），用 `[IO.File]::WriteAllText` 写说明文件再 `git commit -F`。
