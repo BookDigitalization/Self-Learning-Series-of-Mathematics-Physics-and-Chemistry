@@ -1567,8 +1567,8 @@ $ bold((a x + b)(c x + d) = a c x^2 + (b c + a d)x + b d) \
   25. $z - [3x + (y + 5z)] - [x - (3y + 2z)]$。
   26. $(a^3 dot a^5)^2 + (a^8 div a^2)^3$。
   27. $(-3a^2 b^3)^3 div (3a b^2)^2$。
-  28. $a^3 dot a^5 dot a^6 dot b^2 dot b^4 dot a^2 + a^3 dot a^5 dot b^2 dot b^4$。
-  29. $x^3 y^2 x^5 y^2 x^4 y^6 - x^5 y^5 div x^2 y^3$。
+  28. $a^3 dot a^5 dot a^6 dot b^3 dot b^4 dot a^2 + a^3 dot a^5 dot b^2 dot b^4$。
+  29. $x^3 y^2 x^5 y^2 x^4 y^5 - x^5 y^5 div x^2 y^3$。
   30. $(a^6 div a^2)^2 + (a^9 div a^3) dot a^2$。
   31. $a^m dot a^n dot a^(2m) dot a^8$。
   32. $a^(m+1) div a^m times a^(n+7) div a^3$。
@@ -1587,7 +1587,7 @@ $ bold((a x + b)(c x + d) = a c x^2 + (b c + a d)x + b d) \
   39. $(x + 3)^2 + (x - 3)^2 + (2x - 3)^2 - (2x + 3)^2$。
   40. $(3x + 2y)(3x - 2y) - (3x + 2y)^2 - (3x - 2y)^2$。
   // p.173
-  41. $(a - 2b + 3c)^2 - (a + 2b - 3c)^2 - (a + 2b - 3c)(a - 2b - 3c)$。
+  41. $(a - 2b + 3c)^2 - (a + 2b - 3c)^2 - (a + 2b + 3c)(a - 2b - 3c)$。
   42. $(3x - 2y)(9x^2 + 6x y + 4y^2) - (3x - 2y)^3$。
   43. $a(a + b)(a - b) - (a + b)^3$。
   44. $(x + 3)(x + 5) - (x - 3)(x - 5)$。
