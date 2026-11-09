@@ -361,7 +361,17 @@
 
 // 着重点（字下加点）：原书用来标出定义、法则里的关键字。
 //   #edot[绝对值]
-#let edot(body) = text(emphasis: "dot", body)
+#let edot(body) = {
+  let s = if type(body) == str { body } else if body.func() == text { body.text } else { none }
+  if s == none {
+    // 含公式等非纯文字的内容：退而用点状下划线
+    underline(stroke: (thickness: 1pt, dash: "dotted", cap: "round"), offset: 2.5pt, body)
+  } else {
+    for c in s.clusters() {
+      box(c + place(bottom + center, dy: 0.42em, circle(radius: 0.55pt, fill: black, stroke: none)))
+    }
+  }
+}
 
 // 带分数：整数部分 + 分数，如 $mx(3, 1, 2)$ 排成 3½（整数与分数并排，不是乘法）。
 #let mx(whole, num, den) = $#whole #h(0.05em) frac(#num, #den)$
