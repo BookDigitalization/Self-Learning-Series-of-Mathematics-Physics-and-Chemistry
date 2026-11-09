@@ -9,8 +9,8 @@
     frame: if fill == none { none } else { "rect" }, fill: fill, stroke: none, padding: 1.5pt)
   // 棒 AB
   line(p(270, 872), p(788, 872), stroke: 1.6pt)
-  line(p(270, 840), p(270, 872), stroke: 0.9pt)
-  line(p(788, 845), p(788, 872), stroke: 0.9pt)
+  line(p(270, 872), p(270, 840), stroke: 0.9pt, mark: (end: "stealth", fill: black, scale: 0.5))
+  line(p(788, 872), p(788, 845), stroke: 0.9pt, mark: (end: "stealth", fill: black, scale: 0.5))
   t(255, 857, text(style: "italic")[A])
   t(802, 862, text(style: "italic")[B])
   t(510, 850, text(style: "italic")[C])
