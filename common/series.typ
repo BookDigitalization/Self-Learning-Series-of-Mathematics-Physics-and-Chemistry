@@ -335,11 +335,36 @@
   h(0.8em)
   body
 })
-#let solution(body) = block(above: 0.5em, below: 0.5em, width: 100%, {
-  text(font: fonts.hei, weight: "bold")[［解］]
+// 默认“［解］”（物理册）；数学册原书印“【解】”，用 brackets: "【】"，多种解法写 label: [解 1]。
+#let solution(body, label: [解], brackets: "［］") = block(above: 0.5em, below: 0.5em, width: 100%, {
+  text(font: fonts.hei, weight: "bold")[#brackets.first()#label#brackets.last()]
   h(0.5em)
   body
 })
+
+// ───────── 数学册组件 ─────────
+// 数学册的“【解】”：#sol[…]、#sol(label: [解 1])[…]
+#let sol = solution.with(brackets: "【】")
+
+// 小块说明：原书的“分析”“注”“注意”，字号略小，标题黑体。
+//   #remark[分析][这里只有第一级运算……]
+#let remark(title, body) = block(above: 0.7em, below: 0.7em, width: 100%, {
+  set par(first-line-indent: 0em)
+  set text(size: 9.8pt)
+  text(font: fonts.hei, weight: "bold")[#title]
+  h(0.8em)
+  body
+})
+#let analysis(body) = remark([分析], body)
+#let note-small(body) = remark([注], body)
+#let attention(body) = remark([注意], body)
+
+// 着重点（字下加点）：原书用来标出定义、法则里的关键字。
+//   #edot[绝对值]
+#let edot(body) = text(emphasis: "dot", body)
+
+// 带分数：整数部分 + 分数，如 $mx(3, 1, 2)$ 排成 3½（整数与分数并排，不是乘法）。
+#let mx(whole, num, den) = $#whole #h(0.05em) frac(#num, #den)$
 // 习题答案中的一组："习题 1·1"，编号必须对应正文中已有的习题。
 #let answers(number, body) = {
   set par(first-line-indent: 0em)
