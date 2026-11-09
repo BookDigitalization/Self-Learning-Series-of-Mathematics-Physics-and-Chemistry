@@ -155,6 +155,8 @@
   set outline(depth: 2, indent: auto)
   show outline.entry.where(level: 1): set block(above: 1.0em)
   show outline.entry.where(level: 2): set block(above: 0.5em)
+  // 标题很长折行时，第二行缩进到标题文字下面（数学册有很长的节标题）
+  show outline.entry.where(level: 2): set par(hanging-indent: 5.6em)
   show outline.entry.where(level: 1): set text(font: fonts.hei, weight: "bold")
 
   // ── 插图 ──
