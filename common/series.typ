@@ -344,7 +344,36 @@
 
 // ───────── 数学册组件 ─────────
 // 数学册的“【解】”：#sol[…]、#sol(label: [解 1])[…]
-#let sol = solution.with(brackets: "【】")
+// 解答里有独立公式时，以第一个独立公式为界：“【解】”连同公式前的文字放进一个 sticky 块，
+// 与下面的公式粘在一起，避免标签（及其引导语）孤立在页底；没有独立公式的解答照常排。
+#let sol(body, label: [解]) = {
+  let kids = if body.has("children") { body.children } else { (body,) }
+  let idx = kids.position(c => (c.func() == math.equation and c.block) or c.func() in (grid, table, align, pad, block, stack))
+  if body == [] {
+    // 只有标签、解答另起（如 #sol[] 后接对齐好的多行算式）：标签粘住下一块
+    block(above: 0.5em, below: 0em, sticky: true, width: 100%, {
+      set par(first-line-indent: 0em)
+      text(font: fonts.hei, weight: "bold")[【#label】]
+    })
+  } else if idx == none {
+    // 数学册的解答不首行缩进
+    set par(first-line-indent: 0em)
+    solution(body, label: label, brackets: "【】")
+  } else {
+    block(above: 0.5em, below: 0em, sticky: true, width: 100%, {
+      set par(first-line-indent: 0em)
+      text(font: fonts.hei, weight: "bold")[【#label】]
+      if idx > 0 { h(0.5em); kids.slice(0, idx).join() }
+    })
+    kids.slice(idx).join()
+  }
+}// 数学册的例题：与物理册的 example 相同，但题目与下面的“分析”“解”粘在一起，避免题目孤立在页底。
+#let ex(label, body) = block(above: 1.2em, below: 0.5em, width: 100%, sticky: true, {
+  set par(first-line-indent: 0em)
+  text(font: fonts.hei, weight: "bold")[#label]
+  h(0.8em)
+  body
+})
 
 // 小块说明：原书的“分析”“注”“注意”，字号略小，标题黑体。
 //   #remark[分析][这里只有第一级运算……]
