@@ -395,7 +395,36 @@
   offset: 3pt, evade: false, body)
 // 带分数：整数部分 + 分数，如 $mx(3, 1, 2)$ 排成 3½（整数与分数并排，不是乘法）。
 #let mx(whole, num, den) = $#whole #h(0.05em) frac(#num, #den)$
-// 习题答案中的一组："习题 1·1"，编号必须对应正文中已有的习题。
+// ───────── 数学册共用小工具（各章不要再各自定义同名的局部版本）─────────
+// 独立公式末尾的标点：$ a = b ju $、$ a = b fen $、$ a = b dou $（句号、分号、逗号，紧贴公式）
+#let ju = math.class("normal", "。")
+#let fen = math.class("normal", "；")
+#let dou = math.class("normal", "，")
+// 比号：a rt b（不加空格、不在行末断开），数学里的“:”都写成 rt
+#let rt = math.class("normal", ":")
+// 并排小题之间的间隔
+#let gap = h(2em)
+// 并排小题：#cols[(1) …][(2) …][(3) …]，等宽分栏
+#let cols(..items) = grid(
+  columns: (1fr,) * items.pos().len(), column-gutter: 1em, row-gutter: 0.8em, ..items.pos())
+// 答句：靠右，如“答：……”
+#let answer-line(body) = align(right, text(size: 9.8pt, body))
+// 方程组：左大括号 + 每行一个方程，行末带序号。
+//   #eqsys(($x - y + 2 = 0 dou$, [(1)]), ($2x + y + 1 = 0 ju$, [(2)]))
+// 方程末尾的标点写在公式里；没有序号的行第二项写 [] 。
+#let eqsys(..rows) = {
+  let rs = rows.pos()
+  let n = rs.len()
+  block(width: 100%, above: 1em, below: 1em, align(center, grid(
+    columns: (auto, auto, 3em),
+    column-gutter: 0.4em, row-gutter: 0.7em,
+    align: (left + horizon, left + horizon, left + horizon),
+    grid.cell(rowspan: n, math.equation(block: false, $lr(\{ #v(1.25em * n))$)),
+    ..rs.enumerate().map(((i, r)) => (
+      grid.cell(x: 1, y: i, math.equation(block: false, r.at(0))),
+      grid.cell(x: 2, y: i, r.at(1)))).flatten()
+  )))
+}// 习题答案中的一组："习题 1·1"，编号必须对应正文中已有的习题。
 #let answers(number, body) = {
   set par(first-line-indent: 0em)
   context {
