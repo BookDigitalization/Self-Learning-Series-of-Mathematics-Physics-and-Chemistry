@@ -3,6 +3,6 @@
 #let fig-gougu(width: 2.2cm) = px-canvas(100, 70, width: width, (p, u) => {
   import cetz.draw: *
   let t(x, y, body) = content(p(x, y), text(font: fonts.song, size: 8pt, body))
-  line(p(30, 10), p(90, 55), p(30, 55), close: true, stroke: 0.8pt)
-  t(12, 28, [弦]); t(98, 33, [勾]); t(60, 65, [股])
+  line(p(12, 55), p(88, 10), p(88, 55), close: true, stroke: 0.8pt)
+  t(38, 22, [弦]); t(97, 33, [勾]); t(50, 65, [股])
 })

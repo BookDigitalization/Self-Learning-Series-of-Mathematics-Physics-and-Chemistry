@@ -4,10 +4,10 @@
   import cetz.draw: *
   let t(x, y, body) = content(p(x, y), text(font: fonts.song, size: 9pt, body))
   line(p(8, 36), p(422, 36), stroke: 1pt)
-  for x in (8, 350, 392, 422) { line(p(x, 30), p(x, 42), stroke: 0.7pt) }
-  line(p(8, 14), p(76, 14), stroke: 1.4pt)
+  for x in (8, 366, 403, 422) { line(p(x, 30), p(x, 42), stroke: 0.7pt) }
+  line(p(8, 14), p(98, 14), stroke: 1.4pt)
   line(p(8, 9), p(8, 19), stroke: 0.7pt)
-  line(p(76, 9), p(76, 19), stroke: 0.7pt)
-  t(5, 4, $C$); t(76, 4, $D$)
-  t(8, 50, $A$); t(350, 50, $A'$); t(392, 50, $A''$); t(422, 50, $B$)
+  line(p(98, 9), p(98, 19), stroke: 0.7pt)
+  t(5, 4, $C$); t(98, 4, $D$)
+  t(8, 50, $A$); t(366, 50, $A'$); t(403, 50, $A''$); t(422, 50, $B$)
 })
