@@ -624,7 +624,7 @@ $ cs(x=a+b dou, y=a-b ju) $
   8. $cs(a x+b y=(a+b)(a-b) dou, b x-a y=2a b) quad (a^2+b^2 != 0) ju$
 ]
 
-== \*二元一次方程组的解的三种情况
+#heading(level: 2, numbering: star-heading-numbering)[二元一次方程组的解的三种情况]
 
 我们知道，任何一个二元一次方程经过变形后都可以化成
 
@@ -697,7 +697,7 @@ $therefore quad$ 方程组没有解。
 
 $therefore quad$ 方程组有无数多组解。]
 
-#exercise("3·6")[
+#exercise("3·6", star: true)[
   不解方程组，确定下列方程组有一组解，还是没有解，还是有无数多组解：
 
   #cols[1. $cs(3x-5y=2 dou, 2x+y=-3 ju)$][2. $cs(3x-5y=2 dou, 6x-10y=4 ju)$]
