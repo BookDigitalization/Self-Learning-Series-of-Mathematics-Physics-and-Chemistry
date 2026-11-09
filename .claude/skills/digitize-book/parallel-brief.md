@@ -1,0 +1,52 @@
+# 并行录入 / 独立核对：给子 agent 的通用简报
+
+主会话派 agent 时，在任务里写清**册名、文件、页范围、节分界、测试计数器**，并让 agent 先读本文。本文把数学册（代数 1、2 册）踩过的坑都固定下来。
+
+## 一、先读
+
+1. `CLAUDE.md`（质量要求、标点、编号、插图规则、不要做的事）。
+2. `.claude/skills/digitize-book/SKILL.md`、`verify-scans.md`、`pitfalls.md`。
+3. `common/TERMINOLOGY.md` 4.4、4.5 和 `common/math-terms.tsv`：已定的现代用词**一开始就写成现代说法**——叫作、读作、写作、化作、记作、看作、当作、改作、变作、作除数、作被除数、作为、那么、一横、不恰当、像（相像、正像）、图像、连接、两个等。“进行”义的“做”（先做、不能做、做乘法）不改。表里没有的词一律照原书，别自行现代化；发现新旧词记在报告里。
+4. 样板：`books/algebra-1/chapters/ch05.typ`、`ch03b.typ`（正文写法），`books/algebra-1/figures/*.typ`（CeTZ 画图），`common/series.typ`（可用组件）。
+
+## 二、组件与写法
+
+- 节标题 `== 节名`（节号自动），粗体小标题行内写 `*1. 小标题*`，独立成行的用 `=== `。定义、法则里的粗体关键词 `*…*`；字下加点的着重点 `#edot[…]`（纯文字，可跨标点，标点放外面）。
+- 例题 `#ex("例 1")[题目]`（**不是 `example`**，ex 带 sticky，防题目孤立页底）；原书只印“例”的写 `#ex("例")[…]`。“分析”`#analysis[…]`，“注”`#note-small[…]`，“注意”`#attention[…]`，“说明”“附注”等用 `#remark([说明])[…]`。解答 `#sol[…]`（多种解法 `#sol(label: [解 1])[…]`；解答里有独立公式时 sol 会自动把“【解】”与公式粘在一起；只有标签、算式另起时写 `#sol[]` 再接算式块）。
+- 习题 `#exercise("1·1")[ 1. … 2. … ]`：题号写明数字，题组说明（“回答下列问题（1～7）：”）照录；习题标题带小分题的，标签写成原书的样子，如 `exercise("3·4(1)")`（答案区要用同样的字符串引用，**不要随意改标签**）。章末“本章提要”`#summary[…]`，“复习题”**必须带章号**：`#review(title: [复习题三])[…]`（标题以扫描为准）；单元检查题用 `#unit-check("标题照原书")[…]`。
+- 共用小工具（`common/series.typ`，**不要在章文件里重复定义同名的局部版本**）：独立公式末尾标点 `ju`（。）、`fen`（；）、`dou`（，）——写成 `$ a = b ju $`；比号 `rt`（`a rt b`，不要直接写 `:`）；并排小题 `#cols[…][…][…]`；并排间隔 `#gap`；答句 `#answer-line[答：……]`；方程组 `#eqsys(($x - y = 1 dou$, [(1)]), ($x + y = 3 ju$, [(2)]))`；带分数 `mx(整数, 分子, 分母)`；公式式内表。需要而没有的组件：先在章文件顶部写**局部**辅助（名字别与上面重复），并在报告里提出，由主会话决定是否提进 series.typ。
+- 公式用 Typst 原生数学。行内公式整号大小由 main.typ 的 show 规则统一处理。多步算式 `$ a &= b \ &= c $` 对齐。Typst 数学坑：`(a+b)h/2` 会被解析成 (a+b)·(h/2)，要写 `((a+b)h)/2`；负分数写 `-frac(1,2)`；`#h(…)` 或 `#edot[…]` 之后紧跟 `(` 会被当函数参数，写成 `\(`；`//` 行注释会吃掉同行后面的 `]`，注释另起一行或用 `/* */`；公式里的中文单位写在引号里 `"米"`。
+- 句末统一“。”（原书“．”），其余标点照原书用全角中文标点；公式、数字里的小数点不变；题号后的“.”保留。
+- 页界：`// p.N` 单独一行（段落之间）或 `/* p.N */` 行内（段落中间，别断行），标在**该页内容开始处**；页码是**原书页码**，取自页脚印的数字。
+- 插图：几何图、数轴、坐标图、示意图、表格一律 CeTZ / table 重绘（`px-canvas` 按页面像素坐标描图，图里文字是真文字），一幅图一个导出函数放 `figures/` 下，章文件里 `#fig("1·5", fig-1-5())[图题]`（第一个参数是原书图号，与自动编号不符会报错；没有图题就传空 `[]`）；不编号的小图 `#plainfig(...)`。量坐标：`render-pages.py … --dpi 200 --grid 100`，别凭缩小显示的图估计。**不要用自动描摹把位图转矢量**；写实插画才用裁剪二值化位图。图中看不清的数字 `#unclear[猜测]` 并报告。
+
+## 三、渲染扫描与自检
+
+- 原书 p.n = 单册扫描 PDF 的页序（0 起计）n + offset（offset 见 `scripts/math-volumes.json`）。`python scripts/render-pages.py original/<册>.pdf 1-6 --offset <offset> --dpi 110 --out build/pages-<你的代号>`。110 dpi 通读，存疑放大到 200–500 dpi（用 PyMuPDF 按 clip 区域渲染局部）。输出目录、临时脚本都放在你自己的子目录，不要用共享的 scratchpad 根目录（别人会覆盖同名文件）。
+- **逐页看图再录入**，不凭记忆或常识补写。数字、指数、符号、正负号、括号层次、分子分母层次逐个核对。**3 与 8、2 与 3、1 与 7 在低分辨率扫描里很容易混**：放大对照同页别处的 3 和 8；用算式自洽；**用书末“习题答案”反推最可靠**（答案区页码见 volumes.json 的 note）；仍定不了的用 `#unclear[猜测]` 并在报告里列出。疑似原书自身错误**照录**，不自行订正，报告里列出（页码、原文、疑点）。
+- **只编译单章，不要编译整书**（整书会引用别人未完成的文件）：自己建 `build/solo-<代号>/main.typ`：
+  ```
+  #import "/common/series.typ": *
+  #show: series-book.with(title: "代数", volume: "第N册")
+  #show math.equation.where(block: false): it => math.display(it)
+  #show math.equation.where(block: false): set text(top-edge: "bounds", bottom-edge: "bounds")
+  #show: main-matter
+  #counter(heading).update(章号-1)                    // 章文件自带 `= 章名` 时
+  // 续篇文件（不带章标题）用： #counter(heading).update((章号, 已写到的节号))
+  // 续篇文件有编号图时再加： #counter(figure.where(kind: image)).update(K)   // K = 本文件第一幅编号图的图号 − 1
+  #include "/books/<册>/chapters/<文件>.typ"
+  ```
+  编译：`typst compile build/solo-<代号>/main.typ build/solo-<代号>/out.pdf --root . --font-path fonts --ignore-system-fonts`；导出 PNG 加 `"build/solo-<代号>/c-{p}.png" --ppi 80 --pages 1-4`。下载包要代理时同一条命令里先 `$env:HTTPS_PROXY="http://127.0.0.1:7897"`。**不要用 `just chapter`**（`justfile` 的册名默认是 physics-1；用就必须写 `just chapter N <册名>`）。必须无错误、无警告。
+- 录完把编译出的页面导出 PNG，与原书对应页**逐段核对内容**（文字、公式、数字、图中标注），不核对版面。
+
+## 四、不要做的事
+
+- 不改：`common/` 下任何文件、`books/<册>/main.typ`、`REVISIONS.md`、`CHECKLIST.md`、别人的章节文件和 appendix 文件、`original/`。不运行 `git add/commit/push`（主会话统一提交），不写 `build/<册>.pdf`。
+- 不改写、删节、“纠正”原书说法；不替原书改数字。
+- 核对员不要改 `exercise("…")` 标签字符串和各级标题文字（答案区在引用它们）。
+
+## 五、最终报告（简短）
+
+录入员：①完成页范围、改了哪些文件、做了哪些图；②所有 `#unclear` 和不确定处（页码＋位置＋依据）；③疑似原书错误；④新发现的表外旧词（原词→建议，不要自己替换）；⑤编译结果；⑥缺的组件或障碍。
+核对员：①核对了哪些页、哪些没能逐字核到；②改正的每一处（页码、位置、改前→改后、依据）；③仍不确定处；④疑似原书错误；⑤表外旧词；⑥编译结果。
+页码一律取自源码里的 `/* p.N */` 或 `// p.N` 标记，不要估。
