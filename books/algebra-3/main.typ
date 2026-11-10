@@ -52,6 +52,9 @@
 #include "chapters/ch09d.typ"
 #include "chapters/ch09e.typ"
 
-// #show: back-matter
-// #include "appendix/review.typ"
-// #include "appendix/answers.typ"
+#show: back-matter
+
+#include "appendix/review.typ"
+#include "appendix/answers.typ"
+#include "appendix/answers-b.typ"
+
