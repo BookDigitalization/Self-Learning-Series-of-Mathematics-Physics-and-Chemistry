@@ -40,6 +40,10 @@
 #include "chapters/ch06.typ"
 #include "chapters/ch06b.typ"
 #include "chapters/ch06c.typ"
+#include "chapters/ch07.typ"
+#include "chapters/ch07b.typ"
+#include "chapters/ch07c.typ"
+#include "chapters/ch07d.typ"
 
 // #show: back-matter
 // #include "appendix/review.typ"
