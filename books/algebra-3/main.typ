@@ -18,8 +18,13 @@
 #show: main-matter
 
 // 章文件录入完成后逐个加在这里：
-// #include "chapters/ch01.typ"
+#include "chapters/ch01.typ"
+#include "chapters/ch01b.typ"
+#include "chapters/ch01c.typ"
+#include "chapters/ch01d.typ"
+#include "chapters/ch01e.typ"
 
 // #show: back-matter
 // #include "appendix/review.typ"
 // #include "appendix/answers.typ"
+
