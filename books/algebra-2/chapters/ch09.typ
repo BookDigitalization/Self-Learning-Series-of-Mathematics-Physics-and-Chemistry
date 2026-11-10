@@ -671,9 +671,10 @@ $ x^2 - 2x y - 3y^2 &= 0 dou \ (x + y)(x - 3y) &= 0 dou $
 
 #cols[(I) $cases(3x^2 - y^2 = 8 dou, x + y = 0 fen)$][(II) $cases(3x^2 - y^2 = 8 dou, x - 3y = 0 ju)$]
 
+// 原书作 (x=2,y=2)、(x=−2,y=−2)，由 x+y=0 应为 (2,−2)、(−2,2)，已订正，见 REVISIONS.md。
 分别解这两个方程组，得原方程组的解是
 
-$ cases(x = 2 dou, y = 2 fen) quad cases(x = -2 dou, y = -2 fen) quad cases(x = 6/13 sqrt(13) dou, y = 2/13 sqrt(13) fen) quad cases(x = -6/13 sqrt(13) dou, y = -2/13 sqrt(13) ju) $
+$ cases(x = 2 dou, y = -2 fen) quad cases(x = -2 dou, y = 2 fen) quad cases(x = 6/13 sqrt(13) dou, y = 2/13 sqrt(13) fen) quad cases(x = -6/13 sqrt(13) dou, y = -2/13 sqrt(13) ju) $
 ]
 
 #ex("例 2")[解方程组：
@@ -794,7 +795,8 @@ $ cases(x^2 + x y + y^2 = 109 dou, x - y = 2 dou) $
 
 $ cases(x = 7 dou, y = 5 fen) quad quad cases(x = -5 dou, y = -7 ju) $
 
-所以原方程的解是
+// 原书作“所以原方程的解是”，已订正为“原方程组”，见 REVISIONS.md。
+所以原方程组的解是
 
 $ cases(x = 7 dou, y = 5 fen) quad quad cases(x = -5 dou, y = -7 ju) $
 ]

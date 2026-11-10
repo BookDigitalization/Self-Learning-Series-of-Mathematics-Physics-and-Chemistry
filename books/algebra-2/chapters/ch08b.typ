@@ -1306,11 +1306,12 @@ $ "左边" = sqrt(25) - sqrt(4) - sqrt(9) = 0, "与右边相等" dou \
 
 因此，方程 $sqrt(x + 1) + 1 = 0$ 无解。
 
-(3) $because quad sqrt(2x - 1) >= 0, quad sqrt(3x + 1) >= 0 dou$
+// 原书解答里三处印作 √(2x−1)（题目是 √(2x+3)），已订正，见 REVISIONS.md。
+(3) $because quad sqrt(2x + 3) >= 0, quad sqrt(3x + 1) >= 0 dou$
 
-$therefore quad sqrt(2x - 1) + sqrt(3x + 1) >= 0 ju$
+$therefore quad sqrt(2x + 3) + sqrt(3x + 1) >= 0 ju$
 
-因此，方程 $sqrt(2x - 1) + sqrt(3x + 1) = -5$ 无解。]
+因此，方程 $sqrt(2x + 3) + sqrt(3x + 1) = -5$ 无解。]
 
 #exercise("8·16(1)")[
 1. 下列关于 $x$ 的方程中，哪些是无理方程？哪些不是无理方程？
@@ -1606,7 +1607,7 @@ $ a x^2 + b x + c = a(x - x_1)(x - x_2) ju $
 12. 解下列各方程：
 
 /* 原书 p.364 此处印作 x⁴−4（疑为印刷错误，与 §8·16(1) 第 3(4) 题的 x²−4 及书末答案 −2 不符），照录 */
-#cols[(1) $x sqrt(x^4 - 4) = x^2 + 2x$；][(2) $sqrt(x) + sqrt(x - sqrt(1 - x)) = 1$；]
+#cols[(1) $x sqrt(x^2 - 4) = x^2 + 2x$；/* 原书作 x⁴−4（p.358 同式印 x²−4，书末答案只对应 x²−4），已订正，见 REVISIONS.md */][(2) $sqrt(x) + sqrt(x - sqrt(1 - x)) = 1$；]
 
 #cols[(3) $(sqrt(x + 1) - sqrt(x - 1))/(sqrt(x + 1) + sqrt(x - 1)) = 2 - x$；][(4) $sqrt(1 + 9/x) + sqrt(x/(x + 9)) = 2.05$；]
 
