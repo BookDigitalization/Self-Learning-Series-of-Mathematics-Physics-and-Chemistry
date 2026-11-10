@@ -37,6 +37,9 @@
 #include "chapters/ch05.typ"
 #include "chapters/ch05b.typ"
 #include "chapters/ch05c.typ"
+#include "chapters/ch06.typ"
+#include "chapters/ch06b.typ"
+#include "chapters/ch06c.typ"
 
 // #show: back-matter
 // #include "appendix/review.typ"
