@@ -122,7 +122,7 @@ $ "如果" a - b cs(> 0 dou, = 0 dou, < 0 fen) quad "那么" a cs(> b dou, = b d
 
 (3) 应用一些已知的重要不等式：
 
-#cols[(i) $a^2 >= 0 dou$][(ii) $(a - b)^2 > 0 dou$]
+#cols[(i) $a^2 >= 0 dou$][(ii) $(a - b)^2 >= 0 dou$] // 原书作 (a−b)²>0（疑似印刷错误，已订正，见 REVISIONS.md）
 #cols[(iii) $a^2 + b^2 >= 2 a b dou$][(iv) $a + b >= 2 sqrt(a b)$ ($a, b$ 为正数)，]
 (v) $b/a + a/b >= 2$ ($a, b$ 同号)。
 

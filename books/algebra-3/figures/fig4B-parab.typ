@@ -51,8 +51,9 @@
 })
 
 // ───────── 图 4·11：y = 3 − 4x − 2x²（p.155）─────────
-// 原点 (1103.75, 1855)，单位 38.8 × 39.8；顶点 (−1, 5)；描出 (0, 3)、(1/2, 1/2)、(1, −3)、(3/2, −13/2)。
-// 曲线两端取 y = −7（x = −1 ± √6），与扫描上曲线两端的高度相当。
+// 原点 (1103.75, 1855)，单位 38.8 × 39.8；顶点 (−1, 5)；描出 (0, 3)、(1/2, 1/2)、(1, −3)、(3/2, −15/2)。
+// 原图按（印错的）表值 −6½ 把 x = 3/2 的点画在 y = −6.5，已随表订正为 y = −7.5（在曲线上，见 REVISIONS.md）；
+// 曲线两端相应取到 x = −1 ± 2.55（y ≈ −8），使该点落在曲线上。
 #let fig-4-11(width: 540 * k) = px-canvas(540, 700, origin: (880, 1520), width: width, (p, u) => {
   import cetz.draw: *
   let (ox, oy, ux, uy) = (1103.75, 1855, 38.8, 39.8)
@@ -64,9 +65,9 @@
   for j in range(-7, 6) { if j != 0 { line(p(ox - 4, oy - uy * j), p(ox + 4, oy - uy * j), stroke: 0.5pt) } }
   line(m(-1, -7.8), m(-1, 7.7), stroke: dashed)
   line(p(894, 1656), p(1300, 1656), stroke: dashed)
-  for (x, y) in ((0, 3), (0.5, 0.5), (1, -3), (1.5, -6.5)) { line(m(-2 - x, y), m(x, y), stroke: dashed) }
-  curve(m, f, -1 - calc.sqrt(6), -1 + calc.sqrt(6))
-  for (x, y) in ((-1, 5), (0, 3), (0.5, 0.5), (1, -3), (1.5, -6.5)) { circle(m(x, y), radius: 4.5 * u, fill: white, stroke: 0.6pt) }
+  for (x, y) in ((0, 3), (0.5, 0.5), (1, -3), (1.5, -7.5)) { line(m(-2 - x, y), m(x, y), stroke: dashed) }
+  curve(m, f, -1 - 2.55, -1 + 2.55)
+  for (x, y) in ((-1, 5), (0, 3), (0.5, 0.5), (1, -3), (1.5, -7.5)) { circle(m(x, y), radius: 4.5 * u, fill: white, stroke: 0.6pt) }
   content(p(1099, 1522), tt($y$))
   content(p(1385, 1855), tt($x$))
   content(p(1115, 1869), tt($O$))

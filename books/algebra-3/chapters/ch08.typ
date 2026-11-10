@@ -356,7 +356,7 @@ $ lg x^2 = 2 ju $
 
 $ lg x^2 = lg 100 dou \ therefore quad x^2 = 100 dou \ therefore quad x = plus.minus 10 ju $]
 
-// 原书此处作“把 lg x² 变形成 lg x”（前文是 2 lg x，疑漏“2”），照扫描录入（p.287 末）
+// 原书作“把 lg x² 变形成 lg x”（p.287 末；疑似漏“2”，前文是 2 lg x，已订正为 2 lg x，见 REVISIONS.md）
 #attention[本题如果把 $lg x^2$ 变形成 $2 lg x$，得出
 
 $ 2 lg x = 2 dou \ lg x = 1 dou \ x = 10 ju $
@@ -365,7 +365,7 @@ $ 2 lg x = 2 dou \ lg x = 1 dou \ x = 10 ju $
 
 $ lg x^2 = 2 lg x $
 
-在 $x > 0$ 的条件下才能成立，所以把 $lg x^2$ 变形成 $lg x$ 就缩小了未知数 $x$ 可取值的范围。正确的解法是要把 $lg x^2$ 先变形成 $2 lg |x|$，这样就可以得到
+在 $x > 0$ 的条件下才能成立，所以把 $lg x^2$ 变形成 $2 lg x$ 就缩小了未知数 $x$ 可取值的范围。正确的解法是要把 $lg x^2$ 先变形成 $2 lg |x|$，这样就可以得到
 
 $ 2 lg |x| = 2 dou $
 

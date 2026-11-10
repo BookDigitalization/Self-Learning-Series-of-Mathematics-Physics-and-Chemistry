@@ -87,8 +87,8 @@ $ log_10 (-10)(-10) = log_10 (-10) + log_10 (-10) dou \
 
 #cols[(1) $log_10 6$；][(2) $log_10 5$；][(3) $log_10 sqrt(2)$。]]
 
-// 疑似原书错误（p.239，待项目负责人确认）：原书此处第二项印作 log₂ 3（底数 2），应为 log₁₀ 3，现照扫描录入
-#sol[$ "(1)" quad log_10 6 &= log_10 (2 times 3) = log_10 2 + log_2 3 \
+// 原书作 log₂ 3（底数 2；疑似印刷错误，已订正，见 REVISIONS.md）
+#sol[$ "(1)" quad log_10 6 &= log_10 (2 times 3) = log_10 2 + log_10 3 \
   &= 0.3010 + 0.4771 = 0.7781 ju $
 
 // p.240
@@ -192,7 +192,7 @@ $ log_a N_1 N_2 N_3 = log_a N_1 + log_a N_2 + log_a N_3 ju $
 这里真数 $N_1, N_2, N_3$ 都是正数。
 ]
 
-*3. 从式子的对数求原式*#h(1em)把第 238 页的法则反过来，就是
+*3. 从式子的对数求原式*#h(1em)把 §6·5 的法则反过来，/* 原书作“把第 238 页的法则反过来”，页码重排后对不上，改节号引用，见 REVISIONS.md */就是
 
 $ log_a M + log_a N = log_a M N dou \
   log_a M - log_a N = log_a M \/ N dou \
@@ -230,7 +230,7 @@ $ log_10 y = 3 log_10 (a - b) + frac(1, 2) log_10 c - frac(2, 5) log_10 (a + b) 
 (1) $log_10 (n^2 + n + 1) + log_10 (n - 1) = log_10 (n^3 - 1)$；
 
 // p.244
-(2) $log_a (x + sqrt(x^2 - 1)) = -log_a (x - sqrt(x^3 - 1)) ju$ // 原书作 x³（疑为 x²，下面的提示里是 x²）
+(2) $log_a (x + sqrt(x^2 - 1)) = -log_a (x - sqrt(x^2 - 1)) ju$ // 原书作 x³（疑似印刷错误，已订正，见 REVISIONS.md；左边和提示里是 x²）
 
 ［提示：$log_a (x + sqrt(x^2 - 1)) = log_a frac((x + sqrt(x^2 - 1))(x - sqrt(x^2 - 1)), x - sqrt(x^2 - 1)) ju$］
 
@@ -372,7 +372,7 @@ $ r = sqrt(frac((s - a)(s - b)(s - c), s)) $
 
 求 $log_10 r$。
 
-10. 以任意不等于 1 的正数做底，取下面这些式子的对数：
+10. 以任意不等于 1 的正数作底，取下面这些式子的对数：
 
 (1) $x = frac(c root(3, a), b^2 sqrt(d)) quad (a, b, c, d "都是正数") fen$
 

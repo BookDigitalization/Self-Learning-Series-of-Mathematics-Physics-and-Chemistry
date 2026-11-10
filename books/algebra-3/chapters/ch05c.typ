@@ -221,7 +221,7 @@ $ y = -sqrt(x) quad quad (x > 0, y < 0) ju $
 $ x = sqrt(y - 1) quad quad (y >= 1, x >= 0) dou \ x = -sqrt(y - 1) quad quad (y > 1, x < 0) ju $
 ]
 
-这就是说，函数 $y = x^2$ 在区间 $0 <= x < +infinity$ 里的反函数是 // 原书作 y=x²（上文是 y=x²+1，疑为印刷之误；扫描 400 dpi 确认）
+这就是说，函数 $y = x^2 + 1$ 在区间 $0 <= x < +infinity$ 里的反函数是 // 原书作 y=x²（疑似印刷错误，已订正，见 REVISIONS.md；上文是 y=x²+1）
 
 $ x = sqrt(y - 1) dou $
 
