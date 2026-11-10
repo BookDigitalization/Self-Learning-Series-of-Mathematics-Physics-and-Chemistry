@@ -6,7 +6,7 @@
 
 // p.70
 #summary[
-*1. 等式和不等式*
+#block(sticky: true)[*1. 等式和不等式*]
 
 #align(center, table(
   columns: (auto, 1fr, 1fr),

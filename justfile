@@ -60,7 +60,7 @@ crop page box out *args:
 # ───────────── 检查 ─────────────
 
 # 汇总待核对项：黄底标记 #unclear 和 TODO 的位置
-todo:
+todo book=book:
     @"── #unclear（黄底，看不清的字）──"; Select-String -Path books/{{book}}/chapters/*.typ, books/{{book}}/appendix/*.typ -Pattern '#unclear' | ForEach-Object { "{0}:{1}" -f $_.Filename, $_.LineNumber }; "── TODO ──"; Select-String -Path books/{{book}}/*.typ, books/{{book}}/chapters/*.typ, books/{{book}}/appendix/*.typ -Pattern 'TODO' | ForEach-Object { "{0}:{1}  {2}" -f $_.Filename, $_.LineNumber, $_.Line.Trim() }
 
 # 统计：成书页数、书签数
