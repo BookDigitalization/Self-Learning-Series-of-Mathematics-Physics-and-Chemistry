@@ -23,8 +23,10 @@
 #include "chapters/ch01c.typ"
 #include "chapters/ch01d.typ"
 #include "chapters/ch01e.typ"
+#include "chapters/ch02.typ"
+#include "chapters/ch02b.typ"
+#include "chapters/ch02c.typ"
 
 // #show: back-matter
 // #include "appendix/review.typ"
 // #include "appendix/answers.typ"
-
