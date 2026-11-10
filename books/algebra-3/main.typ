@@ -44,6 +44,8 @@
 #include "chapters/ch07b.typ"
 #include "chapters/ch07c.typ"
 #include "chapters/ch07d.typ"
+#include "chapters/ch08.typ"
+#include "chapters/ch08b.typ"
 
 // #show: back-matter
 // #include "appendix/review.typ"
