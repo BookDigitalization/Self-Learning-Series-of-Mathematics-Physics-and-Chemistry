@@ -17,11 +17,38 @@
 
 #show: main-matter
 
-// 章文件录入完成后逐个加在这里（尚无）：
-// #include "chapters/ch01.typ"
+// 章文件按顺序 include：
+#include "chapters/ch01.typ"
+#include "chapters/ch01b.typ"
+#include "chapters/ch01c.typ"
+#include "chapters/ch01d.typ"
+#include "chapters/ch01e.typ"
+#include "chapters/ch02.typ"
+#include "chapters/ch02b.typ"
+#include "chapters/ch03.typ"
+#include "chapters/ch03b.typ"
+#include "chapters/ch03c.typ"
+#include "chapters/ch04.typ"
+#include "chapters/ch04b.typ"
+#include "chapters/ch04c.typ"
+#include "chapters/ch04d.typ"
+#include "chapters/ch04e.typ"
+#include "chapters/ch05.typ"
+#include "chapters/ch05b.typ"
+#include "chapters/ch05c.typ"
+#include "chapters/ch05d.typ"
+#include "chapters/ch05e.typ"
+#include "chapters/ch05f.typ"
+#include "chapters/ch05g.typ"
+#include "chapters/ch05h.typ"
+#include "chapters/ch05i.typ"
+#include "chapters/ch06.typ"
+#include "chapters/ch06b.typ"
+#include "chapters/ch06c.typ"
+#include "chapters/ch06d.typ"
 
 #show: back-matter
 
-// 总复习题、习题答案录入后加在这里：
-// #include "appendix/review.typ"
-// #include "appendix/answers.typ"
+#include "appendix/review.typ"
+#include "appendix/answers.typ"
+
