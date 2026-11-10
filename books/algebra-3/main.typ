@@ -29,6 +29,11 @@
 #include "chapters/ch03.typ"
 #include "chapters/ch03b.typ"
 #include "chapters/ch03c.typ"
+#include "chapters/ch04.typ"
+#include "chapters/ch04b.typ"
+#include "chapters/ch04c.typ"
+#include "chapters/ch04e.typ"
+#include "chapters/ch04d.typ"
 
 // #show: back-matter
 // #include "appendix/review.typ"
