@@ -25,7 +25,7 @@ $ z_1 / z_2 &= (a_1 + b_1 i)/(a_2 + b_2 i) = ((a_1 + b_1 i)(a_2 - b_2 i))/((a_2 
   &= 3 + 2i + 3i + 5 - 4 + 5i \
   &= 4 + 10 i ju $]
 
-如果复数用三角函数式来表示，那么计算它们的商就非常方便。
+如果复数用三角形式来表示，那么计算它们的商就非常方便。
 
 设
 
@@ -41,7 +41,7 @@ $ z_1 / z_2 &= (r_1 (cos theta_1 + i sin theta_1))/(r_2 (cos theta_2 + i sin the
   &quad quad + (i (sin theta_1 cos theta_2 - cos theta_1 sin theta_2))/(cos^2 theta_2 + sin^2 theta_2) ]) \
   &= r_1/r_2 [cos(theta_1 - theta_2) + i sin(theta_1 - theta_2)] ju $
 
-这就是说：两个用三角函数式表示的复数相除，#edot[商的模数等于被除数的模数除以除数的模数，商的辐角等于被除数的辐角减去除数的辐角]。
+这就是说：两个用三角形式表示的复数相除，#edot[商的模等于被除数的模除以除数的模，商的辐角等于被除数的辐角减去除数的辐角]。
 
 #ex("例 2")[计算
 
@@ -63,7 +63,7 @@ $ ((1 - sqrt(3) i)(cos theta + i sin theta))/((1 - i)(cos theta - i sin theta)) 
   &quad quad + i sin lr((theta + (5 pi)/3 - (7 pi)/4 + theta))]) \
   &= sqrt(2) lr([cos lr((2 theta - pi/12)) + i sin lr((2 theta - pi/12))]) = "右边" ju $]
 
-#note-small[从上面所述的复数三角函数式的除法运算法则
+#note-small[从上面所述的复数三角形式的除法运算法则
 
 $ (r_1 (cos theta_1 + i sin theta_1))/(r_2 (cos theta_2 + i sin theta_2)) \
   = r_1/r_2 [cos(theta_1 - theta_2) + i sin(theta_1 - theta_2)] dou $
@@ -158,13 +158,13 @@ $ lr(|(x^2 - y^2 + 2 x y i)/(x y sqrt(2) + sqrt(x^4 + y^4) i)|) ju $
 
 #note-small[从 (1) 可以看出，$omega_1$ 和 $omega_2$ 都是 $x^3 = 1$ 的根。本题的结论，在以后解题时很有用。]
 
-在 §4·6 里，曾谈到复数用三角函数式表示时做乘法就非常简便。乘方是乘法的一种特殊运算，所以也就容易想到：把复数先用三角函数式表示，再来做复数的乘方，同样非常简便。
+在 §4·6 里，曾谈到复数用三角形式表示时做乘法就非常简便。乘方是乘法的一种特殊运算，所以也就容易想到：把复数先用三角形式表示，再来做复数的乘方，同样非常简便。
 
 设 $z = r (cos theta + i sin theta)$，现在来计算 $z$ 的 $n$ 次幂
 
-$ (r cos theta + i sin theta)^n ju $
+$ [r (cos theta + i sin theta)]^n /* 原书作 (r cos θ + i sin θ)^n */ ju $
 
-在 §4·7 例 4 的后面，曾经有过下面这个乘法公式：
+在 §4·6 /* 原书作 §4·7 */例 4 的后面，曾经有过下面这个乘法公式：
 
 $ z_1 z_2 dots.c z_n &= r_1 (cos theta_1 + i sin theta_1) \
   &quad dot r_2 (cos theta_2 + i sin theta_2) dots.c r_n (cos theta_n + i sin theta_n) \
@@ -185,9 +185,9 @@ $ z_1 = z_2 = dots.c = z_n = z dou $
 
 $ z^n = [r (cos theta + i sin theta)]^n = r^n (cos n theta + i sin n theta) ju $
 
-这里 $n$ 是自然数。这就是说，#edot[复数的 $n$ 次幂（$n$ 是正整数）的模数，等于这个复数的模数的 $n$ 次幂，它的辐角等于这个复数的辐角的 $n$ 倍]。
+这里 $n$ 是自然数。这就是说，#edot[复数的 $n$ 次幂（$n$ 是正整数）的模，等于这个复数的模的 $n$ 次幂，它的辐角等于这个复数的辐角的 $n$ 倍]。
 
-这一法则称为*棣美弗定理*。
+这一法则称为*棣莫弗定理*。
 
 #ex("例 3")[计算 $(1 + sqrt(3) i)^10$。]
 
@@ -200,7 +200,7 @@ $ z^n = [r (cos theta + i sin theta)]^n = r^n (cos n theta + i sin n theta) ju $
 #note-small[本题如果应用二项式定理来计算，显然运算过程就要繁复得多。]
 
 #exercise("4·8(2)")[
-1. 用棣美弗定理计算：
+1. 用棣莫弗定理计算：
 
 #cols[(1) $[3 (cos 18° + i sin 18°)]^5$；][(2) $lr([3 lr((cos pi/4 - i sin pi/4))])^6$；]
 #cols[(3) $(2 + 2i)^8$；][(4) $lr((frac(sqrt(3), 2) - 1/2 i))^12$。]
@@ -225,21 +225,21 @@ $ therefore quad "原式" &= (sqrt(3) i - 1) (-1 - sqrt(3) i)/2 \
   &= 1/2 (1 + 3) = 2 ju "]" $
 ]
 
-下面再举几个应用棣美弗定理来解题的例子。
+下面再举几个应用棣莫弗定理来解题的例子。
 
 #ex("*例 4")[已知 $n$ 是自然数，且 $(1 + i)^n$ 是实数。试问 $n$ 的最小值是什么？这个实数是什么？]
 
-#analysis[应用棣美弗定理，把 $(1 + i)^n$ 用复数的三角函数式表出，令虚部系数等于 0，即可求出 $n$ 的最小值。]
+#analysis[应用棣莫弗定理，把 $(1 + i)^n$ 用复数的三角形式表出，令虚部系数等于 0，即可求出 $n$ 的最小值。]
 
 #sol[$ because quad 1 + i = sqrt(2) lr((cos pi/4 + i sin pi/4)) dou $
 
 $ therefore quad (1 + i)^n = (sqrt(2))^n lr((cos (n pi)/4 + i sin (n pi)/4)) ju $
 
-要使 $(1 + i)^n$ 为实数，必须并且只须 $sin (n pi)/4 = 0$。
+要使 $(1 + i)^n$ 为实数，必须并且只需 $sin (n pi)/4 = 0$。
 
 $ therefore quad n = 4k #h(1em) (k "是任意整数") ju $
 
-要使 $n$ 是最小的自然数，只须使 $k = 1$。
+要使 $n$ 是最小的自然数，只需使 $k = 1$。
 
 $ therefore quad n = 4 ju $
 
@@ -251,7 +251,7 @@ $ (1 + i)^n = (1 + i)^4 = (sqrt(2))^4 (cos pi + i sin pi) = -4 ju $]
 
 #ex("*例 5")[用 $sin theta$ 和 $cos theta$ 的代数式来表示 $sin 5 theta$ 和 $cos 5 theta$。]
 
-#analysis[根据棣美弗定理，有
+#analysis[根据棣莫弗定理，有
 
 $ (cos theta + i sin theta)^5 = (cos 5 theta + i sin 5 theta) dou $
 
@@ -282,18 +282,18 @@ $ therefore quad cos 5 theta &= cos^5 theta - 10 cos^3 theta sin^2 theta + 5 cos
 
 3. 设 $lr((frac(1 + i, 1 - i)))^n = 1$，求最小的正整数 $n$。
 
-[提示：$(1 + i)/(1 - i) = (1 + i)^2/((1 - i)(1 + i)) = (2i)/2 = i$，所以本题不必用棣美弗定理。]
+[提示：$(1 + i)/(1 - i) = (1 + i)^2/((1 - i)(1 + i)) = (2i)/2 = i$，所以本题不必用棣莫弗定理。]
 
 4. 设 $(1 + i)^(2n)/(1 - i) + (1 - i)^(2n)/(1 + i) = 2^n$，求最小的正整数 $n$。
 
-5. 用棣美弗定理和复数相等的条件，证明：
+5. 用棣莫弗定理和复数相等的条件，证明：
 
 (1) $cos 2 theta = cos^2 theta - sin^2 theta$，$sin 2 theta = 2 sin theta cos theta$；
 
 (2) $cos 3 theta = cos^3 theta - 3 cos theta sin^2 theta$，$sin 3 theta = 3 cos^2 theta sin theta - sin^3 theta$。
 
 // p.128
-\*6. 运用棣美弗定理、复数相等的条件，以及二项式定理，试求 $sin n theta$ 和 $cos n theta$ 用 $sin theta$，$cos theta$ 表示的公式。
+\*6. 运用棣莫弗定理、复数相等的条件，以及二项式定理，试求 $sin n theta$ 和 $cos n theta$ 用 $sin theta$，$cos theta$ 表示的公式。
 ]
 
 == 复数的开方
@@ -310,13 +310,13 @@ $ 1^3 = 1 dou quad lr((frac(-1 + sqrt(3) i, 2)))^3 = 1 dou quad lr((frac(-1 - sq
 
 这里可以看到，在复数范围里，负数也可以开偶次方，正数的奇次方根也不只有唯一的值。
 
-本节将根据开方是乘方的逆运算这一关系，利用棣美弗定理来导出复数开方的一般法则。由此说明：任何一个复数都可以开 $n$ 次方，并且，任一非零复数的 $n$ 次方根都有 $n$ 个值。
+本节将根据开方是乘方的逆运算这一关系，利用棣莫弗定理来导出复数开方的一般法则。由此说明：任何一个复数都可以开 $n$ 次方，并且，任一非零复数的 $n$ 次方根都有 $n$ 个值。
 
 *1. 复数开方的法则* 先来计算一个具体的题目。
 
 求复数 $z = 1 + sqrt(3) i$ 的平方根。
 
-为了能应用棣美弗定理，先把这个复数写成三角函数式：
+为了能应用棣莫弗定理，先把这个复数写成三角形式：
 
 $ z = 2 lr((cos pi/3 + i sin pi/3)) dou $
 
@@ -333,13 +333,13 @@ $ [rho (cos phi + i sin phi)]^2 = 2 lr((cos pi/3 + i sin pi/3)) dou $
 
 $ rho^2 (cos 2 phi + i sin 2 phi) = 2 lr((cos pi/3 + i sin pi/3)) ju $
 
-因为，两个复数相等时，它们的模数必须相等，而辐角可以相差 $2 pi$ 的整数倍，所以
+因为，两个复数相等时，它们的模必须相等，而辐角可以相差 $2 pi$ 的整数倍，所以
 
 $ cases(rho^2 = 2 dou, 2 phi = pi/3 + 2 k pi #h(1em) (k "是整数") ju) $
 
 由此可知，
 
-$ cases(rho = sqrt(2) #h(1em) ("因为" rho "是模数，所以只取算术根") dou, phi = pi/6 + k pi ju) $
+$ cases(rho = sqrt(2) #h(1em) ("因为" rho "是模，所以只取算术根") dou, phi = pi/6 + k pi ju) $
 
 这样，即得所求的平方根是
 
@@ -384,7 +384,7 @@ $ therefore quad w_k = root(n, r) lr([cos (theta + 2 k pi)/n + i sin (theta + 2 
 $ root(n, z) = root(n, r) lr([cos (theta + 2 k pi)/n + i sin (theta + 2 k pi)/n]) \
   (k = 0, 1, 2, dots.c, n - 1) ju $
 
-这就是说，#edot[复数的 $n$ 次方根有 $n$ 个值，它们的模数都等于这个复数的 $n$ 次算术根，而它们的辐角分别等于这个复数的辐角与 $2 pi$ 的 $0, 1, 2, dots.c, n - 1$ 倍的和的 $n$ 分之一]。
+这就是说，#edot[复数的 $n$ 次方根有 $n$ 个值，它们的模都等于这个复数的 $n$ 次算术根，而它们的辐角分别等于这个复数的辐角与 $2 pi$ 的 $0, 1, 2, dots.c, n - 1$ 倍的和的 $n$ 分之一]。
 
 #attention[在实数范围内和在复数范围内，记号 $root(n, space)$ 的意义有所不同。例如：在实数范围里，$sqrt(1)$ 只表示 1 的算术根 1，在复数范围里 $sqrt(1)$/* p.131 */就表示 1 的两个平方根 $plus.minus 1$。又如：在实数范围里，$root(3, -1)$ 只表示实数 $-1$，但在复数范围里，$root(3, -1)$ 就表示 $-1$ 的三个立方根 $-1, -omega, -omega^2$。为了防止混淆，以后要用方根符号来表示实数 $a$ 的 $n$ 个 $n$ 次方根，宁可把 $a$ 写成 $a + 0 i$ 的形式，表示成 $root(n, a + 0 i)$，而仍旧把符号 $root(n, a)$（当它有意义时）来表示唯一的实数值。]
 
@@ -461,13 +461,13 @@ $ w_k = root(n, r) lr((cos (2 k pi + theta)/n + i sin (2 k pi + theta)/n)) dou $
 
 (2) 任意相邻两点（例如 $M_0$ 与 $M_1$，$M_1$ 与 $M_2$，……）间的夹角都等于 $(2 pi)/n$。因此，只要先作出对应于 $w_0$ 的向量 $arrow(O M_0)$，把它沿逆时针方向旋转角 $(2 pi)/n$，就得到对应于 $w_1$ 的向量 $arrow(O M_1)$，再旋转角 $(2 pi)/n$，就得到对应于 $w_2$ 的向量 $arrow(O M_2)$，……最后，把对应于 $w_(n-2)$ 的向量 $arrow(O M_(n-2))$ 旋转角 $(2 pi)/n$，就得到对应于 $w_(n-1)$ 的向量 $arrow(O M_(n-1))$。
 
-由此，从几何观点来看，复数 $z = r (cos theta + i sin theta)$ 的 $n$ 个 $n$ 次方根所对应的点，恰巧是以原点为中心、$root(n, r)$ 为半径的圆的一个内接正 $n$ 多边形的顶点，其中第一个顶点（点 $M_0$）所对应的向量（向量 $arrow(O M_0)$）与 $x$ 轴的正方向 $O x$ 间的夹角是 $1/n theta$（以 $O x$ 为始边）。
+由此，从几何观点来看，复数 $z = r (cos theta + i sin theta)$ 的 $n$ 个 $n$ 次方根所对应的点，恰巧是以原点为中心、$root(n, r)$ 为半径的圆的一个内接正 $n$ 边形的顶点，其中第一个顶点（点 $M_0$）所对应的向量（向量 $arrow(O M_0)$）与 $x$ 轴的正方向 $O x$ 间的夹角是 $1/n theta$（以 $O x$ 为始边）。
 
 例如，图 4·16 是当 $n = 7$ 时的情况。
 
 #fig("4·16", fig-4-16())[]
 
-#ex("例 3")[根据复数开方的几何意义，试在复数平面内作出表示方程 $x^5 - 1 = 0$ 的五个根的点。]
+#ex("例 3")[根据复数开方的几何意义，试在复平面内作出表示方程 $x^5 - 1 = 0$ 的五个根的点。]
 
 #sol[$ because quad x^5 = 1 = cos 0 + i sin 0 dou $
 
@@ -483,7 +483,7 @@ $ M_0 = cos 0 + i sin 0 fen $
 
 // p.134
 #exercise("4·9(2)", star: true)[
-1. 在复数平面内，作出表示：
+1. 在复平面内，作出表示：
 
 #cols[(1) 1 的六次方根；][(2) 1 的八次方根]
 

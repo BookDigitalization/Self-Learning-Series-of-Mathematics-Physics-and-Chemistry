@@ -104,7 +104,7 @@ $ f(x) = x^n + b_1 x^(n-1) + dots.c + b_(n-1) x + b_n = 0 $
 
 #analysis[这里，最高次项系数 2 的约数只可能是 $plus.minus 1, plus.minus 2$，常数项 3 的约数只可能是 $plus.minus 1, plus.minus 3$，所以，原方程的有理根只可能是 $plus.minus 1, plus.minus 3, plus.minus 1/2, plus.minus 3/2$。容易看出，$f(1) = 0$，所以 1 是原方程的根。这样，只要用综合除法，求出 $f(x)$ 除以 $x - 1$ 的商 $g(x)$，再解二次方程 $g(x) = 0$ 即得。]
 
-#sol[根据上面的定理，所给整系数方程 $f(x) = 0$ 的有理根只能是 $plus.minus 1, plus.minus 3, plus.minus 1/2, plus.minus 3/2$，今用试除法来看一下：
+#sol[根据上面的定理，所给整系数方程 $f(x) = 0$ 的有理根只能是 $plus.minus 1, plus.minus 3, plus.minus 1/2, plus.minus 3/2$，现用试除法来看一下：
 
 // p.175
 #syn(4,
@@ -205,7 +205,7 @@ $because quad f(1) != 0, quad f(-1) != 0, quad therefore quad x = 1$ 和 $x = -1
 
 #sol(label: [证])[这个方程可能有的有理根是 $plus.minus 1, plus.minus 1/2$。
 
-今 $quad f(1) = 3 != 0, quad f(-1) = -5 != 0,$
+现 $quad f(1) = 3 != 0, quad f(-1) = -5 != 0,$
 
 $ f(1/2) = 1/4 != 0, quad f(-1/2) = -mx(2, 1, 4) != 0 ju $
 

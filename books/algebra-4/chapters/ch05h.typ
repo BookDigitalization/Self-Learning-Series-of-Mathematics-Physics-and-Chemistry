@@ -22,18 +22,18 @@ $ x^n = -a_n/a_0 dou $
 
 #ex("例 1")[解方程 $(-2 - 2i) x^4 - 8 = 0$。]
 
-// 原书作 ⁴√8（|x⁴| = 2√2，应为 ⁸√8，即 8 的八次方根；下面 x_1…x_4 同；疑原书错误，仅登记，照录）
+// 原书作 ⁴√8（|x⁴| = 2√2，应为 ⁸√8，即 8 的八次方根；下面 x_1…x_4 同；原书错误，已订正）
 #sol[原方程可化为 $x^4 = 8/(-2 - 2i)$，即
 
 $ x^4 = -2 + 2i ju $
 
 $ therefore quad x^4 = 2 sqrt(2) (cos (3pi)/4 + i sin (3pi)/4) ju $
 
-$ therefore quad x = root(4, 8) (cos frac((3pi)/4 + 2k pi, 4) + i sin frac((3pi)/4 + 2k pi, 4)) \ (k = 0, 1, 2, 3) ju $
+$ therefore quad x = root(8, 8) (cos frac((3pi)/4 + 2k pi, 4) + i sin frac((3pi)/4 + 2k pi, 4)) \ (k = 0, 1, 2, 3) ju $
 
 就是
 
-$ x_1 &= root(4, 8) (cos (3pi)/16 + i sin (3pi)/16) dou \ x_2 &= root(4, 8) (cos (11pi)/16 + i sin (11pi)/16) dou \ x_3 &= root(4, 8) (cos (19pi)/16 + i sin (19pi)/16) dou \ x_4 &= root(4, 8) (cos (27pi)/16 + i sin (27pi)/16) ju $
+$ x_1 &= root(8, 8) (cos (3pi)/16 + i sin (3pi)/16) dou \ x_2 &= root(8, 8) (cos (11pi)/16 + i sin (11pi)/16) dou \ x_3 &= root(8, 8) (cos (19pi)/16 + i sin (19pi)/16) dou \ x_4 &= root(8, 8) (cos (27pi)/16 + i sin (27pi)/16) ju $
 ]
 
 当二项方程 $x^n + b = 0$ 的 $n$ 是 3, 4 或 6，且 $b$ 是实数时，还可用因式分解的方法来解。

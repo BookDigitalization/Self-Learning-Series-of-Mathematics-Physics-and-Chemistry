@@ -21,11 +21,11 @@ $ i^(4n+1) = i dou quad i^(4n+2) = -1 dou quad i^(4n+3) = -i dou quad i^(4n+4) =
 
 (1) 表示平面上的点 $M(a, b)$； #h(1em) (2) 表示平面上的向量 $arrow(O M)$。
 
-*3. 复数的代数式与三角函数式的互化*
+*3. 复数的代数形式与三角形式的互化*
 
 $ z = a + b i = r (cos theta + i sin theta) ju $
 
-$r$——模数（绝对值）
+$r$——模（绝对值）
 
 $ r = |z| = |a + b i| = sqrt(a^2 + b^2) ju $
 
@@ -74,7 +74,7 @@ $theta$——辐角
 
 (i) 应用二项式定理。
 
-(ii) 应用棣美弗定理
+(ii) 应用棣莫弗定理
 
 $ [r (cos theta + i sin theta)]^n = r^n (cos n theta + i sin n theta) ju $
 
@@ -106,9 +106,9 @@ $ root(n, r (cos theta + i sin theta)) = root(n, r) lr((cos (2 k pi + theta)/n +
 
 3. 已知下列这些命题都是成立的，写出它们的逆命题。这些逆命题是否仍成立？
 
-(1) 模数、辐角分别相等的两个复数一定相等；
+(1) 模、辐角分别相等的两个复数一定相等；
 
-(2) 共轭复数的模数相等。
+(2) 共轭复数的模相等。
 
 [提示：要否定一个命题成立，只需举一个例子来说明就可以了。例如，命题“两个偶数的和是偶数”的逆命题是“两个加数的和是偶数，则这两个加数都是偶数”，只要举出 $1 + 3 = 4$ 一例，因 4 是偶数，但 1 和 3 都不是偶数，就足以说明这个逆命题不成立。]
 
@@ -116,7 +116,7 @@ $ root(n, r (cos theta + i sin theta)) = root(n, r) lr((cos (2 k pi + theta)/n +
 
 (2) 如果复数 $z$ 的辐角的主值是 $alpha$ $(0 <= alpha < 2 pi)$，怎样用 $alpha$ 的代数式来表示复数 $overline(z)$ 的辐角？表示 $overline(z)$ 的辐角的主值？
 
-5. 求适合下列各式的实数 $x$ 和 $y$：
+5. 求满足下列各式的实数 $x$ 和 $y$：
 
 (1) $(1 + 2i) x + (3 - 10 i) y = 5 - 6i$；
 
@@ -166,7 +166,7 @@ $ (sqrt(1 + m) + sqrt(1 - m) i)/(sqrt(1 + m) - sqrt(1 - m) i) - (sqrt(1 - m) + s
 
 $ omega^3 = 1 dou quad quad 1 + omega + omega^2 = 0 ju "]" $
 
-11. 利用 $sqrt(x^2 - y^2 plus.minus 2 x y) = plus.minus (x + y i)^2$，计算：
+11. 利用 $sqrt(x^2 - y^2 plus.minus 2 x y i) = plus.minus (x plus.minus y i)$/* 原书作 √(x²−y²±2xy) = ±(x+yi)² */，计算：
 
 #cols[(1) $sqrt(-3 + 4i)$；][(2) $sqrt(7 + sqrt(15) i)$；]
 #cols[(3) $sqrt(5 - sqrt(11) i)$；][(4) $sqrt(-7 - sqrt(15) i)$。]

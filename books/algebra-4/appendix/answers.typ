@@ -31,7 +31,7 @@
 
 #answers("1·4")[#q(1)\(1) 1，(2) 210；#q(3)120。]
 
-#answers("1·5(1)")[#q(1)325；#q(2)\(1) 24，(2) 96，(3) 48；#q(3)\(1) 48，(2) 672，(3) 240，(4) 480；#q(4)30，15，15。]
+#answers("1·5(1)")[#q(1)325；#q(2)\(1) 24，(2) 96，(3) 48；#q(3)\(1) 48，(2) 288/* 原书作 672 */，(3) 240，(4) 480；#q(4)30，15，15。]
 
 #answers("1·5(2)")[#q(1)\(1) 100，(2) 36，(3) 52，(4) 48；#q(2)\(1) 48，(2) 360。]
 
@@ -116,11 +116,11 @@
 // p.235
 #answers("4·8(2)")[#q(1)\(1) $243i$#sym.wj，(2) $729i$#sym.wj，(3) 4096，(4) 1；#q(2)\(1) 2，(2) $-16$#sym.wj，(3) 0，(4) $-64$#sym.wj。]
 
-// 原书 6 题 cos nθ 公式里第三项作 sin^22 θ（疑为 sin^2 θ 的误印，照录；见 notes/appendix.md）
-#answers("4·8(3)")[#q(2)$n = 6$#sym.wj，$-1$#sym.wj；#q(3)$n = 4$#sym.wj；#q(4)$n = 4$#sym.wj；#q(6)$cos n theta = cos^n theta - C_n^2 cos^(n-2) theta sin^22 theta + C_n^4 cos^(n-4) theta sin^4 theta - dots.c$#sym.wj，最后一项，当 $n$#sym.wj 为偶数时为 $(-1)^(n/2) sin^n theta$#sym.wj，奇数时为 $(-1)^((n-1)/2) dot n cos theta sin^(n-1) theta$#sym.wj；$sin n theta = C_n^1 cos^(n-1) theta sin theta - C_n^3 cos^(n-3) theta sin^3 theta + C_n^5 cos^(n-5) theta sin^5 theta - dots.c$#sym.wj，最后一项，当 $n$#sym.wj 为偶数时为 $(-1)^((n-2)/2) n cos theta sin^(n-1) theta$#sym.wj，奇数时为 $(-1)^((n-1)/2) sin^n theta$#sym.wj。]
+// 6 题 cos nθ 公式里第三项，原书作 sin^22 θ（多印了一个 2），已订正为 sin^2 θ
+#answers("4·8(3)")[#q(2)$n = 6$#sym.wj，$-1$#sym.wj；#q(3)$n = 4$#sym.wj；#q(4)$n = 3$#sym.wj/* 原书作 n = 4 */；#q(6)$cos n theta = cos^n theta - C_n^2 cos^(n-2) theta sin^2 theta /* 原书作 sin^22 θ（多印一个 2） */ + C_n^4 cos^(n-4) theta sin^4 theta - dots.c$#sym.wj，最后一项，当 $n$#sym.wj 为偶数时为 $(-1)^(n/2) sin^n theta$#sym.wj，奇数时为 $(-1)^((n-1)/2) dot n cos theta sin^(n-1) theta$#sym.wj；$sin n theta = C_n^1 cos^(n-1) theta sin theta - C_n^3 cos^(n-3) theta sin^3 theta + C_n^5 cos^(n-5) theta sin^5 theta - dots.c$#sym.wj，最后一项，当 $n$#sym.wj 为偶数时为 $(-1)^((n-2)/2) n cos theta sin^(n-1) theta$#sym.wj，奇数时为 $(-1)^((n-1)/2) sin^n theta$#sym.wj。]
 
-// 1 题 (2) 原书漏印 sin（i(6k−1)10°），照录；见 notes/appendix.md
-#answers("4·9(1)")[#q(1)\(1) $2[cos (3k + 1)/6 pi + i sin (3k + 1)/6 pi] (k = 0, 1, 2, 3)$#sym.wj，(2) $sqrt(2) [cos (6k - 1) 10 degree + i (6k - 1) 10 degree] (k = 0, 1, 2, 3, 4, 5)$#sym.wj；#q(2)\(1) $plus.minus (sqrt(2)/2 - sqrt(2)/2 i)$#sym.wj，(2) $root(4, 2) [cos (k 360 degree + 315 degree)/4 + i sin (k 360 degree + 315 degree)/4] (k = 0, 1, 2, 3)$#sym.wj，(3) $root(6, 2) [cos (3k + 1) 20 degree + i sin (3k + 1) 20 degree] (k = 0, 1, 2, 3, 4, 5)$#sym.wj，(4) $root(10, 18) [cos (k 360 degree + 135 degree)/5 + i sin (k 360 degree + 135 degree)/5] (k = 0, 1, 2, 3, 4)$#sym.wj；#q(3)\(1) $-1$#sym.wj，$1/2 plus.minus sqrt(3)/2 i$#sym.wj，(2) $2(1 plus.minus i)$#sym.wj，$2(-1 plus.minus i)$#sym.wj；#q(4)\(1) $-a$#sym.wj，$-a omega$#sym.wj，$-a omega^2$#sym.wj，(2) $a$#sym.wj，$a omega$#sym.wj，$a omega^2$#sym.wj，(3) $plus.minus (sqrt(2)/2 plus.minus sqrt(2)/2 i) a$#sym.wj，(4) $plus.minus a$#sym.wj，$plus.minus a i$#sym.wj。]
+// 1 题 (2) 原书漏印 sin（i(6k−1)10°），已补
+#answers("4·9(1)")[#q(1)\(1) $2[cos (3k + 1)/6 pi + i sin (3k + 1)/6 pi] (k = 0, 1, 2, 3)$#sym.wj，(2) $sqrt(2) [cos (6k - 1) 10 degree + i /* 原书漏印 sin */ sin (6k - 1) 10 degree] (k = 0, 1, 2, 3, 4, 5)$#sym.wj；#q(2)\(1) $plus.minus (sqrt(2)/2 - sqrt(2)/2 i)$#sym.wj，(2) $root(4, 2) [cos (k 360 degree + 315 degree)/4 + i sin (k 360 degree + 315 degree)/4] (k = 0, 1, 2, 3)$#sym.wj，(3) $root(6, 2) [cos (3k + 1) 20 degree + i sin (3k + 1) 20 degree] (k = 0, 1, 2, 3, 4, 5)$#sym.wj，(4) $root(10, 18) [cos (k 360 degree + 135 degree)/5 + i sin (k 360 degree + 135 degree)/5] (k = 0, 1, 2, 3, 4)$#sym.wj；#q(3)\(1) $-1$#sym.wj，$1/2 plus.minus sqrt(3)/2 i$#sym.wj，(2) $2(1 plus.minus i)$#sym.wj，$2(-1 plus.minus i)$#sym.wj；#q(4)\(1) $-a$#sym.wj，$-a omega$#sym.wj，$-a omega^2$#sym.wj，(2) $a$#sym.wj，$a omega$#sym.wj，$a omega^2$#sym.wj，(3) $plus.minus (sqrt(2)/2 plus.minus sqrt(2)/2 i) a$#sym.wj，(4) $plus.minus a$#sym.wj，$plus.minus a i$#sym.wj。]
 
 #sec[复习题四]
 
@@ -154,11 +154,11 @@
 #answers("5·6(1)")[#q(1)\(1) $root(4, 4) (cos (4k + 1)/8 pi + i sin (4k + 1)/8 pi) (k = 0, 1, 2, 3)$#sym.wj，(3) $root(10, 8) (cos (8k + 7)/20 pi + i sin (8k + 7)/20 pi) (k = 0, 1, 2, 3, 4)$#sym.wj，(5) $root(4, 2) (cos (12k + 11)/24 pi + i sin (12k + 11)/24 pi) (k = 0, 1, 2, 3)$#sym.wj；#q(2)\(2) $-3/2$#sym.wj，$(-3 plus.minus 3 sqrt(3) i)/4$#sym.wj，(4) $5/2 sqrt(2) (-1 plus.minus i)$#sym.wj，$5/2 sqrt(2) (1 plus.minus i)$#sym.wj，/* p.238 */(6) $plus.minus 1/2 i$#sym.wj，$(-sqrt(3) plus.minus i)/4$#sym.wj，$(sqrt(3) plus.minus i)/4$#sym.wj。]
 
 // 1 题 (3) 的根指数（原书印得不清）按 x^3 = 1 ± i 推得为 6，见 notes/appendix.md
-#answers("5·6(2)")[#q(1)\(1) $root(3, 2)$#sym.wj，$root(3, 2) ((-1 plus.minus sqrt(3) i)/2)$#sym.wj，$root(3, 3)$#sym.wj，$root(3, 3) ((-1 plus.minus sqrt(3) i)/2)$#sym.wj，(2) $plus.minus sqrt(2)/2$#sym.wj，$plus.minus sqrt(2)/2 i$#sym.wj，$plus.minus sqrt(3)/3 i$#sym.wj，$plus.minus sqrt(3)/3$#sym.wj，(3) $root(6, 2) (cos (8k + 1)/12 pi + i sin (8k + 1)/12 pi) (k = 0, 1, 2)$#sym.wj，$root(6, 2) (cos (8k + 7)/12 pi + i sin (8k + 7)/12 pi) (k = 0, 1, 2)$#sym.wj，(4) $plus.minus 1$#sym.wj，$plus.minus i$#sym.wj，$(sqrt(6) plus.minus sqrt(6) i)/2$#sym.wj，$(-sqrt(6) plus.minus sqrt(6) i)/2$#sym.wj；#q(2)\(1) 0，0，0，0，$root(4, 6) (-sqrt(2)/2 plus.minus sqrt(2)/2 i)$#sym.wj，$root(4, 6) (sqrt(2)/2 plus.minus sqrt(2)/2 i)$#sym.wj，$-sqrt(2)/2 plus.minus sqrt(2)/2 i$#sym.wj，$sqrt(2)/2 plus.minus sqrt(2)/2 i$#sym.wj，$root(4, 5) (-sqrt(2)/2 plus.minus sqrt(2)/2 i)$#sym.wj，$root(4, 4) (sqrt(2)/2 plus.minus sqrt(2)/2 i)$#sym.wj，(2) $plus.minus i$#sym.wj，$plus.minus sqrt(5) i$#sym.wj，$1 plus.minus 2i$#sym.wj，$-1 plus.minus 2i$#sym.wj。]
+#answers("5·6(2)")[#q(1)\(1) $root(3, 2)$#sym.wj，$root(3, 2) ((-1 plus.minus sqrt(3) i)/2)$#sym.wj，$root(3, 3)$#sym.wj，$root(3, 3) ((-1 plus.minus sqrt(3) i)/2)$#sym.wj，(2) $plus.minus sqrt(2)/2$#sym.wj，$plus.minus sqrt(2)/2 i$#sym.wj，$plus.minus sqrt(3)/3 i$#sym.wj，$plus.minus sqrt(3)/3$#sym.wj，(3) $root(6, 2) (cos (8k + 1)/12 pi + i sin (8k + 1)/12 pi) (k = 0, 1, 2)$#sym.wj，$root(6, 2) (cos (8k + 7)/12 pi + i sin (8k + 7)/12 pi) (k = 0, 1, 2)$#sym.wj，(4) $plus.minus 1$#sym.wj，$plus.minus i$#sym.wj，$(sqrt(6) plus.minus sqrt(6) i)/2$#sym.wj，$(-sqrt(6) plus.minus sqrt(6) i)/2$#sym.wj；#q(2)\(1) 0，0，0，0，$root(4, 6) (-sqrt(2)/2 plus.minus sqrt(2)/2 i)$#sym.wj，$root(4, 6) (sqrt(2)/2 plus.minus sqrt(2)/2 i)$#sym.wj，$-sqrt(2)/2 plus.minus sqrt(2)/2 i$#sym.wj，$sqrt(2)/2 plus.minus sqrt(2)/2 i$#sym.wj，$root(4, 5) (-sqrt(2)/2 plus.minus sqrt(2)/2 i)$#sym.wj，$root(4, 5) /* 原书作 ∜4（扫描所印；由 y = −2 得 x⁴ = −5，应为 ∜5） */ (sqrt(2)/2 plus.minus sqrt(2)/2 i)$#sym.wj，(2) $plus.minus i$#sym.wj，$plus.minus sqrt(5) i$#sym.wj，$1 plus.minus 2i$#sym.wj，$-1 plus.minus 2i$#sym.wj。]
 
 #answers("5·6(3)")[#q(1)$plus.minus i$#sym.wj，$(-1 plus.minus sqrt(3) i)/2$#sym.wj；#q(2)$-2 plus.minus sqrt(3)$#sym.wj，$(1 plus.minus sqrt(15) i)/4$#sym.wj；#q(3)$(3 plus.minus sqrt(5))/2$#sym.wj，$(-1 plus.minus 2 sqrt(2) i)/3$#sym.wj；#q(4)$-1$#sym.wj，2，$1/2$#sym.wj，$-2 plus.minus sqrt(3)$#sym.wj；#q(5)$-1$#sym.wj，$(1 plus.minus sqrt(3) i)/2$#sym.wj，$(3 plus.minus sqrt(5))/2$#sym.wj；#q(6)2，$1/2$#sym.wj，$(1 plus.minus sqrt(3) i)/2$#sym.wj，$(-3 plus.minus sqrt(5))/2$#sym.wj。]
 
-#answers("5·6(4)")[#q(1)1，$plus.minus i$#sym.wj，$plus.minus (-3 plus.minus sqrt(7) i)/4$#sym.wj；#q(2)1，$(3 plus.minus sqrt(5))/2$#sym.wj，$(-1 plus.minus 2 sqrt(2) i)/3$#sym.wj；#q(3)$plus.minus 1$#sym.wj，2，$1/2$#sym.wj，$-3$#sym.wj，$-1/3$#sym.wj。]
+#answers("5·6(4)")[#q(1)1，$plus.minus i$#sym.wj，$(-3 plus.minus sqrt(7) i)/4$#sym.wj/* 原书作 ±(−3±√7 i)/4，多一个 ± */；#q(2)1，$(3 plus.minus sqrt(5))/2$#sym.wj，$(-1 plus.minus 2 sqrt(2) i)/3$#sym.wj；#q(3)$plus.minus 1$#sym.wj，2，$1/2$#sym.wj，$-3$#sym.wj，$-1/3$#sym.wj。]
 
 #answers("5·6(5)")[#q(1)2，2，$-1/2$#sym.wj，$-1/2$#sym.wj；#q(2)$1 plus.minus sqrt(2)$#sym.wj，$(1 plus.minus sqrt(5))/2$#sym.wj；#q(3)$-1 plus.minus sqrt(2)$#sym.wj，$-2$#sym.wj，$1/2$#sym.wj；#q(4)$-1 plus.minus sqrt(2)$#sym.wj，$(-1 plus.minus sqrt(5))/2$#sym.wj，$-2$#sym.wj，$1/2$#sym.wj。]
 
@@ -170,8 +170,8 @@
 
 #answers("6·1(1)")[#q(1)\(1) 17，(2) $-1/3$#sym.wj，(3) 1，(4) $-2 b^3$#sym.wj；#q(3)\(1) $x = 1, y = -2$#sym.wj，(2) $-3$#sym.wj，1，(3) $a + b$#sym.wj，$a - b$#sym.wj，(4) $a$#sym.wj，$b$#sym.wj。]
 
-// 2 题 (2) 末句原书作“k≠0 或 k≠1”（应为“且”），照录；见 notes/appendix.md
-#answers("6·1(2)")[#q(1)\(1) 有唯一解，(2) 有无限多组解，(3) 无解，(4) 有唯一解；#q(2)\(1) $k != plus.minus 1$#sym.wj 时，$x = k/(k + 1)$#sym.wj，$y = (2k + 1)/(k + 1)$#sym.wj，$k = 1$#sym.wj 时，有无限多组解，$k = -1$#sym.wj 时，无解，(2) $k = 0$#sym.wj 或 $k = 1$#sym.wj 时，有无穷多组解，$k != 0$#sym.wj 或 $k != 1$#sym.wj 时，有唯一解 $x = k + 1, y = k - 1$#sym.wj。]
+// 2 题 (2) 末句原书作“k≠0 或 k≠1”，已订正为“且”
+#answers("6·1(2)")[#q(1)\(1) 有唯一解，(2) 有无限多组解，(3) 无解，(4) 有唯一解；#q(2)\(1) $k != plus.minus 1$#sym.wj 时，$x = k/(k + 1)$#sym.wj，$y = (2k + 1)/(k + 1)$#sym.wj，$k = 1$#sym.wj 时，有无限多组解，$k = -1$#sym.wj 时，无解，(2) $k = 0$#sym.wj 或 $k = 1$#sym.wj 时，有无穷多组解，$k != 0$#sym.wj 且/* 原书作“或” */ $k != 1$#sym.wj 时，有唯一解 $x = k + 1, y = k - 1$#sym.wj。]
 
 #answers("6·2(1)")[#q(1)\(1) 18，(2) 74；/* p.240 */#q(2)\(1) $a^3 + b^3 + c^3 - 3 a b c$#sym.wj，(2) $2 x y z$#sym.wj。]
 
