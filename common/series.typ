@@ -72,7 +72,7 @@
   body,
 ) = {
   show: bookly.bookly.with(
-    title: "数理化自学丛书 " + title + " " + volume,
+    title: "数理化自学丛书 " + title + (if volume != "" { " " + volume } else { "" }),  // 单册书（如《三角》）volume 传 ""
     author: author,
     theme: bookly.modern,
     lang: "zh",
@@ -415,6 +415,8 @@
 #let dou = math.class("normal", "，")
 // 比号：a rt b（不加空格、不在行末断开），数学里的“:”都写成 rt
 #let rt = math.class("normal", ":")
+// 反余切（Typst 没有内置 arccot；三角册原书 arc ctg 按 TERMINOLOGY 4.9 改写作 arccot）：$arccot x$
+#let arccot = math.op("arccot")
 // 并排小题之间的间隔
 #let gap = h(2em)
 // 并排小题：#cols[(1) …][(2) …][(3) …]，等宽分栏
