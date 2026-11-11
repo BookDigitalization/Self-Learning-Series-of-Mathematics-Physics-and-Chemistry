@@ -1,7 +1,7 @@
 // 第 8 章 一元二次方程和可以化成一元二次方程来解的方程（原书 p.286–320：§8·1–§8·8；§8·9 起见 ch08b.typ）
 #import "/common/series.typ": *
 
-= 一元二次方程和可以化成一元二次方程来解的方程
+= #box[一元二次方程]和可以化成#box[一元二次方程]来解的方程
 #import "/books/algebra-2/figures/fig8-1-2.typ": fig-8-1, fig-8-2
 
 == 一元二次方程
@@ -482,7 +482,7 @@ $ (x - a + b)(x - a - b) = 0 ju $
 
   (6) $(x-1)(x+3) - 2(x+3)^2 + 3(x+3)(x-3) = 0$。
 
-  [解法举例：(1) $x(2x+7) = 3(2x+7) dou$
+  ［解法举例：(1) $x(2x+7) = 3(2x+7) dou$
 
   $ x(2x+7) - 3(2x+7) = 0 dou $
 
@@ -498,7 +498,7 @@ $ (x - a + b)(x - a - b) = 0 ju $
 
   $ (7x+5)(-x-7) = 0 dou $
 
-  $ therefore quad x_1 = -5/7 dou quad x_2 = -7 ju $]
+  $ therefore quad x_1 = -5/7 dou quad x_2 = -7 ju "］" $
 
 6. 解下列关于 $x$ 的方程：
 

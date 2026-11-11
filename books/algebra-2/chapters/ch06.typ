@@ -1141,7 +1141,7 @@ $ (sqrt(5) - sqrt(3) + sqrt(2))(sqrt(5) + sqrt(3) - sqrt(2)) ju $]
   ［解法举例：应用乘法公式 $(A+B)(A^2-A B+B^2) = A^3+B^3$，如果把 $root(3, a)$ 看作公式里的 $A$，$root(3, b)$ 看作 $B$，那么 $root(3, a^2) = A^2$，$root(3, b^2) = B^2$，所以
 
   $ & (root(3, a) + root(3, b))(root(3, a^2) - root(3, a b) + root(3, b^2)) \
-    &= (root(3, a))^3 + (root(3, b))^3 = a + b ju $］
+    &= (root(3, a))^3 + (root(3, b))^3 = a + b ju "］" $
 
   (2) $(root(3, m) - root(3, n))(root(3, m^2) + root(3, m n) + root(3, n^2)) = m - n$。
 
@@ -1153,7 +1153,7 @@ $ (sqrt(5) - sqrt(3) + sqrt(2))(sqrt(5) + sqrt(3) - sqrt(2)) ju $]
 
   $ because quad (a + sqrt(b))(a - sqrt(b)) = a^2 - b dou $
 
-  $ therefore quad F = a - sqrt(b) ju $］
+  $ therefore quad F = a - sqrt(b) ju "］" $
 
   #cols[(2) $(sqrt(a) - sqrt(b)) dot F = a - b$；][(3) $(root(3, a) - root(3, b)) dot F = a - b$；]
 

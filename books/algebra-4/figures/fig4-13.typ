@@ -40,7 +40,7 @@
 })
 
 // ───────── 图 4·14：2(cos 60° + i sin 60°)·3(cos 45° + i sin 45°)（p.118）─────────
-#let fig-4-14(width: 250 * k) = px-canvas(250, 300, origin: (275, 328), width: width, (p, u) => {
+#let fig-4-14(width: 250 * k * 1.35) = px-canvas(250, 300, origin: (275, 328), width: width, (p, u) => {
   import cetz.draw: *
   let (ox, oy) = (372.7, 540)
   let ux = 28.6
@@ -90,14 +90,14 @@
   arc(p(ox, oy), start: 0deg, stop: a1, radius: 42, anchor: "origin", stroke: 0.7pt, mark: (end: "stealth", fill: black, scale: 0.4))
   arc(p(ox, oy), start: 0deg, stop: a3, radius: 52, anchor: "origin", stroke: 0.7pt, mark: (end: "stealth", fill: black, scale: 0.4))
   content(p(647, 660), tt($M_1$))
-  content(p(565, 651), tt($M_2$))
+  content(p(547, 647), tt($M_2$))
   content(p(587, 769), tt($M$))
   content(p(605, 695), tt($theta_2$))
   content(p(565, 718), tt($theta_1$))
-  content(p(582, 743), tt($theta_1 - theta_2$))
+  content(p(614, 748), tt($theta_1 - theta_2$))
   content(p(555, 693), angle: along(a1), tt($r_1$))
   content(p(525, 690), angle: along(a2), tt($r_2$))
-  content(p(535, 765), angle: along(a3), tt($r_1 / r_2$))
+  content(p(542, 782), angle: along(a3), tt($r_1 / r_2$))
   content(p(503, 741), tt($O$))
   content(p(691, 728), tt($x$))
   content(p(511, 594), tt($y$))

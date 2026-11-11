@@ -112,6 +112,12 @@
   set heading(numbering: heading-numbering)
   show heading.where(level: 3): set heading(outlined: false)
 
+  // 标题超过一行宽时，平均折成两行，避免末行只剩一两个字（如“程”“程组”）；不超宽的不受影响
+  let balanced(body) = layout(size => {
+    let w = measure(body).width
+    if w > size.width { block(width: w / 2 + 2em, body) } else { body }
+  })
+
   // 章：大号章号 + 章名，居中
   show heading.where(level: 1): it => {
     pagebreak(weak: true)
@@ -125,7 +131,7 @@
           counter(heading).display(it.numbering))
         v(0.6em)
       }
-      text(font: fonts.hei, size: 22pt, weight: "medium", tracking: 0.1em, it.body)
+      balanced(text(font: fonts.hei, size: 22pt, weight: "medium", tracking: 0.1em, it.body))
     }))
     v(2.5em)
   }
@@ -134,14 +140,14 @@
   show heading.where(level: 2): it => {
     set align(center)
     set par(first-line-indent: 0em)
-    block(above: 2.2em, below: 1.4em, sticky: true, text(font: fonts.hei, size: 14pt, weight: "medium", {
+    block(above: 2.2em, below: 1.4em, sticky: true, balanced(text(font: fonts.hei, size: 14pt, weight: "medium", {
       if it.numbering != none {
         // 节号用衬线数字（同原书），也避免黑体数字与中间点混排时出现空隙
         text(font: fonts.song, fill: colors.primary, counter(heading).display(it.numbering))
         h(1em)
       }
       it.body
-    }))
+    })))
   }
 
   // 小标题：粗体无编号，左对齐

@@ -14,9 +14,9 @@
 |---|---|---|---|---|---|---|---|---|
 | 物理 第一册 | `books/physics-1` | 536 | ✔ | ✔ | ✔ | ✔ | ☐ | 全书录入完毕；已按书末答案核实改正，旧词、单位加数字版注，封面署“数字重排改订版（非官方）”；待发版 |
 | 代数 第一册 | `books/algebra-1` | 304 | ✔ | ✔ | ✔ | ✔ | ☐ | p.1–304 全部录入，每章由另一位核对员对照扫描重核；据答案订正的错误、旧词替换已登记；待发版 |
-| 代数 第二册 | `books/algebra-2` | 436 | ✔ | ✔ | ✔ | ☐ | ☐ | 全部录入，答案区独立核对；订正 16 处原书错误，选学节加星；待版面通读 |
+| 代数 第二册 | `books/algebra-2` | 436 | ✔ | ✔ | ✔ | ✔ | ☐ | 全部录入，答案区独立核对；订正 16 处原书错误，选学节加星；版面通读已做（修了提示块结尾括号落单、长章名折行）；仍有 3 处 `#unclear`（p.143 缺一字、p.163 平方根表两格被噪点糊住，见 `CHECKLIST.md`），发版前需说明 |
 | 代数 第三册 | `books/algebra-3` | 384 | ✔ | ✔ | ✔ | ✔ | ☐ | 全部录入并独立核对；订正 40 处原书错误，页码引用改节号，p.78 比重加注；待发版 |
-| 代数 第四册 | `books/algebra-4` | 241 | ✔ | ✔ | ✔ | ☐ | ☐ | 全部录入（排列组合、数学归纳法、二项式定理、复数、方程论初步、行列式，及总复习题、习题答案）；全书分 10 段对照扫描独立核对；订正 32 处原书错误、旧词按 `TERMINOLOGY.md` 4.7 现代化；另有 5 处疑点照录，见 `CHECKLIST.md` 第四节；版面通读已跑脚本检查，缩略图尚未逐张目测 |
+| 代数 第四册 | `books/algebra-4` | 241 | ✔ | ✔ | ✔ | ✔ | ☐ | 全部录入（排列组合、数学归纳法、二项式定理、复数、方程论初步、行列式，及总复习题、习题答案）；全书分 10 段对照扫描独立核对；订正 32 处原书错误、旧词按 `TERMINOLOGY.md` 4.7 现代化；另有 5 处疑点照录，见 `CHECKLIST.md` 第四节；版面通读已做（脚本检查加缩略图逐页目测，调整了图 4·14、4·15 的标注） |
 
 其余各册（代数以外的数学分册、物理第二至第四册、化学等）尚未开始。原书扫描见 `original/`（不入库）。
 
@@ -49,8 +49,15 @@ typst compile books/physics-1/main.typ build/physics-1.pdf --root . --font-path 
 # 写作时自动重新编译
 typst watch   books/physics-1/main.typ build/physics-1.pdf --root . --font-path fonts --ignore-system-fonts
 
+# 其他分册同理，把 physics-1 换成目录名，例如代数第四册
+typst compile books/algebra-4/main.typ build/algebra-4.pdf --root . --font-path fonts --ignore-system-fonts
+
 # 把原书第 1–6 页渲染成 PNG（build/pages/），录入时对照看图
 python scripts/render-pages.py original/数理化自学丛书物理第一册.pdf 1-6
+
+# 数学分册的扫描在合集 PDF 里：先按册切出单册（页范围登记在 scripts/math-volumes.json），再渲染
+python scripts/split-volume.py algebra-4
+python scripts/render-pages.py original/algebra-4.pdf 1-6 --offset 6
 ```
 
 `--ignore-system-fonts` 保证只使用项目指定的开源字体，不会误用系统里的商业字体。
@@ -100,10 +107,14 @@ python scripts/render-pages.py original/数理化自学丛书物理第一册.pdf
 
 ## 录入原则
 
-- 忠实原文：不改写、不删节、不把旧术语改成现代说法（公斤、尔格、马力、tg 等照原书保留）。
+- 忠实原文：不改写、不删节、不擅自“纠正”原书说法。数字版是**改订版**，改动只限已登记的三类：
+  - 原书错误、明显印刷错误：经项目负责人确认后订正，源码写 `// 原书作 xxx` 注释，并登记各册 `REVISIONS.md`；
+  - 旧用词现代化（那末→那么、象→像、模数→模、适合→满足等）：按 [common/TERMINOLOGY.md](common/TERMINOLOGY.md) 逐条登记的处理方式（替换 / 加注 / 照录）；单位、术语牵涉定义和数值换算的（公斤、尔格、马力等）正文照原书，首次出现处加“数字版注”；
+  - 句末“．”统一改为“。”，原书页码引用（“第 60 页”）改为节号引用。
+  - 改动顺序：先登记，再改源码。表里没有的词一律照原书。
 - 编号沿用原书的中间点写法：§1·1、图 4·6、习题 1·2。
 - 公式一律用 Typst 数学排版，不用图片。
-- 原书明显的印刷错误可以改正，但要在源码中注释原文。
+- 看不清的字不凭空补写：写 `#unclear[猜测]` 或按书末答案、算式反推，并记入各册 `CHECKLIST.md`。
 - 扫描本缺页（如物理第一册的封面、“第二版出版说明”“编者的话”）不补写，也不收录。
 - 源码中用 `// p.96` 注释标出原书页码，便于校对。
 
@@ -128,8 +139,8 @@ python scripts/render-pages.py original/数理化自学丛书物理第一册.pdf
 
 ```powershell
 just fonts            # 下载字体（只需一次）
-just build            # 整书编译到 build/physics-1.pdf
-just check            # 整书编译，有错误或警告就失败（提交前用）
+just build            # 整书编译到 build/physics-1.pdf（默认物理第一册；其他册加分册名，如 just build algebra-4）
+just check            # 整书编译，有错误或警告就失败（提交前用；其他册如 just check algebra-4）
 just chapter 7        # 只编译第 7 章，很快（输出 build/solo/ch07.pdf）
 just png 20-24        # 把成书 PDF 的 20–24 页导出成 PNG 核对
 just scan 7-9         # 渲染原书第 7–9 页（带坐标网格），用来量图
