@@ -1,7 +1,7 @@
 """把原书扫描 PDF 的若干页渲染成 PNG，便于逐页看图录入。
 
 用法：
-    python scripts/render-pages.py <pdf> <页码范围> [--offset N] [--dpi 150] [--out build/pages]
+    uv run python scripts/render-pages.py <pdf> <页码范围> [--offset N] [--dpi 150] [--out build/pages]
 
 页码范围写原书页码，例如 "1-6"、"12"、"1-3,8"。
 --offset 是 PDF 页序（0 起计）与原书页码的差：PDF 第 n 页 = 原书第 n-offset 页。

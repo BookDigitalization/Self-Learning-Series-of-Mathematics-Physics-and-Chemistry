@@ -1,0 +1,10 @@
+# scripts/ 下辅助脚本的 Python 依赖，由 uv 管理：`uv run python scripts/xxx.py`（just 命令已经这样调用）。
+[project]
+name = "shulihua-scripts"
+version = "0"
+requires-python = ">=3.10"
+# PyMuPDF 2.x 会连带装 onnxruntime、numpy 等大依赖，脚本用不到，限定 1.x
+dependencies = ["pymupdf>=1.24,<2"]
+
+[tool.uv]
+package = false

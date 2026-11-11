@@ -47,7 +47,7 @@ build/                     编译产物（不提交）
 - 图书模板：主选 `@preview/bookly`，备选 `orange-book`、`concise-history`（理由见 README）。模板只在 `common/series.typ` 中引用，各书不得直接 import 模板。
 - 字体**只用开源免费字体**（OFL），避免版权纠纷：正文宋体 `Noto Serif SC`，标题/强调黑体 `Noto Sans SC`，边注与图题楷体 `霞鶩文楷`（LXGW WenKai，Typst 只认这个中文族名），西文与公式用 Typst 内置 `New Computer Modern`。
   **禁止使用** SimSun、SimHei、KaiTi、Microsoft YaHei、Times New Roman 等商业/系统字体。
-  字体文件在 `fonts/`（不入库，`scripts/get-fonts.ps1` 下载），编译必须带 `--font-path fonts --ignore-system-fonts`。字体选择集中在 `common/series.typ`。
+  字体文件在 `fonts/`（不入库，`just fonts` 下载：Windows 走 `scripts/get-fonts.ps1`，Linux / macOS 走 `scripts/get-fonts.sh`），编译必须带 `--font-path fonts --ignore-system-fonts`。字体选择集中在 `common/series.typ`。
 - 公式用 Typst 原生数学（`$ v = s / t $`）。中文单位写在公式外或用 `"米/秒"` 文本；三角函数写 Typst 内置的 `tan`、`cot`、`arctan`（原书作 tg、ctg、arc tg，已按 `common/TERMINOLOGY.md` 统一改）。
 - 编号：章节、图、习题的编号格式统一用 `·` 分隔，在 `series.typ` 里用自定义 `numbering` 函数实现（如 `(..n) => n.pos().map(str).join("·")`）。
 - 插图优先用 **CeTZ**（`@preview/cetz`）重绘示意图、受力图、坐标图、几何图；写实插画（人物、器械）用原扫描裁剪 + 去底色/二值化后的 PNG，放到 `figures/`，并在源码注释里记录来源页。首次使用 `@preview` 包需联网下载。
@@ -62,8 +62,8 @@ build/                     编译产物（不提交）
   - `#answers("1·1")[+ …]`：习题答案，引用了不存在的习题时编译报错。
   - `#unclear[猜测]`：识别不清的字，用黄底标出。`#dnote[…]`：数字版注（脚注）。
   - `main.typ` 分区：`front-matter` → `tableofcontents` → `main-matter` → 各章 → `back-matter` → 总复习题、答案、附录（这几部分的一级标题不编号，照原书写全称）。
-- Python 3.10 + PyMuPDF（`import pymupdf`）用于渲染原书页面：
-  `python scripts/render-pages.py original/数理化自学丛书物理第一册.pdf 1-6` 按原书页码渲染到 `build/pages/p0001.png…`（默认 offset 4、150 dpi）；
+- Python 3.10 + PyMuPDF（`import pymupdf`，限定 1.x）用于渲染原书页面，一律经 **uv** 运行（依赖在 `pyproject.toml`，不要直接调用 `python`/`pip`）：
+  `uv run python scripts/render-pages.py original/数理化自学丛书物理第一册.pdf 1-6` 按原书页码渲染到 `build/pages/p0001.png…`（默认 offset 4、150 dpi）；
   加 `--raw` 时按 PDF 页序（0 起计），用于目录页。
 
 ## 工作流程（每次处理一段内容）

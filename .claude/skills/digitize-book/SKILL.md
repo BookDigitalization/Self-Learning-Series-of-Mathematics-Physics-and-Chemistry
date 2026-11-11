@@ -41,7 +41,7 @@ description: 《数理化自学丛书》及同类扫描教材的数字化工作�
 
 ```powershell
 just check
-python scripts/audit-pdf.py build/physics-1.pdf --sheets build/sheets
+uv run python scripts/audit-pdf.py build/physics-1.pdf --sheets build/sheets
 ```
 
 脚本检查：字体是否都是开源字体、书签目标页、目录页码与页脚是否一致、相邻文字行重叠、页底孤立标题、字数过少的页，并生成每 20 页一张的缩略图，逐张看整体版面（有没有溢出、被截断的图、意外空白页）。

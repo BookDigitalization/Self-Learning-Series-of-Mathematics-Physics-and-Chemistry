@@ -32,10 +32,10 @@
 规则：**所有几何图都用 CeTZ 重绘**（矢量、图中字母是真文字）；只有写实插画（绪论里的床、汽车、陶罐、人物、器械照片之类）才裁扫描二值化 PNG（放 `figures/`，源码注释记来源页）。
 
 ### 取坐标
-- 渲染页面：几何第一册 `python scripts/render-pages.py original/geometry-1.pdf 110-113 --offset 6 --dpi 200 --grid 100 --out build/pages/g1`；几何第二册 `python scripts/render-pages.py original/geometry-2.pdf 110-113 --offset 4 --dpi 120 --grid 100 --out build/pages/g2`（`--out` 必须带册目录，别的段在并行渲染）。两册的页面宽度都约 1000 像素。
+- 渲染页面：几何第一册 `uv run python scripts/render-pages.py original/geometry-1.pdf 110-113 --offset 6 --dpi 200 --grid 100 --out build/pages/g1`；几何第二册 `uv run python scripts/render-pages.py original/geometry-2.pdf 110-113 --offset 4 --dpi 120 --grid 100 --out build/pages/g2`（`--out` 必须带册目录，别的段在并行渲染）。两册的页面宽度都约 1000 像素。
   网格图 `build/pages/g1/pNNNN-grid.png` 上标着**真实像素坐标**，按网格数字读坐标，不要凭显示缩小的图估计；读文字用 `scripts/crop-view.py … --grid 0` 放大看。
 - 单幅图要读准时，用 `scripts/crop-view.py` 把图所在区域放大并叠网格，**网格数字就是整页坐标**，不用换算：
-  `python scripts/crop-view.py original/geometry-1.pdf 112 "150,350,800,700" build/pages/f112.png --offset 6 --dpi 200 --zoom 2 --grid 25`
+  `uv run python scripts/crop-view.py original/geometry-1.pdf 112 "150,350,800,700" build/pages/f112.png --offset 6 --dpi 200 --zoom 2 --grid 25`
   （`--dpi`、`--offset` 要和上面渲染整页时一致；`--grid 0` 不画网格，只放大看文字、小标记。输出文件请放到你自己的 scratchpad 或 `build/pages/` 下以段字母开头的名字，避免和别的段冲突。）
   裁写实插画要用的二值化 PNG 才用 `scripts/crop-figure.py`（它的坐标按 200 dpi 页面图，几何第二册要换算）。
 - 原图是手绘，不必描到像素级一致，**但拓扑和比例要对**：点的相对位置、线的交点、哪些点共线/共圆、角的大小大致关系、等长/平行/直角记号、虚线与实线的区别、阴影、字母位置。
@@ -57,7 +57,7 @@
 
 ## 四、编译与自检
 
-- 不要编译整本书（别人的段落还没写完）。用 `python scripts/solo-compile.py <册> <文件…> --ch N --sec M --fig K [--png 1-3]` 单独编译你的文件，参数含义见脚本开头。输出必须**无错误、无警告**。输出 PDF 第 1 页是 solo 封面，`--png` 从第 2 页起导出。
+- 不要编译整本书（别人的段落还没写完）。用 `uv run python scripts/solo-compile.py <册> <文件…> --ch N --sec M --fig K [--png 1-3]` 单独编译你的文件，参数含义见脚本开头。输出必须**无错误、无警告**。输出 PDF 第 1 页是 solo 封面，`--png` 从第 2 页起导出。
 - 导出 PNG 后用 Read 逐页看图，和原书对照：文字、公式、编号、图（元素齐全、字母位置对、没有线条错乱或标注压线）。**每幅图都要核对**，发现错了就改，不要留着。
 - 习题题号要和原书一致；`#exercise("x·y")[…]` 里 `+` 列表的自动编号与原书不一致（跨页续号、起始号不为 1）时，用 `#exercise("x·y")[#set enum(start: n) …]` 之类处理，保证编号一致。
 - 总复习题、习题答案放在 `appendix/`，用 `--back` 编译；`#answers("x·y")` 要求习题已存在，整书拼好前会报错，属正常，其余错误必须清零。

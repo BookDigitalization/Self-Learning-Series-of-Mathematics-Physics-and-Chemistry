@@ -1,7 +1,7 @@
 """把原书扫描页的一块区域放大并叠上带真实坐标的网格，用来给插图量坐标、核对文字。
 
 用法：
-    python scripts/crop-view.py original/geometry-1.pdf 112 "100,420,900,800" build/pages/f112.png --offset 6 --dpi 200 --zoom 2 --grid 50
+    uv run python scripts/crop-view.py original/geometry-1.pdf 112 "100,420,900,800" build/pages/f112.png --offset 6 --dpi 200 --zoom 2 --grid 50
 
 坐标 x0,y0,x1,y1 是“按 --dpi 渲染的整页图”上的像素坐标（和 render-pages.py --dpi 同值输出的 *-grid.png 一致，
 即你读坐标、画图用的那套坐标）；输出图放大 --zoom 倍，网格线按 --grid 像素间隔画，标的数字就是整页坐标。

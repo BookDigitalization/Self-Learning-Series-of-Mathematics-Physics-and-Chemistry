@@ -40,8 +40,8 @@
 
 ```powershell
 # terms.tsv：每行"旧词<TAB>新词"，re: 开头为正则
-python scripts/replace-terms.py --book physics-1 --map terms.tsv          # 先试运行看计数
-python scripts/replace-terms.py --book physics-1 --map terms.tsv --apply  # 再写入
+uv run python scripts/replace-terms.py --book physics-1 --map terms.tsv          # 先试运行看计数
+uv run python scripts/replace-terms.py --book physics-1 --map terms.tsv --apply  # 再写入
 just check
 ```
 

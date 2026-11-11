@@ -3,7 +3,7 @@
 original/
 build/
 
-# 字体文件体积大，由 scripts/get-fonts.ps1 下载
+# 字体文件体积大，由 scripts/get-fonts.ps1 / get-fonts.sh 下载（just fonts）
 fonts/
 
 # 本机私有配置

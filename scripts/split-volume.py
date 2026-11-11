@@ -1,7 +1,7 @@
 """从《数学分册合集》里按册切出单册扫描 PDF，供 render-pages.py 使用。
 
 用法：
-    python scripts/split-volume.py algebra-1
+    uv run python scripts/split-volume.py algebra-1
 
 册的页范围登记在 scripts/math-volumes.json（合集页码，从 1 起，含首尾）。
 **页范围不要照抄合集书签**：书签有错（例如解析几何一级书签落在 2767，实际第 1 章从 2383 起），

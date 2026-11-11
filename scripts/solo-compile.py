@@ -1,8 +1,8 @@
 """单独编译某册的一个或几个章文件（录入时用，整书还没拼好也能编译）。
 
 用法：
-    python scripts/solo-compile.py geometry-1 ch01b.typ --ch 1 --sec 4 --fig 12 --png 1-3 --ppi 90
-    python scripts/solo-compile.py geometry-1 ch02.typ ch02b.typ --ch 2 --sec 0 --fig 0
+    uv run python scripts/solo-compile.py geometry-1 ch01b.typ --ch 1 --sec 4 --fig 12 --png 1-3 --ppi 90
+    uv run python scripts/solo-compile.py geometry-1 ch02.typ ch02b.typ --ch 2 --sec 0 --fig 0
 
 参数（都是“进入这个文件之前”的计数器值，保证节号、图号和整书一致）：
     --ch N    进入文件前已有 N 章；文件以 `= 章名` 开头时填 前一章号（即 章号 − 1），文件从章中间开始时填 当前章号

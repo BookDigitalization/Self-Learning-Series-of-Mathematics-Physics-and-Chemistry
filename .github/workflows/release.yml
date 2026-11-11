@@ -60,12 +60,17 @@ jobs:
         uses: actions/cache@v4
         with:
           path: fonts
-          key: fonts-${{ hashFiles('scripts/get-fonts.ps1') }}
+          key: fonts-${{ hashFiles('scripts/get-fonts.sh') }}
 
       - name: 下载开源字体
         if: steps.fonts-cache.outputs.cache-hit != 'true'
-        shell: pwsh
-        run: ./scripts/get-fonts.ps1
+        run: just fonts
+
+      # Python 辅助脚本经 uv 运行，依赖按 pyproject.toml / uv.lock 安装（与本机 just 命令一致）
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          cache-dependency-glob: uv.lock
 
       - name: 编译（有任何错误或警告就失败）
         run: just check ${{ steps.meta.outputs.book }}
@@ -73,8 +78,7 @@ jobs:
       - name: 检查成书 PDF（页数、书签、可检索文本）
         shell: bash
         run: |
-          python3 -m pip install --quiet pymupdf
-          python3 - <<'PY'
+          uv run --locked python - <<'PY'
           import os, sys, pymupdf
           book = "${{ steps.meta.outputs.book }}"
           d = pymupdf.open(f"build/{book}.pdf")

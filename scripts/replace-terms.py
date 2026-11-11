@@ -1,8 +1,8 @@
 """整词批量替换（用词现代化用）。默认只试运行，加 --apply 才写文件。
 
 用法：
-  python scripts/replace-terms.py --book physics-1 --map terms.tsv            # 试运行：只统计
-  python scripts/replace-terms.py --book physics-1 --map terms.tsv --apply    # 写入
+  uv run python scripts/replace-terms.py --book physics-1 --map terms.tsv            # 试运行：只统计
+  uv run python scripts/replace-terms.py --book physics-1 --map terms.tsv --apply    # 写入
 
 terms.tsv：每行“旧词<TAB>新词”；以 # 开头的行和空行忽略。旧词以 re: 开头表示正则，如
   re:(?<![第十])二个<TAB>两个

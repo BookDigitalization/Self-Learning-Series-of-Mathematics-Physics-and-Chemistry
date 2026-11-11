@@ -41,11 +41,12 @@ build/               编译产物（不入库）
 
 ## 构建
 
-需要 Typst 0.15 及以上版本。首次编译时会从 Typst Universe 下载所需的包，需要联网。
+需要 Typst 0.15 及以上版本、[uv](https://docs.astral.sh/uv/)（运行 Python 辅助脚本，PyMuPDF 等依赖见 `pyproject.toml`，首次运行自动安装），常用操作用 [just](https://github.com/casey/just) 封装（`just` 列出所有命令，Windows 用 PowerShell，Linux / macOS 用 bash）。首次编译时会从 Typst Universe 下载所需的包，需要联网。
 
-```powershell
-# 首次：下载字体到 fonts/
-./scripts/get-fonts.ps1
+```bash
+# 首次：下载字体到 fonts/（即 `just fonts`）
+./scripts/get-fonts.ps1    # Windows（PowerShell）
+./scripts/get-fonts.sh     # Linux / macOS
 
 typst compile books/physics-1/main.typ build/physics-1.pdf --root . --font-path fonts --ignore-system-fonts
 # 写作时自动重新编译
@@ -55,11 +56,11 @@ typst watch   books/physics-1/main.typ build/physics-1.pdf --root . --font-path 
 typst compile books/algebra-4/main.typ build/algebra-4.pdf --root . --font-path fonts --ignore-system-fonts
 
 # 把原书第 1–6 页渲染成 PNG（build/pages/），录入时对照看图
-python scripts/render-pages.py original/数理化自学丛书物理第一册.pdf 1-6
+uv run python scripts/render-pages.py original/数理化自学丛书物理第一册.pdf 1-6
 
 # 数学分册的扫描在合集 PDF 里：先按册切出单册（页范围登记在 scripts/math-volumes.json），再渲染
-python scripts/split-volume.py algebra-4
-python scripts/render-pages.py original/algebra-4.pdf 1-6 --offset 6
+uv run python scripts/split-volume.py algebra-4
+uv run python scripts/render-pages.py original/algebra-4.pdf 1-6 --offset 6
 ```
 
 `--ignore-system-fonts` 保证只使用项目指定的开源字体，不会误用系统里的商业字体。
@@ -77,7 +78,7 @@ python scripts/render-pages.py original/algebra-4.pdf 1-6 --offset 6
 | 楷体（边注、图题） | 霞鹜文楷 LXGW WenKai | `霞鶩文楷` | [lxgw/LxgwWenKai](https://github.com/lxgw/LxgwWenKai) |
 | 西文、公式 | New Computer Modern | `New Computer Modern` | Typst 内置 |
 
-字体文件不入库，用 `scripts/get-fonts.ps1` 下载到 `fonts/`。使用静态字重的 OTF/TTF，不用系统自带的可变字体版本（Typst 会嵌入最细字重）。
+字体文件不入库，用 `scripts/get-fonts.ps1`（Windows）或 `scripts/get-fonts.sh`（Linux / macOS）下载到 `fonts/`。使用静态字重的 OTF/TTF，不用系统自带的可变字体版本（Typst 会嵌入最细字重）。
 
 ## 图书模板
 

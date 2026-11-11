@@ -1,6 +1,6 @@
 """整书 PDF 版面与结构审计（只读）。
 
-用法：python scripts/audit-pdf.py build/physics-1.pdf [--sheets build/sheets]
+用法：uv run python scripts/audit-pdf.py build/physics-1.pdf [--sheets build/sheets]
 
 检查：
   1. 字体：列出嵌入字体，提示不在开源名单里的字体。

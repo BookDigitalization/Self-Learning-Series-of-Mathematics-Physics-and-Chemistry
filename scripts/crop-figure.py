@@ -1,7 +1,7 @@
 """从原书扫描页裁剪插图，转灰度并二值化（去掉纸张底色和噪点），保存为 PNG。
 
 用法：
-    python scripts/crop-figure.py <pdf> <原书页码> <x0,y0,x1,y1> <输出.png> [--offset 4] [--dpi 400] [--threshold 170]
+    uv run python scripts/crop-figure.py <pdf> <原书页码> <x0,y0,x1,y1> <输出.png> [--offset 4] [--dpi 400] [--threshold 170]
                                   [--scale 1.0657] [--blank x0,y0,x1,y1 ...]
 
 坐标是 render-pages.py --dpi 200 输出的页面图（1671×2500）上的像素坐标（左上角为原点）。
