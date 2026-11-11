@@ -4,7 +4,7 @@
 // 原书按章分组：“习题 x·y”后列出有答案的题号；复习题、总复习题的答案单列（无习题标签，用小标题）。
 // 原书只列有答案的题，题号不连续，照录。题号后的“.”不是句末标点，不改；
 // 各条末尾的“．”改作“。”，其余分号、逗号一律照原书用全角（数学式内部的逗号照数学式写）。
-// 原书个别印得不清、疑似原书错误之处见 books/algebra-4/notes/appendix.md。
+// 原书个别印得不清、疑似原书错误之处见 CHECKLIST.md 第三节。
 
 #let q(n) = h(0.8em) + [#n.] + sym.wj + h(0.2em) + sym.wj
 // 答案里有不少分式，行距放宽，免得上下行的分式互相压住
@@ -39,7 +39,7 @@
 
 #answers("1·7")[#q(1)\(1) 10，(2) 60；#q(3)\(1) 20，10，(2) 10，20。]
 
-#answers("1·8(1)")[#q(3)\(1) 8，(2) 7；#q(4)\(1) 28，(2) 56；#q(5)\(1) 120，(2) 210。]
+#answers("1·8(1)")[#q(3)\(1) 8，(2) 27/* 原书作 7；按所印习题 C_n^4 = A_n^3 解得 n = 27 */；#q(4)\(1) 28，(2) 56；#q(5)\(1) 120，(2) 210。]
 
 #answers("1·8(2)")[#q(1)\(1) 4，(2) 4，(3) 12，(4) 16，(5) 16；#q(2)\(1) 10，(2) 26，(3) 20，(4) 16；#q(4)116；#q(5)\(1) 217，(2) 494。]
 
@@ -153,7 +153,7 @@
 
 #answers("5·6(1)")[#q(1)\(1) $root(4, 4) (cos (4k + 1)/8 pi + i sin (4k + 1)/8 pi) (k = 0, 1, 2, 3)$#sym.wj，(3) $root(10, 8) (cos (8k + 7)/20 pi + i sin (8k + 7)/20 pi) (k = 0, 1, 2, 3, 4)$#sym.wj，(5) $root(4, 2) (cos (12k + 11)/24 pi + i sin (12k + 11)/24 pi) (k = 0, 1, 2, 3)$#sym.wj；#q(2)\(2) $-3/2$#sym.wj，$(-3 plus.minus 3 sqrt(3) i)/4$#sym.wj，(4) $5/2 sqrt(2) (-1 plus.minus i)$#sym.wj，$5/2 sqrt(2) (1 plus.minus i)$#sym.wj，/* p.238 */(6) $plus.minus 1/2 i$#sym.wj，$(-sqrt(3) plus.minus i)/4$#sym.wj，$(sqrt(3) plus.minus i)/4$#sym.wj。]
 
-// 1 题 (3) 的根指数（原书印得不清）按 x^3 = 1 ± i 推得为 6，见 notes/appendix.md
+// 1 题 (3) 的根指数（原书印得不清）按 x^3 = 1 ± i 推得为 6，见 CHECKLIST.md 第三节
 #answers("5·6(2)")[#q(1)\(1) $root(3, 2)$#sym.wj，$root(3, 2) ((-1 plus.minus sqrt(3) i)/2)$#sym.wj，$root(3, 3)$#sym.wj，$root(3, 3) ((-1 plus.minus sqrt(3) i)/2)$#sym.wj，(2) $plus.minus sqrt(2)/2$#sym.wj，$plus.minus sqrt(2)/2 i$#sym.wj，$plus.minus sqrt(3)/3 i$#sym.wj，$plus.minus sqrt(3)/3$#sym.wj，(3) $root(6, 2) (cos (8k + 1)/12 pi + i sin (8k + 1)/12 pi) (k = 0, 1, 2)$#sym.wj，$root(6, 2) (cos (8k + 7)/12 pi + i sin (8k + 7)/12 pi) (k = 0, 1, 2)$#sym.wj，(4) $plus.minus 1$#sym.wj，$plus.minus i$#sym.wj，$(sqrt(6) plus.minus sqrt(6) i)/2$#sym.wj，$(-sqrt(6) plus.minus sqrt(6) i)/2$#sym.wj；#q(2)\(1) 0，0，0，0，$root(4, 6) (-sqrt(2)/2 plus.minus sqrt(2)/2 i)$#sym.wj，$root(4, 6) (sqrt(2)/2 plus.minus sqrt(2)/2 i)$#sym.wj，$-sqrt(2)/2 plus.minus sqrt(2)/2 i$#sym.wj，$sqrt(2)/2 plus.minus sqrt(2)/2 i$#sym.wj，$root(4, 5) (-sqrt(2)/2 plus.minus sqrt(2)/2 i)$#sym.wj，$root(4, 5) /* 原书作 ∜4（扫描所印；由 y = −2 得 x⁴ = −5，应为 ∜5） */ (sqrt(2)/2 plus.minus sqrt(2)/2 i)$#sym.wj，(2) $plus.minus i$#sym.wj，$plus.minus sqrt(5) i$#sym.wj，$1 plus.minus 2i$#sym.wj，$-1 plus.minus 2i$#sym.wj。]
 
 #answers("5·6(3)")[#q(1)$plus.minus i$#sym.wj，$(-1 plus.minus sqrt(3) i)/2$#sym.wj；#q(2)$-2 plus.minus sqrt(3)$#sym.wj，$(1 plus.minus sqrt(15) i)/4$#sym.wj；#q(3)$(3 plus.minus sqrt(5))/2$#sym.wj，$(-1 plus.minus 2 sqrt(2) i)/3$#sym.wj；#q(4)$-1$#sym.wj，2，$1/2$#sym.wj，$-2 plus.minus sqrt(3)$#sym.wj；#q(5)$-1$#sym.wj，$(1 plus.minus sqrt(3) i)/2$#sym.wj，$(3 plus.minus sqrt(5))/2$#sym.wj；#q(6)2，$1/2$#sym.wj，$(1 plus.minus sqrt(3) i)/2$#sym.wj，$(-3 plus.minus sqrt(5))/2$#sym.wj。]

@@ -136,7 +136,7 @@ $ z_1 = (x + y) + (x^2 - x y - 2y) i dou quad z_2 = (2x - y) - (y - x y) i dou $
 
 (1) $(1 + omega - omega^2)^3 - (1 - omega + omega^2)^3 = 0$；
 
-// 原书此式末项作 ω^(2n)、ω^(4n)，右端作 2^(2n)，照录（见 notes/appendix.md）
+// 原书此式末项作 ω^(2n)、ω^(4n)，右端作 2^(2n)，照录（见 CHECKLIST.md 第四节）
 (2) $(1 - omega + omega^2)(1 - omega^2 + omega^4)(1 - omega^4 + omega^8) dots.c (1 - omega^(2n) + omega^(4n)) = 2^(2n)$（$n$ 是自然数）。
 
 ［提示：利用习题 4·8(1) 第 4 题的结论。］
