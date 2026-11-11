@@ -65,7 +65,7 @@ $ f(x) = a_0 x^n + a_1 x^(n-1) + dots.c + a_(n-1) x + a_n = 0 quad (a_0 != 0) $
 
 #align(center)[$sqrt(a) - sqrt(b) i, quad -sqrt(a) + sqrt(b) i, quad -sqrt(a) - sqrt(b) i$。]
 
-#attention[定理 2 不能推广到任意无理根的情形。例如，有理系数方程 $f(x) = 0$ 如/* p.180 */具有三次不尽根 $x = a + root(3, b)$（$a$ 和 $b$ 皆有理数，$root(3, b)$ 为无理数），但推不出 $f(x) = 0$ 必具有根 $x = a - root(3, b)$。]
+#attention[定理 2 不能推广到任意无理根的情形。例如，有理系数方/* p.180 */程 $f(x) = 0$ 如具有三次不尽根 $x = a + root(3, b)$（$a$ 和 $b$ 皆有理数，$root(3, b)$ 为无理数），但推不出 $f(x) = 0$ 必具有根 $x = a - root(3, b)$。]
 
 #ex("例 4")[已知方程
 
