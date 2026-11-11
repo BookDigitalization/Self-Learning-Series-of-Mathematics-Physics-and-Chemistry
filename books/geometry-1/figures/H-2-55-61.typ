@@ -35,7 +35,7 @@
 })
 
 // 图 2·56：已知三边 a、b、c 作三角形（CB=a，CA=b，BA=c）
-// AB 边旁的字母原图印作 a（形似 α），按原图照画，疑为 c（见备忘）
+// AB 边旁的字母 原书作 a（扫描确印，形似 α）：按下页作法（以 B 为圆心、c 之长为半径）及线段长度（BA 与已知线段 c 等长）订正为 c
 #let fig-H-2-56(width: 660 * k) = px-canvas(660, 190, origin: (200, 1085), width: width, (p, u) => {
   import cetz.draw: *
   pseg(p, (239, 1123), (477, 1123))
@@ -55,7 +55,7 @@
   lbl(p, B, $B$, dir: "s", d: 14)
   lbl(p, P, $P$, dir: "e", d: 10)
   content(p(543, 1173), tt($b$))
-  content(p(683, 1166), tt($a$))
+  content(p(683, 1166), tt($c$)) // 原书作 a
   content(p(631, 1253), tt($a$))
 })
 

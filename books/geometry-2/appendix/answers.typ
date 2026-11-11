@@ -59,7 +59,7 @@
 
 #answers("2·5")[#q(1)11 厘米；#q(2)9 厘米；#q(3)51.15 分米；/* p.312 */#q(5)\(1) 8，(2) 12，(3) 10.34，(4) 12，(5) 36；#q(6)4.8 分米；#q(7)2.4，$sqrt(23.4)$#sym.wj，$sqrt(13.6)$#sym.wj；#q(8)\(1) 8.5，(2) 10.6。]
 
-#answers("2·6")[#q(1)\(1) $A E = 8 "cm"$#sym.wj，(2) $D E = 9 "cm"$#sym.wj；#q(3)$C D = 6 "cm"$#sym.wj，$A B = (sqrt(5) + 1) / 2 a$#sym.wj；#q(4)约有 3940 公里；#q(5)$R$ 为 21 厘米。]
+#answers("2·6")[#q(1)\(1) $A E = 8 "cm"$#sym.wj，(2) $D E = 9 "cm"$#sym.wj；#q(3)$C D = 6 "cm"$#sym.wj，$A B = (sqrt(5) + 1) / 2 a$#sym.wj；#q(4)约有 3940 千米；#q(5)$R$ 为 21 厘米。]
 
 #answers("2·7")[#q(2)8 厘米和 24 厘米；#q(3)24 厘米；#q(6)$a = R - 1 / 2 sqrt(4 R^2 - b^2)$#sym.wj；#q(7)52.5 毫米或 32.5 毫米。]
 
@@ -91,18 +91,18 @@
 
 #answers("4·2")[#q(7)$R = 1 / 2 sqrt(4 r^2 + a^2)$#sym.wj；#q(8)\(1) $r = sqrt(3) / 6 a$#sym.wj，$R = sqrt(3) / 3 a$#sym.wj，/* p.314 */(2) $r = a / 2$#sym.wj，$R = sqrt(2) / 2 a$#sym.wj，(3) $r = sqrt(3) / 2 a$#sym.wj，$R = a$#sym.wj。]
 
-#answers("4·3")[#q(1)$sqrt(3)$ 分米；#q(2)$2 sqrt(2)$ 分米；#q(5)$(1 + sqrt(2) / 2) a$#sym.wj；#q(6)$R^2 / r^2 Q$#sym.wj；#q(7)$b = 31.5 "mm"$#sym.wj；#q(8)\(1) 正三角形，正方形，正六边形，(2) 475 块；#q(9)$2 (sqrt(2) + 1)$ 厘米；#q(11)$2 sqrt(3) d$#sym.wj，$3 sqrt(3) d^2$#sym.wj；#q(13)$sqrt(3) / 3 R$#sym.wj；#q(14)$1 / 2 (2 - sqrt(2)) a$#sym.wj；#q(15)$a_12 = sqrt(2 - sqrt(3)) R$#sym.wj，$a_3 = sqrt(3) R$#sym.wj；#q(16)$a_8 = sqrt(2 - sqrt(2)) R$#sym.wj，$a_16 = sqrt(2 - sqrt(2 + 2)) R$#sym.wj；#q(17)$3 R^2$#sym.wj；#q(19)$n = 3$#sym.wj，$r = sqrt(3) (2 + sqrt(3)) R$#sym.wj，$n = 4$#sym.wj，$r = (sqrt(2) + 1) R$#sym.wj，$n = 6$#sym.wj，$r = R$#sym.wj。]
+#answers("4·3")[#q(1)$sqrt(3)$ 分米；#q(2)$2 sqrt(2)$ 分米；#q(5)$(1 + sqrt(2) / 2) a$#sym.wj；#q(6)$R^2 / r^2 Q$#sym.wj；#q(7)$b = 31.5 "mm"$#sym.wj；#q(8)\(1) 正三角形，正方形，正六边形，(2) 475 块；#q(9)$2 (sqrt(2) + 1)$ 厘米；#q(11)$2 sqrt(3) d$#sym.wj，$3 sqrt(3) d^2$#sym.wj；#q(13)$sqrt(3) / 3 R$#sym.wj；#q(14)$1 / 2 (2 - sqrt(2)) a$#sym.wj；#q(15)$a_12 = sqrt(2 - sqrt(3)) R$#sym.wj，$a_3 = sqrt(3) R$#sym.wj；#q(16)$a_8 = sqrt(2 - sqrt(2)) R$#sym.wj，$a_16 = sqrt(2 - sqrt(2 + sqrt(2))) R$/* 原书作 √(2−√(2+2))R */#sym.wj；#q(17)$3 R^2$#sym.wj；#q(19)$n = 3$#sym.wj，$r = sqrt(3) (2 + sqrt(3)) R$#sym.wj，$n = 4$#sym.wj，$r = (sqrt(2) + 1) R$#sym.wj，$n = 6$#sym.wj，$r = R$#sym.wj。]
 
 #sec[复习题四]
 
-#q(1)等边或等角的多边形内接或外切于一个圆时，一般都是正多边形，但圆内接偶数边等角多边形不一定是正多边形（如矩形），圆外切偶数边的等边多边形也不一定是正多边形（如菱形）；#q(2)5；#q(3)边数相同的必相似，周长之比等于边的比（或边心距、半径的比），面积之比等于边的平方的比（或周长平方、对应对角线平方的比）；#q(4)$sqrt(2) / 2 R$#sym.wj；#q(5)可以求出这正多边形的边长、边心距和外接圆半径；#q(6)$1 / 2 (sqrt(3) - 1)$ 米；#q(7)$n = 6$ 时，$3 sqrt(3) R$#sym.wj，$9 / 8 sqrt(3) R^2$#sym.wj，$n = 8$ 时，$4 sqrt(2) R$#sym.wj，$sqrt(2 sqrt(2)) R^2$#sym.wj；#q(8)$(sqrt(5) + 1)$ 厘米；#q(10)周长的和为 $4 (3 + sqrt(2)) a$#sym.wj，面积的和为 $7 a^2$#sym.wj；#q(11)$sqrt(6) / 3 a$#sym.wj；#q(12)$4 (sqrt(5) - 1)$ 厘米；#q(13)$sqrt(2 + sqrt(2)) a$#sym.wj，$(1 + sqrt(2)) a$#sym.wj，$sqrt(4 + 2 sqrt(2)) a$#sym.wj；#q(15)$2 sqrt(6) "dm"$#sym.wj；#q(16)$a / 3$#sym.wj；#q(19)$B D = 4.2 "m"$#sym.wj，$a_8 = 2.3 "m"$#sym.wj，$h = 2.1 "m"$#sym.wj；#q(20)$A L = (sqrt(2) - 1) R$#sym.wj。
+#q(1)等边或等角的多边形内接或外切于一个圆时，一般都是正多边形，但圆内接偶数边等角多边形不一定是正多边形（如矩形），圆外切偶数边的等边多边形也不一定是正多边形（如菱形）；#q(2)5；#q(3)边数相同的必相似，周长之比等于边的比（或边心距、半径的比），面积之比等于边的平方的比（或周长平方、对应对角线平方的比）；#q(4)$sqrt(2) / 2 R$#sym.wj；#q(5)可以求出这正多边形的边长、边心距和外接圆半径；#q(6)$1 / 2 (sqrt(3) - 1)$ 米；#q(7)$n = 6$ 时，$3 sqrt(3) R$#sym.wj，$9 / 8 sqrt(3) R^2$#sym.wj，$n = 8$ 时，$4 sqrt(2) R$#sym.wj，$(1 + sqrt(2)) R^2$/* 原书作 √(2√2)R² */#sym.wj；#q(8)$(sqrt(5) + 1)$ 厘米；#q(10)周长的和为 $4 (3 + sqrt(2)) a$#sym.wj，面积的和为 $7 a^2$#sym.wj；#q(11)$sqrt(6) / 3 a$#sym.wj；#q(12)$4 (sqrt(5) - 1)$ 厘米；#q(13)$sqrt(2 + sqrt(2)) a$#sym.wj，$(1 + sqrt(2)) a$#sym.wj，$sqrt(4 + 2 sqrt(2)) a$#sym.wj；#q(15)$2 sqrt(6) "dm"$#sym.wj；#q(16)$a / 3$#sym.wj；#q(19)$B D = 4.2 "m"$#sym.wj，$a_8 = 2.3 "m"$#sym.wj，$h = 2.1 "m"$#sym.wj；#q(20)$A L = (sqrt(2) - 1) R$#sym.wj。
 
 // p.315
 #sec[第五章]
 
 #answers("5·1")[#q(1)\(1) 62.83 米，(2) 219.91 厘米；#q(2)\(1) 3.98 厘米，(2) 0.76 分米；#q(4)$2 π R = 21.77 "cm"$#sym.wj，$2 π r = 10.88 "cm"$#sym.wj；#q(5)圆周增加 15.7 厘米，也增加 10%；#q(6)周长增加 $2 π a$#sym.wj；#q(7)直径增加 31.8 厘米；#q(8)342.8 厘米；#q(9)1.1 厘米；#q(10)60 个齿；#q(11)约为 1.257 米/秒；#q(12)$212 "mm"$#sym.wj；#q(14)\(1) $A$ 轮每分钟转 160 次，(2) 皮带长 58.5 尺；#q(15)$R = R_1 + R_2$#sym.wj。]
 
-#answers("5·2")[#q(1)$l = 14.8 "cm"$#sym.wj；#q(3)23.6 厘米；#q(6)$0.81 l$#sym.wj；#q(7)\(1) $π / 3 a$#sym.wj，(2) $sqrt(2) / 4 π a$#sym.wj，(3) $2 / 9 sqrt(3) π a$#sym.wj；#q(8)圆心角 $α$ 约为 $100°$#sym.wj；#q(9)$127°20'$#sym.wj；#q(10)约为 $15 / 1000$#sym.wj；#q(11)$3 (2 sqrt(3) - 3) l ≈ 1.392 l$#sym.wj。]
+#answers("5·2")[#q(1)$l = 14.8 "cm"$#sym.wj；#q(3)23.6 厘米；#q(6)$0.83 l$/* 原书作 0.81 l */#sym.wj；#q(7)\(1) $π / 3 a$#sym.wj，(2) $sqrt(2) / 4 π a$#sym.wj，(3) $2 / 9 sqrt(3) π a$#sym.wj；#q(8)圆心角 $α$ 约为 $100°$#sym.wj；#q(9)$127°20'$#sym.wj；#q(10)约为 $15 / 1000$#sym.wj；#q(11)$3 (2 sqrt(3) - 3) l ≈ 1.392 l$#sym.wj。]
 
 #answers("5·3")[#q(1)\(1) $3 / 4 π$#sym.wj，(2) $5 / 12 π$#sym.wj，(3) $3 / 8 π$#sym.wj，(4) $1 / 3 π$#sym.wj，(5) $1 / 8 π$#sym.wj，(6) $π / 10$#sym.wj；#q(2)\(1) $45°$#sym.wj，(2) $108°$#sym.wj，(3) $150°$#sym.wj，(4) $67°30'$#sym.wj，(5) $15°$#sym.wj，(6) $160°$#sym.wj；#q(3)2 厘米；#q(4)\(1) $0.95 l$#sym.wj，(2) $0.90 l$#sym.wj，(3) $0.83 l$#sym.wj；#q(5)$R = 318 "mm"$#sym.wj；#q(6)45 米；#q(7)272 毫米。]
 

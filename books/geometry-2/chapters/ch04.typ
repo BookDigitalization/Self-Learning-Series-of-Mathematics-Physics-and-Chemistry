@@ -62,9 +62,9 @@ $ ∠E A B "的度数" &= 1 / 2 (overparen(B C) + overparen(C D) + overparen(D E
 
 #step[$∴ ∠P A B "的度数" = ∠P B A "的度数" = display(1/2) overparen(A B) "的度数" ju$]
 
-#step[$∴ △P A B$ 是等腰三角形，它的两个底角的度数各等于 $display(1/2) overparen(A B)$ 的度数的一半。]
+#step[$∴ △P A B$ 是等腰三角形，它的两个底角的度数各等于 $display(1/2) overparen(A B)$ 的度数/* 原书此处多“的一半” */。]
 
-用同样的方法可以证明 $△Q B C$，$△R C D$，$△S D E$，$△T E A$ 都是等腰三角形，它们的每一个底角的度数都等于 $display(1/2) overparen(A B)$ 的度数的一半。
+用同样的方法可以证明 $△Q B C$，$△R C D$，$△S D E$，$△T E A$ 都是等腰三角形，它们的每一个底角的度数都等于 $display(1/2) overparen(A B)$ 的度数/* 原书此处多“的一半” */。
 
 这些等腰三角形不仅有底角相等，而且它们的底边 $A B$，$B C$，$C D$，$D E$，$E A$ 也都相等。
 
