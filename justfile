@@ -6,7 +6,6 @@ set shell := ["pwsh", "-NoProfile", "-Command"]
 set windows-shell := ["pwsh", "-NoProfile", "-Command"]
 
 book := "physics-1"
-scan := "original/数理化自学丛书物理第一册.pdf"
 flags := "--root . --font-path fonts --ignore-system-fonts"
 
 # 列出所有命令
@@ -31,6 +30,10 @@ watch book=book:
 chapter n book=book:
     @$nn = '{{n}}'.PadLeft(2,'0'); New-Item -ItemType Directory -Force build/solo | Out-Null; "#import `"/common/series.typ`": *`n#show: series-book.with(title: `"单章测试`")`n#show: main-matter`n#counter(heading).update({{n}} - 1)`n#include `"/books/{{book}}/chapters/ch$nn.typ`"" | Set-Content build/solo/main$nn.typ -Encoding utf8; typst compile build/solo/main$nn.typ build/solo/ch$nn.pdf {{flags}}
 
+# 数学册（代数、几何）单独编译若干章文件，如 `just solo geometry-1 "ch01.typ ch01b.typ" --ch 1 --sec 1 --fig 1 --png 1-3`；参数照 scripts/solo-compile.py（`chapter` 只认 chNN.typ，不认 ch01b 这类续篇）
+solo book files *args:
+    python scripts/solo-compile.py {{book}} {{files}} {{args}}
+
 # 把整书某几页导出成 PNG 核对：`just png 20-24`（页号是成书 PDF 页序，从 1 起）。输出 build/check-<页>.png
 png pages ppi="70" book=book:
     typst compile books/{{book}}/main.typ "build/check-{p}.png" {{flags}} --pages {{pages}} --ppi {{ppi}}
@@ -41,22 +44,25 @@ chapter-png n pages ppi="70" book=book:
 
 # ───────────── 原书扫描 ─────────────
 
-# 渲染原书页（按原书页码，如 `just scan 7-9`）到 build/pages/，带坐标网格，用来量图的坐标
-scan pages dpi="200" grid="100":
-    python scripts/render-pages.py {{scan}} {{pages}} --dpi {{dpi}} --grid {{grid}}
+# 渲染原书页（按原书页码，如 `just scan 7-9`；其他册 `just scan 7-9 200 100 geometry-1`），带坐标网格，用来量图的坐标。册的扫描件路径和 offset 取自 scripts/book-scan.py
+scan pages dpi="200" grid="100" book=book:
+    $i = (python scripts/book-scan.py {{book}}) -split ' '; python scripts/render-pages.py $i[0] {{pages}} --offset $i[1] --dpi {{dpi}} --grid {{grid}}
 
-# 渲染原书页，不带网格（只想看内容时）
-scan-plain pages dpi="150":
-    python scripts/render-pages.py {{scan}} {{pages}} --dpi {{dpi}}
+# 渲染原书页，不带网格（只想看内容时）：`just scan-plain 7-9 150 geometry-1`
+scan-plain pages dpi="150" book=book:
+    $i = (python scripts/book-scan.py {{book}}) -split ' '; python scripts/render-pages.py $i[0] {{pages}} --offset $i[1] --dpi {{dpi}}
 
 # 渲染目录页（PDF 页序，0 起）
-scan-toc pages="0-4":
-    python scripts/render-pages.py {{scan}} {{pages}} --raw
+scan-toc pages="0-4" book=book:
+    $i = (python scripts/book-scan.py {{book}}) -split ' '; python scripts/render-pages.py $i[0] {{pages}} --offset $i[1] --raw
 
-# 从原书页裁图：`just crop 7 "520,900,1155,1275" books/physics-1/figures/fig1-10.png`；额外参数照 crop-figure.py 写，如 `--blank x0,y0,x1,y1`
-crop page box out *args:
-    python scripts/crop-figure.py {{scan}} {{page}} {{box}} {{out}} --scale 1.0657 {{args}}
+# 从原书页裁图：`just crop 7 "520,900,1155,1275" books/physics-1/figures/fig1-10.png`；其他册在 out 后加册名 `… out.png geometry-1`；额外参数照 crop-figure.py 写，如 `--blank x0,y0,x1,y1`
+crop page box out book=book *args:
+    $i = (python scripts/book-scan.py {{book}}) -split ' '; python scripts/crop-figure.py $i[0] {{page}} "{{box}}" {{out}} --offset $i[1] --scale 1.0657 {{args}}
 
+# 扫描页的一块放大并叠页坐标网格（坐标即整页坐标），量图、读小字用：`just crop-view 112 "150,350,800,700" build/pages/f112.png geometry-1`（几何一册 200 dpi，二册 120 dpi）
+crop-view page box out book=book dpi="200" zoom="2" grid="25":
+    $i = (python scripts/book-scan.py {{book}}) -split ' '; python scripts/crop-view.py $i[0] {{page}} "{{box}}" {{out}} --offset $i[1] --dpi {{dpi}} --zoom {{zoom}} --grid {{grid}}
 # ───────────── 检查 ─────────────
 
 # 汇总待核对项：黄底标记 #unclear 和 TODO 的位置
