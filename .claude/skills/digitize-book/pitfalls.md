@@ -41,3 +41,10 @@
 - 解答的“【解】”标签放在页底、算式在下一页：用 sticky 块把标签与第一个块（独立公式、竖式、表格）粘住（见 `sol`、`ex`）；物理册的 `solution`/`example` 保持原样，数学册用自己的变体，避免改动已发版册的排版。
 - Typst 数学：`(a+b)h/2` 会被解析成 (a+b)·(h/2)，要写 `((a+b)h)/2`；负分数写 `-frac(1,2)`；`#h(3em)` 或 `#edot[…]` 后面紧跟 `(` 会被当成函数参数，写成 `\(`；独立公式末尾的句号写 `class("normal", "。")`（在代码上下文里要写 `math.class`）。
 - 提交说明里不要出现弯引号“”（PowerShell 会当成引号），用 `[IO.File]::WriteAllText` 写说明文件再 `git commit -F`。
+## 几何册（平面几何 1–2 册）
+
+- CeTZ 里自己的函数参数不要叫 `fill`、`stroke`（会遮住 `cetz.draw` 的同名函数）；`geo.typ` 里的点线样式叫 `dotted` 而不是 `dot`（会遮住数学里的 `dot`）。`seg` 已带 stroke，虚线段用 `dseg`。
+- `anglearc` 不接受带角度单位的 `calc.rem`，先 `.deg()` 转成数。
+- `#unclear[…]` 在 CeTZ 画布里不显黄底，要在图里写 `box(fill: rgb("#ffe58f"), …)`；`just todo` 已扫描 `figures/*.typ`。
+- 扫描分辨率不同：几何第一册用 200 dpi、offset 6，第二册 120 dpi、offset 4，页宽都约 1000 像素，图缩放 `0.0152cm/px`。
+- 旧用词替换会漏掉变体（如“补助直线”漏在“补助线”规则外）：独立核对时专门 grep 一遍旧词变体，补进 tsv 与 TERMINOLOGY。

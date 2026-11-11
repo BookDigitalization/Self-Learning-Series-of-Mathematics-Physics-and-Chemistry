@@ -1,6 +1,6 @@
 # 并行录入 / 独立核对：给子 agent 的通用简报
 
-主会话派 agent 时，在任务里写清**册名、文件、页范围、节分界、测试计数器**，并让 agent 先读本文。本文把数学册（代数 1、2 册）踩过的坑都固定下来。
+主会话派 agent 时，在任务里写清**册名、文件、页范围、节分界、测试计数器**，并让 agent 先读本文。本文把数学册（代数 1–4 册、平面几何 1–2 册）踩过的坑都固定下来；几何册另读 `geometry.md`。
 
 ## 一、先读
 
@@ -24,7 +24,7 @@
 
 - 原书 p.n = 单册扫描 PDF 的页序（0 起计）n + offset（offset 见 `scripts/math-volumes.json`）。`python scripts/render-pages.py original/<册>.pdf 1-6 --offset <offset> --dpi 110 --out build/pages-<你的代号>`。110 dpi 通读，存疑放大到 200–500 dpi（用 PyMuPDF 按 clip 区域渲染局部）。输出目录、临时脚本都放在你自己的子目录，不要用共享的 scratchpad 根目录（别人会覆盖同名文件）。
 - **逐页看图再录入**，不凭记忆或常识补写。数字、指数、符号、正负号、括号层次、分子分母层次逐个核对。**3 与 8、2 与 3、1 与 7 在低分辨率扫描里很容易混**：放大对照同页别处的 3 和 8；用算式自洽；**用书末“习题答案”反推最可靠**（答案区页码见 volumes.json 的 note）；仍定不了的用 `#unclear[猜测]` 并在报告里列出。疑似原书自身错误**照录**，不自行订正，报告里列出（页码、原文、疑点）。
-- **只编译单章，不要编译整书**（整书会引用别人未完成的文件）：自己建 `build/solo-<代号>/main.typ`：
+- **只编译单章，不要编译整书**（整书会引用别人未完成的文件）。几何册直接用 `python scripts/solo-compile.py <册> <文件…> --ch N --sec M --fig K`（见 `geometry.md`）；也可以自己建 `build/solo-<代号>/main.typ`：
   ```
   #import "/common/series.typ": *
   #show: series-book.with(title: "代数", volume: "第N册")

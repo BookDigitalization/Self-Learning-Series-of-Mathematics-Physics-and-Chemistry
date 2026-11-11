@@ -23,6 +23,8 @@ description: 《数理化自学丛书》及同类扫描教材的数字化工作�
 
 踩过的坑（PowerShell、Typst、git）见 [pitfalls.md](pitfalls.md)，动手前扫一眼。
 
+数学册（代数、几何等）的整册流水线与给子 agent 的简报：[parallel-brief.md](parallel-brief.md)；**几何册（图多、有证明格式）另见 [geometry.md](geometry.md)**，术语表 `common/geo-terms.tsv`，图工具 `common/geo.typ`，辅助脚本 `scripts/crop-view.py`（裁剪放大并叠页坐标网格）、`scripts/solo-compile.py`（单文件独立编译）。
+
 ## 必须遵守的几条
 
 - **先登记，再改源码。** 用词改动先进 `TERMINOLOGY.md`，具体改动进 `REVISIONS.md`，然后才改 `.typ`。
@@ -30,6 +32,10 @@ description: 《数理化自学丛书》及同类扫描教材的数字化工作�
 - **不要凭常识补内容或猜数字。** 看不清的字写 `#unclear[猜测]`，或用答案、算式反推并在 REVISIONS 里写明依据。
 - **页码必须从源码 `/* p.N */` 标记里取，不要估。** 写进 REVISIONS 的页码要核实过。
 - 每批改动后 `just check`（必须"无错误、无警告"）再提交；提交信息用文件传入（`git commit -F`）。**不要自行 push**，用户明确说推送才推。
+
+## 整册流水线（数学册实践）
+
+录入（按节分段并行）→ 改订（先用 `scripts/replace-terms.py` 按 tsv 批量换词，再逐条订正原书错误并登记）→ **独立核对**（换一批 agent 对照扫描重核，直接改能确定的错、其余上报）→ 整书版面通读 → 提交。每步之后主会话抽查 agent 结论（重算题目数字、核对页码），汇总状态时数字要从文件里数，别凭印象。各段备忘汇总进该册 `CHECKLIST.md`（一至五节），不留 `notes/` 目录。**疑点先记录、不擅自改**：看不清的、改法不唯一的原书疑似错误只记 CHECKLIST，等负责人定。
 
 ## 版面通读
 
@@ -42,6 +48,7 @@ python scripts/audit-pdf.py build/physics-1.pdf --sheets build/sheets
 
 - `OVERLAP` 里图中旋转标注、独立公式的命中通常是误报，要放大看（裁页：`pymupdf` 按 clip 区域 150dpi 渲染）。
 - `ORPHAN` 里"［解］"、答案行开头的命中是正常换页，不用管。
+- 几何册常见的版面问题：章末孤图页 → 缩小末尾几幅图的 `width`（`k·像素` 即 `px * 0.0152cm` 一类）直到回到上一页；图与题分页 → 用 `#block(breakable: false)[题 + 图]`；“本章提要”表被拆页 → 同样包 `breakable: false`；答案区窄行两端对齐难看 → `#set par(justify: false)`。`audit-pdf.py` 对插图内的旋转标注会报 OVERLAP 误报。
 - 已知的修法：答案里的行内分式压行 → `#show math.equation.where(block: false): set text(top-edge: "bounds", bottom-edge: "bounds")`（单加大行距没用）；标题孤立页底 → 标题块加 `sticky: true`；目录多出一页孤行 → 收紧 `outline.entry` 的块间距。
 
 ## 发版
