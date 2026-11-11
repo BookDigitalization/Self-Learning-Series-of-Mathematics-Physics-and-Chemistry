@@ -62,7 +62,8 @@ build/                     编译产物（不提交）
   - `#answers("1·1")[+ …]`：习题答案，引用了不存在的习题时编译报错。
   - `#unclear[猜测]`：识别不清的字，用黄底标出。`#dnote[…]`：数字版注（脚注）。
   - `main.typ` 分区：`front-matter` → `tableofcontents` → `main-matter` → 各章 → `back-matter` → 总复习题、答案、附录（这几部分的一级标题不编号，照原书写全称）。
-- Python 3.10 + PyMuPDF（`import pymupdf`，限定 1.x）用于渲染原书页面，一律经 **uv** 运行（依赖在 `pyproject.toml`，不要直接调用 `python`/`pip`）：
+- Python 3.10 + PyMuPDF（`import pymupdf`，限定 1.x）用于渲染原书页面，一律经 **uv** 运行（依赖在 `pyproject.toml`，不要直接调用 `python`/`pip`）。
+  Linux / macOS 上用 `bash scripts/py.sh` 代替 `uv run python`（参数相同；在 NixOS 上会补 libstdc++ 库路径，否则 PyMuPDF 无法 import），下文的 `uv run python` 一律照此替换。
   `uv run python scripts/render-pages.py original/数理化自学丛书物理第一册.pdf 1-6` 按原书页码渲染到 `build/pages/p0001.png…`（默认 offset 4、150 dpi）；
   加 `--raw` 时按 PDF 页序（0 起计），用于目录页。
 

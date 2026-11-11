@@ -9,7 +9,8 @@ set windows-shell := ["pwsh", "-NoProfile", "-Command"]
 book := "physics-1"
 flags := "--root . --font-path fonts --ignore-system-fonts"
 # Python 一律经 uv 运行，依赖见 pyproject.toml（首次运行自动建 .venv 并安装 PyMuPDF）
-python := "uv run python"
+# Linux / macOS 经 scripts/py.sh（NixOS 上补 libstdc++ 的库路径，否则 PyMuPDF 无法 import）
+python := if os_family() == "windows" { "uv run python" } else { "bash scripts/py.sh" }
 
 # 列出所有命令
 default:
