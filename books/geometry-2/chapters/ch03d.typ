@@ -327,7 +327,7 @@ $B' C'$ 就是求作的线段。]
   + 在 $△A B C$ 中，$C B rt C A = 1 rt 2$。引过点 $C$ 的内角与外角的平分线，内角平分线与 $A B$ 交于点 $L$，外角平分线与 $A B$ 的延长线交于点 $L'$。求证 $△B C L$ 的面积 $rt$ $△A C L$ 的面积 $rt$ $△A B C$ 的面积 $rt$ $△C L L'$ 的面积 $= 1 rt 2 rt 3 rt 4$。
 
     // p.221
-    #plainfig((fig-L-rev3-q17(), [（第 17 题）]))
+    #plainfig((fig-L-rev3-q17(width: 420 * 0.0152cm), [（第 17 题）]))
 
     ［证：取 $C A$ 的中点 $M$，连接 $L M$。$∵ C M = display(1/2) A C = B C$，$C L$ 是 $∠A C B$ 的平分线。可知 $△C B L ≌ △C M L$，从而它们/* 原书作“他们” */的面积相等。又因 $△C L M$ 与 $△A L M$ 是等积三角形，$∴ △B C L$ 的面积 $rt$ $△A C L$ 的面积 $= 1 rt 2$。那么 $△B C L$ 的面积 $rt$ $△A B C$ 的面积 $= 1 rt 3$。
 

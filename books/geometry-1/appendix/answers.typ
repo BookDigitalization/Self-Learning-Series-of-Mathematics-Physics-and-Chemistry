@@ -8,7 +8,7 @@
 // 绪论的“习题”原书不编号，没有习题标签，用 intro-ans 单独排。
 
 #let q(n) = h(0.8em) + [#n.] + sym.wj + h(0.2em) + sym.wj
-#set par(leading: 0.9em)
+#set par(leading: 0.9em, justify: false)
 #show math.equation.where(block: false): set text(top-edge: "bounds", bottom-edge: "bounds")
 #let sec(title) = {
   set par(first-line-indent: 0em)

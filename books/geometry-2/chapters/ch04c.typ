@@ -14,7 +14,7 @@
 
   *4. 计算*　$R$，$r$，$a_n$，$α_n$ 或 $n$ 之间，如已知其中某两个，就可以求出其他的元素。
 
-  例如，已知 $R$，可得下表：
+  #block(breakable: false)[例如，已知 $R$，可得下表：
 
   #align(center, table(
     columns: (auto, auto, auto, auto, auto, auto, auto),
@@ -31,7 +31,7 @@
     [\*5], [$108°$], [$72°$], [$72°$], [$1/2 sqrt(10 - 2 sqrt(5)) space R$], [★], [$5/8 sqrt(2(5 + sqrt(5))) space R^2$],
     [6], [$120°$], [$60°$], [$60°$], [$R$], [$sqrt(3)/2 R$], [$3/2 sqrt(3) space R^2$],
     table.hline(stroke: 1.2pt),
-  ))
+  ))]
 
   （★ $display(1/4) sqrt(2(3 + sqrt(5))) R$）。
 
