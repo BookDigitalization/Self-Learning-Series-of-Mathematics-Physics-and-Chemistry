@@ -105,7 +105,7 @@
   let Mp = (X(10) - 0.74 * dx, y4)
   let Np = (x0 + dx * 3, y4)
   line(p(..M), p(..Q), stroke: lb)
-  line(p(..Q), p(..N), stroke: 0.6pt)
+  line(p(..Q), p(..N), stroke: lb)
   line(p(..Mp), p(..Np), stroke: lb)
   for q in (M, Pp, Q, N, Mp, Np) { ring(p, q, r: 2.8) }
   // 字母

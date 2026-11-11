@@ -121,6 +121,10 @@
   amid(p, E1, E2)
   amid(p, E2, E3)
   amid(p, E3, E4)
+  // 原图 A 的四边形也带描图方向的箭头（A1A2、A2A3、A3A4）
+  amid(p, A1, A2, s: 5)
+  amid(p, A2, A3, s: 5)
+  amid(p, A3, A4, s: 5)
   lbl(p, S, $S$, dir: "w", d: 11)
   lbl(p, C1, $C_1$, dir: "n", d: 10)
   lbl(p, C2, $C_2$, dir: "ne", d: 11)

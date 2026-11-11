@@ -11,9 +11,6 @@
   seg(p, C, O)
   ticks(p, A, B, 1)
   ticks(p, A, C, 1)
-  anglearc(p, B, C, O, 30)
-  anglearc(p, B, O, A, 38)
-  anglearc(p, C, A, O, 38)
   lbl(p, A, $A$, dir: "n", d: 11)
   lbl(p, B, $B$, dir: "sw", d: 11)
   lbl(p, C, $C$, dir: "se", d: 11)
@@ -52,8 +49,9 @@
   for i in range(16) {
     let y = 398 + i * 11
     let o = offs.at(i)
-    line(p(368 + o, y), p(520 - o, y), stroke: lt)
-    line(p(535 + o, y), p(708 - o / 2, y), stroke: lt)
+    let g = 430 + calc.rem(i * 53, 220)   // 每行断口位置错开，和原图的水纹一致
+    line(p(368 + o, y), p(g - 6, y), stroke: lt)
+    line(p(g + 6, y), p(708 - o / 2, y), stroke: lt)
   }
   seg(p, A, (712, 578))
   seg(p, D, B)
@@ -65,11 +63,11 @@
 })
 
 // 第 5 题（p.107）：用等腰直角三角板 DEF 测树高 AB；AK=CD，DK=a
-#let fig-F-q5(width: 410 * k) = px-canvas(410, 390, origin: (320, 870), width: width, (p, u) => {
+#let fig-F-q5(width: 410 * k) = px-canvas(410, 410, origin: (320, 850), width: width, (p, u) => {
   import cetz.draw: *
-  F-img(p, u, "F-q5-tree.png", (325, 885, 480, 1246))
+  F-img(p, u, "F-q5-tree.png", (325, 864, 480, 1246))
   F-img(p, u, "F-q5-man.png", (676, 1152, 712, 1236))
-  let (B, E, D, F) = ((405, 897), (644, 1116), (688, 1158), (644, 1158))
+  let (B, E, D, F) = ((405, 866), (644, 1116), (688, 1158), (644, 1158))
   let bob = (643, 1185)
   dseg(p, B, E)
   seg(p, E, D)
@@ -80,7 +78,7 @@
   poly(p, ((654, 1137), (654, 1149), (667, 1149)), close: true)
   dseg(p, (396, 1158), (676, 1158))
   dseg(p, (410, 1233), (696, 1233))
-  lbl(p, (412, 894), $B$, dir: "n", d: 14)
+  lbl(p, (412, 868), $B$, dir: "n", d: 14)
   lbl(p, (396, 1158), $C$, dir: "w", d: 10)
   lbl(p, (408, 1233), $A$, dir: "s", d: 12)
   lbl(p, E, $E$, dir: "ne", d: 11)

@@ -69,9 +69,10 @@
   K-b(p, C, D)
   K-b(p, D, A)
   K-b(p, M, N)
-  K-b(p, D, N)
-  K-b(p, N, S)
-  K-b(p, B, S)
+  // 原图：辅助线 DN、NS 和延长线 BS 都是虚线（阴影三角形的边）
+  dseg(p, D, N)
+  dseg(p, N, S)
+  dseg(p, B, S)
   ticks(p, D, M, 1)
   ticks(p, M, A, 1)
   ticks(p, C, N, 1)

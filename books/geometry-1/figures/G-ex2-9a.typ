@@ -96,6 +96,8 @@
   let (D, C, B, A) = ((638, 425), (842, 425), (773, 563), (568, 563))
   poly(p, (A, B, C, D), close: true)
   seg(p, D, B)
+  anglearc(p, D, A, B, 16)   // ∠1、∠2 的小角弧（原图有）
+  anglearc(p, B, D, C, 16)
   lbl(p, D, $D$, dir: "n", d: 10)
   lbl(p, C, $C$, dir: "ne")
   lbl(p, B, $B$, dir: "se")

@@ -26,6 +26,8 @@
   seg(p, B, C)
   seg(p, A, B)
   seg(p, C, D)
+  anglearc(p, O, A, B, 17)   // ∠1、∠2 的角弧（原图有）
+  anglearc(p, O, C, D, 17)
   ticks(p, A, O, 2)
   ticks(p, O, D, 2)
   ticks(p, B, O, 1)

@@ -9,7 +9,7 @@
   circ(p, M, 61.5)
   let P0 = (591, 270)
   let P1 = (859, 262.5)
-  line(p(..P0), p(..P1), stroke: lw, mark: (end: "stealth", fill: black, scale: 0.45))
+  line(p(..P0), p(..P1), stroke: lw)   // 原图直线两端是圆点，无箭头
   let (A, D) = O-lc(P0, P1, M, 97.5)
   let (B, C) = O-lc(P0, P1, M, 61.5)
   let K = O-foot(M, P0, P1)
@@ -177,7 +177,7 @@
   seg(p, Q, S)
   seg(p, A, B, stroke: dsh)
   anglearc(p, P, R, Q, 18)
-  anglearc(p, Q, A, S, 15)
+  anglearc(p, Q, ext, S, 15)   // ∠1 是 Q 处 QS 与直线 PQ 延长线所夹的外角（原图弧在 QS 右侧）
   anglearc(p, B, A, S, 15)
   lbl(p, P, $P$, dir: "w", d: 11)
   lbl(p, Q, $Q$, dir: "n", d: 12)
@@ -185,6 +185,6 @@
   lbl(p, B, $B$, dir: "s", d: 13)
   lbl(p, R, $R$, dir: "sw", d: 10)
   lbl(p, S, $S$, dir: "se", d: 10)
-  lbl(p, (Q.at(0) + 17, Q.at(1) + 14), tsm[1], dir: "c", d: 0)
+  lbl(p, (Q.at(0) + 23, Q.at(1) + 17), tsm[1], dir: "c", d: 0)
   lbl(p, (B.at(0) + 12, B.at(1) - 12), tsm[2], dir: "c", d: 0)
 })

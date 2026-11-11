@@ -144,7 +144,7 @@
   let A = (296, 418)
   let (B, E, D) = ((287, 631), (587, 631), (715, 631))
   let C = (710, 553)
-  pimg(p, u, "/books/geometry-2/figures/D-tree7.png", (232, 420, 322, 634))
+  pimg(p, u, "/books/geometry-2/figures/D-tree7.png", (226, 420, 350, 634))
   pimg(p, u, "/books/geometry-2/figures/D-man7.png", (700, 545, 732, 634))
   line(p(230, 631), p(752, 631), stroke: lb)
   seg(p, A, E)
@@ -154,7 +154,7 @@
   lbl(p, B, $B$, dir: "s", d: 11)
   lbl(p, E, $E$, dir: "s", d: 11)
   lbl(p, D, $D$, dir: "s", d: 11)
-  lbl(p, C, $C$, dir: "n", d: 11)
+  lbl(p, C, $C$, dir: "n", d: 22)
 })
 
 // 习题 1·8 第 8 题：树高 DM；杆 AA'、BB'；A'、B'、M 在一直线上
@@ -163,7 +163,7 @@
   let M = (322, 918)
   let (D, B, A) = ((322, 1112), (584, 1112), (672, 1112))
   let (B1, A1) = ((584, 1030), (672, 1070))
-  pimg(p, u, "/books/geometry-2/figures/D-tree8.png", (268, 925, 345, 1118))
+  pimg(p, u, "/books/geometry-2/figures/D-tree8.png", (264, 925, 368, 1118))
   line(p(265, 1112), p(712, 1112), stroke: lb)
   seg(p, B, B1)
   seg(p, A, A1)

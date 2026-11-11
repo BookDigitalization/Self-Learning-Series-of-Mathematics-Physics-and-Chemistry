@@ -178,7 +178,7 @@
   line(p(348, 330), p(348, 368), stroke: lt, mark: (end: "stealth", fill: black, scale: 0.4))
   tickat(p, (1, 0), (0, 0), (348, 238), s: 4)
   A2-t(p, (326, 318), $frac(1, 2) c "寸"$)
-  dimh(p, 230, 497, 417, lab: $c "寸"$, labx: 362)
+  dimh(p, 230, 497, 417, lab: $c "寸"$, labx: 362, gapw: 46)
   tickat(p, (0, 0), (1, 0), (230, 417), s: 4)
   tickat(p, (0, 0), (1, 0), (497, 417), s: 4)
   A2-t(p, (362, 458), tt[(1)])

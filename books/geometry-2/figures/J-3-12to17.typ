@@ -62,7 +62,7 @@
   seg(p, B, D)
   seg(p, D, D1)
   rtmark(p, D1, D, B, s: 8)
-  rtmark(p, O, C, D, s: 8)
+  rtmark(p, O, C, B, s: 8)
   anglearc(p, B, A, D, 15)
   anglearc(p, B, D, C, 15)
   lbl(p, D, $D$, dir: "n", d: 10)

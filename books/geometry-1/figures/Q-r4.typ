@@ -76,7 +76,7 @@
   P-c(p, o, r)
   seg(p, c, d)
   seg(p, a, b)
-  seg(p, o, e)
+  dseg(p, o, e)
   seg(p, a, s)
   seg(p, b, kk)
   lbl(p, a, $A$, dir: "sw", d: 10)

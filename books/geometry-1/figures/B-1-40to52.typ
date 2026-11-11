@@ -207,8 +207,8 @@
   let c = (580, 690)
   let d = (450, 750)
   for t in (a, b, c, d) { B-ray(p, o, t) }
-  anglearc(p, o, a, c, 34)
-  anglearc(p, o, b, d, 24)
+  anglearc(p, o, a, c, 22)
+  anglearc(p, o, b, d, 30)
   lbl(p, o, $O$, dir: "s", d: 12)
   lbl(p, a, $A$, dir: "e", d: 10)
   lbl(p, b, $B$, dir: "ne", d: 10)

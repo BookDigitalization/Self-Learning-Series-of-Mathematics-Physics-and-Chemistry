@@ -44,5 +44,5 @@
   content(p(598, 630), tsm($1$))
   content(p(575, 363), tt($l_1$))
   content(p(768, 513), tt($l_2$))
-  content(p(843, 650), tt(unclear[$l_3$]))   // TODO 原图看不清下标
+  content(p(843, 650), box(fill: rgb("#ffe58f"), inset: (x: 1pt, y: 1.5pt), tt($l_3$)))   // TODO 原图看不清下标
 })

@@ -151,11 +151,11 @@
   B-ray(p, o, b)
   B-ray(p, o, c)
   B-ray(p, o, d)
-  // ∠1 = ∠AOB（外弧）；∠3、∠4 在 OB 与 OC 之间；∠2 = ∠COD
-  anglearc(p, o, a, b, 96)
-  anglearc(p, o, b, c, 72)
-  anglearc(p, o, b, d, 100)
-  anglearc(p, o, c, d, 55)
+  // ∠1 = ∠AOB（外弧）、∠3 = ∠AOC（内弧）、∠4 = ∠AOD（中弧）、∠2 = ∠COD（小弧）；与书末答案一致
+  anglearc(p, o, a, b, 98)
+  anglearc(p, o, a, c, 56)
+  anglearc(p, o, a, d, 77)
+  anglearc(p, o, c, d, 38)
   lbl(p, (636, 1106), $1$, dir: "c", d: 0)
   lbl(p, (602, 1140), $3$, dir: "c", d: 0)
   lbl(p, (622, 1141), $4$, dir: "c", d: 0)

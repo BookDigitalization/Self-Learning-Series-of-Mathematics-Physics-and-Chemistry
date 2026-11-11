@@ -23,6 +23,7 @@
   poly(p, (C, A, B), close: true)
   anglearc(p, C, A, B, 32)
   anglearc(p, B, A, C, 36)
+  anglearc(p, B, A, C, 43)  // 原图 B 处是双弧
   lbl(p, C, $C$, dir: "nw", d: 11)
   lbl(p, A, $A$, dir: "s", d: 12)
   lbl(p, B, $B$, dir: "e", d: 11)
@@ -46,14 +47,14 @@
 })
 
 // 图 2·65：左 △ABC，右 △A'B'C'（∠A'>∠A），虚线为移图后的 △A'BC'，A'M 平分 ∠B'A'B
-// 等长记号：AB、AC、A'B、A'B'、A'C' 各 1 道
+// 等长记号：AB、A'B、A'B' 各 2 道，AC、A'C' 各 1 道（与原图一致）
 #let fig-H-2-65(width: 700 * k) = px-canvas(700, 270, origin: (140, 170), width: width, (p, u) => {
   import cetz.draw: *
   // 左
   let (A, C) = ((178, 405), (443, 405))
   let B = H-pol(A, 256, 32.8)
   poly(p, (A, C, B), close: true)
-  ticks(p, A, B, 1)
+  ticks(p, A, B, 2)
   ticks(p, A, C, 1)
   anglearc(p, A, C, B, 30)
   lbl(p, A, $A$, dir: "w", d: 11)
@@ -72,10 +73,12 @@
   dseg(p, A2, M)
   dseg(p, M, B3)
   dseg(p, B3, C2)
-  ticks(p, A2, B2, 1)
-  ticks(p, A2, B3, 1)
+  ticks(p, A2, B2, 2)
+  ticks(p, A2, B3, 2)
   ticks(p, A2, C2, 1)
   anglearc(p, A2, C2, B3, 30)
+  anglearc(p, A2, B3, M, 26)
+  anglearc(p, A2, M, B2, 26)
   lbl(p, A2, $A'$, dir: "w", d: 11)
   lbl(p, C2, $C'$, dir: "se", d: 11)
   lbl(p, B2, $B'$, dir: "n", d: 11)

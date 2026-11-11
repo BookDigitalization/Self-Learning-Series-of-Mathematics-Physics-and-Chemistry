@@ -96,6 +96,7 @@
   rtmark(p, M, A, E)
   anglearc(p, A, C, B, 28)
   anglearc(p, B, E, A, 30)
+  anglearc(p, B, C, E, 24)  // 原图 BE 两侧各有一道角弧（∠EBA、∠EBC）
   lbl(p, A, $A$, dir: "n")
   lbl(p, C, $C$, dir: "sw", d: 11)
   lbl(p, B, $B$, dir: "e", d: 11)

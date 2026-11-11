@@ -157,7 +157,7 @@
   let E = (M.at(0) + ex, M.at(1) - calc.sqrt(em * em - ex * ex))
   tri(p, A, B, C)
   poly(p, (M, E, D), close: false)
-  line(p(..M), p(..N), stroke: lw, mark: (end: "stealth", fill: black, scale: 0.5))
+  seg(p, M, N)
   dseg(p, M, Mp)
   dseg(p, P, D)
   dseg(p, Q, F)

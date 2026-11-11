@@ -239,7 +239,8 @@
   arc(p(..O), start: -th, stop: th, radius: r, anchor: "origin", stroke: lb)
   line(p(722, 866.5), p(822, 866.5), stroke: lt)
   line(p(722, 1043.5), p(822, 1043.5), stroke: lt)
-  dimv(p, 816, 866.5, 1043.5, lab: [25], laby: 955, gaph: 26)
+  dimv(p, 816, 866.5, 1043.5)
+  lbl(p, (835, 955), [25], dir: "c", d: 0)  // 原图 25 写在尺寸线右侧
   dimh(p, xl, xr, 893, lab: [30], gapw: 28)
   line(p(xl, 888), p(xl, yt), stroke: lt)
   line(p(xr, 888), p(xr, yt), stroke: lt)

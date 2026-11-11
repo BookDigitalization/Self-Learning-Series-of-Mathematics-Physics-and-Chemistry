@@ -66,7 +66,7 @@
   anglearc(p, C, P, A, 16)
   anglearc(p, C, A, D, 20)
   ring(p, O, r: 3)
-  lbl(p, C, $C$, dir: "nw", d: 11)
+  lbl(p, C, $C$, dir: "nw", d: 15)
   lbl(p, P, $P$, dir: "s", d: 12)
   lbl(p, A, $A$, dir: "s", d: 12)
   lbl(p, D, $D$, dir: "s", d: 12)
@@ -207,7 +207,7 @@
   seg(p, C, D)
   lbl(p, M, $M$, dir: "w", d: 11)
   lbl(p, Q, $Q$, dir: "n", d: 10)
-  lbl(p, C, $C$, dir: "se", d: 9)
+  lbl(p, C, $C$, dir: "e", d: 13)
   lbl(p, A, $A$, dir: "w", d: 10)
   lbl(p, P, $P$, dir: "sw", d: 10)
   lbl(p, B, $B$, dir: "s", d: 11)
@@ -249,8 +249,8 @@
   lbl(p, A, $A$, dir: "n", d: 10)
   lbl(p, B, $B$, dir: "sw", d: 10)
   lbl(p, C, $C$, dir: "se", d: 10)
-  lbl(p, M, $M$, dir: "nw", d: 11)
-  lbl(p, N, $N$, dir: "ne", d: 11)
+  lbl(p, M, $M$, dir: "nw", d: 13)
+  lbl(p, N, $N$, dir: "ne", d: 14)
 })
 
 // ───────── 第 30 题（p.307）─────────

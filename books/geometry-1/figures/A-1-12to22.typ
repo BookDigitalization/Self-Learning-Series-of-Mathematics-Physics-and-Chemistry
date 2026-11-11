@@ -90,8 +90,8 @@
   A-dim(p, 386, 599, 1044, lab: $l$, labx: 498, gapw: 14)
   seg(p, (386, 1071), (599, 1071))
   A-dim(p, 466, 599, 1097, lab: $m$, labx: 526, gapw: 18)
-  lbl(p, (381, 1083), $P$, dir: "c", d: 0)
-  lbl(p, (466, 1083), $Q$, dir: "c", d: 0)
+  lbl(p, (375, 1085), $P$, dir: "c", d: 0)
+  lbl(p, (458, 1085), $Q$, dir: "c", d: 0)
   // 右：从 l 的左端起截取 m，P 在右端
   A-vl(p, 614, 1036, 1103)
   A-vl(p, 830, 1036, 1103)
@@ -99,8 +99,8 @@
   A-dim(p, 614, 830, 1044, lab: $l$, labx: 716, gapw: 14)
   seg(p, (614, 1071), (830, 1071))
   A-dim(p, 614, 748, 1097, lab: $m$, labx: 684, gapw: 18)
-  lbl(p, (748, 1083), $Q$, dir: "c", d: 0)
-  lbl(p, (826, 1083), $P$, dir: "c", d: 0)
+  lbl(p, (740, 1085), $Q$, dir: "c", d: 0)
+  lbl(p, (820, 1085), $P$, dir: "c", d: 0)
 })
 
 // 图 1·18（p.15）：用分割规把线段 AB 五等分（写实插画，字母和数字重新标注）
@@ -119,16 +119,17 @@
   import cetz.draw: *
   // (1)
   A-img(p, u, "A-1-19a.png", (600, 634, 690, 758))
+  rect(p(644, 740), p(664, 760), fill: white, stroke: none)   // 涂去 PNG 里原有的字母 B，下面用真文字补
   seg(p, (319, 762), (712, 762))
   for (i, x) in ((1, 386), (2, 462), (3, 536), (4, 608), (5, 681)) {
     A-tick(p, (0, 0), (1, 0), (x, 762), s: 5)
     A-t(p, (x, 777), [#i])
   }
-  A-tick(p, (0, 0), (1, 0), (654, 762), s: 5)
+  A-tick(p, (0, 0), (1, 0), (652, 762), s: 5)
   lbl(p, (317, 750), $A$, dir: "c", d: 0)
-  lbl(p, (654, 748), $B$, dir: "c", d: 0)
-  A-vl(p, 651, 762, 815)
-  A-vl(p, 682, 762, 815)
+  lbl(p, (653, 750), $B$, dir: "c", d: 0)
+  A-vl(p, 651, 781, 817)   // 原图尺寸界线从刻度数字下方画起
+  A-vl(p, 682, 787, 817)
   line(p(623, 802), p(650, 802), stroke: lt, mark: (end: "stealth", fill: black, scale: 0.4))
   line(p(704, 802), p(683, 802), stroke: lt, mark: (end: "stealth", fill: black, scale: 0.4))
   lbl(p, (666, 802), $a$, dir: "c", d: 0)
@@ -143,12 +144,12 @@
   A-tick(p, (0, 0), (1, 0), (643, 989), s: 5)
   lbl(p, (301, 975), $A$, dir: "c", d: 0)
   lbl(p, (643, 978), $B$, dir: "c", d: 0)
-  A-vl(p, 611, 989, 1035)
-  A-vl(p, 643, 989, 1035)
-  line(p(579, 1011), p(610, 1011), stroke: lt, mark: (end: "stealth", fill: black, scale: 0.4))
-  line(p(675, 1011), p(644, 1011), stroke: lt, mark: (end: "stealth", fill: black, scale: 0.4))
-  lbl(p, (627, 1012), $a$, dir: "c", d: 0)
-  A-t(p, (586, 1051), [(2)])
+  A-vl(p, 610, 1014, 1042)
+  A-vl(p, 642, 1010, 1042)
+  line(p(579, 1027), p(609, 1027), stroke: lt, mark: (end: "stealth", fill: black, scale: 0.4))
+  line(p(675, 1027), p(643, 1027), stroke: lt, mark: (end: "stealth", fill: black, scale: 0.4))
+  lbl(p, (626, 1027), $a$, dir: "c", d: 0)
+  A-t(p, (510, 1052), [(2)])
 })
 
 // 图 1·20（p.16）：在射线 AM 上截取 5 个 a

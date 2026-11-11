@@ -11,6 +11,8 @@
   anglearc(p, C, B, A, 22)
   anglearc(p, A, B, M, 24)
   anglearc(p, A, M, C, 24)
+  anglearc(p, A, B, M, 30)   // 原图 A 处为双弧
+  anglearc(p, A, M, C, 30)
   lbl(p, A, $A$, dir: "ne", d: 11)
   lbl(p, B, $B$, dir: "sw", d: 11)
   lbl(p, C, $C$, dir: "se", d: 11)

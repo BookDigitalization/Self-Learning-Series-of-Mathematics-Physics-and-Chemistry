@@ -114,7 +114,7 @@
   dseg(p, P, B)
   rtmark(p, A, O, (150, 989), s: 7)
   rtmark(p, B, O1, (540, 989), s: 7)
-  rtmark(p, P, O, top, s: 7)
+  rtmark(p, P, O, M, s: 7)
   amk(p, A, O, P, 26)
   amk(p, B, O1, P, 26)
   amk(p, P, O, A, 20)

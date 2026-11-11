@@ -77,7 +77,7 @@
   let r = 166
   darc(p, O, r, 0, 180)
   dseg(p, (548, 983), (880, 983))
-  dseg(p, (757, 983), (757, 823))
+  seg(p, (757, 983), (757, 823))   // x 在原图为实线
   tickat(p, (548, 983), (880, 983), (757, 983), s: 0)
   tseg(p, (880, 983), (880, 945))
   lbl(p, (660, 983), $c$, dir: "s", d: 10)
@@ -96,7 +96,7 @@
   tickat(p, A1, B1, A1, s: 5)
   tickat(p, A1, B1, B1, s: 5)
   dimh(p, 568, 735, 265, lab: $x$)
-  dimh(p, 735, 835, 265, lab: $a - x$, gapw: 36)
+  dimh(p, 735, 835, 265, lab: $a - x$, gapw: 48)
   lbl(p, (739, 254), $P$, dir: "c", d: 0)
   lbl(p, (556, 243), $A$, dir: "w", d: 6)
   lbl(p, (846, 243), $B$, dir: "e", d: 6)
@@ -115,6 +115,9 @@
   // 以 A 为圆心，从 D 到 P 的虚线弧
   let a0 = dirang(D.at(0) - A.at(0), D.at(1) - A.at(1))
   darc(p, A, r, 0, a0.deg())
+  // 以 C 为圆心、CD = CB = a/2 为半径，从 D 到 B 的虚线弧（原图有）
+  let a1 = dirang(D.at(0) - C.at(0), D.at(1) - C.at(1))
+  darc(p, C, dist(B, C), a1.deg(), -90)
   lbl(p, A, $A$, dir: "w", d: 9)
   lbl(p, B, $B$, dir: "e", d: 9)
   lbl(p, C, $C$, dir: "ne", d: 9)

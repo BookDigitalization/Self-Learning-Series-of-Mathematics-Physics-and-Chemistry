@@ -61,7 +61,7 @@
   let q = (p1.at(0) - tq * (b.at(0) - p1.at(0)) , 731)
   seg(p, a, pp)
   seg(p, pp, b)
-  dseg(p, a, q)
+  seg(p, a, q) // 原图 AQ 为实线
   dseg(p, a, p1)
   dseg(p, b, q)
   dseg(p, b, q2)
@@ -145,6 +145,8 @@
   seg(p, a, c)
   seg(p, b, e)
   anglearc(p, e, b, c, 36)
+  anglearc(p, a, b, c, 30) // 原图 ∠BAC 处的双弧
+  anglearc(p, a, b, c, 36)
   lbl(p, (e.at(0) + 14, e.at(1) + 30), $d$, dir: "c", d: 0)
   lbl(p, a, $A$, dir: "nw", d: 10)
   lbl(p, e, $E$, dir: "ne", d: 10)

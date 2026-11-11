@@ -204,7 +204,7 @@ $ A B &= 5.4 "mm" times 10 = 54 "mm" = 5.4 "cm" dou \
     #plainfig((fig-A-ex3-4(), [（第 4 题）]))
   + 根据上题的图填写下面的空白：\
     (1) $A C = B C + bk fen$#h(3em);(2) $C D = A D - bk - bk fen$\
-    (3) $B C = A D - bk - bk fen$/* p.18 */#h(1em);(4) $A B + B C = bk - C D fen$\
+    /* p.18 */(3) $B C = A D - bk - bk fen$#h(1em);(4) $A B + B C = bk - C D fen$\
     (5) $A D = bk + bk dou$把几种答案都写出来。
   + 下图中 $M$ 是线段 $A B$ 的中点，填写下面的空白：\
     (1) $A M = bk fen$#h(5em);(2) $A B - A M = bk fen$\

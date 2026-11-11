@@ -172,7 +172,11 @@
     catmull(..r.map(t => p(..t)), tension: 0.5, stroke: (paint: black, thickness: 0.5pt, dash: "dashed"))
   }
   // 树
-  line(p(750, 462), p(741, 478), p(730, 486), p(739, 492), p(754, 495), p(772, 488), p(765, 477), p(758, 470), close: true, fill: black, stroke: none)
+  // （原图是一棵黑色的小树：三层叠起的树冠加树干，树干下端靠近 B）
+  line(p(752, 462), p(743, 478), p(761, 478), close: true, fill: black, stroke: none)
+  line(p(752, 471), p(737, 489), p(767, 489), close: true, fill: black, stroke: none)
+  line(p(752, 480), p(730, 498), p(774, 498), close: true, fill: black, stroke: none)
+  line(p(752, 496), p(752, 508), stroke: (paint: black, thickness: 1.6pt))
   // 三角形与中位线（虚线）
   seg(p, A, B, stroke: dsh)
   seg(p, A, V, stroke: dsh)

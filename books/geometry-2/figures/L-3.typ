@@ -139,7 +139,7 @@
   poly(p, (F, H, I, J), close: true)
   carc(p, (652, 1101), 0, 180, 132.3, stroke: dsh)
   dimh(p, 521, 615, 1114, lab: $1/2 A B$, gapw: 42)
-  dimh(p, 615, 784, 1114, lab: $C D$, gapw: 26)
+  dimh(p, 615, 784, 1114, lab: $C D$, gapw: 40)
   lbl(p, (604, 1038), $x$, dir: "c", d: 0)
   lbl(p, E, $E$, dir: "nw", d: 9)
   lbl(p, G, $G$, dir: "ne", d: 9)
@@ -230,7 +230,7 @@
   lbl(p, (442, 535), $A'$, dir: "sw", d: 9)
   lbl(p, (738, 535), $B'$, dir: "se", d: 9)
   dimv(p, 417, 464, 535, lab: $x = a/2$)
-  dimh(p, 442, 738, 561, lab: $y = 2a$, gapw: 38)
+  dimh(p, 442, 738, 561, lab: $y = 2a$, gapw: 64)
 })
 
 // 图 3·35：过顶点 A 的线段三等分 △ABC 的面积
@@ -324,7 +324,7 @@
   poly(p, (A2, B2, C2, D2), close: true)
   dseg(p, O, A2)
   dseg(p, O, B2)
-  rtmark(p, O, A2, B2, s: 8)
+  // 扫描上 O 处无直角记号，不加
   lbl(p, D2, $D''$, dir: "nw", d: 11)
   lbl(p, C2, $C''$, dir: "e", d: 12)
   lbl(p, A2, $A''$, dir: "w", d: 12)

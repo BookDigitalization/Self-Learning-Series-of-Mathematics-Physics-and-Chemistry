@@ -104,10 +104,9 @@
   K-b(p, B, D)
   ticks(p, B, A, 1)
   ticks(p, D, C, 1)
-  anglearc(p, B, A, C, 24)
-  anglearc(p, C, D, B, 24)
-  K-arctick(p, B, A, D, 18, 30)
-  K-arctick(p, C, D, A, 18, 30)
+  // 原图底角处是一条跨过对角线的弧（半径约 27 像素），没有另加短横
+  anglearc(p, B, A, C, 27)
+  anglearc(p, C, D, B, 27)
   lbl(p, (626, 1046), $A$, dir: "c", d: 0)
   lbl(p, (773, 1048), $D$, dir: "c", d: 0)
   lbl(p, (551, 1195), $B$, dir: "c", d: 0)

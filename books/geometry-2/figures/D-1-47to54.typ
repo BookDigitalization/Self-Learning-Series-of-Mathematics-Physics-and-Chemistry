@@ -47,11 +47,11 @@
 // 图 1·49 OA·OB = OC·OD；虚线 AC、BD
 #let fig-D-1-49(width: 490 * k) = px-canvas(490, 240, origin: (285, 415), width: width, (p, u) => {
   import cetz.draw: *
-  let O = (305, 629)
-  let (A, B, X) = ((418, 629), (655, 629), (748, 629))
-  let Y = (569, 431)
-  let C = (432, 538)
-  let D = (510, 482)
+  let O = (320, 629)
+  let (A, B, X) = ((415, 629), (655, 629), (740, 629))
+  let Y = (555, 440)
+  let C = (432, 539)
+  let D = (490, 494)
   line(p(..O), p(..X), stroke: lw)
   line(p(..O), p(..Y), stroke: lw)
   dseg(p, A, C)
@@ -157,8 +157,8 @@
   seg(p, A1, C1)
   rtmark(p, D, C, A)
   rtmark(p, D1, C1, A1)
-  anglearc(p, A, C, B, 14)
-  anglearc(p, A1, C1, B1, 14)
+  rtmark(p, A, D, B)
+  rtmark(p, A1, D1, B1)
   lbl(p, D, $D$, dir: "nw", d: 10)
   lbl(p, C, $C$, dir: "ne", d: 10)
   lbl(p, B, $B$, dir: "se", d: 10)

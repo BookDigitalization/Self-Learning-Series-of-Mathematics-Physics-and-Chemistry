@@ -110,11 +110,10 @@ $ (A B)/(A D) = (A D)/(A F) ju $
 $ (A F)/(A D) = (A D)/(A B) ju $
 ]
 
-#ex([例 2.])[在 $△A B C$ 中，$D E ∥ B C$，$D F ∥ A C$。$A E = 3 "cm"$，$A C = 5 "cm"$，$B C = 10 "cm"$。求 $B F$ 和 $C F$ 的长（图 1·15）。]
+#ex([例 2.])[在 $△A B C$ 中，$D E ∥ B C$，$D F ∥ A C$。$A E = 3 "cm"$，/* p.24 */$A C = 5 "cm"$，$B C = 10 "cm"$。求 $B F$ 和 $C F$ 的长（图 1·15）。]
 
 #fig("1·15", fig-B-1-15(), [])
 
-// p.24
 #sol[$∵$ $D E ∥ B C$，
 
 #eqn("1", $∴ (A D)/(A B) = (A E)/(A C) = 3/5$)
