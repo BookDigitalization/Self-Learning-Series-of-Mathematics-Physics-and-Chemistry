@@ -1,0 +1,123 @@
+// 图 4·53（原书 p.258）、4·54（p.258）、4·55（p.260）、4·56（p.260）、4·57（p.261）；页面 200 dpi 坐标。
+#import "O-base.typ": *
+
+// 图 4·53 圆的外切四边形：圆心 (684, 737)，半径 113；切点方向角 P 271°、Q 17°、R 96.5°、S 170°
+#let fig-O-4-53(width: 320 * k) = px-canvas(320, 280, origin: (535, 595), width: width, (p, u) => {
+  import cetz.draw: *
+  let (M, r) = ((684, 737), 113)
+  let (aP, aQ, aR, aS) = (271, 17, 96.5, 170)
+  let A = O-tv(M, r, aP, aS)
+  let B = O-tv(M, r, aP, aQ)
+  let C = O-tv(M, r, aQ, aR)
+  let D = O-tv(M, r, aR, aS)
+  poly(p, (A, B, C, D), close: true)
+  circ(p, M, r)
+  for a in (aP, aQ, aR, aS) { O-rtick(p, M, O-pa(M, r, a)) }
+  lbl(p, A, $A$, dir: "w", d: 11)
+  lbl(p, B, $B$, dir: "e", d: 11)
+  lbl(p, C, $C$, dir: "ne", d: 10)
+  lbl(p, D, $D$, dir: "nw", d: 10)
+  lbl(p, O-pa(M, r, aP), $P$, dir: "s", d: 12)
+  lbl(p, O-pa(M, r, aQ), $Q$, dir: "e", d: 12)
+  lbl(p, O-pa(M, r, aR), $R$, dir: "n", d: 12)
+  lbl(p, O-pa(M, r, aS), $S$, dir: "w", d: 12)
+})
+
+// 图 4·54 例：圆的外切平行四边形（菱形）ABCD，圆心 M（实心小点）。原图 C 的字母印得像“O”，按正文作 C
+#let fig-O-4-54(width: 245 * k) = px-canvas(245, 185, origin: (620, 1082), width: width, (p, u) => {
+  import cetz.draw: *
+  let (A, B, C, D) = ((644, 1239), (793, 1239), (838, 1098), (688, 1098))
+  let (M, r) = ((738, 1169), 70)
+  poly(p, (A, B, C, D), close: true)
+  circ(p, M, r)
+  pdot(p, M, r: 2)
+  lbl(p, M, $M$, dir: "e", d: 11)
+  lbl(p, A, $A$, dir: "sw", d: 10)
+  lbl(p, B, $B$, dir: "se", d: 10)
+  lbl(p, C, $C$, dir: "ne", d: 10)
+  lbl(p, D, $D$, dir: "nw", d: 10)
+})
+
+// 图 4·55 弦切角 TAB 是锐角：AC 为直径（虚线），BC 虚线，B 处直角记号，A、C 处各一道角弧
+#let fig-O-4-55(width: 300 * k) = px-canvas(300, 270, origin: (545, 255), width: width, (p, u) => {
+  import cetz.draw: *
+  let (M, r) = ((691, 388), 112)
+  let A = (691, 276)
+  let C = (691, 500)
+  let B = O-pa(M, r, 12)
+  let T = (832, 276)
+  seg(p, (548, 276), T)
+  circ(p, M, r)
+  seg(p, A, B)
+  seg(p, A, C, stroke: dsh)
+  seg(p, B, C, stroke: dsh)
+  rtmark(p, B, A, C, s: 9)
+  anglearc(p, A, (741, 276), B, 24)
+  anglearc(p, C, A, B, 24)
+  O-ring(p, M)
+  lbl(p, M, $M$, dir: "e", d: 11)
+  lbl(p, A, $A$, dir: "n", d: 10)
+  lbl(p, B, $B$, dir: "e", d: 11)
+  lbl(p, C, $C$, dir: "s", d: 11)
+  lbl(p, T, $T$, dir: "e", d: 10)
+})
+
+// 图 4·56 (1) 弦切角 TAB 是直角（AB 为直径）、(2) 弦切角 TAB 是钝角（AC 为直径，虚线）；d = ∠TAC
+#let fig-O-4-56(width: 600 * k) = px-canvas(600, 290, origin: (190, 982), width: width, (p, u) => {
+  import cetz.draw: *
+  // (1)
+  let (M1, r) = ((317, 1107), 111)
+  let A1 = (317, 996)
+  let B1 = (317, 1218)
+  seg(p, (199, 996), (461, 996))
+  circ(p, M1, r)
+  seg(p, A1, B1)
+  anglearc(p, A1, (367, 996), B1, 25)
+  O-ring(p, M1)
+  lbl(p, M1, $M$, dir: "e", d: 11)
+  lbl(p, A1, $A$, dir: "n", d: 10)
+  lbl(p, B1, $B$, dir: "s", d: 11)
+  lbl(p, (338, 1018), $d$, dir: "c", d: 0)
+  lbl(p, O-pa(M1, r, 0), $S$, dir: "e", d: 11)
+  lbl(p, (472, 996), $T$, dir: "c", d: 0)
+  O-cap(p, (304, 1260), [(1)])
+  // (2)
+  let M2 = (627, 1111)
+  let A2 = (627, 1000)
+  let C2 = (627, 1222)
+  let B2 = O-pa(M2, r, 205)
+  seg(p, (506, 1000), (761, 1000))
+  circ(p, M2, r)
+  seg(p, A2, B2)
+  seg(p, A2, C2, stroke: dsh)
+  anglearc(p, A2, (677, 1000), C2, 26)
+  anglearc(p, A2, C2, B2, 20)
+  O-ring(p, M2)
+  lbl(p, M2, $M$, dir: "e", d: 11)
+  lbl(p, A2, $A$, dir: "n", d: 10)
+  lbl(p, B2, $B$, dir: "sw", d: 10)
+  lbl(p, C2, $C$, dir: "s", d: 11)
+  lbl(p, (673, 1021), $d$, dir: "c", d: 0)
+  lbl(p, O-pa(M2, r, 0), $S$, dir: "e", d: 11)
+  lbl(p, (769, 1000), $T$, dir: "c", d: 0)
+  O-cap(p, (641, 1261), [(2)])
+})
+
+// 图 4·57 例：DE 切圆于点 A
+#let fig-O-4-57(width: 320 * k) = px-canvas(320, 250, origin: (540, 482), width: width, (p, u) => {
+  import cetz.draw: *
+  let (M, r) = ((691, 598.5), 112)
+  let A = (681, 710.5)
+  let B = O-pa(M, r, 53)
+  let C = O-pa(M, r, 186.4)
+  seg(p, (548, 710.5), (835, 710.5))
+  circ(p, M, r)
+  seg(p, C, A)
+  seg(p, A, B)
+  seg(p, C, B)
+  lbl(p, A, $A$, dir: "s", d: 11)
+  lbl(p, B, $B$, dir: "ne", d: 10)
+  lbl(p, C, $C$, dir: "w", d: 11)
+  lbl(p, (547, 710.5), $D$, dir: "w", d: 11)
+  lbl(p, (835, 710.5), $E$, dir: "e", d: 11)
+})

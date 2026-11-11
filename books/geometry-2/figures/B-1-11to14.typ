@@ -1,0 +1,125 @@
+// 图 1·11（原书 p.19）、图 1·12（p.20，含 (1)(2) 两幅）、图 1·13（p.22）、图 1·14（p.23）；页面 120 dpi 坐标。
+#import "B-base.typ": *
+
+// 图 1·11 DE ∥ BC，AB、AC 被平行线分成 m + n = 5 + 3 个相等的线段（图中 a、b）
+#let fig-B-1-11(width: 400 * k) = px-canvas(400, 310, origin: (450, 758), width: width, (p, u) => {
+  import cetz.draw: *
+  let A = (703, 775)
+  let B = (475, 1043)
+  let C = (833, 1043)
+  // 过 A 的虚线（平行于 BC）
+  dseg(p, (652, 775), (762, 775))
+  for i in (1, 2, 3, 4, 6, 7) {
+    let t = i / 8
+    dseg(p, B-lerp(A, B, t), B-lerp(A, C, t))
+  }
+  let D = B-lerp(A, B, 5 / 8)
+  let E = B-lerp(A, C, 5 / 8)
+  poly(p, (A, B, C), close: true)
+  seg(p, D, E)
+  lbl(p, A, $A$, dir: "n", d: 12)
+  lbl(p, D, $D$, dir: "w", d: 11)
+  lbl(p, E, $E$, dir: "e", d: 11)
+  lbl(p, B, $B$, dir: "w", d: 11)
+  lbl(p, C, $C$, dir: "e", d: 11)
+  content(p(683, 790), tsm($a$))
+  content(p(724, 790), tsm($b$))
+})
+
+// 图 1·12 (1)(2)：例，AD : DB = 1 : √2
+#let fig-B-1-12(width: 700 * k) = px-canvas(700, 300, origin: (190, 855), width: width, (p, u) => {
+  import cetz.draw: *
+  // (1)
+  let A = (403, 873)
+  let B = (240, 1050)
+  let C = (474, 1050)
+  let tb = (1080 - 873) / 177
+  let B1 = B-lerp(A, B, tb)
+  let C1 = B-lerp(A, C, tb)
+  dseg(p, (330, 869), (476, 869))
+  line(p(476, 869), p(482, 869), stroke: lt, mark: arw)
+  let D = B-lerp(A, B, 0.38)
+  let E = B-lerp(A, C, 0.38)
+  let F = B-lerp(A, B, 0.8)
+  let G = B-lerp(A, C, 0.8)
+  seg(p, A, B)
+  seg(p, A, C)
+  seg(p, B, C)
+  seg(p, D, E)
+  dseg(p, F, G)
+  dseg(p, B, B1)
+  dseg(p, C, C1)
+  dseg(p, B1, C1)
+  lbl(p, A, $A$, dir: "n", d: 12)
+  lbl(p, D, $D$, dir: "w", d: 12)
+  lbl(p, E, $E$, dir: "e", d: 12)
+  lbl(p, F, $F$, dir: "w", d: 12)
+  lbl(p, G, $G$, dir: "e", d: 12)
+  lbl(p, B, $B$, dir: "w", d: 11)
+  lbl(p, C, $C$, dir: "e", d: 11)
+  lbl(p, B1, $B'$, dir: "sw", d: 11)
+  lbl(p, C1, $C'$, dir: "se", d: 11)
+  lbl(p, (333, 1138), [(1)], dir: "c", d: 0)
+  // (2)
+  let A2 = (741, 878)
+  let B2 = (575, 1056)
+  let C2 = (807, 1056)
+  let t2 = 1.036
+  let B2p = B-lerp(A2, B2, t2)
+  let C2p = B-lerp(A2, C2, t2)
+  dseg(p, (675, 878), (812, 878))
+  line(p(812, 878), p(818, 878), stroke: lt, mark: arw)
+  B-hatch(p, (A2, B2p, C2p), 886, 1060, 10)
+  let D2 = B-lerp(A2, B2, 0.4)
+  let E2 = B-lerp(A2, C2, 0.4)
+  seg(p, A2, B2p)
+  seg(p, A2, C2p)
+  seg(p, B2, C2)
+  seg(p, D2, E2)
+  lbl(p, A2, $A$, dir: "n", d: 12)
+  lbl(p, D2, $D$, dir: "w", d: 12)
+  lbl(p, E2, $E$, dir: "e", d: 12)
+  lbl(p, (563, 1050), $B$, dir: "c", d: 0)
+  lbl(p, (821, 1050), $C$, dir: "c", d: 0)
+  lbl(p, (562, 1076), $B'$, dir: "c", d: 0)
+  lbl(p, (817, 1076), $C'$, dir: "c", d: 0)
+  lbl(p, (690, 1133), [(2)], dir: "c", d: 0)
+})
+
+// 图 1·13 推论：DE ∥ BC
+#let fig-B-1-13(width: 360 * k) = px-canvas(360, 240, origin: (320, 715), width: width, (p, u) => {
+  import cetz.draw: *
+  let A = (589, 731)
+  let B = (339, 931)
+  let C = (656, 931)
+  let D = B-lerp(A, B, 0.425)
+  let E = B-lerp(A, C, 0.425)
+  poly(p, (A, B, C), close: true)
+  seg(p, D, E)
+  lbl(p, A, $A$, dir: "n", d: 12)
+  lbl(p, D, $D$, dir: "w", d: 11)
+  lbl(p, E, $E$, dir: "e", d: 11)
+  lbl(p, B, $B$, dir: "w", d: 11)
+  lbl(p, C, $C$, dir: "e", d: 11)
+})
+
+// 图 1·14 例 1：DE ∥ BC，EF ∥ CD
+#let fig-B-1-14(width: 380 * k) = px-canvas(380, 240, origin: (505, 485), width: width, (p, u) => {
+  import cetz.draw: *
+  let A = (762, 506)
+  let B = (526, 688)
+  let C = (846, 688)
+  let D = B-lerp(A, B, 0.495)
+  let E = B-lerp(A, C, 0.495)
+  let F = B-lerp(A, B, 0.2475)
+  poly(p, (A, B, C), close: true)
+  seg(p, D, E)
+  seg(p, D, C)
+  seg(p, F, E)
+  lbl(p, A, $A$, dir: "n", d: 12)
+  lbl(p, F, $F$, dir: "nw", d: 11)
+  lbl(p, D, $D$, dir: "nw", d: 11)
+  lbl(p, E, $E$, dir: "ne", d: 11)
+  lbl(p, B, $B$, dir: "w", d: 11)
+  lbl(p, C, $C$, dir: "e", d: 11)
+})

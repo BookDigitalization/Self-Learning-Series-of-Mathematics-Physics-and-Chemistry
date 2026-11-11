@@ -1,0 +1,210 @@
+// 复习题二的插图：第 3 题（原书 p.161）、第 12 题（p.162）、第 15、16 题（p.163）、第 24、27、29、30 题（p.164）；页面 120 dpi 坐标。
+#import "I-base.typ": *
+
+// 第 3 题：△ABC，CA ⊥ CD，CE ⊥ AB
+#let fig-I-rev-3(width: 460 * k) = px-canvas(460, 235, origin: (290, 700), width: width, (p, u) => {
+  import cetz.draw: *
+  let A = (319, 916)
+  let D = (719, 909)
+  let yb = x => 916 - (x - 319) * 7 / 400
+  let B = (581, yb(581))
+  let E = (467, yb(467))
+  let C = (467, 722)
+  tseg(p, A, D)
+  tseg(p, A, C)
+  tseg(p, C, D)
+  tseg(p, C, B)
+  tseg(p, C, E)
+  rtmark(p, E, B, C, s: 9)
+  lbl(p, A, $A$, dir: "sw", d: 9)
+  lbl(p, B, $B$, dir: "ne", d: 12)
+  lbl(p, D, $D$, dir: "e", d: 11)
+  lbl(p, E, $E$, dir: "nw", d: 12)
+  lbl(p, C, $C$, dir: "n", d: 10)
+  lbl(p, (386, 798), $42$, dir: "c", d: 0)
+  lbl(p, (497, 819), $39$, dir: "c", d: 0)
+  dimh(p, 319, 581, 926, lab: $45$, labx: 433)
+  tickat(p, (319, 926), (581, 926), (319, 926), s: 5)
+  tickat(p, (319, 926), (581, 926), (581, 926), s: 5)
+})
+
+// 第 12 题：两圆外切于 C，外公切线 AB，BD ∥ O₁O₂
+#let fig-I-rev-12(width: 380 * k) = px-canvas(380, 250, origin: (470, 500), width: width, (p, u) => {
+  import cetz.draw: *
+  let (O1, O2) = ((576, 617), (751, 598))
+  let (r1, r2) = (96.5, 81)
+  let A = (568, 521)
+  let B = (741, 518)
+  let C = lerp(O1, O2, r1 / (r1 + r2))
+  let D = isect(A, O1, B, (B.at(0) + O2.at(0) - O1.at(0), B.at(1) + O2.at(1) - O1.at(1)))
+  circ(p, O1, r1)
+  circ(p, O2, r2)
+  tseg(p, (485, 521), (828, 519))
+  tseg(p, A, O1)
+  tseg(p, B, O2)
+  tseg(p, O1, O2)
+  dseg(p, D, B)
+  ring(p, O1, r: 3)
+  ring(p, O2, r: 3)
+  lbl(p, A, $A$, dir: "n", d: 11)
+  lbl(p, B, $B$, dir: "n", d: 11)
+  lbl(p, D, $D$, dir: "w", d: 9)
+  lbl(p, C, $C$, dir: "se", d: 12)
+  lbl(p, O1, $O_1$, dir: "s", d: 13)
+  lbl(p, O2, $O_2$, dir: "s", d: 13)
+  lbl(p, (562, 578), $r_1$, dir: "c", d: 0)
+  lbl(p, (759, 548), $r_2$, dir: "c", d: 0)
+})
+
+// 第 15 题：半径 OC ⊥ 直径 AB，M 为 OC 中点，弦 BD 过 M
+#let fig-I-rev-15(width: 245 * k) = px-canvas(245, 230, origin: (200, 195), width: width, (p, u) => {
+  import cetz.draw: *
+  let O = (309, 311)
+  let r = 100
+  let A = (209, 311)
+  let B = (409, 311)
+  let C = (309, 211)
+  let M = (309, 261)
+  let D = line-circ(B, M, O, r).at(1)
+  circ(p, O, r)
+  tseg(p, A, B)
+  tseg(p, O, C)
+  tseg(p, B, D)
+  ring(p, O, r: 3)
+  lbl(p, A, $A$, dir: "w", d: 9)
+  lbl(p, B, $B$, dir: "e", d: 10)
+  lbl(p, C, $C$, dir: "n", d: 10)
+  lbl(p, D, $D$, dir: "nw", d: 9)
+  lbl(p, M, $M$, dir: "e", d: 11)
+  lbl(p, O, $O$, dir: "s", d: 12)
+  lbl(p, (259, 322), $R$, dir: "s", d: 4)
+})
+
+// 第 16 题：大圆 O，内切小圆 O₁（切于 B），外切小圆 O₂（切于 A），∠AOB = 60°
+#let fig-I-rev-16(width: 280 * k) = px-canvas(280, 230, origin: (535, 195), width: width, (p, u) => {
+  import cetz.draw: *
+  let O = (643, 305)
+  let R = 103
+  let r = 40
+  let A = (O.at(0) + R, 305)
+  let B = cpt(O, R, 60)
+  let O1 = cpt(O, R - r, 60)
+  let O2 = (O.at(0) + R + r, 305)
+  circ(p, O, R)
+  circ(p, O1, r)
+  circ(p, O2, r)
+  dseg(p, O, O2)
+  tseg(p, O, O1)
+  tseg(p, O1, O2)
+  ring(p, O, r: 3)
+  ring(p, O1, r: 3)
+  ring(p, O2, r: 3)
+  anglearc(p, O, A, O1, 22)
+  lbl(p, (627, 290), $60°$, dir: "c", d: 0)
+  lbl(p, B, $B$, dir: "ne", d: 11)
+  lbl(p, A, $A$, dir: "sw", d: 11)
+  lbl(p, O, $O$, dir: "sw", d: 11)
+  lbl(p, O1, $O_1$, dir: "n", d: 15)
+  lbl(p, O2, $O_2$, dir: "e", d: 15)
+})
+
+// 第 24 题：三个并列的正方形，α、β、γ
+#let fig-I-rev-24(width: 425 * k) = px-canvas(425, 165, origin: (418, 170), width: width, (p, u) => {
+  import cetz.draw: *
+  let (x0, x1, x2, x3) = (428, 562, 695, 829)
+  let (yt, yb) = (199, 333)
+  let A = (x0, yt)
+  let H = (x3, yb)
+  line(p(x0, yt), p(x3, yt), p(x3, yb), p(x0, yb), close: true, stroke: lb)
+  tseg(p, (x1, yt), (x1, yb))
+  tseg(p, (x2, yt), (x2, yb))
+  tseg(p, A, (x1, yb))
+  tseg(p, A, (x2, yb))
+  tseg(p, A, H)
+  anglearc(p, (x1, yb), (x0, yb), A, 26)
+  anglearc(p, (x1, yb), (x0, yb), A, 30)
+  anglearc(p, (x2, yb), (x1, yb), A, 26)
+  anglearc(p, (x3, yb), (x2, yb), A, 24)
+  lbl(p, (516, 320), $α$, dir: "c", d: 0)
+  lbl(p, (650, 322), $β$, dir: "c", d: 0)
+  lbl(p, (774, 323), $γ$, dir: "c", d: 0)
+  lbl(p, A, $A$, dir: "nw", d: 9)
+  lbl(p, (x1, yt), $B$, dir: "n", d: 11)
+  lbl(p, (x2, yt), $C$, dir: "n", d: 11)
+  lbl(p, (x3, yt), $D$, dir: "ne", d: 9)
+  lbl(p, (x0, yb), $E$, dir: "s", d: 12)
+  lbl(p, (x1, yb), $F$, dir: "s", d: 12)
+  lbl(p, (x2, yb), $G$, dir: "s", d: 12)
+  lbl(p, (x3, yb), $H$, dir: "se", d: 11)
+})
+
+// 第 27 题：第 12 题的图加辅助线 CA、CB、CE、DE、O₁E
+#let fig-I-rev-27(width: 360 * k) = px-canvas(360, 250, origin: (500, 610), width: width, (p, u) => {
+  import cetz.draw: *
+  let (O1, O2) = ((614, 728), (773, 717))
+  let (r1, r2) = (90, 72)
+  let A = (618, 638)
+  let B = (773, 645)
+  let C = lerp(O1, O2, r1 / (r1 + r2))
+  let E = (C.at(0), 643)
+  let D = (616, 651)
+  let F = isect(A, C, O1, E)
+  circ(p, O1, r1)
+  circ(p, O2, r2)
+  tseg(p, A, B)
+  tseg(p, A, O1)
+  tseg(p, B, O2)
+  tseg(p, O1, O2)
+  tseg(p, E, C)
+  tseg(p, A, C)
+  tseg(p, B, C)
+  dseg(p, D, E)
+  dseg(p, O1, E)
+  ring(p, O1, r: 3)
+  ring(p, O2, r: 3)
+  lbl(p, A, $A$, dir: "n", d: 11)
+  lbl(p, B, $B$, dir: "n", d: 11)
+  lbl(p, E, $E$, dir: "n", d: 11)
+  lbl(p, D, $D$, dir: "w", d: 9)
+  lbl(p, F, $F$, dir: "sw", d: 11)
+  lbl(p, C, $C$, dir: "sw", d: 14)
+  lbl(p, O1, $O_1$, dir: "s", d: 13)
+  lbl(p, O2, $O_2$, dir: "s", d: 13)
+})
+
+// 第 29 题：半圆内接正方形
+#let fig-I-rev-29(width: 275 * k) = px-canvas(275, 165, origin: (178, 1095), width: width, (p, u) => {
+  import cetz.draw: *
+  let O = (313, 1249)
+  let R = 136
+  carc(p, O, R, 0, 180)
+  tseg(p, (O.at(0) - R, 1249), (O.at(0) + R, 1249))
+  let (xl, xr, yt) = (253, 373, 1126)
+  tseg(p, (xl, yt), (xr, yt))
+  tseg(p, (xl, yt), (xl, 1249))
+  tseg(p, (xr, yt), (xr, 1249))
+  tseg(p, O, (xr, yt))
+  rtmark(p, (xr, 1249), (xl, 1249), (xr, yt), s: 9)
+  lbl(p, (330, 1190), $R$, dir: "c", d: 0)
+  lbl(p, (385, 1190), $x$, dir: "c", d: 0)
+  lbl(p, O, $O$, dir: "s", d: 12)
+})
+
+// 第 30 题：梯形，平行于底的直线 x 把它分成两个相似梯形
+#let fig-I-rev-30(width: 290 * k) = px-canvas(290, 175, origin: (548, 1090), width: width, (p, u) => {
+  import cetz.draw: *
+  let (TL, TR, BL, BR) = ((614, 1105), (735, 1105), (556, 1244), (828, 1244))
+  let ym = 1173
+  let t = (ym - 1105) / 139
+  let ML = lerp(TL, BL, t)
+  let MR = lerp(TR, BR, t)
+  tseg(p, TL, TR)
+  tseg(p, BL, BR)
+  tseg(p, TL, BL)
+  tseg(p, TR, BR)
+  tseg(p, ML, MR)
+  dseg(p, ML, (ML.at(0) + (BR.at(0) - TR.at(0)) * (1 - t), 1244))
+  lbl(p, (674, 1105), $a$, dir: "n", d: 8)
+  lbl(p, (684, 1173), $x$, dir: "n", d: 8)
+  lbl(p, (692, 1244), $b$, dir: "s", d: 10)
+})

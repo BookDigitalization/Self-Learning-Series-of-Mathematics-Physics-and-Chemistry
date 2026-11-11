@@ -20,6 +20,8 @@
 - 几何符号一律直接写 Unicode 符号（已核实在 Typst 数学里都能排）：△ ∠ ≌ ∽ ⊥ ∥ ∵ ∴ ∟ °，弧用 `overparen(A B)`。
   `△ABC` 写 `$△A B C$`，`∠A` 写 `$∠A$`，线段 `AB` 写 `$A B$`（斜体、字母间不加空格），`A'B'` 写 `$A' B'$`，下标 `A_1`。度分秒 `30°15'20''`。
   比例号用 `rt`（如 `$A D rt C D = C D rt B D$`）。长度单位写在引号里：`$A M = 2.4 "cm"$`（原书印 cm 的就照印，印“厘米”的写汉字）。
+- **习题必须用 `#exercise("x·y")[ + 题 … + 题 … ]`**（series.typ 组件，自动加标签 <ex-x·y>，习题答案靠它交叉引用；不要手写“1\.”段落）。题号跨页连续；题后的提示、插图缩进四格放在所属题目下（写法参考 `books/physics-1/chapters/ch01.typ`）；某节习题一部分在你的段里、其余在下一段时，下一段用 `#set enum(start: n)` 续号，并在备忘里写明。例题标签写成 `#ex[例 1.][…]`（原书带点就带点）。
+- 证明里一行一步（行首“∵”“∴”“又”）：章文件里 `#import "/common/geo.typ": step`（`step(body)` 是左缩进两字的一行），内容用行内公式加文字，括号里的理由（如“（s.a.s.）”）照录；不要用独立公式。
 - 星号 * 的题或节（选学内容）照原书标：节用 `#heading(level: 2, numbering: star-heading-numbering)[…]`，题在题号后写 `\*`。
 - 用词、标点：见 `CLAUDE.md` 与 `TERMINOLOGY.md`（句末“．”改“。”，旧词按表替换）。表里没有、但你觉得是旧用词的词（如“迭合”），**照原书录入**，记进备忘，由负责人定。
 - **疑似原书错误一律照录**，在备忘里写明页码、位置、你认为的正确内容和依据；不要自行改。
@@ -31,7 +33,7 @@
 
 ### 取坐标
 - 渲染页面：几何第一册 `python scripts/render-pages.py original/geometry-1.pdf 110-113 --offset 6 --dpi 200 --grid 100 --out build/pages/g1`；几何第二册 `python scripts/render-pages.py original/geometry-2.pdf 110-113 --offset 4 --dpi 120 --grid 100 --out build/pages/g2`（`--out` 必须带册目录，别的段在并行渲染）。两册的页面宽度都约 1000 像素。
-  网格图 `build/pages/g1/pNNNN-grid.png` 上标着**真实像素坐标**，按网格数字读坐标，不要凭显示缩小的图估计；同时有不带网格的 `pNNNN.png` 用来读文字。
+  网格图 `build/pages/g1/pNNNN-grid.png` 上标着**真实像素坐标**，按网格数字读坐标，不要凭显示缩小的图估计；读文字用 `scripts/crop-view.py … --grid 0` 放大看。
 - 单幅图要读准时，用 `scripts/crop-view.py` 把图所在区域放大并叠网格，**网格数字就是整页坐标**，不用换算：
   `python scripts/crop-view.py original/geometry-1.pdf 112 "150,350,800,700" build/pages/f112.png --offset 6 --dpi 200 --zoom 2 --grid 25`
   （`--dpi`、`--offset` 要和上面渲染整页时一致；`--grid 0` 不画网格，只放大看文字、小标记。输出文件请放到你自己的 scratchpad 或 `build/pages/` 下以段字母开头的名字，避免和别的段冲突。）
@@ -43,14 +45,19 @@
 - 每幅图一个文件 `figures/<段字母>-<图号或页码>.typ`，例如 `figures/E-2-3.typ`（图 2·3）、习题里无编号的小图 `figures/E-p91-q12.typ`；同一页的几幅小图可放同一个文件，导出多个函数。
   文件头注释写：图号、原书页码、读坐标时的页面渲染 dpi。
 - 导出函数名带段字母，避免多个文件同名冲突：`#let fig-E-2-3(width: 400 * k) = px-canvas(W, H, origin: (x0, y0), width: width, (p, u) => { import cetz.draw: *; … })`，其中 `#let k = 0.0152cm`（页面宽约 1000 像素时，1 像素 = 0.0152 cm，图的大小约为原图的 1.1 倍，和代数各册一致；图特别大或特别小可以调整 width）。
-- 用 `common/geo.typ` 的 `poly`、`seg`、`circ`、`pdot`、`lbl`、`anglearc`、`rtmark`、`ticks`、`parmark`、虚线样式 `dsh`、`dot` 等。**不要改 `common/geo.typ` 和 `common/series.typ`**；缺的工具写在你自己的图文件里（函数名加段字母前缀）。
+- 用 `common/geo.typ` 的 `poly`、`seg`、`circ`、`pdot`、`lbl`、`anglearc`、`rtmark`、`ticks`、`parmark`、虚线样式 `dsh`、点线样式 `dotted`（不叫 dot，免得遮住数学里的 `dot` 乘号）等。**不要改 `common/geo.typ` 和 `common/series.typ`**；缺的工具写在你自己的图文件里（函数名加段字母前缀）。
+- `geo.typ` 另有：`dseg`（虚线段；`seg` 已带 stroke，再传 stroke 会重复报错）、`pseg`（两端带短横的线段）、`dimh`（尺寸线）、`pimg`（按页面坐标放 PNG）、`ctext`、`ring`、`nrm`、`tickat`。
+- 其他陷阱：公式里 `#h(3em)(2)` 会把 `(2)` 当函数调用，要写 `#h(3em);(2)`；原书脚注可用 `#footnote`（序号全书连续，和原书每页重起不同，可接受）；节名**以正文为准**，目录与正文不一致时在备忘里写明。
+- `math-terms.tsv` 里的“衔接→啮合”只适用于机械传动，几何册的“首尾衔接”不改；其他整词替换由主线程统一做，你只需照现代用词写你有把握的词（那么、像、作、满足、称作等），其余照录。
+- 陷阱：在 `(p, u) => { import cetz.draw: *; … }` 里，`cetz.draw` 导出了名为 `fill`、`line`、`circle`、`arc`、`content`、`group` 等的函数；自己的变量、参数不要用这些名字（如参数名 `fill` 会被遮住，报“expected color … found function”）。图里的点用页面绝对坐标，`origin` 取图左下角的页面坐标。
+- 带实物的图（池塘、河流、纸条、曲尺、量角器之类）画成清晰的几何示意；看不清的下标等用 `unclear` 标出并写进备忘。
 - 标注：字母、数字、角度全用 `$A$` `$30°$` 之类的真文字（`lbl`），放在原图字母的位置附近，不要压在线上。
 - 编号插图 `#fig("2·3", fig-E-2-3())[图题]`；第一个参数写原书图号，必须和自动编号一致，否则编译报错。章内编号以原书为准。习题、例题里无编号的小图用 `#plainfig((fig-…(), [（第 5 题）]), …)`；已知条件右侧的并排小图可用 `#grid`/`#box` 排在文字旁，但不要为了对齐原版面而费力：内容对即可。
 - 绪论里的插图编号是“图 1、图 2”（没有章号），`#fig` 的断言过不了时，用 `#figure(…, kind: "intro", supplement: [图], numbering: "1")` 或 `plainfig` 加手写图题，自己判断，在备忘里说明。
 
 ## 四、编译与自检
 
-- 不要编译整本书（别人的段落还没写完）。用 `python scripts/solo-compile.py <册> <文件…> --ch N --sec M --fig K [--png 1-3]` 单独编译你的文件，参数含义见脚本开头。输出必须**无错误、无警告**。
+- 不要编译整本书（别人的段落还没写完）。用 `python scripts/solo-compile.py <册> <文件…> --ch N --sec M --fig K [--png 1-3]` 单独编译你的文件，参数含义见脚本开头。输出必须**无错误、无警告**。输出 PDF 第 1 页是 solo 封面，`--png` 从第 2 页起导出。
 - 导出 PNG 后用 Read 逐页看图，和原书对照：文字、公式、编号、图（元素齐全、字母位置对、没有线条错乱或标注压线）。**每幅图都要核对**，发现错了就改，不要留着。
 - 习题题号要和原书一致；`#exercise("x·y")[…]` 里 `+` 列表的自动编号与原书不一致（跨页续号、起始号不为 1）时，用 `#exercise("x·y")[#set enum(start: n) …]` 之类处理，保证编号一致。
 - 总复习题、习题答案放在 `appendix/`，用 `--back` 编译；`#answers("x·y")` 要求习题已存在，整书拼好前会报错，属正常，其余错误必须清零。

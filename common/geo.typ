@@ -12,7 +12,7 @@
 #let lt = 0.6pt                                            // 细线（辅助线、角弧）
 #let lb = 1.3pt                                            // 加粗线（原图里描粗的线）
 #let dsh = (paint: black, thickness: 0.6pt, dash: "dashed") // 虚线
-#let dot = (paint: black, thickness: 0.6pt, dash: "dotted")
+#let dotted = (paint: black, thickness: 0.6pt, dash: "dotted")
 #let tt(body) = text(font: fonts.song, size: 8pt, body)
 #let tsm(body) = text(font: fonts.song, size: 7pt, body)
 #let arw = (end: "stealth", fill: black, scale: 0.45)
@@ -109,3 +109,57 @@
       p(c.at(0) - ux * s - nx * s, c.at(1) - uy * s - ny * s), stroke: lt)
   }
 }
+
+// ───────── 段 A 试点补充的通用工具 ─────────
+// 线段 a→b 的单位法向
+#let nrm(a, b) = {
+  let dx = b.at(0) - a.at(0)
+  let dy = b.at(1) - a.at(1)
+  let l = calc.sqrt(dx * dx + dy * dy)
+  (-dy / l, dx / l)
+}
+// 在线段 a→b 上的点 pt 处画垂直于线段的短横（半长 s）
+#let tickat(p, a, b, pt, s: 5) = {
+  import cetz.draw: *
+  let n = nrm(a, b)
+  line(p(pt.at(0) - n.at(0) * s, pt.at(1) - n.at(1) * s), p(pt.at(0) + n.at(0) * s, pt.at(1) + n.at(1) * s), stroke: lw)
+}
+// 两端带短横的线段（原书用来表示线段的端点）
+#let pseg(p, a, b, s: 5, ..style) = {
+  import cetz.draw: *
+  line(p(..a), p(..b), stroke: lw, ..style)
+  tickat(p, a, b, a, s: s)
+  tickat(p, a, b, b, s: s)
+}
+// 虚线段（seg 已带 stroke，再传 stroke 会重复报错，虚线用这个）
+#let dseg(p, a, b) = {
+  import cetz.draw: *
+  line(p(..a), p(..b), stroke: dsh)
+}
+// 水平尺寸线：两端箭头；lab 不为空时在 labx 处断开放文字
+#let dimh(p, x0, x1, y, lab: none, labx: auto, gapw: 26) = {
+  import cetz.draw: *
+  if lab == none {
+    line(p(x0, y), p(x1, y), stroke: lt, mark: arw2)
+  } else {
+    let m = if labx == auto { (x0 + x1) / 2 } else { labx }
+    line(p(x0, y), p(m - gapw / 2, y), stroke: lt, mark: (start: "stealth", fill: black, scale: 0.45))
+    line(p(m + gapw / 2, y), p(x1, y), stroke: lt, mark: (end: "stealth", fill: black, scale: 0.45))
+    lbl(p, (m, y), lab, dir: "c", d: 0)
+  }
+}
+// 放置 PNG（写实图）：box = (x0, y0, x1, y1) 为它在页面上的像素范围
+#let pimg(p, u, path, box) = {
+  import cetz.draw: *
+  let (x0, y0, x1, y1) = box
+  content(p(x0, y0), image(path, width: (x1 - x0) * u), anchor: "north-west")
+}
+// 居中的文字
+#let ctext(p, pt, body) = lbl(p, pt, body, dir: "c", d: 0)
+// 空心小圆点
+#let ring(p, c, r: 3) = {
+  import cetz.draw: *
+  circle(p(..c), radius: r, fill: white, stroke: lw)
+}
+// 证明里的一步（原书一行一步，行首带“∵”“∴”或“又”）
+#let step(body) = block(above: 0.5em, below: 0.5em, width: 100%, pad(left: 2em, body))

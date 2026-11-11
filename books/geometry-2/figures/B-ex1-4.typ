@@ -1,0 +1,62 @@
+// 习题 1·4 的插图（原书 p.36 第 9 题、p.37 第 12 题）；页面 120 dpi 坐标。
+#import "B-base.typ": *
+
+// 第 9 题图：过角内一点 P 作直线，使 CP : PD = m : n
+#let fig-B-q9(width: 370 * k) = px-canvas(370, 275, origin: (470, 1000), width: width, (p, u) => {
+  import cetz.draw: *
+  B-bar(p, 477, 551, 1023, $n$, d: 8)
+  B-bar(p, 478, 578, 1056, $m$, d: 8)
+  let O = (504, 1251)
+  let A = (822, 1245)
+  let B = (727, 1056)
+  let D = (667, 1107)
+  let N = (759, 1106)
+  let M = (659, 1248)
+  let C = (785, 1246)
+  let P = (717, 1164)
+  line(p(..O), p(..A), stroke: lw, mark: arw)
+  seg(p, O, B)
+  seg(p, D, C)
+  seg(p, N, M)
+  line(p(612, 1107), p(800, 1105), stroke: lb)
+  anglearc(p, O, A, B, 28)
+  ring(p, P, r: 2.5)
+  lbl(p, O, $O$, dir: "sw", d: 11)
+  lbl(p, M, $M$, dir: "s", d: 13)
+  lbl(p, C, $C$, dir: "s", d: 13)
+  lbl(p, (832, 1244), $A$, dir: "c", d: 0)
+  lbl(p, B, $B$, dir: "ne", d: 11)
+  lbl(p, D, $D$, dir: "nw", d: 11)
+  lbl(p, N, $N$, dir: "n", d: 11)
+  lbl(p, P, $P$, dir: "e", d: 13)
+})
+
+// 第 12 题图：O 为 AB 外一点，P 的轨迹 MN
+#let fig-B-q12b(width: 370 * k) = px-canvas(370, 250, origin: (535, 470), width: width, (p, u) => {
+  import cetz.draw: *
+  let O = (778, 488)
+  let C = (778, 686)
+  let E = (599, 686)
+  let D = (822, 686)
+  let y = 571
+  let P1 = (778, y)
+  let P3 = (B-lerp(O, E, (y - 488) / 198).at(0), y)
+  let P2 = (B-lerp(O, D, (y - 488) / 198).at(0), y)
+  seg(p, (551, 686), (876, 686))
+  seg(p, (563, y), (872, y))
+  seg(p, O, C)
+  seg(p, O, E)
+  seg(p, O, D)
+  rtmark(p, C, O, D, s: 9)
+  lbl(p, O, $O$, dir: "n", d: 12)
+  lbl(p, (547, y + 5), $M$, dir: "c", d: 0)
+  lbl(p, (884, y), $N$, dir: "c", d: 0)
+  lbl(p, (540, 689), $A$, dir: "c", d: 0)
+  lbl(p, (887, 686), $B$, dir: "c", d: 0)
+  lbl(p, P3, $P_3$, dir: "nw", d: 12)
+  lbl(p, P1, $P_1$, dir: "nw", d: 14)
+  lbl(p, P2, $P_2$, dir: "ne", d: 13)
+  lbl(p, E, $E$, dir: "s", d: 13)
+  lbl(p, C, $C$, dir: "s", d: 13)
+  lbl(p, D, $D$, dir: "s", d: 13)
+})
