@@ -4,6 +4,8 @@
 #import "/common/series.typ": *
 
 #show: series-book.with(title: "物理", volume: "第一册")
+// 行内公式后紧跟的“，。；”不与公式断开（否则会落到下一行行首）
+#show math.equation.where(block: false): it => it + sym.wj
 
 #show: front-matter
 

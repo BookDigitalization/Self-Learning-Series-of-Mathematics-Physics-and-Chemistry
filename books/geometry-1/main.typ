@@ -8,7 +8,7 @@
 #show: series-book.with(title: "平面几何", volume: "第一册")
 
 // 原书行内分式、比例式是整号大小：行内公式一律按 display 样式排，并按真实边界撑行高（避免压行）
-#show math.equation.where(block: false): it => math.display(it)
+#show math.equation.where(block: false): it => math.display(it) + sym.wj
 #show math.equation.where(block: false): set text(top-edge: "bounds", bottom-edge: "bounds")
 
 #show: front-matter
