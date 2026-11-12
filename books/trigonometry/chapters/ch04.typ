@@ -47,6 +47,7 @@ $ ∠D C E = ∠A O B = alpha. $
 
 在图中我们看到，
 
+// 原书第一个分母印作 CC，订正为 OC
 $ sin(alpha + beta) = (D C)/(O C) = (D G + G C)/(O C) = (F E)/(O C) + (G C)/(O C). $
 
 但在直角三角形 $E O F$ 和 $C O E$ 中，
