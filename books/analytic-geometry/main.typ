@@ -36,9 +36,17 @@
 #include "chapters/ch04e.typ"
 #include "chapters/ch04f.typ"
 #include "chapters/ch04g.typ"
+#include "chapters/ch05.typ"
+#include "chapters/ch05b.typ"
+#include "chapters/ch05c.typ"
+#include "chapters/ch06.typ"
+#include "chapters/ch06b.typ"
+#include "chapters/ch07.typ"
+#include "chapters/ch07b.typ"
 
 #show: back-matter
 
-// #include "appendix/appendix-empirical.typ"  // 附录 经验公式 p.457
-// #include "appendix/review.typ"              // 总复习题 p.468
-// #include "appendix/answers.typ"             // 习题答案 p.478
+#include "appendix/appendix-empirical.typ"  // 附录 经验公式 p.457
+#include "appendix/review.typ"              // 总复习题 p.468
+#include "appendix/answers.typ"             // 习题答案 p.478–490
+#include "appendix/answers-b.typ"           // 习题答案（续）p.490–501
