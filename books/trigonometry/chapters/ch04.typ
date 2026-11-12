@@ -545,7 +545,7 @@ $ &= (cos^2 display(theta/2) - sin^2 display(theta/2))/(cos^2 display(theta/2) +
 
 (3) $tan theta = tan(2 dot display(theta/2)) = display((2 tan display(theta/2))/(1 - tan^2 display(theta/2)) = (2t)/(1 - t^2)).$
 
-在这个例题里，我们看到，如果令 $tan theta/2 = t$，那么 $sin theta$，$cos theta$ 和 $tan theta$ 都可以表示成关于 $t$ 的分式。这种变形，在高等数学里很有用处。它们叫作万能代换。
+在这个例题里，我们看到，如果令 $tan theta/2 = t$，那么 $sin theta$，$cos theta$ 和 $tan theta$ 都可以表示成关于 $t$ 的分式。这种变形，在高等数学里很有用处。它们叫作*万能代换*。
 
 我们还要注意，从二倍角的余弦公式
 
@@ -1156,7 +1156,7 @@ $ & sin A + sin B + sin C \
   &= 4 sin(90° - C/2) cos A/2 cos B/2 \
   &= 4 cos A/2 cos B/2 cos C/2. $
 
-在这个例题中，我们看到，一开始就要把 $C$ 写成 $180° - (A + B)$，后来又把 $A + B$ 写成 $180° - C$。证明这一类等式，一般都可以这样做。
+在这个例题中，我们看到，一开始要把 $C$ 写成 $180° - (A + B)$，后来又把 $A + B$ 写成 $180° - C$。证明这一类等式，一般都可以这样做。
 
 #ex("例 2.")[在 $△A B C$ 中，求证
 
@@ -1240,24 +1240,24 @@ $ tan A + tan B = -tan C + tan A tan B tan C, $
   *1. 重要公式*（公式后面括号中注的是公式名称的略号）
 
   #let nm(a, b) = grid(columns: (1fr, auto), column-gutter: 1em, a, b)
-  #nm([(1) $sin(alpha plus.minus beta) = sin alpha cos beta plus.minus cos alpha sin beta$；], $S_(alpha plus.minus beta)$)
-  #nm([(2) $cos(alpha plus.minus beta) = cos alpha cos beta minus.plus sin alpha sin beta$；], $C_(alpha plus.minus beta)$)
-  #nm([(3) $tan(alpha plus.minus beta) = display((tan alpha plus.minus tan beta)/(1 minus.plus tan alpha tan beta))$；], $T_(alpha plus.minus beta)$)
-  #nm([(4) $sin 2 alpha = 2 sin alpha cos alpha$；], $S_(2 alpha)$)
-  #nm([(5) $cos 2 alpha = cos^2 alpha - sin^2 alpha = 1 - 2 sin^2 alpha = 2 cos^2 alpha - 1$；], $C_(2 alpha)$)
-  #nm([(6) $tan 2 alpha = display((2 tan alpha)/(1 - tan^2 alpha))$；], $T_(2 alpha)$)
-  #nm([(7) $sin alpha/2 = plus.minus sqrt(display((1 - cos alpha)/2))$；], $S_(alpha/2)$)
+  #nm([(1) $sin(alpha plus.minus beta) = sin alpha cos beta plus.minus cos alpha sin beta$；], $(S_(alpha plus.minus beta))$)
+  #nm([(2) $cos(alpha plus.minus beta) = cos alpha cos beta minus.plus sin alpha sin beta$；], $(C_(alpha plus.minus beta))$)
+  #nm([(3) $tan(alpha plus.minus beta) = display((tan alpha plus.minus tan beta)/(1 minus.plus tan alpha tan beta))$；], $(T_(alpha plus.minus beta))$)
+  #nm([(4) $sin 2 alpha = 2 sin alpha cos alpha$；], $(S_(2 alpha))$)
+  #nm([(5) $cos 2 alpha = cos^2 alpha - sin^2 alpha = 1 - 2 sin^2 alpha = 2 cos^2 alpha - 1$；], $(C_(2 alpha))$)
+  #nm([(6) $tan 2 alpha = display((2 tan alpha)/(1 - tan^2 alpha))$；], $(T_(2 alpha))$)
+  #nm([(7) $sin alpha/2 = plus.minus sqrt(display((1 - cos alpha)/2))$；], $(S_(alpha/2))$)
   // p.173
-  #nm([(8) $cos alpha/2 = plus.minus sqrt(display((1 + cos alpha)/2))$；], $C_(alpha/2)$)
-  #nm([(9) $tan alpha/2 = plus.minus sqrt(display((1 - cos alpha)/(1 + cos alpha))) = (1 - cos alpha)/(sin alpha) = (sin alpha)/(1 + cos alpha)$；], $T_(alpha/2)$)
-  #nm([(10) $sin alpha cos beta = display(1/2) [sin(alpha + beta) + sin(alpha - beta)]$；], $S C$)
-  #nm([(11) $cos alpha sin beta = display(1/2) [sin(alpha + beta) - sin(alpha - beta)]$；], $C S$)
-  #nm([(12) $cos alpha cos beta = display(1/2) [cos(alpha + beta) + cos(alpha - beta)]$；], $C C$)
-  #nm([(13) $sin alpha sin beta = -display(1/2) [cos(alpha + beta) - cos(alpha - beta)]$；], $S S$)
-  #nm([(14) $sin alpha + sin beta = 2 sin (alpha + beta)/2 cos (alpha - beta)/2$；], $S + S$)
-  #nm([(15) $sin alpha - sin beta = 2 cos (alpha + beta)/2 sin (alpha - beta)/2$；], $S - S$)
-  #nm([(16) $cos alpha + cos beta = 2 cos (alpha + beta)/2 cos (alpha - beta)/2$；], $C + C$)
-  #nm([(17) $cos alpha - cos beta = -2 sin (alpha + beta)/2 sin (alpha - beta)/2$。], $C - C$)
+  #nm([(8) $cos alpha/2 = plus.minus sqrt(display((1 + cos alpha)/2))$；], $(C_(alpha/2))$)
+  #nm([(9) $tan alpha/2 = plus.minus sqrt(display((1 - cos alpha)/(1 + cos alpha))) = (1 - cos alpha)/(sin alpha) = (sin alpha)/(1 + cos alpha)$；], $(T_(alpha/2))$)
+  #nm([(10) $sin alpha cos beta = display(1/2) [sin(alpha + beta) + sin(alpha - beta)]$；], $(S C)$)
+  #nm([(11) $cos alpha sin beta = display(1/2) [sin(alpha + beta) - sin(alpha - beta)]$；], $(C S)$)
+  #nm([(12) $cos alpha cos beta = display(1/2) [cos(alpha + beta) + cos(alpha - beta)]$；], $(C C)$)
+  #nm([(13) $sin alpha sin beta = -display(1/2) [cos(alpha + beta) - cos(alpha - beta)]$；], $(S S)$)
+  #nm([(14) $sin alpha + sin beta = 2 sin (alpha + beta)/2 cos (alpha - beta)/2$；], $(S + S)$)
+  #nm([(15) $sin alpha - sin beta = 2 cos (alpha + beta)/2 sin (alpha - beta)/2$；], $(S - S)$)
+  #nm([(16) $cos alpha + cos beta = 2 cos (alpha + beta)/2 cos (alpha - beta)/2$；], $(C + C)$)
+  #nm([(17) $cos alpha - cos beta = -2 sin (alpha + beta)/2 sin (alpha - beta)/2$。], $(C - C)$)
 
   *2. 各个公式间的关系*
 
@@ -1292,7 +1292,7 @@ $ tan A + tan B = -tan C + tan A tan B tan C, $
     $ sin(alpha + beta) = cos(alpha + beta). $
   10. 已知 $tan alpha$ 和 $tan beta$ 是方程 $x^2 + p x + q = 0$ 的两个根，求下式的值：
     $ sin^2 (alpha + beta) + p sin(alpha + beta) cos(alpha + beta) + q cos^2 (alpha + beta). $
-  11. 在一个圆的圆心的同旁作平行的两弦，这二条弦所对的圆心角为 $72°$ 与 $144°$。求证这二弦间的距离等于半径的二分之一。
+  11. 在一个圆的圆心的同旁作平行的两弦，这二条弦所对的圆心角各为 $72°$ 与 $144°$。求证这二弦间的距离等于半径的二分之一。
   12. 求证 $tan 6° tan 42° tan 66° tan 78° = 1$。
   // p.175
   13. 求证

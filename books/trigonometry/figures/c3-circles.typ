@@ -97,7 +97,7 @@
   let cs = calc.cos(deg * 1deg)
   let sn = calc.sin(deg * 1deg)
   let t = (cx + r, cy - r * calc.tan(deg * 1deg))
-  line(p(cx + r, cy + 1.9 * r), p(cx + r, cy - 1.9 * r), stroke: lw)
+  line(p(cx + r, cy + 1.6 * r), p(cx + r, cy - 1.6 * r), stroke: lw)
   if cs > 0 { seg(p, (cx, cy), t) } else {
     seg(p, (cx, cy), (px, py))
     line(p(cx, cy), p(..t), stroke: dsh)
@@ -220,7 +220,7 @@
 })
 
 // 图 3·26 中的一幅：T、S 与它们的线
-#let c3-p26(p, cx, cy, r, deg, lp, lt-, ls-) = {
+#let c3-p26(p, cx, cy, r, deg, lp, lt-, ls-, lead: false) = {
   import cetz.draw: *
   c3-uc(p, cx, cy, r, ext: 1.3)
   let (px, py) = c3-pt(cx, cy, r, deg)
@@ -241,13 +241,18 @@
   lbl(p, (cx - 8, cy - r - 8), $B$, dir: "c", d: 0)
   lbl(p, (px, cy + if sn > 0 { 10 } else { -10 }), $M$, dir: "c", d: 0)
   lbl(p, (if cs > 0 { cx - 8 } else { cx + 8 }, cy + 9), $O$, dir: "c", d: 0)
+  if lead {
+    // 原图左上幅 P、S 的标注用细引线引出
+    line(p(px, py), p(px + lp.at(0) - 26, py + lp.at(1)), stroke: lt)
+    line(p(..s), p(s.at(0) + ls-.at(0) + 6, s.at(1) + ls-.at(1) + 7), stroke: lt)
+  }
   lbl(p, (px + lp.at(0), py + lp.at(1)), lp.at(2), dir: "c", d: 0)
   lbl(p, (t.at(0) + lt-.at(0), t.at(1) + lt-.at(1)), lt-.at(2), dir: "c", d: 0)
   lbl(p, (s.at(0) + ls-.at(0), s.at(1) + ls-.at(1)), ls-.at(2), dir: "c", d: 0)
 }
 // 图 3·26
 #let fig-c3-26(width: 600 * 1.3 * c3k) = px-canvas(600, 470, width: width, (p, u) => {
-  c3-p26(p, 125, 125, 58, 50, (-26, 0, $P(x, y)$), (28, -4, $T(x_1, y_1)$), (-22, -19, $S(x_2, y_2)$))
+  c3-p26(p, 125, 125, 58, 50, (60, 0, $P(x, y)$), (30, -12, $T(x_1, y_1)$), (-16, -43, $S(x_2, y_2)$), lead: true)
   c3-p26(p, 430, 125, 58, 145, (38, -8, $P(x, y)$), (35, 10, $T(x_1, y_1)$), (-42, -8, $S(x_2, y_2)$))
   // 原书（p.130 图 3·26 左下图）作 P(x₁, y)，其余三幅都是 P(x, y)，订正为 P(x, y)
   c3-p26(p, 125, 360, 58, 215, (-30, 10, $P(x, y)$), (32, 6, $T(x_1, y_1)$), (40, -10, $S(x_2, y_2)$))

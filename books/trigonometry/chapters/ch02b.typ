@@ -51,13 +51,12 @@
 根据三角函数的定义，得
 
 $ sin alpha &= y/r dou & quad sin(-alpha) &= (-y)/r = -y/r fen \
-  cos alpha &= x/r dou & quad cos(-alpha) &= x/r fen \
+  /* p.68 */cos alpha &= x/r dou & quad cos(-alpha) &= x/r fen \
   tan alpha &= y/x dou & quad tan(-alpha) &= (-y)/x = -y/x fen \
   cot alpha &= x/y dou & quad cot(-alpha) &= x/(-y) = -x/y fen \
   sec alpha &= r/x dou & quad sec(-alpha) &= r/x fen \
   csc alpha &= r/y dou & quad csc(-alpha) &= r/(-y) = -r/y ju $
 
-// p.68
 所以
 
 #c2b-b($ sin(-alpha) &= -sin alpha dou \

@@ -241,24 +241,26 @@
   lbl(p, (ox + sx * (c3-pi / 3) + 7, oy - 60), $y'$, dir: "c", d: 0)
 })
 // 图 3·24：y = sin x（细）与 y = 2 sin 3x（粗）
-#let fig-c3-24(width: 380 * 1.85 * c3k) = px-canvas(380, 200, width: width, (p, u) => {
+// 取样范围照原图（p.128）量得：粗线约 −4.79…4.74，细线约 −4.63…4.58（弧度），左起于波谷，共四个波峰
+#let fig-c3-24(width: 400 * 1.85 * c3k) = px-canvas(400, 200, width: width, (p, u) => {
   import cetz.draw: *
-  let (ox, oy, sx, sy) = (190, 105, 46, 30)
-  c3-axes(p, ox, oy, 175, 175, 85, 90)
-  c3-curve(p, ox, oy, sx, sy, c3-sin, -3.5, 3.5, st: c3-thin)
-  c3-curve(p, ox, oy, sx, sy, x => 2 * calc.sin(3 * x), -3.7, 3.7, st: c3-thick, n: 300)
+  let (ox, oy, sx, sy) = (200, 105, 34, 34)
+  c3-axes(p, ox, oy, 185, 185, 85, 90)
+  c3-curve(p, ox, oy, sx, sy, c3-sin, -4.63, 4.58, st: c3-thin)
+  c3-curve(p, ox, oy, sx, sy, x => 2 * calc.sin(3 * x), -4.79, 4.74, st: c3-thick, n: 400)
 })
 // 图 3·25：y = 2 sin(3x + π)，对 y' 轴（x = -π/3）是 y = 2 sin 3x
-#let fig-c3-25(width: 380 * 1.85 * c3k) = px-canvas(380, 200, width: width, (p, u) => {
+// 取样范围照原图（p.128）量得：约 −5.84…3.48（弧度），y′ 轴左边两个波峰
+#let fig-c3-25(width: 400 * 1.85 * c3k) = px-canvas(400, 200, width: width, (p, u) => {
   import cetz.draw: *
-  let (ox, oy, sx, sy) = (205, 100, 46, 30)
+  let (ox, oy, sx, sy) = (222, 100, 34, 34)
   let xs = -c3-pi / 3
   line(p(ox + sx * xs, oy + 80), p(ox + sx * xs, oy - 95), stroke: dsh, mark: arw)
   line(p(ox, oy + 80), p(ox, oy - 95), stroke: lt, mark: arw)
-  line(p(ox - 200, oy), p(ox + 170, oy), stroke: lt, mark: arw)
-  lbl(p, (ox + 178, oy + 2), $x$, dir: "c", d: 0)
+  line(p(ox - 212, oy), p(ox + 160, oy), stroke: lt, mark: arw)
+  lbl(p, (ox + 168, oy + 2), $x$, dir: "c", d: 0)
   lbl(p, (ox + 8, oy + 9), $O$, dir: "c", d: 0)
   lbl(p, (ox + sx * xs - 8, oy - 100), $y'$, dir: "c", d: 0)
   lbl(p, (ox + 8, oy - 100), $y$, dir: "c", d: 0)
-  c3-curve(p, ox, oy, sx, sy, x => 2 * calc.sin(3 * x + c3-pi), -4.2, 3.4, st: c3-thick, n: 300)
+  c3-curve(p, ox, oy, sx, sy, x => 2 * calc.sin(3 * x + c3-pi), -5.84, 3.48, st: c3-thick, n: 400)
 })

@@ -201,7 +201,7 @@ $ sin 3 x = sin(3 dot (5 pi)/18) = sin (5 pi)/6 = 1/2 ju $
 #sol[$ x/2 = 2 n pi plus.minus arccos(-sqrt(2)/2) = 2 n pi plus.minus (3 pi)/4 ju $
 $ therefore quad x = 4 n pi plus.minus (3 pi)/2 ju $
 
-验算：当 $n = 0$ 时，$x = plus.minus (3 pi)/2$。把 $(3 pi)/2$ 和 $-(3 pi)/2$ 代入原方程都满足。因为 $cos x/2$ 的最小正周期是 $4 pi$，所以 $4 n pi plus.minus (3 pi)/2$ 都是原方程的解。
+验算：当 $n = 0$ 时，$x = plus.minus (3 pi)/2$。把 $(3 pi)/2$ 和 $-(3 pi)/2$ 代入原方程都满足。因为 $cos pi/2$/* 原书如此，疑为 cos x/2 之误，未登记 REVISIONS，待负责人定 */ 的最小正周期是 $4 pi$，所以 $4 n pi plus.minus (3 pi)/2$ 都是原方程的解。
 ]
 
 #ex([例 3.])[解方程 #h(0.5em) $tan(x + 30°) = sqrt(3)$。]
@@ -731,7 +731,7 @@ $ x &= n dot 360° + 25°50' - 53°8' \
 
 $ a x + b y = 0 dou quad a x^2 + b x y + c y^2 = 0 $
 
-分别是 $x$ 和 $y$ 的一次齐次方程和二次齐次方程。同样，我们把含有 $sin x$ 和 $cos x$，并且对于 $sin x$ 和 $cos x$ 来说，各项的/* p.293 */数都相同的三角方程叫作 *$bold(sin x)$ 和 $bold(cos x)$ 的齐次方程*。
+分别是 $x$ 和 $y$ 的一次齐次方程和二次齐次方程。同样，我们把含有 $sin x$ 和 $cos x$，并且对于 $sin x$ 和 $cos x$ 来说，各项的次/* p.293 */数都相同的三角方程叫作 *$bold(sin x)$ 和 $bold(cos x)$ 的齐次方程*。
 
 $sin x$ 和 $cos x$ 的一次齐次方程和二次齐次方程的标准形式分别是
 

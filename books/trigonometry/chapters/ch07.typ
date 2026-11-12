@@ -504,7 +504,7 @@ $ cos alpha = -0.8. $
 
 因为 $cos alpha$ 的值是负的，所以 $alpha$ 的终边在第二象限内。
 
-$ therefore quad sin alpha = sqrt(1 - cos^2 alpha) = sqrt(1 - (-0.8)^2) = 0.6, \
+$ therefore quad sin alpha = sqrt(1 - cos^2 alpha) = sqrt(1 - (-0.8)^2) = 0.6. \
   tan alpha = (sin alpha) / (cos alpha) = 0.6 / (-0.8) = -0.75. $
 
 #c7-lead([就是], $ tan[arccos(-0.8)] = -0.75. $)
