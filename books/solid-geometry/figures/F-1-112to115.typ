@@ -1,0 +1,117 @@
+// 图 1·112（原书 p.99）、1·113、1·114(1)(2)、1·115（p.100）；页面 200 dpi 坐标。
+#import "F-base.typ": *
+
+#let fig-F-1-112(width: 300 * k) = px-canvas(300, 320, origin: (640, 670), width: width, (p, u) => {
+  import cetz.draw: *
+  let S = (790, 693)
+  let A = (700, 844)
+  let B = (790, 908)
+  let C = (858, 897)
+  let D = (755, 812)
+  seg(p, S, (668, 895))
+  seg(p, S, (790, 968))
+  seg(p, S, (870, 947))
+  dseg(p, S, (722, 925))
+  tseg(p, A, B)
+  tseg(p, B, C)
+  dseg(p, A, D)
+  dseg(p, D, C)
+  L(p, 792, 682, $S$)
+  L(p, 684, 842, $A$)
+  L(p, 662, 910, $A_1$)
+  L(p, 803, 920, $B$)
+  L(p, 792, 978, $B_1$)
+  L(p, 876, 892, $C$)
+  L(p, 877, 950, $C_1$)
+  L(p, 771, 805, $D$)
+  L(p, 721, 940, $D_1$)
+})
+
+#let fig-F-1-113(width: 260 * k) = px-canvas(260, 275, origin: (610, 325), width: width, (p, u) => {
+  import cetz.draw: *
+  let S = (738, 340)
+  let A = (655, 497)
+  let B = (705, 498)
+  let C = (738, 521)
+  let D = (808, 471)
+  let E = (757, 438)
+  seg(p, S, (625, 552))
+  seg(p, S, (697, 535))
+  seg(p, S, (736, 568))
+  seg(p, S, (832, 520))
+  tseg(p, A, B)
+  tseg(p, B, C)
+  tseg(p, C, D)
+  dseg(p, A, E)
+  dseg(p, E, D)
+  dseg(p, S, (772, 525))
+  L(p, 738, 328, $S$)
+  L(p, 638, 498, $A$)
+  L(p, 695, 516, $B$)
+  L(p, 748, 530, $C$)
+  L(p, 826, 464, $D$)
+  L(p, 765, 428, $E$)
+})
+
+#let fig-F-1-114a(width: 220 * k) = px-canvas(220, 275, origin: (90, 780), width: width, (p, u) => {
+  import cetz.draw: *
+  let S = (209, 795)
+  let A = (135, 935)
+  let B = (212, 976)
+  let C = (274, 962)
+  let D = (187, 905)
+  // 阴影：沿 AB 到 DC 的一族线
+  for i in range(1, 12) {
+    let t = i / 12
+    line(p(..lerp(A, B, t)), p(..lerp(D, C, t)), stroke: 0.4pt)
+  }
+  seg(p, S, (100, 998))
+  seg(p, S, (216, 1044))
+  seg(p, S, (290, 1002))
+  dseg(p, S, (170, 988))
+  seg(p, A, D)
+  seg(p, D, C)
+  tseg(p, A, B)
+  tseg(p, B, C)
+  L(p, 210, 781, $S$)
+  L(p, 117, 932, $A$)
+  L(p, 199, 991, $B$)
+  L(p, 284, 961, $C$)
+  L(p, 198, 889, $D$)
+})
+
+#let fig-F-1-114b(width: 220 * k) = px-canvas(220, 275, origin: (340, 780), width: width, (p, u) => {
+  import cetz.draw: *
+  let S = (471, 793)
+  seg(p, S, (367, 989))
+  seg(p, S, (477, 1041))
+  seg(p, S, (552, 994))
+  dseg(p, S, (419, 995))
+  L(p, 472, 780, $S$)
+  L(p, 353, 990, $A$)
+  L(p, 447, 942, $D$)
+  L(p, 489, 1040, $B$)
+  L(p, 563, 993, $C$)
+})
+
+#let fig-F-1-115(width: 270 * k) = px-canvas(270, 295, origin: (585, 765), width: width, (p, u) => {
+  import cetz.draw: *
+  let O = (751, 945)
+  let X = (600, 943)
+  let Z = (752, 790)
+  let Y = (840, 1034)
+  // 不规则的平面片外形
+  catmull(p(..X), p(622, 925), p(650, 892), p(675, 867), p(710, 832), p(..Z), stroke: lb)
+  catmull(p(..Z), p(760, 795), p(785, 835), p(810, 877), p(832, 925), p(842, 975), p(..Y), stroke: lb)
+  catmull(p(..Y), p(820, 1047), p(770, 1048), p(725, 1032), p(680, 1010), p(645, 985), p(615, 960), p(..X), stroke: lb)
+  tseg(p, O, X)
+  tseg(p, O, Y)
+  tseg(p, O, Z)
+  L(p, 755, 776, $z$)
+  L(p, 582, 942, $x$)
+  L(p, 855, 1046, $y$)
+  L(p, 768, 934, $O$)
+  L(p, 716, 872, $P$)
+  L(p, 791, 894, $N$)
+  L(p, 732, 991, $M$)
+})
