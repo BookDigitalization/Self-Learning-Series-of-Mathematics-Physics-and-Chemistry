@@ -82,6 +82,7 @@
   }
   let t(x, y, body) = content(p(x, y), tt(body))
   let ar(a, b) = line(p(..a), p(..b), stroke: lw, mark: arw)
+  // 原书（p.173 图 4·3 左上框）下标末字印作 θ（600 dpi 放大可见，与下方 S 框的 β 字形不同）；按左侧箭头“以 −β 代 β”和下方 S 框订正为 β
   bx(283, 1027, 380, 1077, $T_(alpha - beta)$)
   bx(509, 1027, 603, 1077, $T_(alpha + beta)$)
   bx(733, 1027, 830, 1077, $T_(2 alpha)$)
