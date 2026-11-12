@@ -287,7 +287,8 @@
   line(p(X(B.at(0)), Y(B.at(1))), p(X(fb.at(0)), Y(fb.at(1))), stroke: lt, mark: (end: "stealth", fill: black, scale: 0.4))
   I-d(p, (X(A.at(0)), Y(A.at(1)))); I-d(p, (X(B.at(0)), Y(B.at(1)))); I-d(p, (X(C.at(0)), Y(C.at(1))))
   I-t(p, (342, 713), $B (-4, sqrt(3) / 2)$)
-  I-t(p, (587, 697), $C (1; sqrt(3))$)
+  // 原书图中作 C(1; √3)（分号），与正文统一为逗号
+  I-t(p, (587, 697), $C (1, sqrt(3))$)
   I-t(p, (709, 697), $A (6, sqrt(3))$)
   I-t(p, (443, 705), $d_2$); I-t(p, (646, 746), $d_1$)
   I-t(p, (502, 781), $O$); I-t(p, (762, 764), $x$); I-t(p, (511, 577), $y$)
@@ -314,9 +315,10 @@
   I-ax(p, (627, 775), (627, 530))
   for x in (-3, -2, -1, 2, 3, 4) { line(p(ox + s * x, oy), p(ox + s * x, oy - 4), stroke: lt) }
   for y in (-3, -2, 1, 2, 3) { line(p(627, oy - s * y), p(631, oy - s * y), stroke: lt) }
-  I-ln(p, (558, 700), (749, 603))
-  line(p(694, 631), p(741, 718), stroke: lt, mark: (end: "stealth", fill: black, scale: 0.4))
-  I-d(p, (741, 718))
-  content(p(775, 734), tt($P (4, -2)$))
+  // 原图直线斜率约 0.5、与 3x − 4y = 0 不符（手绘），按方程画：斜率 3/4，垂足 (1.6, 1.2)，P(4, −2)
+  I-ln(p, (ox + s * -2.42, oy + s * 0.75 * 2.42), (ox + s * 4.28, oy - s * 0.75 * 4.28))
+  line(p(ox + s * 1.6, oy - s * 1.2), p(ox + s * 4, oy + s * 2), stroke: lt, mark: (end: "stealth", fill: black, scale: 0.4))
+  I-d(p, (ox + s * 4, oy + s * 2))
+  content(p(775, 739), tt($P (4, -2)$))
   I-t(p, (616, 678), $O$); I-t(p, (818, 666), $x$); I-t(p, (627, 518), $y$)
 })

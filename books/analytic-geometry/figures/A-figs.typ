@@ -45,17 +45,20 @@
   A-t(p, 398, 1362, $A$)
 })
 
-// 图 1·2（p.1）：(a) 由西到东 (b) 由东到西（原图 (a) 的箭头画在线的中部）
+// 图 1·2（p.1）：(a) 由西到东 (b) 由东到西（原图两线的箭头都画在线的中部）
+// 原书作：(a)(b) 两线中部的小箭头形状相同、朝向一致（放大看 (a) 像指向左），与正文“由西到东（图 a）与由东到西（图 b）”不合；
+// 数字版按正文画：(a) 指向右（东），(b) 指向左（西）。
 #let fig-A-1-2(width: 310 * k) = px-canvas(310, 160, origin: (540, 1240), width: width, (p, u) => {
   import cetz.draw: *
   A-ax(p, 550, 832, 1257, arrow: false)
-  line(p(690, 1257), p(676, 1257), stroke: 1pt, mark: (end: "stealth", fill: black, scale: 0.5))
+  line(p(676, 1257), p(690, 1257), stroke: 1pt, mark: (end: "stealth", fill: black, scale: 0.5))
   A-tk(p, 611, 1257)
   A-tk(p, 770, 1257)
   A-t(p, 611, 1272, $B$)
   A-t(p, 770, 1272, $A$)
   A-t(p, 690, 1293, $(a)$)
-  A-ax(p, 550, 837, 1347)
+  A-ax(p, 550, 837, 1347, arrow: false)
+  line(p(706, 1347), p(692, 1347), stroke: 1pt, mark: (end: "stealth", fill: black, scale: 0.5))
   A-tk(p, 613, 1347)
   A-tk(p, 772, 1347)
   A-t(p, 613, 1362, $B$)

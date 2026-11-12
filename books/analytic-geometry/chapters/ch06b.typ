@@ -52,7 +52,7 @@ $ x^2/a^2 + y^2/b^2 = 1 dou $
 
 #fig("6·13", grid(columns: 2, column-gutter: 2em, align: bottom, fig-W-6-13a(width: 380 * k), fig-W-6-13b(width: 380 * k)), [])
 
-#note-small[利用本题的性质，可以制造一种画椭圆的工具。方法如下：用两根木条（或其他刚性物体）钉成十字形，木条中间挖一道槽。在另一活动木条 $P B A$ 的 $P$ 处钻一小孔，可以容纳铅笔尖，$A$，$B$ 是两个螺旋钉，可以放松移动以配合 $abs(A P) = a$，$abs(B P) = b$ 的长度，当 $A$，$B$ 各在一条槽内移动时，$P$ 处笔尖就画出一个椭圆（图 6·13(b)）。]
+#note-small[利用本题的性质，可以制造一种画椭圆的工具。方法如下：用两根木条（或其他刚性物体）钉成十字形，木条中间挖一道槽。在另一活动木条 $P B A$ 的 $P$ 处钻一小孔，可以容纳铅笔尖，$A$，$B$ 是两个螺钉，可以放松移动以配合 $abs(A P) = a$，$abs(B P) = b$ 的长度，当 $A$，$B$ 各在一条槽内移动时，$P$ 处笔尖就画出一个椭圆（图 6·13(b)）。]
 
 #ex[例 2.][一个大小一定的圆，沿平面上一根直线并且在它的上边滚动。求这圆周上一个定点 $P$ 的轨迹的方程。]
 
@@ -77,7 +77,7 @@ $ x = r arccos (r - y)/r - sqrt(2r y - y^2) ju $
 ]
 
 #ex[例 3.][一根绳子紧紧围绕着一个圆，当此绳子拉紧而逐渐剥离时（这时剥离部分的绳为圆的切线），求绳外端 $P$ 点的轨迹。]
-#sol[以圆心为坐标的原点，使 $x$ 轴经过圆上 $A$ 点，$A$ 点为绳端 $P$ 合于圆上时的位置，$A B$ 是围绕圆的一段绳子，现在拉到 $B P$ 的位置，因为绳子是拉紧的，所以 $B P$ 切圆于 $B$ 点。令 $P(x, y)$ 为轨迹上的一点，连接 $O B$（如图 6·15），设圆半径为 $r$，又设 $∠D O B = theta$，则 $∠Q B P$ 也是 $theta$。令
+#sol[以圆心为坐标的原点，使 $x$ 轴经过圆上 $A$ 点，$A$ 点为绳端 $P$ 合于圆上时的位置，$A B$ 是围绕圆的一段绳子，现在拉到 $B P$ 的位置，因为绳子是拉紧的，所以 $B P$ 切圆于 $B$ 点。令 $P(x, y)$ 为轨迹上的一点，连接 $O B$（如图 6·15），设圆半径为 $r$，又设 $∠D O B = theta$，则 $∠Q B P$ 也是 $theta$。现
 $ cases(x = O M = O D + D M = O D + Q P dou, y = M P = D Q = D B - Q B ju) $
 #W-lead([但], $ O B = r, quad B P = overparen(B A) = r theta dou $)
 $ ∴ quad O D = r cos theta, quad Q P = B P sin theta = r theta sin theta dou $
@@ -133,13 +133,13 @@ $ x^2 + y^2 = a^2 + b^2 ju $
 ]
 
 // p.405
-#note-small[求两组直线交点轨迹的方程，可以从两个对应直线方程求出它们的交点的坐标所表示的参数方程，也可以直接从这两方程消去参数得出普通方程 $F(x, y) = 0$。一般是采取后面的一种方法，因为这样就直接得到普通方程，比较容易看出曲线的性质。在上面的例 4 及例 5 都是直接消去参数的，现例 4 的参数方程是 $x = t$，$y = (a^2 - t^2)/h$，比较还是简单的，但在例 5 中，假使要化为参数方程，反而比较麻烦，不如直接求普通方程来得便当。]
+#note-small[求两组直线交点轨迹的方程，可以从两个对应直线方程求出它们的交点的坐标所表示的参数方程，也可以直接从这两方程消去参数得出普通方程 $F(x, y) = 0$。一般是采取后面的一种方法，因为这样就直接得到普通方程，比较容易看出曲线的性质。在上面的例 4 及例 5 都是直接消去参数的，现例 4 的参数方程是 $x = t$，$y = (a^2 - t^2)/h$，比较还是简单的，但在例 5 中，假使要化为参数方程，反而比较麻烦，不如直接求普通方程来得方便。]
 
 == 圆锥曲线的直径
 
 连接圆锥曲线上任意两点的线段叫作*圆锥曲线的弦*，现在我们来考虑一个圆锥曲线中一组平行弦中点的轨迹。
 
-先从圆谈起，在图 6·18(a) 中是圆的一组平行的弦，由平面几何的知识可以知道它们的中点的轨迹是圆的直径。这个性质对于一般的圆锥曲线是否适用，还须要我们来探讨和证明。下面先来探求椭圆的一组平行弦的中点的轨迹方程：
+先从圆谈起，在图 6·18(a) 中是圆的一组平行的弦，由平面几何的知识可以知道它们的中点的轨迹是圆的直径。这个性质对于一般的圆锥曲线是否适用，还需要我们来探讨和证明。下面先来探求椭圆的一组平行弦的中点的轨迹方程：
 
 #fig("6·18", grid(columns: 2, column-gutter: 2em, align: bottom, fig-W-6-18a(), fig-W-6-18b()), [])
 
@@ -206,11 +206,11 @@ $ k dot k' = -beta^2/alpha^2 ju $
 
 *\*3. 双曲线、抛物线的直径*　设双曲线的方程是 $beta^2 x^2 - alpha^2 y^2 = alpha^2 beta^2$，又设一组平行弦的斜率是已知数 $k$，照椭圆同样的方法可以求到它相应的直径方程是
 $ y = beta^2/(alpha^2 k) x ju $
-同样可推到，假使
+同样可推得，假使
 $ y = k x, quad y = k' x $
 是双曲线的两共轭直径，则它们斜率间的关系是 $k k' = beta^2/alpha^2$（图 6·19(b)）。
 
-设抛物线的方程是 $y^2 = 2p x$，又它的一组平行弦的斜率是 $k$，同样可推到它的直径是
+设抛物线的方程是 $y^2 = 2p x$，又它的一组平行弦的斜率是 $k$，同样可推得它的直径是
 $ y = p/k ju $
 很明显，可看出抛物线的直径都是平行于它的轴的（图 6·19(c)），抛物线的直径没有共轭的直径。
 
@@ -223,8 +223,8 @@ $ y = p/k ju $
   table.hline(stroke: 1pt),
   [圆锥曲线方程], [直径方程], [两共轭直径的斜率关系式],
   table.hline(stroke: 0.6pt),
-  // 原书此格印作 γ²（与正文 p.407 的 x² + y² = a² 不一致），照录
-  [$x^2 + y^2 = gamma^2$], [$x + k y = 0$], [$k k' = -1$],
+  // 原书作 x² + y² = γ²，与正文 p.407 的 x² + y² = a² 不一致，按正文订正
+  [$x^2 + y^2 = a^2$], [$x + k y = 0$], [$k k' = -1$],
   [$beta^2 x^2 + alpha^2 y^2 = alpha^2 beta^2$], [$beta^2 x + alpha^2 k y = 0$], [$k k' = -beta^2/alpha^2$],
   [$beta^2 x^2 - alpha^2 y^2 = alpha^2 beta^2$], [$beta^2 x - alpha^2 k y = 0$], [$k k' = beta^2/alpha^2$],
   [$y^2 = 2p x$], [$y = p/k$], [无共轭直径],
@@ -290,33 +290,34 @@ $ y = p/k ju $
 
     #plainfig((fig-W-q11(), [（第 11 题）]))
 
-    ［提示：如图上小圆半径 $C B = r$，大圆半径 $O B = 4r$，$∠A O B = phi.alt$。又设 $P(x, y)$ 为小圆上一点。以大圆心为原点，$x$ 轴经过大圆周上 $A$ 点，此 $A$ 点为滚动开始时 $P$ 与大圆周相合之处，所以
+    ［提示：如图上小圆半径 $C B = r$，大圆半径 $O B = 4r$，$∠A O B = phi$。又设 $P(x, y)$ 为小圆上一点。以大圆心为原点，$x$ 轴经过大圆周上 $A$ 点，此 $A$ 点为滚动开始时 $P$ 与大圆周重合之处，所以
     $ overparen(B P) = overparen(B A) dou $
     // p.413
     #W-lead([但], $ overparen(B P) = r(∠P C B) dou $)
-    #W-lead([又], $ overparen(B A) = 4r dot phi.alt dou $)
-    $ ∴ quad r(∠P C B) = 4r dot phi.alt dou $
-    #W-lead([故], $ ∠P C B = 4 phi.alt ju $)
-    令
+    #W-lead([又], $ overparen(B A) = 4r dot phi dou $)
+    $ ∴ quad r(∠P C B) = 4r dot phi dou $
+    #W-lead([故], $ ∠P C B = 4 phi ju $)
+    现
     #eqsys(($x = O M = O D + D M = O D + E P dou$, [(1)]), ($y = M P = D E = D C - E C ju$, [(2)]))
-    $ ∵ quad & O D = abs(O C) cos phi.alt = 3r cos phi.alt quad (∵ O C = O B - C B = 3r) dou \
-      & ∠P C E = ∠B C E - ∠P C B = (phi.alt + 90°) - 4 phi.alt = 90° - 3 phi.alt dou \
-      & E P = abs(C P) sin(∠P C E) = r sin(90° - 3 phi.alt) = r cos 3 phi.alt dou \
-      & D C = abs(O C) sin phi.alt = 3r sin phi.alt dou \
-      & E C = abs(C P) cos(∠P C E) = r cos(90° - 3 phi.alt) = r sin 3 phi.alt dou $
+    $ ∵ quad & O D = abs(O C) cos phi = 3r cos phi quad (∵ O C = O B - C B = 3r) dou \
+      & ∠P C E = ∠B C E - ∠P C B = (phi + 90°) - 4 phi = 90° - 3 phi dou \
+      & E P = abs(C P) sin(∠P C E) = r sin(90° - 3 phi) = r cos 3 phi dou \
+      & D C = abs(O C) sin phi = 3r sin phi dou \
+      & E C = abs(C P) cos(∠P C E) = r cos(90° - 3 phi) = r sin 3 phi dou $
     ∴ 代入(1)，(2)两式得
-    #eqno([(3)], $ cases(x = 3r cos phi.alt + r cos 3 phi.alt dou, y = 3r sin phi.alt - r sin 3 phi.alt ju) $)
-    这是所求轨迹的参数方程，参数为 $phi.alt$。
+    #eqno([(3)], $ cases(x = 3r cos phi + r cos 3 phi dou, y = 3r sin phi - r sin 3 phi ju) $)
+    这是所求轨迹的参数方程，参数为 $phi$。
 
     从三角公式，
-    $ & cos 3 phi.alt = 4 cos^3 phi.alt - 3 cos phi.alt dou \
-      & sin 3 phi.alt = 3 sin phi.alt - 4 sin^3 phi.alt dou \
-      ∴ quad & 3 cos phi.alt + cos 3 phi.alt = 4 cos^3 phi.alt dou \
-      & 3 sin phi.alt - sin 3 phi.alt = 4 sin^3 phi.alt dou $
+    $ & cos 3 phi = 4 cos^3 phi - 3 cos phi dou \
+      & sin 3 phi = 3 sin phi - 4 sin^3 phi dou \
+      ∴ quad & 3 cos phi + cos 3 phi = 4 cos^3 phi dou \
+      & 3 sin phi - sin 3 phi = 4 sin^3 phi dou $
     代入(3)得
-    $ cases(x = 4r cos^3 phi.alt dou, y = 4r sin^3 phi.alt ju) $
-    这曲线是内摆线的一个特例，因为它有四个歧点，所以叫它是*四歧点内摆线*。］
-  + 下页附图中，$O B$ 是一根曲柄，它围绕 $O$ 点旋转；$A B$ 是一根联杆，$A$ 点在 $O x$ 线上滑动，令 $O B$ 长 $r$，$abs(A B) = abs(O B)$，设 $P$ 为 $A B$ 上面一点，又 $abs(P B) = b$，$abs(P A) = a$。求 $P$ 点的轨迹的方程。
+    $ cases(x = 4r cos^3 phi dou, y = 4r sin^3 phi ju) $
+    这曲线是内摆线的一个特例，因为它有四个尖点，所以叫它是*四尖点内摆线*。］
+  // 原书作“下页附图中，”（页码式引用，TERMINOLOGY 4.6），附图紧接本题
+  + 如附图，$O B$ 是一根曲柄，它围绕 $O$ 点旋转；$A B$ 是一根连杆，$A$ 点在 $O x$ 线上滑动，令 $O B$ 长 $r$，$abs(A B) = abs(O B)$，设 $P$ 为 $A B$ 上面一点，又 $abs(P B) = b$，$abs(P A) = a$。求 $P$ 点的轨迹的方程。
 
     // p.414
     #plainfig((fig-W-q12(), [（第 12 题）]))
@@ -326,7 +327,7 @@ $ y = p/k ju $
   *1. 参数方程一般形式是*（设 $t$ 是参数）：
   $ cases(x = f_1(t) dou, y = f_2(t) ju) $
   消去 $t$ 可得到普通方程
-  $ F(x, y) = 0 quad "或者是" quad y = phi.alt(x) "的形式" ju $
+  $ F(x, y) = 0 quad "或者是" quad y = phi(x) "的形式" ju $
 
   *2. 参数方程的作用*
 
@@ -363,15 +364,15 @@ $ y = p/k ju $
     (2) $x^2 + 4y^2 - 6x + 5 = 0$ 中，当 $x = 3 + 2 cos theta$；
 
     (3) $x^3 + y^3 - 3a x y = 0$ 中，当 $y = t x$。
-  + 消去下列各式的参数（$t$，$phi.alt$，$theta$ 或 $lambda$）：
+  + 消去下列各式的参数（$t$，$phi$，$theta$ 或 $lambda$）：
 
-    #cols[(1) $cases(x = -3 + a csc phi.alt dou, y = 4 + b cot phi.alt fen)$][(2) $cases(x = cos phi.alt dou, y = 2 + cos 2 phi.alt fen)$]
+    #cols[(1) $cases(x = -3 + a csc phi dou, y = 4 + b cot phi fen)$][(2) $cases(x = cos phi dou, y = 2 + cos 2 phi fen)$]
 
     #cols[(3) $cases(display(x = (x_1 + lambda x_2)/(1 + lambda)) dou, display(y = (y_1 + lambda y_2)/(1 + lambda)) fen)$][(4) $cases(display(x = -(36t)/(4 + 9t^2)) dou, display(y = (8 - 18t^2)/(4 + 9t^2)) fen)$]
 
     #grid(columns: (auto, 1fr), column-gutter: 2em, row-gutter: 1em, align: horizon,
       [(5) $cases(x = a cos^4 theta dou, y = a sin^4 theta fen)$], [［提示：化成 $cos^2 theta = dots.c$。］],
-      [(6) $cases(x = phi.alt - sin phi.alt dou, y = 1 - cos phi.alt ju)$], [［提示：从第二式得 $cos phi.alt = 1 - y$，\ $∴ phi.alt = arccos(1 - y)$；又 $sin phi.alt = dots.c$。］])
+      [(6) $cases(x = phi - sin phi dou, y = 1 - cos phi ju)$], [［提示：从第二式得 $cos phi = 1 - y$，\ $∴ phi = arccos(1 - y)$；又 $sin phi = dots.c$。］])
   + 在 $9x^2 - 4y^2 = 36$ 中，求对于 $y = 2x + t$ 平行弦的直径，又求它的共轭直径。
   + 在上题的共轭双曲线（参考第四章双曲线节）$4y^2 - 9x^2 = 36$ 中，求以上题的直径的斜率为平行弦组的斜率的直径方程。
 
@@ -381,8 +382,8 @@ $ y = p/k ju $
     ［提示：以弦的参数方程代入椭圆方程，并照 $rho$ 的降幂次序排列得
     $ (beta^2 cos^2 gamma + alpha^2 sin^2 gamma) rho^2 + 2(beta^2 x' cos gamma + alpha^2 y' sin gamma) rho \
       + (beta^2 x'^2 + alpha^2 y'^2 - alpha^2 beta^2) = 0 dou $
-    // 原书“ρ₁（PP₁ 的长），ρ₂（PP₂ 的长）”，P 疑应作 P′（弦的中点），照录
-    照图 6·18(b)，设 $P'$ 是 $P_1 P_2$ 弦的中点，则上式两根是 $rho_1$（$P P_1$ 的长），$rho_2$（$P P_2$ 的长），令 $rho_1 = -rho_2$，那么
+    // 原书作“ρ₁（PP₁ 的长），ρ₂（PP₂ 的长）”；ρ 从弦的中点 P′(x′, y′) 量起，订正为 P′P₁、P′P₂
+    照图 6·18(b)，设 $P'$ 是 $P_1 P_2$ 弦的中点，则上式两根是 $rho_1$（$P' P_1$ 的长），$rho_2$（$P' P_2$ 的长），令 $rho_1 = -rho_2$，那么
     $ rho_1 + rho_2 = (-2(beta^2 x' cos gamma + alpha^2 y' sin gamma))/(beta^2 cos^2 gamma + alpha^2 sin^2 gamma) = 0 ju $
     即 $beta^2 x' cos gamma + alpha^2 y' sin gamma = 0$，即 $beta^2 x' + alpha^2 tan gamma dot y' = 0$，即 $beta^2 x' + alpha^2 k y' = 0$，如 $P'(x', y')$ 以动点 $P(x, y)$ 代替，则前式可改写为 $beta^2 x + alpha^2 k y = 0$，这就是所要求的直径方程。］
   + 用上题方法求下列各圆锥曲线的直径：
@@ -441,5 +442,5 @@ $ y = p/k ju $
     $ (2A + B k) x + (B + 2C k) y + (D + E k) = 0 ju $
 
     ［提示：按照 6·6 节 1 的方法求直径方程。］
-  + 等边双曲线的方程是 $x y = lambda$，它的一组平行弦的斜率是 $k$，求证它相应的直径的方程是 $k x + y = 0$。
+  + 等轴双曲线的方程是 $x y = lambda$，它的一组平行弦的斜率是 $k$，求证它相应的直径的方程是 $k x + y = 0$。
 ]
