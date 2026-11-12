@@ -29,6 +29,13 @@
 #include "chapters/ch03b.typ"
 #include "chapters/ch03c.typ"
 #include "chapters/ch03d.typ"
+#include "chapters/ch04.typ"
+#include "chapters/ch04b.typ"
+#include "chapters/ch04c.typ"
+#include "chapters/ch04d.typ"
+#include "chapters/ch04e.typ"
+#include "chapters/ch04f.typ"
+#include "chapters/ch04g.typ"
 
 #show: back-matter
 
