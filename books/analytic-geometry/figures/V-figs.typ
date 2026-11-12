@@ -174,7 +174,7 @@
   let P = m(xp, (2 * a - xp) / 2)
   let M = m(xp, 0)
   line(p(..P), p(..M), stroke: dsh)
-  pdot(p, P); pdot(p, m(0, a))
+  pdot(p, P, r: 3.5); pdot(p, m(0, a), r: 3.5)
   V-t(p, (P.at(0) - 12, P.at(1) - 12), $P$)
   V-t(p, (M.at(0) - 3, M.at(1) + 14), $M$)
   V-t(p, (M.at(0) + 30, M.at(1) + 14), $2a$)

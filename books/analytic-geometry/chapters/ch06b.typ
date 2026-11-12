@@ -77,7 +77,7 @@ $ x = r arccos (r - y)/r - sqrt(2r y - y^2) ju $
 ]
 
 #ex[例 3.][一根绳子紧紧围绕着一个圆，当此绳子拉紧而逐渐剥离时（这时剥离部分的绳为圆的切线），求绳外端 $P$ 点的轨迹。]
-#sol[以圆心为坐标的原点，使 $x$ 轴经过圆上 $A$ 点，$A$ 点为绳端 $P$ 合于圆上时的位置，$A B$ 是围绕圆的一段绳子，现在拉到 $B P$ 的位置，因为绳子是拉紧的，所以 $B P$ 切圆于 $B$ 点。令 $P(x, y)$ 为轨迹上的一点，连接 $O B$（如图 6·15），设圆半径为 $r$，又设 $∠D O B = theta$，则 $∠Q B P$ 也是 $theta$。现
+#sol[以圆心为坐标的原点，使 $x$ 轴经过圆上 $A$ 点，$A$ 点为绳端 $P$ 落在圆上时的位置，$A B$ 是围绕圆的一段绳子，现在拉到 $B P$ 的位置，因为绳子是拉紧的，所以 $B P$ 切圆于 $B$ 点。令 $P(x, y)$ 为轨迹上的一点，连接 $O B$（如图 6·15），设圆半径为 $r$，又设 $∠D O B = theta$，则 $∠Q B P$ 也是 $theta$。现
 $ cases(x = O M = O D + D M = O D + Q P dou, y = M P = D Q = D B - Q B ju) $
 #W-lead([但], $ O B = r, quad B P = overparen(B A) = r theta dou $)
 $ ∴ quad O D = r cos theta, quad Q P = B P sin theta = r theta sin theta dou $
