@@ -1293,7 +1293,7 @@ $ tan A + tan B = -tan C + tan A tan B tan C, $
     $ sin(alpha + beta) = cos(alpha + beta). $
   10. 已知 $tan alpha$ 和 $tan beta$ 是方程 $x^2 + p x + q = 0$ 的两个根，求下式的值：
     $ sin^2 (alpha + beta) + p sin(alpha + beta) cos(alpha + beta) + q cos^2 (alpha + beta). $
-  11. 在一个圆的圆心的同旁作平行的两弦，这二条弦所对的圆心角各为 $72°$ 与 $144°$。求证这二弦间的距离等于半径的二分之一。
+  11. 在一个圆的圆心的同旁作平行的两弦，这两条弦所对的圆心角各为 $72°$ 与 $144°$。求证这两弦间的距离等于半径的二分之一。
   12. 求证 $tan 6° tan 42° tan 66° tan 78° = 1$。
   // p.175
   13. 求证

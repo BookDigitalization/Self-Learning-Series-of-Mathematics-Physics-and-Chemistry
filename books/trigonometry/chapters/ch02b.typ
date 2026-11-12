@@ -4,6 +4,12 @@
 
 // 局部辅助：原书用粗体排的公式组、整段粗体（含公式）
 #let c2b-b(body) = {
+  // set text 对公式不起作用，公式内容另用 math.bold 加粗（标签防止 show 规则递归）
+  show math.equation: it => {
+    if it.has("label") and it.label == <bold-eq-done> { it } else {
+      [#math.equation(block: it.block, numbering: it.numbering, math.bold(it.body))<bold-eq-done>]
+    }
+  }
   set text(weight: "bold")
   body
 }

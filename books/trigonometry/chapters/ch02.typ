@@ -6,6 +6,18 @@
 #import "/books/trigonometry/figures/c2a-p54-58.typ": *
 #import "/books/trigonometry/figures/c2a-p61-64.typ": *
 
+// 局部辅助：原书用粗体排的公式组（同 ch02b 的 c2b-b）
+#let c2a-b(body) = {
+  // set text 对公式不起作用，公式内容另用 math.bold 加粗（标签防止 show 规则递归）
+  show math.equation: it => {
+    if it.has("label") and it.label == <bold-eq-done> { it } else {
+      [#math.equation(block: it.block, numbering: it.numbering, math.bold(it.body))<bold-eq-done>]
+    }
+  }
+  set text(weight: "bold")
+  body
+}
+
 // 局部：表格（模板把表格第一行设成白字配深色表头，这里不用表头底色，显式改回黑字）
 #let c2a-tab(cols, head, rows, vlines: ()) = align(center, block(breakable: false, above: 1em, below: 1em, {
   set text(size: 9.8pt)
@@ -182,12 +194,14 @@ $ r = sqrt(x^2 + y^2) ju $
 // p.50
 在角 $alpha$ 的终边（就是射线最后的位置）上任意取一点 $P$。设点 $P$ 的坐标为 $(x, y)$，$O P$ 的长为 $r$。根据锐角三角函数的定义，我们知道
 
+#c2a-b[
 #eqno([(1)], $sin alpha = y / r dou$)
 #eqno([(2)], $cos alpha = x / r dou$)
 #eqno([(3)], $tan alpha = y / x dou$)
 #eqno([(4)], $cot alpha = x / y dou$)
 #eqno([(5)], $sec alpha = r / x dou$)
 #eqno([(6)], $csc alpha = r / y ju$)
+]
 
 #fig("2·12", fig-c2a-2-12())[]
 
@@ -361,14 +375,14 @@ $ cos(-30°) = cos 330° = sqrt(3)/2 dou $
 
 等等。
 
-在 §2·1 中，我们又知道和角 $alpha$ 始边相同，终边也相同的一切角可以用 $n dot 360° + alpha$ 来表示。所以，$n dot 360° + alpha$ 的三角函数值和 $alpha$ 的三角函数值完全相同。就是说，对于任意角 $alpha$ 和任意整数 $n$，我们都有
+在 §2·1 中，我们又知道和角 $alpha$ 始边相同，终边也相同的一切角可以用 $n dot 360° + alpha$ 来表示。所以，*$bold(n dot 360° + alpha)$* 的三角函数值和 $alpha$ 的三角函数值完全相同。就是说，对于任意角 $alpha$ 和任意整数 $n$，我们都有
 
-$ sin(n dot 360° + alpha) &= sin alpha dou \
+#c2a-b($ sin(n dot 360° + alpha) &= sin alpha dou \
   cos(n dot 360° + alpha) &= cos alpha dou \
   tan(n dot 360° + alpha) &= tan alpha dou \
   cot(n dot 360° + alpha) &= cot alpha dou \
   sec(n dot 360° + alpha) &= sec alpha dou \
-  csc(n dot 360° + alpha) &= csc alpha ju $
+  csc(n dot 360° + alpha) &= csc alpha ju $)
 
 // p.60
 利用这一组公式，我们可以化任何正角的三角函数为小于 $360°$ 的正角的三角函数。
@@ -414,12 +428,12 @@ $ tan alpha &= y/x dou quad & tan(180° - alpha) &= y/(-x) = -frac(y, x) fen \
 
 所以
 
-$ sin(180° - alpha) &= sin alpha dou \
+#c2a-b($ sin(180° - alpha) &= sin alpha dou \
   cos(180° - alpha) &= -cos alpha dou \
   tan(180° - alpha) &= -tan alpha dou \
   cot(180° - alpha) &= -cot alpha dou \
   sec(180° - alpha) &= -sec alpha dou \
-  csc(180° - alpha) &= csc alpha ju $
+  csc(180° - alpha) &= csc alpha ju $)
 
 利用这一组公式，可以把 $90°$ 与 $180°$ 间的角的三角函数，化成锐角的三角函数。
 
@@ -448,12 +462,12 @@ $ cos alpha &= x/r dou quad & cos(180° + alpha) &= (-x)/r = -frac(x, r) fen \
 
 所以
 
-$ sin(180° + alpha) &= -sin alpha dou \
+#c2a-b($ sin(180° + alpha) &= -sin alpha dou \
   cos(180° + alpha) &= -cos alpha dou \
   tan(180° + alpha) &= tan alpha dou \
   cot(180° + alpha) &= cot alpha dou \
   sec(180° + alpha) &= -sec alpha dou \
-  csc(180° + alpha) &= -csc alpha ju $
+  csc(180° + alpha) &= -csc alpha ju $)
 
 // p.64
 利用这组公式，可以把 $180°$ 与 $270°$ 间的角的三角函数，化成锐角的三角函数。
@@ -468,16 +482,16 @@ $ tan 204°30' &= tan(180° + 24°30') \
 
 *3. $360° - alpha$ 与锐角 $alpha$ 的三角函数间的关系*　从图 2·24 可以看到，如果在角 $alpha$ 和 $360° - alpha$ 的终边上分别取 $O P$ 和 $O P_1$，使 $O P = O P_1 = r$，并且作 $x$ 轴的垂线 $M P$ 和 $M_1 P_1$，那么，由于 $O P_1$ 和 $O P$ 对称于 $x$ 轴，$M_1$ 和 $M$ 必定重合#footnote[图中用记号 $M(M_1)$ 表示点 $M$ 和 $M_1$ 重合。]。因此，设点 $P$ 的坐标是 $(x, y)$，那么，点 $P_1$ 的坐标就是 $(x, -y)$。用前面同样的方法，可以推得
 
-$ sin(360° - alpha) &= -sin alpha dou \
+#c2a-b($ sin(360° - alpha) &= -sin alpha dou \
   cos(360° - alpha) &= cos alpha dou \
-  tan(360° - alpha) &= -tan alpha dou $
+  tan(360° - alpha) &= -tan alpha dou $)
 
 #fig("2·24", fig-c2a-2-24())[]
 
 // p.65
-$ cot(360° - alpha) &= -cot alpha dou \
+#c2a-b($ cot(360° - alpha) &= -cot alpha dou \
   sec(360° - alpha) &= sec alpha dou \
-  csc(360° - alpha) &= -csc alpha ju $
+  csc(360° - alpha) &= -csc alpha ju $)
 
 利用这组公式，可以把 $270°$ 与 $360°$ 间的角的三角函数，化成锐角的三角函数。
 

@@ -117,7 +117,7 @@ $ lg cos 76°34' = nb(1).3661 ju $
     #cols[(3) $lg cos alpha = nb(2).9301$；][(4) $lg cos alpha = nb(1).8839$；]
     /* p.207 */#cols[(5) $lg tan alpha = 2.0311$；][(6) $lg tan alpha = nb(2).0311$；]
     #cols[(7) $lg cot alpha = nb(1).5018$；][(8) $lg cot alpha = 0.7865$。]
-  3. 求满足下列条件的角 $theta$。
+  3. 求符合下列条件的角 $theta$。
 
     (1) $lg sin 2 theta = nb(1).6004 quad (0 < theta < 90°)$；
 
