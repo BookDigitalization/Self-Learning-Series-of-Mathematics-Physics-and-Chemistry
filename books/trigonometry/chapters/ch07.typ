@@ -98,7 +98,7 @@ $ x = + sqrt(y) ju $
 
 一般地说，当 $sin x = m med (|m| <= 1)$ 时，从 $-pi/2$ 到 $pi/2$ 的 $x$ 的值叫作 $m$ 的*反正弦*，用 $arcsin m$ 来表示。这也就是说，$arcsin m$（$|m| <= 1$）表示从 $-pi/2$ 到 $pi/2$ 的一个角，它的正弦等于 $m$。用式子来表示，就是
 
-$ sin(arcsin m) = m, quad -pi/2 <= arcsin m <= pi/2 med (|m| <= 1) ju $
+$ sin(arcsin m) = m dou quad -pi/2 <= arcsin m <= pi/2 med (|m| <= 1) ju $
 
 #ex("例")[求下列反正弦的值：
 
@@ -107,7 +107,7 @@ $ sin(arcsin m) = m, quad -pi/2 <= arcsin m <= pi/2 med (|m| <= 1) ju $
 
 #sol[(1) $arcsin 0.6536$ 表示从 $-90°$ 到 $90°$ 的一个角，它的正弦等于 0.6536。查表得
 
-$ sin 40°49' = 0.6536, \ therefore quad arcsin 0.6536 = 40°49'. $
+$ sin 40°49' = 0.6536 dou \ therefore quad arcsin 0.6536 = 40°49' ju $
 
 (2) 从 $-pi/2$ 到 $pi/2$ 正弦等于 1 的角是 $pi/2$。因此，
 
@@ -115,7 +115,7 @@ $ arcsin 1 = pi/2 ju $
 
 (3) 正弦等于 $sqrt(3)/2$ 的锐角是 $pi/3$。因为
 
-$ sin(-pi/3) = - sin pi/3 = - sqrt(3)/2, $
+$ sin(-pi/3) = - sin pi/3 = - sqrt(3)/2 dou $
 
 // p.246
 所以从 $-pi/2$ 到 $pi/2$ 正弦等于 $-sqrt(3)/2$ 的角是 $-pi/3$。因此，
@@ -124,7 +124,7 @@ $ arcsin(-sqrt(3)/2) = -pi/3 ju $
 
 (4) 查表得 $sin 24°46' = 0.4189$。因为 $sin(-24°46') = -sin 24°46' = -0.4189$，所以从 $-90°$ 到 $90°$ 正弦等于 $-0.4189$ 的角是 $-24°46'$。
 
-$ therefore quad arcsin(-0.4189) = -24°46'. $
+$ therefore quad arcsin(-0.4189) = -24°46' ju $
 ]
 
 由于三角函数 $y = sin x$ 当 $y$ 取 $-1$ 到 $+1$ 的一个值的时候，对应的 $x$ 值有无数个，所以我们也只能考虑它在某一个区间内的反函数。
@@ -151,7 +151,7 @@ $ -pi/2 <= x <= pi/2 ju $
 
 因为在反正弦函数 $x = arcsin y$ 中，$x$ 和 $y$ 的关系是
 
-$ y = sin x med (-pi/2 <= x <= pi/2), $
+$ y = sin x med (-pi/2 <= x <= pi/2) dou $
 
 所以 $y = sin x$ 从 $-pi/2$ 到 $pi/2$ 的一段图像同时也是 $x = arcsin y$ 的图像（图 7·3）。但是曲线上的点的横坐标对于正弦函数 $y = sin x$ 来说是自变量，对于反正弦函数 $x = arcsin y$ 来说是函数；曲线上的点的纵坐标对于正弦函数来说是函数，对于反正弦函数来说是自变量。
 
@@ -163,7 +163,7 @@ $ y = arcsin x ju $
 
 这样一来，$y$ 就是正弦等于 $x$ 并且在 $[-pi/2, pi/2]$ 这个区间内的角。换句话说，$x$ 和 $y$ 间的关系是
 
-$ x = sin y med (-pi/2 <= y <= pi/2). $
+$ x = sin y med (-pi/2 <= y <= pi/2) ju $
 
 所以，要画出 $y = arcsin x$ 的图像，只要作 $x = sin y$ 从 $-pi/2$ 到/* p.248 */ $pi/2$ 的一段图像就可以了。我们列出下面的数值表：
 
@@ -212,7 +212,7 @@ $ x = sin y med (-pi/2 <= y <= pi/2). $
 
 一般地说，当 $cos x = m med (|m| <= 1)$ 时，从 0 到 $pi$ 的 $x$ 的值叫作 $m$ 的*反余弦*，用 $arccos m$ 来表示。这就是说，$arccos m$（$|m| <= 1$）表示从 0 到 $pi$ 的一个角，它的余弦等于 $m$。用式子来表示，就是
 
-$ cos(arccos m) = m, quad 0 <= arccos m <= pi med (|m| <= 1). $
+$ cos(arccos m) = m dou quad 0 <= arccos m <= pi med (|m| <= 1) ju $
 
 // p.251
 #ex("例")[求下列反余弦的值：
@@ -222,7 +222,7 @@ $ cos(arccos m) = m, quad 0 <= arccos m <= pi med (|m| <= 1). $
 
 #sol[(1) 查表得 $cos 41°25' = 0.7500 = 3/4$。所以从 $0°$ 到 $180°$ 之间，余弦等于 $3/4$ 的角是 $41°25'$。因此，
 
-$ arccos 3/4 = 41°25'. $
+$ arccos 3/4 = 41°25' ju $
 
 (2) 从 0 到 $pi$ 余弦等于 0 的角是 $pi/2$。因此，
 
@@ -235,12 +235,12 @@ $ arccos(-1/2) = (2pi)/3 ju $
 // 原书作 81°6′、98°54′（cos 81°6′ = 0.1547；0.1543 对应 81°7.4′）
 (4) 查表得 $cos 81°7' = 0.1543$。因为 $cos(180° - 81°7') = -cos 81°7' = -0.1543$，所以从 $0°$ 到 $180°$ 余弦等于 $-0.1543$ 的角是 $180° - 81°7'$，就是 $98°53'$。因此，
 
-$ arccos(-0.1543) = 98°53'. $
+$ arccos(-0.1543) = 98°53' ju $
 ]
 
 因为余弦函数 $y = cos x$ 中当 $y$ 取从 $-1$ 到 $+1$ 的某一个值 $m$ 的时候，在 $[0, pi]$ 这个区间内，$x$ 有确定的值，并且这个值可以记作 $arccos m$（图 7·6），所以对于 $y$ 的每一个从 $-1$ 到/* p.252 */ $+1$ 的值，在 $[0, pi]$ 这个区间内，都有
 
-$ x = arccos y, $
+$ x = arccos y dou $
 
 #grid(columns: (1fr, 1fr), align: bottom,
   fig("7·6", fig-7-6())[],
@@ -248,7 +248,7 @@ $ x = arccos y, $
 
 这就是说，$x = arccos y$ 是余弦函数 $y = cos x$ 在 $[0, pi]$ 这个区间内的反函数。我们把它叫作*反余弦函数*。它的定义域是
 
-$ -1 <= y <= 1, $
+$ -1 <= y <= 1 dou $
 
 它的函数值的范围是
 
@@ -260,7 +260,7 @@ $ y = arccos x ju $
 
 这里，$y$ 是余弦等于 $x$ 并且在 $[0, pi]$ 这个区间内的角，就是
 
-$ x = cos y med (0 <= y <= pi). $
+$ x = cos y med (0 <= y <= pi) ju $
 
 因此，要作 $y = arccos x$ 的图像，只要作 $x = cos y$ 从 0 到 $pi$ 的一段图像就可以了（图 7·7）。
 
@@ -304,7 +304,7 @@ $ x = cos y med (0 <= y <= pi). $
 
 但是在正切函数的每一个单调区间，例如 $(-(3pi)/2, -pi/2)$，$(-pi/2, pi/2)$，$(pi/2, (3pi)/2)$ 内，直线 $y = m$ 与 $y = tan x$ 的图像都只相交一次。所以在正切函数的每一个单调区间内，满足 $tan x = m$ 的 $x$ 有唯一确定的值。我们把满足 $tan x = m$ 并且在 $(-pi/2, pi/2)$ 这个区间内的 $x$ 的值叫作 $m$ 的*反正切*，用 $arctan m$ 来表示。换句话说，$arctan m$ 是正切等于 $m$ 并且在/* p.255 */ $-pi/2$ 和 $pi/2$ 间的一个角。用式子来表示，就是
 
-$ tan(arctan m) = m, quad -pi/2 < arctan m < pi/2 ju $
+$ tan(arctan m) = m dou quad -pi/2 < arctan m < pi/2 ju $
 
 #fig("7·8", fig-7-8())[]
 
@@ -319,11 +319,11 @@ $ arctan 1 = pi/4 ju $
 
 (2) 查表得 $tan 73°56' = 3.471$。所以在 $-90°$ 和 $90°$ 之间，正切等于 3.471 的角是 $73°56'$。因此，
 
-$ arctan 3.471 = 73°56'. $
+$ arctan 3.471 = 73°56' ju $
 
 (3) 查表得 $tan 28°8' = 0.5348$。因为 $tan(-28°8') = -tan 28°8' = -0.5348$，所以在 $-90°$ 和 $90°$ 之间正切等于/* p.256 */ $-0.5348$ 的角是 $-28°8'$。因此，
 
-$ arctan(-0.5348) = -28°8'. $
+$ arctan(-0.5348) = -28°8' ju $
 ]
 
 因为正切函数 $y = tan x$ 取某一个值 $m$ 的时候，在 $(-pi/2, pi/2)$ 这个区间内，$x$ 有确定的值，并且这个值可以记作 $arctan m$（图 7·9），所以对于 $y$ 的任何一个值，在 $(-pi/2, pi/2)$ 这个区间内，
@@ -332,7 +332,7 @@ $ x = arctan y ju $
 
 因此，$x = arctan y$ 是正切函数 $y = tan x$ 在 $(-pi/2, pi/2)$ 区间内的反函数。我们把它叫作*反正切函数*。它的定义域是一切实数，也就是
 
-$ -oo < y < oo, $
+$ -oo < y < oo dou $
 
 它的函数值的范围是
 
@@ -349,7 +349,7 @@ $ y = arctan x ju $
 
 这里，$y$ 是正切等于 $x$ 并且在 $(-pi/2, pi/2)$ 区间内的角，就是
 
-$ x = tan y med (-pi/2 < y < pi/2). $
+$ x = tan y med (-pi/2 < y < pi/2) ju $
 
 因此，要作 $y = arctan x$ 的图像，只要作 $x = tan y$ 在 $-pi/2$ 和 $pi/2$ 间的一段图像就可以了（图 7·10）。
 
@@ -391,7 +391,7 @@ $ x = tan y med (-pi/2 < y < pi/2). $
 
 但是在余切函数的每一个单调区间 $dots.c$，$(-pi, 0)$，$(0, pi)$，$(pi, 2pi)$，$dots.c$ 内，对于 $cot x$ 的每一个值，$x$ 都只有一个确定的值和它对应。我们把满足 $cot x = m$ 并且在 $(0, pi)$ 这个区间内的 $x$ 的值叫作 $m$ 的*反余切*，用 $arccot m$ 来表示。换句话说，$arccot m$ 是余切等于 $m$ 并且在 0 和 $pi$ 间的一个角。用式子来表示，就是
 
-$ cot(arccot m) = m, quad 0 < arccot m < pi ju $
+$ cot(arccot m) = m dou quad 0 < arccot m < pi ju $
 
 #ex("例")[求下列反余切的值：
 
@@ -400,11 +400,11 @@ $ cot(arccot m) = m, quad 0 < arccot m < pi ju $
 #sol[(1) 查表得 $cot 59°48' = 0.5820$。所以在 $0°$ 和 $180°$ 之间，余切等于 0.5820 的角是 $59°48'$。因此，
 
 // p.260
-$ arccot 0.5820 = 59°48'. $
+$ arccot 0.5820 = 59°48' ju $
 
 (2) 查表得 $cot 19°26' = 2.835$。因为 $cot(180° - 19°26') = -cot 19°26' = -2.835$，所以在 $0°$ 和 $180°$ 之间，余切等于 $-2.835$ 的角是 $180° - 19°26' = 160°34'$。因此，
 
-$ arccot(-2.835) = 160°34'. $
+$ arccot(-2.835) = 160°34' ju $
 ]
 
 因为在 $(0, pi)$ 这个区间内，函数 $y = cot x$ 取某一个值 $m$ 的时候，$x$ 有确定的值 $arccot m$ 和它对应（图 7·12），所以
@@ -413,7 +413,7 @@ $ x = arccot y $
 
 是余切函数 $y = cot x$ 在 $(0, pi)$ 这个区间内的反函数。我们把它叫作*反余切函数*。它的定义域是
 
-$ -oo < y < oo, $
+$ -oo < y < oo dou $
 
 它的函数值的范围是
 
@@ -501,14 +501,14 @@ $ therefore quad cos alpha = sqrt(1 - sin^2 alpha) = sqrt(1 - (8/17)^2) = 15/17 
 
 #sol[设 $arccos(-0.8) = alpha med (0 <= alpha <= pi)$，那么
 
-$ cos alpha = -0.8. $
+$ cos alpha = -0.8 ju $
 
 因为 $cos alpha$ 的值是负的，所以 $alpha$ 的终边在第二象限内。
 
-$ therefore quad sin alpha = sqrt(1 - cos^2 alpha) = sqrt(1 - (-0.8)^2) = 0.6. \
-  tan alpha = (sin alpha) / (cos alpha) = 0.6 / (-0.8) = -0.75. $
+$ therefore quad sin alpha = sqrt(1 - cos^2 alpha) = sqrt(1 - (-0.8)^2) = 0.6 ju \
+  tan alpha = (sin alpha) / (cos alpha) = 0.6 / (-0.8) = -0.75 ju $
 
-#c7-lead([就是], $ tan[arccos(-0.8)] = -0.75. $)
+#c7-lead([就是], $ tan[arccos(-0.8)] = -0.75 ju $)
 ]
 
 // p.264
@@ -516,12 +516,12 @@ $ therefore quad sin alpha = sqrt(1 - cos^2 alpha) = sqrt(1 - (-0.8)^2) = 0.6. \
 
 #sol[设 $arcsin 1/sqrt(82) = alpha$，那么
 
-$ sin alpha = 1/sqrt(82), \
+$ sin alpha = 1/sqrt(82) dou \
   cos alpha = sqrt(1 - sin^2 alpha) = sqrt(1 - (1/sqrt(82))^2) = 9/sqrt(82) ju $
 
 又设 $arcsin 4/sqrt(41) = beta$，那么
 
-$ sin beta = 4/sqrt(41), \
+$ sin beta = 4/sqrt(41) dou \
   cos beta = sqrt(1 - sin^2 beta) = sqrt(1 - (4/sqrt(41))^2) = 5/sqrt(41) ju $
 
 $ therefore quad sin(alpha + beta) &= sin alpha cos beta + cos alpha sin beta \
@@ -535,7 +535,7 @@ $ therefore quad sin(alpha + beta) &= sin alpha cos beta + cos alpha sin beta \
 
 #sol[设 $arctan a = alpha$，那么
 
-$ tan alpha = a. \
+$ tan alpha = a ju \
   tan 2 alpha = (2 tan alpha) / (1 - tan^2 alpha) = (2a) / (1 - a^2) ju $
 
 #c7-lead([就是], $ tan(2 arctan a) = (2a) / (1 - a^2) ju $)
@@ -611,7 +611,7 @@ $ -pi/2 <= arcsin(-m) <= pi/2 ju $
 
 用 $-1$ 乘第二个不等式的每一项，不等号都要改变方向，所以得
 
-$ pi/2 >= -arcsin m >= -pi/2, $
+$ pi/2 >= -arcsin m >= -pi/2 dou $
 
 #c7-lead([就是], $ -pi/2 <= -arcsin m <= pi/2 ju $)
 
@@ -637,13 +637,13 @@ $ cos(pi - arccos m) = -cos(arccos m) = -m ju $
 
 2) 根据反余弦的定义，
 
-$ 0 <= arccos(-m) <= pi, $
+$ 0 <= arccos(-m) <= pi dou $
 
 #c7-lead([同样，], $ 0 <= arccos m <= pi ju $)
 
 从 $pi$ 分别减去第二个不等式的每一项。根据“等量减去不等量，减去较大的量，所得的差反而小”的性质，可以知道，
 
-$ pi - 0 >= pi - arccos m >= pi - pi, $
+$ pi - 0 >= pi - arccos m >= pi - pi dou $
 
 #c7-lead([就是], $ 0 <= pi - arccos m <= pi ju $)
 
@@ -693,7 +693,7 @@ $ -pi/2 <= arcsin m <= pi/2 ju $
 
 $ 0 <= arccos m <= pi ju $
 
-#c7-lead([因此], $ pi/2 - 0 >= pi/2 - arccos m >= pi/2 - pi, $)
+#c7-lead([因此], $ pi/2 - 0 >= pi/2 - arccos m >= pi/2 - pi dou $)
 
 #c7-lead([就是], $ -pi/2 <= pi/2 - arccos m <= pi/2 ju $)
 
@@ -702,7 +702,7 @@ $ 0 <= arccos m <= pi ju $
 但是在 $[-pi/2, pi/2]$ 这个区间内正弦等于 $m$ 的角只有一个。因此
 
 // p.269
-$ arcsin m = pi/2 - arccos m, $
+$ arcsin m = pi/2 - arccos m dou $
 
 移项，就得到
 
@@ -716,15 +716,15 @@ $ arcsin m + arccos m = pi/2 ju $
 
 #sol(label: [证])[1) $tan(arctan 1/2 + arctan 1/3)$
 
-$ = (tan(arctan 1/2) + tan(arctan 1/3)) / (1 - tan(arctan 1/2) tan(arctan 1/3)) = (1/2 + 1/3) / (1 - 1/2 dot 1/3) = 1. $
+$ = (tan(arctan 1/2) + tan(arctan 1/3)) / (1 - tan(arctan 1/2) tan(arctan 1/3)) = (1/2 + 1/3) / (1 - 1/2 dot 1/3) = 1 ju $
 
-$ tan pi/4 = 1. $
+$ tan pi/4 = 1 ju $
 
 $ therefore quad tan(arctan 1/2 + arctan 1/3) = tan pi/4 ju $
 
 2)
 
-$ 0 < arctan 1/2 < pi/4, \ 0 < arctan 1/3 < pi/4 ju \ therefore quad 0 < arctan 1/2 + arctan 1/3 < pi/2 ju $
+$ 0 < arctan 1/2 < pi/4 dou \ 0 < arctan 1/3 < pi/4 ju \ therefore quad 0 < arctan 1/2 + arctan 1/3 < pi/2 ju $
 
 #c7-lead([同时], $ 0 < pi/4 < pi/2 ju $)
 
@@ -812,6 +812,6 @@ $ arctan 1/2 + arctan 1/3 = pi/4 ju $
   17. \*求证
     $ arctan sqrt((a(a + b + c)) / (b c)) + arctan sqrt((b(a + b + c)) / (c a)) \
       + arctan sqrt((c(a + b + c)) / (a b)) = pi ju $
-  18. \*求证
-    $ tan(pi/4 + 1/2 arccos a/b) + tan(pi/4 - 1/2 arccos a/b) = (2b)/a ju $
+  18. #block(breakable: false)[\*求证
+    $ tan(pi/4 + 1/2 arccos a/b) + tan(pi/4 - 1/2 arccos a/b) = (2b)/a ju $]
 ]

@@ -14,15 +14,15 @@
 
 我们应该注意，两角和的正弦 $sin(alpha + beta)$，一般地与两角的正弦的和 $sin alpha + sin beta$ 是不相等的。例如我们知道
 
-$ sin(60° + 30°) = sin 90° = 1. $
+$ sin(60° + 30°) = sin 90° = 1 ju $
 
-但是 $sin 60° + sin 30° = sqrt(3)/2 + 1/2 = (sqrt(3) + 1)/2 approx 1.366.$
+但是 $sin 60° + sin 30° = sqrt(3)/2 + 1/2 = (sqrt(3) + 1)/2 approx 1.366 ju$
 
-所以 #h(2em) $sin(60° + 30°) != sin 60° + sin 30°.$
+所以 #h(2em) $sin(60° + 30°) != sin 60° + sin 30° ju$
 
 同样地，两角和的余弦 $cos(alpha + beta)$，一般地也并不等于两角的余弦的和。例如
 
-$ cos(60° + 30°) != cos 60° + cos 30°. $
+$ cos(60° + 30°) != cos 60° + cos 30° ju $
 
 怎样用两个角的三角函数来表示这两个角的和的正弦和余弦呢？
 
@@ -31,7 +31,7 @@ $ cos(60° + 30°) != cos 60° + cos 30°. $
 *1. 两角和的正弦*　我们来证明，当两个角 $alpha, beta$ 都是锐角，并且它们的和 $alpha + beta$ 也是锐角的时候，总有
 
 // p.134
-$ bold(sin(alpha + beta) = sin alpha cos beta + cos alpha sin beta). $
+$ bold(sin(alpha + beta) = sin alpha cos beta + cos alpha sin beta) ju $
 
 #sol(label: [证])[作 $∠A O B = alpha$，并且以它的终边 $O B$ 为始边，再作 $∠B O C = beta$，那么 $∠A O C$ 就等于 $alpha + beta$（图 4·1）。]
 
@@ -43,28 +43,28 @@ $ bold(sin(alpha + beta) = sin alpha cos beta + cos alpha sin beta). $
 
 因为 $∠D C E$ 的两边 $D C$ 和 $E C$ 与 $∠A O B$ 的两边 $O A$ 和 $O B$ 分别垂直，并且这两个角都是锐角，所以
 
-$ ∠D C E = ∠A O B = alpha. $
+$ ∠D C E = ∠A O B = alpha ju $
 
 在图中我们看到，
 
 // 原书第一个分母印作 CC，订正为 OC
-$ sin(alpha + beta) = (D C)/(O C) = (D G + G C)/(O C) = (F E)/(O C) + (G C)/(O C). $
+$ sin(alpha + beta) = (D C)/(O C) = (D G + G C)/(O C) = (F E)/(O C) + (G C)/(O C) ju $
 
 但在直角三角形 $E O F$ 和 $C O E$ 中，
 
-$ (F E)/(O E) = sin alpha, quad (O E)/(O C) = cos beta. $
+$ (F E)/(O E) = sin alpha dou quad (O E)/(O C) = cos beta ju $
 
 因此，#h(2em) $display((F E)/(O C) = (F E)/(O E) dot (O E)/(O C) = sin alpha cos beta.)$
 
 又在直角三角形 $E C G$ 和 $C O E$ 中，
 
-$ (G C)/(E C) = cos alpha, quad (E C)/(O C) = sin beta. $
+$ (G C)/(E C) = cos alpha dou quad (E C)/(O C) = sin beta ju $
 
 因此，#h(2em) $display((G C)/(O C) = (G C)/(E C) dot (E C)/(O C) = cos alpha sin beta.)$
 
 所以
 
-$ sin(alpha + beta) = sin alpha cos beta + cos alpha sin beta. $
+$ sin(alpha + beta) = sin alpha cos beta + cos alpha sin beta ju $
 
 #ex("例 1.")[求 $sin 75°$ 的值（精确到 0.001）。]
 
@@ -73,32 +73,32 @@ $ sin(alpha + beta) = sin alpha cos beta + cos alpha sin beta. $
 $ sin 75° &= sin(45° + 30°) \
   &= sin 45° cos 30° + cos 45° sin 30° \
   &= sqrt(2)/2 dot sqrt(3)/2 + sqrt(2)/2 dot 1/2 = (sqrt(6) + sqrt(2))/4 \
-  &= (2.449 + 1.414)/4 = 3.863/4 = 0.966. $
+  &= (2.449 + 1.414)/4 = 3.863/4 = 0.966 ju $
 
 *2. 两角和的余弦*　利用图 4·1，我们也很容易证明当 $alpha, beta$ 都是锐角，并且它们的和 $alpha + beta$ 也是锐角的时候，总有
 
-$ bold(cos(alpha + beta) = cos alpha cos beta - sin alpha sin beta). $
+$ bold(cos(alpha + beta) = cos alpha cos beta - sin alpha sin beta) ju $
 
 #sol(label: [证])[在图 4·1 中，我们可以看到
 
-$ cos(alpha + beta) = (O D)/(O C) = (O F - D F)/(O C) = (O F)/(O C) - (G E)/(O C). $
+$ cos(alpha + beta) = (O D)/(O C) = (O F - D F)/(O C) = (O F)/(O C) - (G E)/(O C) ju $
 ]
 
 但在直角三角形 $E O F$ 和 $C O E$ 中，
 
-$ (O F)/(O E) = cos alpha, quad (O E)/(O C) = cos beta. $
+$ (O F)/(O E) = cos alpha dou quad (O E)/(O C) = cos beta ju $
 
 因此，#h(2em) $display((O F)/(O C) = (O F)/(O E) dot (O E)/(O C) = cos alpha cos beta.)$
 
 又在直角三角形 $E C G$ 和 $C O E$ 中，
 
-$ (G E)/(E C) = sin alpha, quad (E C)/(O C) = sin beta. $
+$ (G E)/(E C) = sin alpha dou quad (E C)/(O C) = sin beta ju $
 
 因此，#h(2em) $display((G E)/(O C) = (G E)/(E C) dot (E C)/(O C) = sin alpha sin beta.)$
 
 所以
 
-$ cos(alpha + beta) = cos alpha cos beta - sin alpha sin beta. $
+$ cos(alpha + beta) = cos alpha cos beta - sin alpha sin beta ju $
 
 #ex("例 2.")[不用查表，求
 
@@ -110,7 +110,7 @@ $ cos 42° cos 18° - sin 42° sin 18° $
 
 // p.136
 $ cos 42° cos 18° - sin 42° sin 18° &= cos(42° + 18°) \
-  &= cos 60° = 1/2. $
+  &= cos 60° = 1/2 ju $
 ]
 
 #exercise("4·1")[
@@ -155,11 +155,11 @@ $ cos 42° cos 18° - sin 42° sin 18° &= cos(42° + 18°) \
 
 这里我们假设 $beta = 0°$。对于公式 (1)
 
-$ "左边" &= sin(alpha + beta) = sin(alpha + 0°) = sin alpha; \
+$ "左边" &= sin(alpha + beta) = sin(alpha + 0°) = sin alpha fen \
   "右边" &= sin alpha cos beta + cos alpha sin beta \
   &= sin alpha cos 0° + cos alpha sin 0° \
   &= sin alpha dot 1 + cos alpha dot 0 \
-  &= sin alpha. $
+  &= sin alpha ju $
 
 我们看到，左边 = 右边。因此，公式 (1) 能够成立。同样可以证明公式 (2) 也能够成立。
 
@@ -167,10 +167,10 @@ $ "左边" &= sin(alpha + beta) = sin(alpha + 0°) = sin alpha; \
 
 这时，对于公式 (1)
 
-$ "左边" &= sin(alpha + beta) = sin 90° = 1; \
+$ "左边" &= sin(alpha + beta) = sin 90° = 1 fen \
   "右边" &= sin alpha cos beta + cos alpha sin beta \
   &= sin alpha cos(90° - alpha) + cos alpha sin(90° - alpha) \
-  &= sin^2 alpha + cos^2 alpha = 1. $
+  &= sin^2 alpha + cos^2 alpha = 1 ju $
 
 我们看到，左边 = 右边。因此，公式 (1) 能够成立。同样可以证明公式 (2) 也能够成立。
 
@@ -178,29 +178,29 @@ $ "左边" &= sin(alpha + beta) = sin 90° = 1; \
 
 我们令 $alpha$ 的余角为 $alpha_1$，$beta$ 的余角为 $beta_1$。那么
 
-$ alpha = 90° - alpha_1, quad beta = 90° - beta_1, \
-  alpha + beta = 180° - (alpha_1 + beta_1). $
+$ alpha = 90° - alpha_1 dou quad beta = 90° - beta_1 dou \
+  alpha + beta = 180° - (alpha_1 + beta_1) ju $
 
 因为 $alpha$ 和 $beta$ 是锐角，$alpha + beta$ 是钝角，所以 $alpha_1$ 和 $beta_1$ 是锐角，$alpha_1 + beta_1$ 也是锐角。公式 (1) 和 (2) 对于 $alpha_1$ 和 $beta_1$ 是成立的。
 
 这时，
-$ sin alpha &= sin(90° - alpha_1) = cos alpha_1, \
-  cos alpha &= cos(90° - alpha_1) = sin alpha_1, \
-  sin beta &= sin(90° - beta_1) = cos beta_1, $
+$ sin alpha &= sin(90° - alpha_1) = cos alpha_1 dou \
+  cos alpha &= cos(90° - alpha_1) = sin alpha_1 dou \
+  sin beta &= sin(90° - beta_1) = cos beta_1 dou $
 
 // p.138
-$ cos beta = cos(90° - beta_1) = sin beta_1. $
+$ cos beta = cos(90° - beta_1) = sin beta_1 ju $
 
 因此，
 $ sin(alpha + beta) &= sin[180° - (alpha_1 + beta_1)] \
   &= sin(alpha_1 + beta_1) = sin alpha_1 cos beta_1 + cos alpha_1 sin beta_1 \
   &= cos alpha sin beta + sin alpha cos beta \
-  &= sin alpha cos beta + cos alpha sin beta. \
+  &= sin alpha cos beta + cos alpha sin beta ju \
   cos(alpha + beta) &= cos[180° - (alpha_1 + beta_1)] \
   &= -cos(alpha_1 + beta_1) \
   &= -(cos alpha_1 cos beta_1 - sin alpha_1 sin beta_1) \
   &= -(sin alpha sin beta - cos alpha cos beta) \
-  &= cos alpha cos beta - sin alpha sin beta. $
+  &= cos alpha cos beta - sin alpha sin beta ju $
 
 我们看到，公式 (1) 和 (2) 也能够成立。
 
@@ -208,32 +208,32 @@ $ sin(alpha + beta) &= sin[180° - (alpha_1 + beta_1)] \
 
 我们已经证明公式 (1) 和 (2) 对于 $alpha$ 和 $beta$ 是 $0°$ 的角或者任何锐角的时候都能成立。现在再设 $alpha$ 和 $beta$ 是任意的正角或者负角。任意角 $theta$ 总可以写成
 
-$ k dot 360° + theta_1, quad k dot 360° + 90° + theta_1, \
-  k dot 360° + 180° + theta_1, quad k dot 360° + 270° + theta_1 $
+$ k dot 360° + theta_1 dou quad k dot 360° + 90° + theta_1 dou \
+  k dot 360° + 180° + theta_1 dou quad k dot 360° + 270° + theta_1 $
 
 这四种形式中的一种。这里 $k$ 是一个整数，$theta_1$ 是一个锐角或者 $0°$ 的角。例如：
 
-$ 653° = 360° + 270° + 23°, \
-  1260° = 3 dot 360° + 180° + 0°, \
-  -585° = -2 dot 360° + 90° + 45°. $
+$ 653° = 360° + 270° + 23° dou \
+  1260° = 3 dot 360° + 180° + 0° dou \
+  -585° = -2 dot 360° + 90° + 45° ju $
 
 假定 $alpha$ 和 $beta$ 已经分别化成上面四种形式中的一种，我们可以证明公式 (1) 和 (2) 能够成立。例如假设
 
-$ alpha = m dot 360° + 270° + alpha_1, \
-  beta = n dot 360° + 180° + beta_1, $
+$ alpha = m dot 360° + 270° + alpha_1 dou \
+  beta = n dot 360° + 180° + beta_1 dou $
 
 其中 $m$ 和 $n$ 是整数，$alpha_1$ 和 $beta_1$ 是锐角或者 $0°$ 的角。这时
 
 $ sin alpha &= sin(m dot 360° + 270° + alpha_1) \
-  &= sin(270° + alpha_1) = -cos alpha_1, \
+  &= sin(270° + alpha_1) = -cos alpha_1 dou \
   cos alpha &= cos(m dot 360° + 270° + alpha_1) \
-  &= cos(270° + alpha_1) = sin alpha_1, $
+  &= cos(270° + alpha_1) = sin alpha_1 dou $
 
 // p.139
 $ sin beta &= sin(n dot 360° + 180° + beta_1) \
-  &= sin(180° + beta_1) = -sin beta_1, \
+  &= sin(180° + beta_1) = -sin beta_1 dou \
   cos beta &= cos(n dot 360° + 180° + beta_1) \
-  &= cos(180° + beta_1) = -cos beta_1. $
+  &= cos(180° + beta_1) = -cos beta_1 ju $
 
 因此，
 $ sin(alpha + beta) &= sin(m dot 360° + 270° + alpha_1 + n dot 360° + 180° + beta_1) \
@@ -242,14 +242,14 @@ $ sin(alpha + beta) &= sin(m dot 360° + 270° + alpha_1 + n dot 360° + 180° +
   &= cos(alpha_1 + beta_1) \
   &= cos alpha_1 cos beta_1 - sin alpha_1 sin beta_1 \
   &= (-sin alpha)(-cos beta) - cos alpha(-sin beta) \
-  &= sin alpha cos beta + cos alpha sin beta. \
+  &= sin alpha cos beta + cos alpha sin beta ju \
   cos(alpha + beta) &= cos(m dot 360° + 270° + alpha_1 + n dot 360° + 180° + beta_1) \
   &= cos[(m + n + 1) dot 360° + 90° + (alpha_1 + beta_1)] \
   &= cos[90° + (alpha_1 + beta_1)] \
   &= -sin(alpha_1 + beta_1) \
   &= -(sin alpha_1 cos beta_1 + cos alpha_1 sin beta_1) \
   &= -[cos alpha(-cos beta) + (-sin alpha)(-sin beta)] \
-  &= cos alpha cos beta - sin alpha sin beta. $
+  &= cos alpha cos beta - sin alpha sin beta ju $
 
 我们看到，在这种情形，公式 (1) 和 (2) 也能够成立。当 $alpha$ 和 $beta$ 化成上面所讲的四种形式中的其他形式时，我们同样可以证明公式 (1) 和 (2) 能够成立。
 
@@ -259,23 +259,23 @@ $ sin(alpha + beta) &= sin(m dot 360° + 270° + alpha_1 + n dot 360° + 180° +
 
 #sol[因为 $alpha$ 的终边在第二象限中，所以
 
-$ cos alpha = -sqrt(1 - sin^2 alpha) = -sqrt(1 - (2/3)^2) = -sqrt(5)/3. $
+$ cos alpha = -sqrt(1 - sin^2 alpha) = -sqrt(1 - (2/3)^2) = -sqrt(5)/3 ju $
 ]
 
 因为 $beta$ 的终边在第三象限中，所以
 
-$ sin beta = -sqrt(1 - cos^2 beta) = -sqrt(1 - (-3/4)^2) = -sqrt(7)/4. $
+$ sin beta = -sqrt(1 - cos^2 beta) = -sqrt(1 - (-3/4)^2) = -sqrt(7)/4 ju $
 
 // p.140
 因此，
 $ sin(alpha + beta) &= sin alpha cos beta + cos alpha sin beta \
   &= 2/3 (-3/4) + (-sqrt(5)/3)(-sqrt(7)/4) \
   &= -1/2 + sqrt(35)/12 approx -0.500 + 0.493 \
-  &= -0.007. \
+  &= -0.007 ju \
   cos(alpha + beta) &= cos alpha cos beta - sin alpha sin beta \
   &= (-sqrt(5)/3)(-3/4) - 2/3 (-sqrt(7)/4) \
   &= sqrt(5)/4 + sqrt(7)/6 approx 0.559 + 0.441 \
-  &= 1.000. $
+  &= 1.000 ju $
 
 #exercise("4·2")[
   1. 利用两角和的正弦及余弦公式验证诱导公式：
@@ -291,9 +291,9 @@ $ sin(alpha + beta) &= sin alpha cos beta + cos alpha sin beta \
     ［提示：利用 $cos[(alpha + beta) + gamma]$ 的展开式来求。］
   5. 设 $alpha$ 和 $beta$ 都是正锐角，求证 $sin(alpha + beta) < sin alpha + sin beta$。
   6. 求证 $cos(alpha + beta) cos gamma - cos alpha cos(beta + gamma)$
-    $ = sin(alpha + beta) sin gamma - sin alpha sin(beta + gamma). $
+    $ = sin(alpha + beta) sin gamma - sin alpha sin(beta + gamma) ju $
   7. 求证 $cos(alpha - beta) cos(beta - gamma) - sin(alpha - beta) sin(beta - gamma)$
-    $ = cos(alpha - gamma). $
+    $ = cos(alpha - gamma) ju $
 ]
 
 // p.141
@@ -303,13 +303,13 @@ $ sin(alpha + beta) &= sin alpha cos beta + cos alpha sin beta \
 
 *1. 两角和的正切*　利用两角和的正弦公式与余弦公式，我们得到
 
-$ tan(alpha + beta) = (sin(alpha + beta))/(cos(alpha + beta)) = (sin alpha cos beta + cos alpha sin beta)/(cos alpha cos beta - sin alpha sin beta). $
+$ tan(alpha + beta) = (sin(alpha + beta))/(cos(alpha + beta)) = (sin alpha cos beta + cos alpha sin beta)/(cos alpha cos beta - sin alpha sin beta) ju $
 
 假定 $tan alpha$ 和 $tan beta$ 也都存在，我们还可以把最后分式的分子和分母都除以 $cos alpha cos beta$，使结果只含 $tan alpha$ 和 $tan beta$。这样，就得到
 
 $ tan(alpha + beta) &= ((sin alpha cos beta + cos alpha sin beta)/(cos alpha cos beta))/((cos alpha cos beta - sin alpha sin beta)/(cos alpha cos beta)) \
   &= ((sin alpha)/(cos alpha) + (sin beta)/(cos beta))/(1 - (sin alpha)/(cos alpha) dot (sin beta)/(cos beta)) \
-  &= (tan alpha + tan beta)/(1 - tan alpha tan beta). $
+  &= (tan alpha + tan beta)/(1 - tan alpha tan beta) ju $
 
 就是 #h(4em) $display(bold(tan(alpha + beta) = (tan alpha + tan beta)/(1 - tan alpha tan beta)).)$
 
@@ -319,7 +319,7 @@ $ tan(alpha + beta) &= ((sin alpha cos beta + cos alpha sin beta)/(cos alpha cos
 
 $ cot(alpha + beta) &= (cos(alpha + beta))/(sin(alpha + beta)) = (cos alpha cos beta - sin alpha sin beta)/(sin alpha cos beta + cos alpha sin beta) \
   &= ((cos alpha cos beta - sin alpha sin beta)/(sin alpha sin beta))/((sin alpha cos beta + cos alpha sin beta)/(sin alpha sin beta)) \
-  &= ((cos alpha)/(sin alpha) dot (cos beta)/(sin beta) - 1)/((cos beta)/(sin beta) + (cos alpha)/(sin alpha)) = (cot alpha cot beta - 1)/(cot beta + cot alpha). $
+  &= ((cos alpha)/(sin alpha) dot (cos beta)/(sin beta) - 1)/((cos beta)/(sin beta) + (cos alpha)/(sin alpha)) = (cot alpha cot beta - 1)/(cot beta + cot alpha) ju $
 
 就是 #h(4em) $display(bold(cot(alpha + beta) = (cot alpha cot beta - 1)/(cot beta + cot alpha)).)$
 
@@ -354,24 +354,24 @@ $ cot(alpha + beta) &= (cos(alpha + beta))/(sin(alpha + beta)) = (cos alpha cos 
 对于任意角 $x$ 和 $y$ 都能成立。所以 $y$ 是负角的时候也能成立。例如在公式 (1) 中，令 $x = 45°$，$y = -30°$；可得
 
 $ & sin[45° + (-30°)] \
-  & quad = sin 45° cos(-30°) + cos 45° sin(-30°), $
+  & quad = sin 45° cos(-30°) + cos 45° sin(-30°) dou $
 
 就是
 
-$ sin(45° - 30°) = sin 45° cos 30° - cos 45° sin 30°. $
+$ sin(45° - 30°) = sin 45° cos 30° - cos 45° sin 30° ju $
 
 一般地说，在公式 (1) 中，令 $x = alpha$，$y = -beta$，得
 
-$ sin[alpha + (-beta)] = sin alpha cos(-beta) + cos alpha sin(-beta), $
+$ sin[alpha + (-beta)] = sin alpha cos(-beta) + cos alpha sin(-beta) dou $
 
 把两边都化简后，就得到两角差的正弦公式
 
-$ bold(sin(alpha - beta) = sin alpha cos beta - cos alpha sin beta). $
+$ bold(sin(alpha - beta) = sin alpha cos beta - cos alpha sin beta) ju $
 
 同样，在公式
 
-$ cos(x + y) = cos x cos y - sin x sin y, \
-  tan(x + y) = (tan x + tan y)/(1 - tan x tan y), \
+$ cos(x + y) = cos x cos y - sin x sin y dou \
+  tan(x + y) = (tan x + tan y)/(1 - tan x tan y) dou \
   cot(x + y) = (cot x cot y - 1)/(cot y + cot x) $
 
 中，分别令 $x = alpha$，$y = -beta$，就得到
@@ -379,17 +379,17 @@ $ cos(x + y) = cos x cos y - sin x sin y, \
 // p.144
 $ cos(alpha - beta) &= cos[alpha + (-beta)] \
   &= cos alpha cos(-beta) - sin alpha sin(-beta) \
-  &= cos alpha cos beta + sin alpha sin beta, \
+  &= cos alpha cos beta + sin alpha sin beta dou \
   tan(alpha - beta) &= tan[alpha + (-beta)] \
-  &= (tan alpha + tan(-beta))/(1 - tan alpha tan(-beta)) = (tan alpha - tan beta)/(1 + tan alpha tan beta), \
+  &= (tan alpha + tan(-beta))/(1 - tan alpha tan(-beta)) = (tan alpha - tan beta)/(1 + tan alpha tan beta) dou \
   cot(alpha - beta) &= cot[alpha + (-beta)] \
   &= (cot alpha cot(-beta) - 1)/(cot(-beta) + cot alpha) = (-cot alpha cot beta - 1)/(-cot beta + cot alpha) \
-  &= (cot alpha cot beta + 1)/(cot beta - cot alpha). $
+  &= (cot alpha cot beta + 1)/(cot beta - cot alpha) ju $
 
 就是
-$ bold(cos(alpha - beta)) & bold(= cos alpha cos beta + sin alpha sin beta), \
-  bold(tan(alpha - beta)) & bold(= (tan alpha - tan beta)/(1 + tan alpha tan beta)), \
-  bold(cot(alpha - beta)) & bold(= (cot alpha cot beta + 1)/(cot beta - cot alpha)). $
+$ bold(cos(alpha - beta)) & bold(= cos alpha cos beta + sin alpha sin beta) dou \
+  bold(tan(alpha - beta)) & bold(= (tan alpha - tan beta)/(1 + tan alpha tan beta)) dou \
+  bold(cot(alpha - beta)) & bold(= (cot alpha cot beta + 1)/(cot beta - cot alpha)) ju $
 
 这些公式对于使它们的两边有意义的角都能成立。
 
@@ -401,22 +401,22 @@ $ & cos(alpha + beta) cos(alpha - beta) \
   &= cos^2 alpha cos^2 beta - sin^2 alpha sin^2 beta \
   &= cos^2 alpha (1 - sin^2 beta) - (1 - cos^2 alpha) sin^2 beta \
   &= cos^2 alpha - cos^2 alpha sin^2 beta - sin^2 beta + cos^2 alpha sin^2 beta \
-  &= cos^2 alpha - sin^2 beta. $
+  &= cos^2 alpha - sin^2 beta ju $
 
 #ex("例 2.")[已知 $cos x = -12/13$，并且 $pi < x < (3pi)/2$，求 $cot(x - pi/4)$ 的值。]
 
 #sol[因为 $x$ 的终边在第三象限内，所以
 
 // p.145
-$ sin x = -sqrt(1 - cos^2 x) = -sqrt(1 - (-12/13)^2) = -5/13. $
+$ sin x = -sqrt(1 - cos^2 x) = -sqrt(1 - (-12/13)^2) = -5/13 ju $
 ]
 
 // 下式分母的 13 扫描似 18（油墨），按上式与算式自洽录作 13
-$ cot x = (cos x)/(sin x) = (-display(12/13))/(-display(5/13)) = 12/5. $
+$ cot x = (cos x)/(sin x) = (-display(12/13))/(-display(5/13)) = 12/5 ju $
 
 因此，
 $ cot(x - pi/4) &= (cot x cot display(pi/4) + 1)/(cot display(pi/4) - cot x) \
-  &= (display(12/5) dot 1 + 1)/(1 - display(12/5)) = -17/7. $
+  &= (display(12/5) dot 1 + 1)/(1 - display(12/5)) = -17/7 ju $
 
 #exercise("4·4")[
   #set enum(numbering: n => if n == 6 [\*#n.] else [#n.])
@@ -453,18 +453,18 @@ $ cot(x - pi/4) &= (cot x cot display(pi/4) + 1)/(cot display(pi/4) - cot x) \
   5. 求证 $tan alpha + (1 + tan alpha) tan(pi/4 - alpha) = 1$。
   6. 一个三角形的两个内角的正切分别是 2 和 3，求第三个内角。
   7. 求证 $display((tan(75° + alpha) - tan(30° + alpha))/(1 + tan(75° + alpha) tan(30° + alpha)))$
-    $ = sin(60° - alpha) cos(30° + alpha) + cos(60° - alpha) sin(30° + alpha). $
+    $ = sin(60° - alpha) cos(30° + alpha) + cos(60° - alpha) sin(30° + alpha) ju $
 ]
 
 == 二倍角的三角函数
 
 我们知道，$sin 2 alpha$ 与 $2 sin alpha$ 的意义是不同的。$sin 2 alpha$ 表示角 $alpha$ 的两倍的正弦，而 $2 sin alpha$ 表示角 $alpha$ 的正弦的两倍。一般地说，$sin 2 alpha != 2 sin alpha$。例如，当 $alpha = 30°$ 时，
 
-$ sin 2 alpha = sin(2 times 30°) = sin 60° = sqrt(3)/2, $
+$ sin 2 alpha = sin(2 times 30°) = sin 60° = sqrt(3)/2 dou $
 
 但
 
-$ 2 sin alpha = 2 sin 30° = 2 times 1/2 = 1. $
+$ 2 sin alpha = 2 sin 30° = 2 times 1/2 = 1 ju $
 
 同样，$2 alpha$ 的其他三角函数一般也不等于 $alpha$ 的同名三角函数的两倍。
 
@@ -476,10 +476,10 @@ $ sin(x + y) = sin x cos y + cos x sin y $
 
 中，用 $alpha$ 代替 $x$ 和 $y$，得
 
-$ sin(alpha + alpha) = sin alpha cos alpha + cos alpha sin alpha, $
+$ sin(alpha + alpha) = sin alpha cos alpha + cos alpha sin alpha dou $
 
 // p.147
-就是 #h(4em) $bold(sin 2 alpha = 2 sin alpha cos alpha).$
+就是 #h(4em) $bold(sin 2 alpha = 2 sin alpha cos alpha) ju$
 
 *2. 二倍角的余弦*　在两角和的余弦公式
 
@@ -487,17 +487,17 @@ $ cos(x + y) = cos x cos y - sin x sin y $
 
 中，用 $alpha$ 代替 $x$ 和 $y$，得
 
-$ cos(alpha + alpha) = cos alpha cos alpha - sin alpha sin alpha, $
+$ cos(alpha + alpha) = cos alpha cos alpha - sin alpha sin alpha dou $
 
-就是 #h(4em) $bold(cos 2 alpha = cos^2 alpha - sin^2 alpha).$
+就是 #h(4em) $bold(cos 2 alpha = cos^2 alpha - sin^2 alpha) ju$
 
 因为 $sin^2 alpha + cos^2 alpha = 1$，所以 $cos^2 alpha = 1 - sin^2 alpha$，代入上式得到
 
-$ bold(cos 2 alpha = 1 - 2 sin^2 alpha). $
+$ bold(cos 2 alpha = 1 - 2 sin^2 alpha) ju $
 
 或者用 $sin^2 alpha = 1 - cos^2 alpha$ 代替 $cos 2 alpha = cos^2 alpha - sin^2 alpha$ 中的 $sin^2 alpha$，又得到
 
-$ bold(cos 2 alpha = 2 cos^2 alpha - 1). $
+$ bold(cos 2 alpha = 2 cos^2 alpha - 1) ju $
 
 因此，二倍角的余弦可以写成三种形式。后面两种形式用起来比较方便，因为只要知道单角的一个函数便已足够了。
 
@@ -511,21 +511,21 @@ $ cot(x + y) = (cot x cot y - 1)/(cot y + cot x) $
 
 中，分别令 $x = y = alpha$，化简后，得
 
-$ bold(tan 2 alpha = (2 tan alpha)/(1 - tan^2 alpha)), \
-  bold(cot 2 alpha = (cot^2 alpha - 1)/(2 cot alpha)). $
+$ bold(tan 2 alpha = (2 tan alpha)/(1 - tan^2 alpha)) dou \
+  bold(cot 2 alpha = (cot^2 alpha - 1)/(2 cot alpha)) ju $
 
 // p.148
 #ex("例 1.")[已知 $sin alpha = 0.8$，并且 $alpha$ 的终边在第二象限内，求 $sin 2 alpha$ 和 $cos 2 alpha$ 的值。]
 
 #sol[因为 $alpha$ 的终边在第二象限内，所以
 
-$ cos alpha = -sqrt(1 - sin^2 alpha) = -sqrt(1 - 0.8^2) = -0.6. $
+$ cos alpha = -sqrt(1 - sin^2 alpha) = -sqrt(1 - 0.8^2) = -0.6 ju $
 ]
 
 因此，
 
-$ sin 2 alpha = 2 sin alpha cos alpha = 2 times 0.8(-0.6) = -0.96; \
-  cos 2 alpha = 1 - 2 sin^2 alpha = 1 - 2 times 0.8^2 = 1 - 1.28 = -0.28. $
+$ sin 2 alpha = 2 sin alpha cos alpha = 2 times 0.8(-0.6) = -0.96 fen \
+  cos 2 alpha = 1 - 2 sin^2 alpha = 1 - 2 times 0.8^2 = 1 - 1.28 = -0.28 ju $
 
 #ex("例 2.")[设 $tan theta/2 = t$，求证：
 
@@ -535,35 +535,35 @@ $ sin 2 alpha = 2 sin alpha cos alpha = 2 times 0.8(-0.6) = -0.96; \
 #sol(label: [证])[(1) $sin theta = sin(2 dot theta/2) = 2 sin theta/2 cos theta/2$
 $ &= (2 sin display(theta/2) cos display(theta/2))/(cos^2 display(theta/2) + sin^2 display(theta/2)) \
   &= ((2 sin display(theta/2) cos display(theta/2))/(cos^2 display(theta/2)))/((cos^2 display(theta/2) + sin^2 display(theta/2))/(cos^2 display(theta/2))) \
-  &= (2 tan display(theta/2))/(1 + tan^2 display(theta/2)) = (2t)/(1 + t^2). $
+  &= (2 tan display(theta/2))/(1 + tan^2 display(theta/2)) = (2t)/(1 + t^2) ju $
 ]
 
 // p.149
 (2) $cos theta = cos(2 dot theta/2) = cos^2 theta/2 - sin^2 theta/2$
 $ &= (cos^2 display(theta/2) - sin^2 display(theta/2))/(cos^2 display(theta/2) + sin^2 display(theta/2)) \
   &= ((cos^2 display(theta/2) - sin^2 display(theta/2))/(cos^2 display(theta/2)))/((cos^2 display(theta/2) + sin^2 display(theta/2))/(cos^2 display(theta/2))) \
-  &= (1 - tan^2 display(theta/2))/(1 + tan^2 display(theta/2)) = (1 - t^2)/(1 + t^2). $
+  &= (1 - tan^2 display(theta/2))/(1 + tan^2 display(theta/2)) = (1 - t^2)/(1 + t^2) ju $
 
-(3) $tan theta = tan(2 dot display(theta/2)) = display((2 tan display(theta/2))/(1 - tan^2 display(theta/2)) = (2t)/(1 - t^2)).$
+(3) $tan theta = tan(2 dot display(theta/2)) = display((2 tan display(theta/2))/(1 - tan^2 display(theta/2)) = (2t)/(1 - t^2)) ju$
 
 在这个例题里，我们看到，如果令 $tan theta/2 = t$，那么 $sin theta$，$cos theta$ 和 $tan theta$ 都可以表示成关于 $t$ 的分式。这种变形，在高等数学里很有用处。它们叫作*万能代换*。
 
 我们还要注意，从二倍角的余弦公式
 
-$ cos 2 alpha = 1 - 2 sin^2 alpha, \
-  cos 2 alpha = 2 cos^2 alpha - 1, $
+$ cos 2 alpha = 1 - 2 sin^2 alpha dou \
+  cos 2 alpha = 2 cos^2 alpha - 1 dou $
 
 分别可以推得
 
-$ sin^2 alpha = (1 - cos 2 alpha)/2, $
+$ sin^2 alpha = (1 - cos 2 alpha)/2 dou $
 
 // p.150
-$ cos^2 alpha = (1 + cos 2 alpha)/2. $
+$ cos^2 alpha = (1 + cos 2 alpha)/2 ju $
 
 这两个恒等式也是很有用的。
 
 #ex("例 3.")[求证 $2 sin^2 theta sin^2 phi + 2 cos^2 theta cos^2 phi$
-$ = 1 + cos 2 theta cos 2 phi. $]
+$ = 1 + cos 2 theta cos 2 phi ju $]
 
 #sol(label: [证])[]
 $ & 2 sin^2 theta sin^2 phi + 2 cos^2 theta cos^2 phi \
@@ -571,7 +571,7 @@ $ & 2 sin^2 theta sin^2 phi + 2 cos^2 theta cos^2 phi \
   & quad + 2 dot (1 + cos 2 theta)/2 dot (1 + cos 2 phi)/2 \
   &= 1/2 (1 - cos 2 theta - cos 2 phi + cos 2 theta cos 2 phi) \
   & quad + 1/2 (1 + cos 2 theta + cos 2 phi + cos 2 theta cos 2 phi) \
-  &= 1 + cos 2 theta cos 2 phi. $
+  &= 1 + cos 2 theta cos 2 phi ju $
 
 #ex("例 4.")[分别用 $sin alpha$，$cos alpha$ 和 $tan alpha$ 来表示 $sin 3 alpha$，$cos 3 alpha$ 和 $tan 3 alpha$。]
 
@@ -581,19 +581,19 @@ $ sin 3 alpha &= sin(2 alpha + alpha) \
   &= 2 sin alpha cos^2 alpha + (1 - 2 sin^2 alpha) sin alpha \
   &= 2 sin alpha (1 - sin^2 alpha) + (1 - 2 sin^2 alpha) sin alpha \
   &= 2 sin alpha - 2 sin^3 alpha + sin alpha - 2 sin^3 alpha \
-  &= 3 sin alpha - 4 sin^3 alpha. \
+  &= 3 sin alpha - 4 sin^3 alpha ju \
   cos 3 alpha &= cos(2 alpha + alpha) \
   &= cos 2 alpha cos alpha - sin 2 alpha sin alpha \
   &= (2 cos^2 alpha - 1) cos alpha - 2 sin^2 alpha cos alpha \
   &= (2 cos^2 alpha - 1) cos alpha - 2(1 - cos^2 alpha) cos alpha \
   &= 2 cos^3 alpha - cos alpha - 2 cos alpha + 2 cos^3 alpha \
-  &= 4 cos^3 alpha - 3 cos alpha. $
+  &= 4 cos^3 alpha - 3 cos alpha ju $
 
 // p.151
 $ tan 3 alpha &= tan(2 alpha + alpha) = (tan 2 alpha + tan alpha)/(1 - tan 2 alpha tan alpha) \
   &= (display((2 tan alpha)/(1 - tan^2 alpha)) + tan alpha)/(1 - display((2 tan alpha)/(1 - tan^2 alpha)) dot tan alpha) \
   &= (2 tan alpha + tan alpha (1 - tan^2 alpha))/(1 - tan^2 alpha - 2 tan^2 alpha) \
-  &= (3 tan alpha - tan^3 alpha)/(1 - 3 tan^2 alpha). $
+  &= (3 tan alpha - tan^3 alpha)/(1 - 3 tan^2 alpha) ju $
 
 #exercise("4·5")[
   #set enum(numbering: n => if n == 6 [\*#n.] else [#n.])
@@ -615,7 +615,7 @@ $ tan 3 alpha &= tan(2 alpha + alpha) = (tan 2 alpha + tan alpha)/(1 - tan 2 alp
     #h(2.6em)\(2) $sin 4 alpha = 4(sin alpha cos^3 alpha - cos alpha sin^3 alpha)$。
   6. (1) 求证
     $ sqrt(1 - sin 2 alpha) = |sin alpha - cos alpha| \
-      "和" sqrt(1 + sin 2 alpha) = |sin alpha + cos alpha|; $
+      "和" sqrt(1 + sin 2 alpha) = |sin alpha + cos alpha| fen $
     ［提示：$1 - sin 2 alpha = sin^2 alpha + cos^2 alpha - 2 sin alpha cos alpha$。］
 
     // p.152
@@ -639,7 +639,7 @@ $ tan 3 alpha &= tan(2 alpha + alpha) = (tan 2 alpha + tan alpha)/(1 - tan 2 alp
 
 一个角的一半叫作它的半角。有时我们要用一个角的三角函数来表示它的半角的三角函数。例如，已知
 
-$ cos 45° = sqrt(2)/2, $
+$ cos 45° = sqrt(2)/2 dou $
 
 要算出 $sin 22°30'$，$cos 22°30'$，等等。半角三角函数的公式可以从二倍角的余弦公式推导出来。
 
@@ -649,16 +649,16 @@ $ cos 2x = 1 - 2 sin^2 x $
 
 中，令 $x = alpha/2$，那么 $2x = alpha$。因此，
 
-$ cos alpha = 1 - 2 sin^2 alpha/2. $
+$ cos alpha = 1 - 2 sin^2 alpha/2 ju $
 
-移项，得 #h(4em) $2 sin^2 display(alpha/2) = 1 - cos alpha,$
+移项，得 #h(4em) $2 sin^2 display(alpha/2) = 1 - cos alpha dou$
 
 // p.153
 就是
 
-#eqno([(1)], $sin^2 alpha/2 = (1 - cos alpha)/2.$)
+#eqno([(1)], $sin^2 alpha/2 = (1 - cos alpha)/2 ju$)
 
-$ ∴ quad bold(sin alpha/2 = ± sqrt((1 - cos alpha)/2)). $
+$ ∴ quad bold(sin alpha/2 = ± sqrt((1 - cos alpha)/2)) ju $
 
 在二倍角的余弦的另一公式
 
@@ -666,21 +666,21 @@ $ cos 2x = 2 cos^2 x - 1 $
 
 中，令 $x = alpha/2$，那么
 
-$ cos alpha = 2 cos^2 alpha/2 - 1. $
+$ cos alpha = 2 cos^2 alpha/2 - 1 ju $
 
-移项，得 #h(4em) $2 cos^2 display(alpha/2) = 1 + cos alpha,$
+移项，得 #h(4em) $2 cos^2 display(alpha/2) = 1 + cos alpha dou$
 
 就是
 
-#eqno([(2)], $cos^2 alpha/2 = (1 + cos alpha)/2.$)
+#eqno([(2)], $cos^2 alpha/2 = (1 + cos alpha)/2 ju$)
 
-$ ∴ quad bold(cos alpha/2 = ± sqrt((1 + cos alpha)/2)). $
+$ ∴ quad bold(cos alpha/2 = ± sqrt((1 + cos alpha)/2)) ju $
 
 把等式 (1) 的两边分别除以等式 (2) 的两边，还可以得到
 
-$ tan^2 alpha/2 = (1 - cos alpha)/(1 + cos alpha), $
+$ tan^2 alpha/2 = (1 - cos alpha)/(1 + cos alpha) dou $
 
-$ ∴ quad bold(tan alpha/2 = ± sqrt((1 - cos alpha)/(1 + cos alpha))). $
+$ ∴ quad bold(tan alpha/2 = ± sqrt((1 - cos alpha)/(1 + cos alpha))) ju $
 
 我们得到了由角 $alpha$ 的余弦来求 $display(alpha/2)$ 的正弦，余弦和正切的公式。这些公式只能确定所求的三角函数的绝对值。根号前的符号，决定于角 $display(alpha/2)$ 的终边所在的象限。因此，应用这些公式时，应当根据题目的条件，先求出 $display(alpha/2)$ 的终边所在的象限，然后决定根号前应取的符号。从下面的例 1～例 3 可以看到，/* p.154 */如果知道角 $alpha$ 的值或者它所在的范围，那么 $display(alpha/2)$ 的三角函数值可以唯一确定；但是如果只知道角 $alpha$ 的终边所在的象限，那么将得到 $display(alpha/2)$ 的两组三角函数值。
 
@@ -691,15 +691,15 @@ $ ∴ quad bold(tan alpha/2 = ± sqrt((1 - cos alpha)/(1 + cos alpha))). $
 $ tan 67°30' &= tan (135°)/2 = +sqrt((1 - cos 135°)/(1 + cos 135°)) \
   &= sqrt((1 - (-display(1/sqrt(2))))/(1 + (-display(1/sqrt(2))))) = sqrt((sqrt(2) + 1)/(sqrt(2) - 1)) \
   &= sqrt((sqrt(2) + 1)^2/((sqrt(2) - 1)(sqrt(2) + 1))) = sqrt((sqrt(2) + 1)^2/(2 - 1)) \
-  &= sqrt(2) + 1. $
+  &= sqrt(2) + 1 ju $
 ]
 
 #ex("例 2.")[已知 $cos alpha = -15/17$，并且 $180° < alpha < 270°$，求 $sin display(alpha/2)$ 和 $cos display(alpha/2)$ 的值。]
 
 #sol[因为 $180° < alpha < 270°$，所以 $90° < display(alpha/2) < 135°$，$display(alpha/2)$ 的终边在第二象限内。因此，
 
-$ sin alpha/2 = +sqrt((1 - cos alpha)/2) = +sqrt((1 - (-display(15/17)))/2) = +(4 sqrt(17))/17; \
-  cos alpha/2 = -sqrt((1 + cos alpha)/2) = -sqrt((1 + (-display(15/17)))/2) = -sqrt(17)/17. $
+$ sin alpha/2 = +sqrt((1 - cos alpha)/2) = +sqrt((1 - (-display(15/17)))/2) = +(4 sqrt(17))/17 fen \
+  cos alpha/2 = -sqrt((1 + cos alpha)/2) = -sqrt((1 + (-display(15/17)))/2) = -sqrt(17)/17 ju $
 ]
 
 // p.155
@@ -712,7 +712,7 @@ $ n dot 360° + 270° + alpha_1 $
 
 的形式，这里 $n$ 是一个整数，$alpha_1$ 是一个锐角。因此，
 
-$ alpha/2 = n dot 180° + 135° + alpha_1/2. $
+$ alpha/2 = n dot 180° + 135° + alpha_1/2 ju $
 
 因为 $alpha_1$ 是锐角，所以 $display(alpha_1/2)$ 是小于 $45°$ 的锐角，$135° + display(alpha_1/2)$ 是在 $135°$ 与 $180°$ 之间的角，并且容易看出：
 
@@ -722,38 +722,38 @@ $ alpha/2 = n dot 180° + 135° + alpha_1/2. $
 
 (1) 当 $display(alpha/2)$ 的终边在第二象限内时，
 
-$ sin alpha/2 > 0, quad cos alpha/2 < 0, quad tan alpha/2 < 0. $
+$ sin alpha/2 > 0 dou quad cos alpha/2 < 0 dou quad tan alpha/2 < 0 ju $
 
 应用公式，得到
 
-$ sin alpha/2 &= sqrt((1 - display(3/5))/2) = sqrt(5)/5; \
-  cos alpha/2 &= -sqrt((1 + display(3/5))/2) = -(2 sqrt(5))/5; \
-  tan alpha/2 &= -sqrt((1 - display(3/5))/(1 + display(3/5))) = -1/2. $
+$ sin alpha/2 &= sqrt((1 - display(3/5))/2) = sqrt(5)/5 fen \
+  cos alpha/2 &= -sqrt((1 + display(3/5))/2) = -(2 sqrt(5))/5 fen \
+  tan alpha/2 &= -sqrt((1 - display(3/5))/(1 + display(3/5))) = -1/2 ju $
 
 (2) 当 $display(alpha/2)$ 的终边在第四象限内时，
 
 // p.156
-$ sin alpha/2 < 0, quad cos alpha/2 > 0, quad tan alpha/2 < 0. $
+$ sin alpha/2 < 0 dou quad cos alpha/2 > 0 dou quad tan alpha/2 < 0 ju $
 
 应用公式，得到
 
-$ sin alpha/2 &= -sqrt((1 - display(3/5))/2) = -sqrt(5)/5; \
-  cos alpha/2 &= sqrt((1 + display(3/5))/2) = (2 sqrt(5))/5; \
-  tan alpha/2 &= -sqrt((1 - display(3/5))/(1 + display(3/5))) = -1/2. $
+$ sin alpha/2 &= -sqrt((1 - display(3/5))/2) = -sqrt(5)/5 fen \
+  cos alpha/2 &= sqrt((1 + display(3/5))/2) = (2 sqrt(5))/5 fen \
+  tan alpha/2 &= -sqrt((1 - display(3/5))/(1 + display(3/5))) = -1/2 ju $
 
 $tan display(alpha/2)$ 也可以用 $sin alpha$ 和 $cos alpha$ 的不带根号的式子来表示。
 
-$ tan alpha/2 = (sin display(alpha/2))/(cos display(alpha/2)) = (2 sin display(alpha/2) cos display(alpha/2))/(2 cos^2 display(alpha/2)) = (sin alpha)/(1 + cos alpha). $
+$ tan alpha/2 = (sin display(alpha/2))/(cos display(alpha/2)) = (2 sin display(alpha/2) cos display(alpha/2))/(2 cos^2 display(alpha/2)) = (sin alpha)/(1 + cos alpha) ju $
 
 就是
 
-#eqno([(3)], $bold(tan alpha/2 = (sin alpha)/(1 + cos alpha)).$)
+#eqno([(3)], $bold(tan alpha/2 = (sin alpha)/(1 + cos alpha)) ju$)
 
 同样，#h(2em) $display(tan alpha/2 = (sin display(alpha/2))/(cos display(alpha/2)) = (2 sin^2 display(alpha/2))/(2 sin display(alpha/2) cos display(alpha/2)) = (1 - cos alpha)/(sin alpha).)$
 
 就是
 
-#eqno([(4)], $bold(tan alpha/2 = (1 - cos alpha)/(sin alpha)).$)
+#eqno([(4)], $bold(tan alpha/2 = (1 - cos alpha)/(sin alpha)) ju$)
 
 应用这两个公式时，只要知道角 $alpha$ 的终边所在的象限，可不必先分析 $display(alpha/2)$ 的终边所在的象限，就求出 $tan display(alpha/2)$ 的值。
 
@@ -762,11 +762,11 @@ $ tan alpha/2 = (sin display(alpha/2))/(cos display(alpha/2)) = (2 sin display(a
 
 因为角 $alpha$ 的终边在第四象限内，所以 $sin alpha < 0$。因此，
 
-$ sin alpha = -sqrt(1 - cos^2 alpha) = -sqrt(1 - (3/5)^2) = -4/5. $
+$ sin alpha = -sqrt(1 - cos^2 alpha) = -sqrt(1 - (3/5)^2) = -4/5 ju $
 
 应用公式 $tan display(alpha/2) = display((1 - cos alpha)/(sin alpha))$，得到
 
-$ tan alpha/2 = (1 - display(3/5))/(-display(4/5)) = -1/2. $
+$ tan alpha/2 = (1 - display(3/5))/(-display(4/5)) = -1/2 ju $
 
 我们看到，这样计算就比较方便。
 
@@ -797,19 +797,19 @@ $ tan alpha/2 = (1 - display(3/5))/(-display(4/5)) = -1/2. $
 
 我们知道：
 
-$ sin(alpha + beta) = sin alpha cos beta + cos alpha sin beta, \
-  sin(alpha - beta) = sin alpha cos beta - cos alpha sin beta. $
+$ sin(alpha + beta) = sin alpha cos beta + cos alpha sin beta dou \
+  sin(alpha - beta) = sin alpha cos beta - cos alpha sin beta ju $
 
 把这两个等式的两边分别相加或者相减，得
 
-$ sin(alpha + beta) + sin(alpha - beta) = 2 sin alpha cos beta, \
-  sin(alpha + beta) - sin(alpha - beta) = 2 cos alpha sin beta. $
+$ sin(alpha + beta) + sin(alpha - beta) = 2 sin alpha cos beta dou \
+  sin(alpha + beta) - sin(alpha - beta) = 2 cos alpha sin beta ju $
 
 把最后这两个等式的两边都除以 2，并且调过来写，得到
 
-#eqno([(1)], $bold(sin alpha cos beta = 1/2 [sin(alpha + beta) + sin(alpha - beta)]),$)
+#eqno([(1)], $bold(sin alpha cos beta = 1/2 [sin(alpha + beta) + sin(alpha - beta)]) dou$)
 
-#eqno([(2)], $bold(cos alpha sin beta = 1/2 [sin(alpha + beta) - sin(alpha - beta)]).$)
+#eqno([(2)], $bold(cos alpha sin beta = 1/2 [sin(alpha + beta) - sin(alpha - beta)]) ju$)
 
 // p.159
 #ex("例 1.")[计算 $sin 105° cos 75°$ 的值。]
@@ -817,14 +817,14 @@ $ sin(alpha + beta) + sin(alpha - beta) = 2 sin alpha cos beta, \
 #sol[应用公式 (1)，得
 
 $ sin 105° cos 75° &= 1/2 [sin(105° + 75°) + sin(105° - 75°)] \
-  &= 1/2 (sin 180° + sin 30°) = 1/2 (0 + 1/2) = 1/4. $
+  &= 1/2 (sin 180° + sin 30°) = 1/2 (0 + 1/2) = 1/4 ju $
 ]
 
 也可以应用公式 (2)，得
 
 $ cos 75° sin 105° &= 1/2 [sin(75° + 105°) - sin(75° - 105°)] \
   &= 1/2 [sin 180° - sin(-30°)] \
-  &= 1/2 (sin 180° + sin 30°) = 1/2 (0 + 1/2) = 1/4. $
+  &= 1/2 (sin 180° + sin 30°) = 1/2 (0 + 1/2) = 1/4 ju $
 
 从这个例题可以看到，公式 (1) 和 (2) 的作用是一样的，它们都可以用来把正弦与余弦的积化成另外两个角的正弦的代数和的形式。
 
@@ -832,40 +832,40 @@ $ cos 75° sin 105° &= 1/2 [sin(75° + 105°) - sin(75° - 105°)] \
 
 根据公式
 
-$ cos(alpha + beta) = cos alpha cos beta - sin alpha sin beta, \
-  cos(alpha - beta) = cos alpha cos beta + sin alpha sin beta, $
+$ cos(alpha + beta) = cos alpha cos beta - sin alpha sin beta dou \
+  cos(alpha - beta) = cos alpha cos beta + sin alpha sin beta dou $
 
 可以得到
 
-$ cos(alpha + beta) + cos(alpha - beta) = 2 cos alpha cos beta, \
-  cos(alpha + beta) - cos(alpha - beta) = -2 sin alpha sin beta. $
+$ cos(alpha + beta) + cos(alpha - beta) = 2 cos alpha cos beta dou \
+  cos(alpha + beta) - cos(alpha - beta) = -2 sin alpha sin beta ju $
 
 因此，
 
-#eqno([(3)], $bold(cos alpha cos beta = 1/2 [cos(alpha + beta) + cos(alpha - beta)]),$)
+#eqno([(3)], $bold(cos alpha cos beta = 1/2 [cos(alpha + beta) + cos(alpha - beta)]) dou$)
 
-#eqno([(4)], $bold(sin alpha sin beta = -1/2 [cos(alpha + beta) - cos(alpha - beta)]).$)
+#eqno([(4)], $bold(sin alpha sin beta = -1/2 [cos(alpha + beta) - cos(alpha - beta)]) ju$)
 
 // p.160
 注意公式 (4) 前面的系数是 $-display(1/2)$。这个公式也可以写成另一种形式：
 
-#eqno([(4$'$)], $sin alpha sin beta = 1/2 [cos(alpha - beta) - cos(alpha + beta)].$)
+#eqno([(4$'$)], $sin alpha sin beta = 1/2 [cos(alpha - beta) - cos(alpha + beta)] ju$)
 
 #ex("例 2.")[化简 $cos(alpha + beta) cos(alpha - beta)$
 $ - cos(beta + gamma) cos(beta - gamma) \
-  + cos(alpha + gamma) cos(alpha - gamma). $]
+  + cos(alpha + gamma) cos(alpha - gamma) ju $]
 
 #sol[应用公式 (3)，得
 
-$ cos(alpha + beta) cos(alpha - beta) = 1/2 (cos 2 alpha + cos 2 beta), \
-  -cos(beta + gamma) cos(beta - gamma) = -1/2 (cos 2 beta + cos 2 gamma), \
-  cos(alpha + gamma) cos(alpha - gamma) = 1/2 (cos 2 alpha + cos 2 gamma). $
+$ cos(alpha + beta) cos(alpha - beta) = 1/2 (cos 2 alpha + cos 2 beta) dou \
+  -cos(beta + gamma) cos(beta - gamma) = -1/2 (cos 2 beta + cos 2 gamma) dou \
+  cos(alpha + gamma) cos(alpha - gamma) = 1/2 (cos 2 alpha + cos 2 gamma) ju $
 ]
 
 把这三个等式的两边分别相加，就得到
 
 $ & cos(alpha + beta) cos(alpha - beta) - cos(beta + gamma) cos(beta - gamma) \
-  & quad + cos(alpha + gamma) cos(alpha - gamma) = cos 2 alpha. $
+  & quad + cos(alpha + gamma) cos(alpha - gamma) = cos 2 alpha ju $
 
 #ex("例 3.")[求证 $sin(alpha + beta) sin(alpha - beta) = sin^2 alpha - sin^2 beta$。]
 
@@ -875,7 +875,7 @@ $ & sin(alpha + beta) sin(alpha - beta) \
   &= 1/2 {cos[(alpha + beta) - (alpha - beta)] - cos[(alpha + beta) + (alpha - beta)]} \
   &= 1/2 (cos 2 beta - cos 2 alpha) \
   &= 1/2 [(1 - 2 sin^2 beta) - (1 - 2 sin^2 alpha)] \
-  &= sin^2 alpha - sin^2 beta. $
+  &= sin^2 alpha - sin^2 beta ju $
 ]
 
 // p.161
@@ -890,9 +890,9 @@ $ & sin(alpha + beta) sin(alpha - beta) \
     #cols[(1) $2 sin 3 theta cos theta$；][(2) $2 sin(pi/4 - 3x) cos(pi/4 + x)$；]
     #cols[(3) $cos((3pi)/4 + 2x) sin(pi/4 - x)$；][(4) $2 sin(pi/4 - x) sin(pi/4 + x)$。]
   3. 求证 $sin(alpha + beta) sin(alpha - beta) + sin(beta + gamma) sin(beta - gamma)$
-    $ + sin(gamma + alpha) sin(gamma - alpha) = 0. $
+    $ + sin(gamma + alpha) sin(gamma - alpha) = 0 ju $
   4. 求证 $display((sin alpha)/(sin(alpha - beta) sin(alpha - gamma)) + (sin beta)/(sin(beta - alpha) sin(beta - gamma)))$
-    $ + (sin gamma)/(sin(gamma - alpha) sin(gamma - beta)) = 0. $
+    $ + (sin gamma)/(sin(gamma - alpha) sin(gamma - beta)) = 0 ju $
     ［提示：取公分母为 $sin(alpha - beta) sin(beta - gamma) sin(gamma - alpha)$。］
   5. 求证 $tan(alpha + beta) + tan(alpha - beta) = display((2 sin 2 alpha)/(cos 2 alpha + cos 2 beta))$。
   6. 求证 $cot(A + 15°) - tan(A - 15°) = display((4 cos 2A)/(1 + 2 sin 2A))$。
@@ -905,30 +905,30 @@ $ & sin(alpha + beta) sin(alpha - beta) \
 
 我们从 §4·7 中知道：
 
-$ sin(x + y) + sin(x - y) = 2 sin x cos y; \
-  sin(x + y) - sin(x - y) = 2 cos x sin y; \
-  cos(x + y) + cos(x - y) = 2 cos x cos y; \
-  /* p.162 */ cos(x + y) - cos(x - y) = -2 sin x sin y. $
+$ sin(x + y) + sin(x - y) = 2 sin x cos y fen \
+  sin(x + y) - sin(x - y) = 2 cos x sin y fen \
+  cos(x + y) + cos(x - y) = 2 cos x cos y fen \
+  /* p.162 */ cos(x + y) - cos(x - y) = -2 sin x sin y ju $
 
 令 $x + y = alpha$，$x - y = beta$。解这个方程组，得 $x = display((alpha + beta)/2)$，$y = display((alpha - beta)/2)$。代入上面的四个等式中，就得到
 
-#eqno([(1)], $bold(sin alpha + sin beta = 2 sin (alpha + beta)/2 cos (alpha - beta)/2);$)
+#eqno([(1)], $bold(sin alpha + sin beta = 2 sin (alpha + beta)/2 cos (alpha - beta)/2) fen$)
 
-#eqno([(2)], $bold(sin alpha - sin beta = 2 cos (alpha + beta)/2 sin (alpha - beta)/2);$)
+#eqno([(2)], $bold(sin alpha - sin beta = 2 cos (alpha + beta)/2 sin (alpha - beta)/2) fen$)
 
-#eqno([(3)], $bold(cos alpha + cos beta = 2 cos (alpha + beta)/2 cos (alpha - beta)/2);$)
+#eqno([(3)], $bold(cos alpha + cos beta = 2 cos (alpha + beta)/2 cos (alpha - beta)/2) fen$)
 
-#eqno([(4)], $bold(cos alpha - cos beta = -2 sin (alpha + beta)/2 sin (alpha - beta)/2).$)
+#eqno([(4)], $bold(cos alpha - cos beta = -2 sin (alpha + beta)/2 sin (alpha - beta)/2) ju$)
 
 利用这些公式，可以把两个角的正弦或者余弦的代数和化成另外两个角的三角函数的积。
 
 注意公式 (4) 中的系数是 $-2$。由于
 
-$ -sin (alpha - beta)/2 = sin(-(alpha - beta)/2) = sin (beta - alpha)/2, $
+$ -sin (alpha - beta)/2 = sin(-(alpha - beta)/2) = sin (beta - alpha)/2 dou $
 
 公式 (4) 也可以写成下面的形式：
 
-#eqno([(4$'$)], $cos alpha - cos beta = 2 sin (alpha + beta)/2 sin (beta - alpha)/2.$)
+#eqno([(4$'$)], $cos alpha - cos beta = 2 sin (alpha + beta)/2 sin (beta - alpha)/2 ju$)
 
 #ex("例 1.")[求证 $sin(45° + x) - sin(45° - x) = sqrt(2) sin x$。]
 
@@ -936,7 +936,7 @@ $ -sin (alpha - beta)/2 = sin(-(alpha - beta)/2) = sin (beta - alpha)/2, $
 $ & sin(45° + x) - sin(45° - x) \
   &= 2 cos ((45° + x) + (45° - x))/2 \
   & quad times sin ((45° + x) - (45° - x))/2 \
-  &= 2 cos 45° sin x = 2 dot sqrt(2)/2 sin x = sqrt(2) sin x. $
+  &= 2 cos 45° sin x = 2 dot sqrt(2)/2 sin x = sqrt(2) sin x ju $
 
 除了应用公式 (1)～(4) 可以把两个角的正弦或者余弦的代数和化成积以外，其他两个同名函数的代数和也很容易化/* p.163 */成积的形式。这些就不必作为公式来记忆了。我们只举一些例子说明如下：
 
@@ -945,7 +945,7 @@ $ & sin(45° + x) - sin(45° - x) \
 #sol[]
 $ tan alpha + tan beta &= (sin alpha)/(cos alpha) + (sin beta)/(cos beta) \
   &= (sin alpha cos beta + cos alpha sin beta)/(cos alpha cos beta) \
-  &= (sin(alpha + beta))/(cos alpha cos beta). $
+  &= (sin(alpha + beta))/(cos alpha cos beta) ju $
 
 像 $a + b sin alpha$，$a + b cos alpha$，$a + b tan alpha$ 等形式的式子可以利用辅助角把它们化成积的形式。
 
@@ -953,33 +953,33 @@ $ tan alpha + tan beta &= (sin alpha)/(cos alpha) + (sin beta)/(cos beta) \
 
 #sol[]
 $ 1 + sqrt(3) tan alpha &= sqrt(3) (1/sqrt(3) + tan alpha) \
-  &= sqrt(3) (tan 30° + tan alpha). $
+  &= sqrt(3) (tan 30° + tan alpha) ju $
 
 利用例 2 的结果，得
 
-$ tan 30° + tan alpha = (sin(30° + alpha))/(cos 30° cos alpha). $
+$ tan 30° + tan alpha = (sin(30° + alpha))/(cos 30° cos alpha) ju $
 
 因此，
 
 $ 1 + sqrt(3) tan alpha &= sqrt(3) dot (sin(30° + alpha))/(cos 30° cos alpha) = sqrt(3) dot (sin(30° + alpha))/(display(sqrt(3)/2) cos alpha) \
-  &= (2 sin(30° + alpha))/(cos alpha). $
+  &= (2 sin(30° + alpha))/(cos alpha) ju $
 
 #ex("例 4.")[把 $1 + sin alpha$ 化成积的形式。]
 
 #sol[]
 $ 1 + sin alpha &= sin 90° + sin alpha \
-  &= 2 sin(45° + alpha/2) cos(45° - alpha/2). $
+  &= 2 sin(45° + alpha/2) cos(45° - alpha/2) ju $
 
 这个例题也可以应用二倍角的余弦公式，按照下面的方法来做：
 
 // p.164
 $ 1 + sin alpha &= 1 + cos(90° - alpha) \
-  &= 1 + 2 cos^2 (45° - alpha/2) - 1 = 2 cos^2 (45° - alpha/2). $
+  &= 1 + 2 cos^2 (45° - alpha/2) - 1 = 2 cos^2 (45° - alpha/2) ju $
 
 两个结果的形式虽然不同，其实是一样的；因为
 
 $ & 2 sin(45° + alpha/2) cos(45° - alpha/2) \
-  &= 2 cos[90° - (45° + alpha/2)] cos(45° - alpha/2) = 2 cos^2 (45° - alpha/2). $
+  &= 2 cos[90° - (45° + alpha/2)] cos(45° - alpha/2) = 2 cos^2 (45° - alpha/2) ju $
 
 当两个角的函数互为余函数，而要把它们化成积的形式时，可以仿照下面的例 5 和例 6 来做。
 
@@ -990,7 +990,7 @@ $ sin alpha + cos beta &= sin alpha + sin(90° - beta) \
   &= 2 sin (alpha + (90° - beta))/2 \
   & quad times cos (alpha - (90° - beta))/2 \
   &= 2 sin((alpha - beta)/2 + 45°) \
-  & quad times cos((alpha + beta)/2 - 45°). $
+  & quad times cos((alpha + beta)/2 - 45°) ju $
 
 #ex("例 6.")[把 $tan alpha + cot beta$ 化成积的形式。]
 
@@ -998,11 +998,11 @@ $ sin alpha + cos beta &= sin alpha + sin(90° - beta) \
 
 利用例 2 的结果，得
 
-$ tan alpha + tan(90° - beta) = (sin(alpha + 90° - beta))/(cos alpha cos(90° - beta)) = (cos(alpha - beta))/(cos alpha sin beta). $
+$ tan alpha + tan(90° - beta) = (sin(alpha + 90° - beta))/(cos alpha cos(90° - beta)) = (cos(alpha - beta))/(cos alpha sin beta) ju $
 
 因此，
 
-$ tan alpha + cot beta = (cos(alpha - beta))/(cos alpha sin beta). $
+$ tan alpha + cot beta = (cos(alpha - beta))/(cos alpha sin beta) ju $
 
 遇到要把三个同名函数的代数和化成积的时候，要适当选择某两个函数，先把它们的和化成积，不要盲目乱套公式。
 
@@ -1016,7 +1016,7 @@ $ & sin 40° + sin 50° + sin 60° \
   &= 2 sin 50° (cos 10° + 1/2) \
   &= 2 sin 50° (cos 10° + cos 60°) \
   &= 2 sin 50° dot 2 cos 35° cos 25° \
-  &= 4 sin 50° cos 35° cos 25°. $
+  &= 4 sin 50° cos 35° cos 25° ju $
 
 // 原书此段排小字
 #text(size: 9.8pt)[这里，我们先把 $sin 60° + sin 40°$ 化成积，是因为 $60°$ 和 $40°$ 这两个角的和的一半等于 $50°$，恰巧就是题目中的第三个角。]
@@ -1034,7 +1034,7 @@ $ & 1 + tan x + sec x \
   &= (2 cos display(x/2) (cos display(x/2) + sin display(x/2)))/(cos x) \
   &= (2 cos display(x/2) [sin(90° - display(x/2)) + sin display(x/2)])/(cos x) \
   /* p.166 */ &= (2 cos display(x/2) dot 2 sin 45° cos(45° - display(x/2)))/(cos x) \
-  &= (2 sqrt(2) cos display(x/2) cos(45° - display(x/2)))/(cos x). $
+  &= (2 sqrt(2) cos display(x/2) cos(45° - display(x/2)))/(cos x) ju $
 
 #exercise("4·8")[
   #set enum(numbering: n => if n == 8 [\*#n.] else [#n.])
@@ -1074,13 +1074,13 @@ $ & 1 + tan x + sec x \
 
 #sol[把 $sin x$ 的系数提到括号外面，得
 
-$ sqrt(3)/2 sin x + 1/2 cos x = sqrt(3)/2 (sin x + 1/sqrt(3) cos x). $
+$ sqrt(3)/2 sin x + 1/2 cos x = sqrt(3)/2 (sin x + 1/sqrt(3) cos x) ju $
 ]
 
 因为 $display(1/sqrt(3) = tan pi/6 = (sin display(pi/6))/(cos display(pi/6)))$，所以
 
 $ "原式" &= sqrt(3)/2 (sin x + (sin display(pi/6))/(cos display(pi/6)) cos x) \
-  &= sqrt(3)/(2 cos display(pi/6)) (sin x cos pi/6 + cos x sin pi/6) = sin(x + pi/6). $
+  &= sqrt(3)/(2 cos display(pi/6)) (sin x cos pi/6 + cos x sin pi/6) = sin(x + pi/6) ju $
 
 #ex("例 2.")[化 $4 sin x + 3 cos x$ 成一个角的正弦的形式。]
 
@@ -1088,30 +1088,30 @@ $ "原式" &= sqrt(3)/2 (sin x + (sin display(pi/6))/(cos display(pi/6)) cos x) 
 
 令 $display(3/4) = tan phi$。查表求得 $phi$ 的最小正值
 
-$ phi = 36°52'. $
+$ phi = 36°52' ju $
 
 因此，
 
 $ "原式" &= 4(sin x + tan 36°52' cos x) \
   &= 4(sin x + (sin 36°52')/(cos 36°52') cos x) \
   /* p.168 */ &= 4/(cos 36°52') (sin x cos 36°52' + cos x sin 36°52') \
-  &= 4/(cos 36°52') sin(x + 36°52'). $
+  &= 4/(cos 36°52') sin(x + 36°52') ju $
 
 由 $tan 36°52' = display(3/4)$，得
 
-$ sec 36°52' = sqrt(1 + tan^2 36°52') = sqrt(1 + (3/4)^2) = 5/4, \
-  cos 36°52' = 1/(sec 36°52') = 1/display(5/4) = 4/5. $
+$ sec 36°52' = sqrt(1 + tan^2 36°52') = sqrt(1 + (3/4)^2) = 5/4 dou \
+  cos 36°52' = 1/(sec 36°52') = 1/display(5/4) = 4/5 ju $
 
-$ ∴ quad "原式" = 4/display(4/5) sin(x + 36°52') = 5 sin(x + 36°52'). $
+$ ∴ quad "原式" = 4/display(4/5) sin(x + 36°52') = 5 sin(x + 36°52') ju $
 
 一般地说，
 
-$ a sin x + b cos x = a(sin x + b/a cos x). $
+$ a sin x + b cos x = a(sin x + b/a cos x) ju $
 
 令 $display(b/a) = tan phi$，那么
 
 $ a sin x + b cos x &= a(sin x + tan phi cos x) \
-  &= a/(cos phi) (sin x cos phi + cos x sin phi) = (a sin(x + phi))/(cos phi). $
+  &= a/(cos phi) (sin x cos phi + cos x sin phi) = (a sin(x + phi))/(cos phi) ju $
 
 #ex("例 3.")[画出 $y = 3 sin x - sqrt(3) cos x$ 的图像。]
 
@@ -1121,7 +1121,7 @@ $ y &= 3 sin x - sqrt(3) cos x \
   &= 3(sin x - sqrt(3)/3 cos x) \
   &= 3(sin x - tan pi/6 cos x) \
   &= 3/(cos display(pi/6)) (sin x cos pi/6 - cos x sin pi/6) \
-  &= 2 sqrt(3) sin(x - pi/6). $
+  &= 2 sqrt(3) sin(x - pi/6) ju $
 
 由此可知，要画出 $y = 3 sin x - sqrt(3) cos x$ 的图像，只要先画出 $y = 2 sqrt(3) sin x$ 的图像，然后将 $y$ 轴向左平移等于 $display(pi/6)$ 的一段距离就可/* p.169 */以了（图 4·2）。
 
@@ -1144,7 +1144,7 @@ $ y &= 3 sin x - sqrt(3) cos x \
 
 #ex("例 1.")[在 $△A B C$ 中，求证
 
-$ sin A + sin B + sin C = 4 cos A/2 cos B/2 cos C/2. $]
+$ sin A + sin B + sin C = 4 cos A/2 cos B/2 cos C/2 ju $]
 
 #sol(label: [证])[]
 $ & sin A + sin B + sin C \
@@ -1155,13 +1155,13 @@ $ & sin A + sin B + sin C \
   &= 2 sin 1/2 (A + B) [cos 1/2 (A + B) + cos 1/2 (A - B)] \
   &= 2 sin 1/2 (180° - C) dot 2 cos A/2 cos B/2 \
   &= 4 sin(90° - C/2) cos A/2 cos B/2 \
-  &= 4 cos A/2 cos B/2 cos C/2. $
+  &= 4 cos A/2 cos B/2 cos C/2 ju $
 
 在这个例题中，我们看到，一开始要把 $C$ 写成 $180° - (A + B)$，后来又把 $A + B$ 写成 $180° - C$。证明这一类等式，一般都可以这样做。
 
 #ex("例 2.")[在 $△A B C$ 中，求证
 
-$ cos 2A + cos 2B + cos 2C = -1 - 4 cos A cos B cos C. $]
+$ cos 2A + cos 2B + cos 2C = -1 - 4 cos A cos B cos C ju $]
 
 #sol(label: [证])[]
 $ & cos 2A + cos 2B + cos 2C \
@@ -1171,30 +1171,30 @@ $ & cos 2A + cos 2B + cos 2C \
   &= 2 cos(A + B) cos(A - B) + 2 cos^2 (A + B) - 1 \
   &= -1 + 2 cos(A + B) [cos(A + B) + cos(A - B)] \
   &= -1 + 2 cos(180° - C) dot 2 cos A cos B \
-  &= -1 - 4 cos A cos B cos C. $
+  &= -1 - 4 cos A cos B cos C ju $
 
 #ex("例 3.")[在 $△A B C$ 中，求证
 
-$ cos^2 A + cos^2 B + cos^2 C = 1 - 2 cos A cos B cos C. $]
+$ cos^2 A + cos^2 B + cos^2 C = 1 - 2 cos A cos B cos C ju $]
 
 // p.171
 #sol(label: [证])[]
 $ & cos^2 A + cos^2 B + cos^2 C \
   &= (1 + cos 2A)/2 + (1 + cos 2B)/2 + (1 + cos 2C)/2 \
-  &= 3/2 + 1/2 (cos 2A + cos 2B + cos 2C). $
+  &= 3/2 + 1/2 (cos 2A + cos 2B + cos 2C) ju $
 
 利用例 2 中所证明的关系，得
 
 $ cos^2 A + cos^2 B + cos^2 C &= 3/2 + 1/2 (-1 - 4 cos A cos B cos C) \
-  &= 1 - 2 cos A cos B cos C. $
+  &= 1 - 2 cos A cos B cos C ju $
 
 #ex("例 4.")[在 $△A B C$ 中，求证
 
-$ tan A + tan B + tan C = tan A tan B tan C. $]
+$ tan A + tan B + tan C = tan A tan B tan C ju $]
 
 #sol(label: [证])[利用 §4·8 例 2 的结果，我们知道
 
-$ tan A + tan B = (sin(A + B))/(cos A cos B). $
+$ tan A + tan B = (sin(A + B))/(cos A cos B) ju $
 ]
 
 所以
@@ -1204,22 +1204,22 @@ $ tan A + tan B + tan C &= (sin(A + B))/(cos A cos B) + (sin C)/(cos C) \
   &= sin C dot (cos C + cos A cos B)/(cos A cos B cos C) \
   &= sin C dot (-cos(A + B) + cos A cos B)/(cos A cos B cos C) \
   &= sin C dot (-cos A cos B + sin A sin B + cos A cos B)/(cos A cos B cos C) \
-  &= (sin A sin B sin C)/(cos A cos B cos C) = tan A tan B tan C. $
+  &= (sin A sin B sin C)/(cos A cos B cos C) = tan A tan B tan C ju $
 
 这个例题也可以不先把 $tan A + tan B$ 变形，而采用下面的更简便的证法：
 
-因为 #h(4em) $A + B = 180° - C,$
+因为 #h(4em) $A + B = 180° - C dou$
 
-所以 #h(4em) $tan(A + B) = tan(180° - C),$
+所以 #h(4em) $tan(A + B) = tan(180° - C) dou$
 
 就是 #h(4em) $display((tan A + tan B)/(1 - tan A tan B) = -tan C.)$
 
 等式的两边都乘以 $1 - tan A tan B$，得
 
-$ tan A + tan B = -tan C + tan A tan B tan C, $
+$ tan A + tan B = -tan C + tan A tan B tan C dou $
 
 // p.172
-移项，就得到 #h(2em) $tan A + tan B + tan C = tan A tan B tan C.$
+移项，就得到 #h(2em) $tan A + tan B + tan C = tan A tan B tan C ju$
 
 注意，这个等式对于直角三角形不成立。
 
@@ -1234,13 +1234,13 @@ $ tan A + tan B = -tan C + tan A tan B tan C, $
   6. $cot A/2 + cot B/2 + cot C/2 = cot A/2 cot B/2 cot C/2$。
   7. $tan A/2 tan B/2 + tan B/2 tan C/2 + tan C/2 tan A/2 = 1$。
   8. $sin(B + C - A) + sin(C + A - B) + sin(A + B - C)$
-    $ = 4 sin A sin B sin C. $
+    $ = 4 sin A sin B sin C ju $
 ]
 
 #summary[
   *1. 重要公式*（公式后面括号中注的是公式名称的略号）
 
-  #let nm(a, b) = grid(columns: (1fr, auto), column-gutter: 1em, a, b)
+  #let nm(a, b) = grid(columns: (1fr, auto), column-gutter: 1em, align: (left + horizon, right + horizon), a, b)
   #nm([(1) $sin(alpha plus.minus beta) = sin alpha cos beta plus.minus cos alpha sin beta$；], $(S_(alpha plus.minus beta))$)
   #nm([(2) $cos(alpha plus.minus beta) = cos alpha cos beta minus.plus sin alpha sin beta$；], $(C_(alpha plus.minus beta))$)
   #nm([(3) $tan(alpha plus.minus beta) = display((tan alpha plus.minus tan beta)/(1 minus.plus tan alpha tan beta))$；], $(T_(alpha plus.minus beta))$)
@@ -1267,7 +1267,7 @@ $ tan A + tan B = -tan C + tan A tan B tan C, $
   // p.174
   *3. $bold(a sin x + b cos x)$ 的变形*　在 $a sin x + b cos x$ 中，令 $display(b/a) = tan phi$，就得到
 
-  $ a sin x + b cos x = (a sin(x + phi))/(cos phi). $
+  $ a sin x + b cos x = (a sin(x + phi))/(cos phi) ju $
 ]
 
 #review(title: [复习题四])[
@@ -1276,7 +1276,7 @@ $ tan A + tan B = -tan C + tan A tan B tan C, $
   2. 已知 $tan alpha = m/n$，求 $m cos 2 alpha + n sin 2 alpha$。
   3. 已知 $tan alpha = 1/7$，$tan beta = 1/2$，求 $tan(beta - 2 alpha)$。
   4. 设 $alpha, beta, gamma$ 都是锐角，它们的正切依次为 $1/2, 1/5, 1/8$；求证
-    $ alpha + beta + gamma = 45°. $
+    $ alpha + beta + gamma = 45° ju $
   5. 不用查表，求下列各式的值：
 
     (1) $sin 20° + sin 40° - sin 80°$；
@@ -1290,25 +1290,25 @@ $ tan A + tan B = -tan C + tan A tan B tan C, $
 
     ［提示：左边 $= display((sin 30°)/(sin 10°) - (cos 30°)/(cos 10°))$。］
   9. 已知 $tan alpha$ 和 $tan beta$ 是方程 $x^2 + 6x + 7 = 0$ 的两个根，求证
-    $ sin(alpha + beta) = cos(alpha + beta). $
+    $ sin(alpha + beta) = cos(alpha + beta) ju $
   10. 已知 $tan alpha$ 和 $tan beta$ 是方程 $x^2 + p x + q = 0$ 的两个根，求下式的值：
-    $ sin^2 (alpha + beta) + p sin(alpha + beta) cos(alpha + beta) + q cos^2 (alpha + beta). $
+    $ sin^2 (alpha + beta) + p sin(alpha + beta) cos(alpha + beta) + q cos^2 (alpha + beta) ju $
   11. 在一个圆的圆心的同旁作平行的两弦，这两条弦所对的圆心角各为 $72°$ 与 $144°$。求证这两弦间的距离等于半径的二分之一。
   12. 求证 $tan 6° tan 42° tan 66° tan 78° = 1$。
   // p.175
   13. 求证
     $ 1/(sin(alpha - beta) sin(alpha - gamma)) + 1/(sin(beta - gamma) sin(beta - alpha)) $
-    $ + 1/(sin(gamma - alpha) sin(gamma - beta)) = 1/(2 cos (alpha - beta)/2 cos (beta - gamma)/2 cos (gamma - alpha)/2). $
+    $ + 1/(sin(gamma - alpha) sin(gamma - beta)) = 1/(2 cos (alpha - beta)/2 cos (beta - gamma)/2 cos (gamma - alpha)/2) ju $
   14. 求证 $cos 47° - cos 61° - cos 11° + cos 25° = sin 7°$。
   15. 设 $A + B + C = pi$，求证
-    $ cot A cot B + cot B cot C + cot C cot A = 1. $
+    $ cot A cot B + cot B cot C + cot C cot A = 1 ju $
   16. 设 $alpha + beta + gamma + delta = 2pi$，求证
-    $ cos alpha + cos beta + cos gamma + cos delta + 4 cos (alpha + beta)/2 cos (alpha + gamma)/2 cos (alpha + delta)/2 = 0. $
+    $ cos alpha + cos beta + cos gamma + cos delta + 4 cos (alpha + beta)/2 cos (alpha + gamma)/2 cos (alpha + delta)/2 = 0 ju $
   17. 设 $alpha + beta + gamma = 0$，求证
     $ 2(sin alpha + sin beta + sin gamma)(1 + cos alpha + cos beta + cos gamma) $
-    $ = sin 2 alpha + sin 2 beta + sin 2 gamma. $
+    $ = sin 2 alpha + sin 2 beta + sin 2 gamma ju $
   18. 设 $A + B + C = pi$，求证
-    $ sin 4A + sin 4B + sin 4C = -4 sin 2A dot sin 2B dot sin 2C. $
+    $ sin 4A + sin 4B + sin 4C = -4 sin 2A dot sin 2B dot sin 2C ju $
   19. 设 $A + B + C = pi$，且 $2 sin B sin C = 2 cos^2 A/2$，求证 $∠B = ∠C$。
   20. 设 $alpha + beta + gamma = pi$，且 $sin alpha = cos beta cos gamma$，求证 $tan beta + tan gamma = 1$。
 ]

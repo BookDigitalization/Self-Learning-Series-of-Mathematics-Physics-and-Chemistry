@@ -29,7 +29,7 @@ $ sin x + x - 1 = 0 dou $
 
 解最简三角方程，就是 §2·9 中所讲的“已知一个三角函数的值，求角”的问题。虽然这个问题以前已经解决了，但是利用反三角函数，可以更方便地写出结果。现在我们分别说明如下：
 
-*1.* $bold(sin x = a)$
+#block(sticky: true)[*1.* $bold(sin x = a)$]
 
 #ex([例 1.])[解方程 #h(0.5em) $sin x = 3/4$。]
 
@@ -892,7 +892,7 @@ $ x = n dot 360° + 53°8' fen \
 
 在图 8·1 中，我们看到，两条曲线在从 $-pi$ 到 $pi$ 的区间内有五个交点。它们的横坐标分别是
 
-$ x_1 = 0, quad x_(2,3) approx plus.minus 1.0, quad x_(4,5) = plus.minus pi ju $
+$ x_1 = 0 dou quad x_(2,3) approx plus.minus 1.0 dou quad x_(4,5) = plus.minus pi ju $
 
 // p.297
 #fig("8·1", fig-c8-1())[]

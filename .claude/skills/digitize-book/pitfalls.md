@@ -47,4 +47,6 @@
 - `anglearc` 不接受带角度单位的 `calc.rem`，先 `.deg()` 转成数。
 - `#unclear[…]` 在 CeTZ 画布里不显黄底，要在图里写 `box(fill: rgb("#ffe58f"), …)`；`just todo` 已扫描 `figures/*.typ`。
 - 扫描分辨率不同：几何第一册用 200 dpi、offset 6，第二册 120 dpi、offset 4，页宽都约 1000 像素，图缩放 `0.0152cm/px`。
-- 旧用词替换会漏掉变体（如“补助直线”漏在“补助线”规则外）：独立核对时专门 grep 一遍旧词变体，补进 tsv 与 TERMINOLOGY。
+- 旧用词替换会漏掉变体（如“补助直线”漏在“补助线”规则外）：独立核对时专门 grep 一遍旧词变体，补进 tsv 与 TERMINOLOGY。- 局部函数不要和数学算子同名：`#let sec(…)` 会遮住公式里的 `sec`，排成等宽字体（三角册答案区曾因此出 16 处 DejaVuSansMono）。`audit-pdf.py` 的字体清单能查出来。
+- 行内公式后紧跟“；，。”时，Typst 会在公式和标点之间断行，标点落到下一行行首。main.typ 里给行内公式加不断行连接符：`#show math.equation.where(block: false): it => math.display(it) + sym.wj`。
+- `set text(weight: "bold")` 对公式不起作用。要整组公式加粗，用 show 规则改写成 `math.bold(it.body)`，并加标签防止递归（见三角册 ch02.typ 的 `c2a-b`）。

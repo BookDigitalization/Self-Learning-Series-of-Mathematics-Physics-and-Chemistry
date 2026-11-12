@@ -1280,7 +1280,7 @@ $ s &= 1/2 (a + b + c) dou \
 
 (3) $ar = sqrt(s(s - a)(s - b)(s - c))$。
 
-*4. 三角形的外接圆半径*
+#block(sticky: true)[*4. 三角形的外接圆半径*]
 
 $ R = a/(2 sin A) = b/(2 sin B) = c/(2 sin C) ju $
 

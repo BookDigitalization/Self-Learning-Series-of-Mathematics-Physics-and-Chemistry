@@ -775,7 +775,7 @@ $ "原式" &= cos alpha dot csc alpha (-tan alpha) \
 
 任意负角的三角函数 #sym.arrow.long 任意正角的三角函数 #sym.arrow.long 小于 $360°$ 的正角的三角函数 #sym.arrow.long 锐角的三角函数。
 
-*4. 已知一个三角函数的值等于 $bold(a)$，求角的步骤*
+#block(sticky: true)[*4. 已知一个三角函数的值等于 $bold(a)$，求角的步骤*]
 
 (1) 求出同名函数的值等于 $|a|$ 的锐角；
 
