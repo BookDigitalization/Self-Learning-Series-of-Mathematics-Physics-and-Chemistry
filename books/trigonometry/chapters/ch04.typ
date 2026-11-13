@@ -317,9 +317,7 @@ $ tan(alpha + beta) &= ((sin alpha cos beta + cos alpha sin beta)/(cos alpha cos
   &= ((sin alpha)/(cos alpha) + (sin beta)/(cos beta))/(1 - (sin alpha)/(cos alpha) dot (sin beta)/(cos beta)) \
   &= (tan alpha + tan beta)/(1 - tan alpha tan beta) ju $
 
-#rule(title: [公式])[
 就是 #h(4em) $display(bold(tan(alpha + beta) = (tan alpha + tan beta)/(1 - tan alpha tan beta)).)$
-]
 
 因为两角和的正弦公式和余弦公式是具有一般性的，所以上面的公式在 $tan(alpha + beta)$，$tan alpha$，$tan beta$ 都存在的条件下总能成立。换句话说，当 $alpha + beta$，$alpha$ 和 $beta$ 都不等于 $k pi + pi/2$（$k$ 是整数）时，上面的公式都能成立。
 
@@ -329,9 +327,7 @@ $ cot(alpha + beta) &= (cos(alpha + beta))/(sin(alpha + beta)) = (cos alpha cos 
   &= ((cos alpha cos beta - sin alpha sin beta)/(sin alpha sin beta))/((sin alpha cos beta + cos alpha sin beta)/(sin alpha sin beta)) \
   &= ((cos alpha)/(sin alpha) dot (cos beta)/(sin beta) - 1)/((cos beta)/(sin beta) + (cos alpha)/(sin alpha)) = (cot alpha cot beta - 1)/(cot beta + cot alpha) ju $
 
-#rule(title: [公式])[
 就是 #h(4em) $display(bold(cot(alpha + beta) = (cot alpha cot beta - 1)/(cot beta + cot alpha)).)$
-]
 
 当 $cot(alpha + beta)$，$cot alpha$，$cot beta$ 都存在，也就是当 $alpha + beta$，$alpha$ 和 $beta$ 都不等于 $k pi$（$k$ 是整数）时，这个公式都能成立。
 
@@ -493,9 +489,7 @@ $ sin(x + y) = sin x cos y + cos x sin y $
 $ sin(alpha + alpha) = sin alpha cos alpha + cos alpha sin alpha dou $
 
 // p.147
-#rule(title: [公式])[
 就是 #h(4em) $bold(sin 2 alpha = 2 sin alpha cos alpha) ju$
-]
 
 *2. 二倍角的余弦*　在两角和的余弦公式
 
@@ -505,21 +499,15 @@ $ cos(x + y) = cos x cos y - sin x sin y $
 
 $ cos(alpha + alpha) = cos alpha cos alpha - sin alpha sin alpha dou $
 
-#rule(title: [公式])[
 就是 #h(4em) $bold(cos 2 alpha = cos^2 alpha - sin^2 alpha) ju$
-]
 
 因为 $sin^2 alpha + cos^2 alpha = 1$，所以 $cos^2 alpha = 1 - sin^2 alpha$，代入上式得到
 
-#rule(title: [公式])[
 $ bold(cos 2 alpha = 1 - 2 sin^2 alpha) ju $
-]
 
 或者用 $sin^2 alpha = 1 - cos^2 alpha$ 代替 $cos 2 alpha = cos^2 alpha - sin^2 alpha$ 中的 $sin^2 alpha$，又得到
 
-#rule(title: [公式])[
 $ bold(cos 2 alpha = 2 cos^2 alpha - 1) ju $
-]
 
 因此，二倍角的余弦可以写成三种形式。后面两种形式用起来比较方便，因为只要知道单角的一个函数便已足够了。
 
@@ -682,9 +670,7 @@ $ cos alpha = 1 - 2 sin^2 alpha/2 ju $
 
 #eqno([(1)], $sin^2 alpha/2 = (1 - cos alpha)/2 ju$)
 
-#rule(title: [公式])[
 $ ∴ quad bold(sin alpha/2 = ± sqrt((1 - cos alpha)/2)) ju $
-]
 
 在二倍角的余弦的另一公式
 
@@ -700,17 +686,13 @@ $ cos alpha = 2 cos^2 alpha/2 - 1 ju $
 
 #eqno([(2)], $cos^2 alpha/2 = (1 + cos alpha)/2 ju$)
 
-#rule(title: [公式])[
 $ ∴ quad bold(cos alpha/2 = ± sqrt((1 + cos alpha)/2)) ju $
-]
 
 把等式 (1) 的两边分别除以等式 (2) 的两边，还可以得到
 
 $ tan^2 alpha/2 = (1 - cos alpha)/(1 + cos alpha) dou $
 
-#rule(title: [公式])[
 $ ∴ quad bold(tan alpha/2 = ± sqrt((1 - cos alpha)/(1 + cos alpha))) ju $
-]
 
 我们得到了由角 $alpha$ 的余弦来求 $display(alpha/2)$ 的正弦，余弦和正切的公式。这些公式只能确定所求的三角函数的绝对值。根号前的符号，决定于角 $display(alpha/2)$ 的终边所在的象限。因此，应用这些公式时，应当根据题目的条件，先求出 $display(alpha/2)$ 的终边所在的象限，然后决定根号前应取的符号。从下面的例 1～例 3 可以看到，/* p.154 */如果知道角 $alpha$ 的值或者它所在的范围，那么 $display(alpha/2)$ 的三角函数值可以唯一确定；但是如果只知道角 $alpha$ 的终边所在的象限，那么将得到 $display(alpha/2)$ 的两组三角函数值。
 
@@ -777,17 +759,13 @@ $ tan alpha/2 = (sin display(alpha/2))/(cos display(alpha/2)) = (2 sin display(a
 
 就是
 
-#rule(title: [公式])[
 #eqno([(3)], $bold(tan alpha/2 = (sin alpha)/(1 + cos alpha)) ju$)
-]
 
 同样，#h(2em) $display(tan alpha/2 = (sin display(alpha/2))/(cos display(alpha/2)) = (2 sin^2 display(alpha/2))/(2 sin display(alpha/2) cos display(alpha/2)) = (1 - cos alpha)/(sin alpha).)$
 
 就是
 
-#rule(title: [公式])[
 #eqno([(4)], $bold(tan alpha/2 = (1 - cos alpha)/(sin alpha)) ju$)
-]
 
 应用这两个公式时，只要知道角 $alpha$ 的终边所在的象限，可不必先分析 $display(alpha/2)$ 的终边所在的象限，就求出 $tan display(alpha/2)$ 的值。
 
