@@ -8,7 +8,9 @@
 
 在第四章里，我们已经知道，如果 $x^n = a$，$x$ 就叫作 $a$ 的 $n$ 次方根。当 $n$ 是奇数的时候，$a$ 可以是任何实数，并且规定用 $root(n, a)$（$n$ 为奇数）来表示这个方根；当 $n$ 是偶数的时候，$a$ 可以是任何正实数或者零，并且规定用 $root(n, a)$（$n$ 为偶数）表示正的一个方根，用 $-root(n, a)$（$n$ 为偶数）表示负的一个方根。
 
+#definition[
 式子 $root(n, a)$ 叫作*根式*。$n$ 叫作*根指数*，$a$ 叫作*被开方数*。例如，$sqrt(3)$，$root(3, -5)$，$root(4, 3/4)$，$sqrt(x)$，$sqrt(a^2+1)$，$root(3, x-y)$ 等都是根式。
+]
 
 #note-small[我们也把式子 $b root(n, a)$ 叫作根式，这里，$b$ 叫作根式的系数。]
 
@@ -164,6 +166,7 @@ $ (root(n, a^m))^(n p) = [(root(n, a^m))^n]^p = (a^m)^p = a^(m p) dou $
 
 $therefore quad root(n p, a^(m p))$ 和 $root(n, a^m)$ 都是 $a^(m p)$ 的 $n p$ 次算术根。
 
+#rule(title: [性质])[
 但是 $a^(m p)$ 的 $n p$ 次算术根只有一个，所以得到下面的公式：
 
 $ root(n p, a^(m p)) = root(n, a^m) ju $
@@ -171,9 +174,11 @@ $ root(n p, a^(m p)) = root(n, a^m) ju $
 这就是说，#edot[一个根式（算术根）的根指数和被开方数的指数都乘以或者除以同一个正整数，根式的值不变]。
 
 这个性质，叫作*根式的基本性质*。
+]
 
 对于根式的基本性质，应该特别注意算术根这个条件。如果不是算术根，那么这个性质就不一定成立。例如，$root(3, -8) = -2$，而 $root(6, (-8)^2) = root(6, 64) = 2$，所以 $root(3, -8) != root(6, (-8)^2)$。
 
+#rule(title: [公式])[
 用同样的方法，我们也可以证明下面公式（幂的算术根）：
 
 $ root(p, a^(m p)) = a^m ju $
@@ -184,10 +189,13 @@ $ root(p, a^(m p)) = a^m ju $
 $ root(n, a^n) = a ju $
 
 这里，$a >= 0$，$n$ 是大于 $1$ 的整数。
+]
 
+#rule(title: [性质])[
 根据根式的基本性质，可以知道：
 
 #edot[一个算术根，当它的被开方数的指数和根指数有公约数时，可以约去这个公约数；反过来，也可以把被开方数的指数和根指数都扩大相同的倍数]。
+]
 
 这个性质，在以后根式的运算中经常要用到，应该牢固掌握。
 
@@ -244,7 +252,9 @@ $ root(n, a^n) = a ju $
 
 == 同次根式
 
+#definition[
 两个或者几个根式，如果它们的根指数相同，这些根式就叫作*同次根式*。例如，$root(3, 2)$ 和 $root(3, 3)$ 是同次根式。
+]
 
 两个或者几个根式，如果根指数不相同，这些根式就叫作*异次根式*。例如，$sqrt(2)$ 和 $root(3, 2)$ 是异次根式。异次根式可以根据根式的基本性质化为同次根式。把异次根式化为同次根式的方法和分数里的通分很相像，就是，#edot[先求出各个根式的根指数的最小公倍数，然后应用根式的基本性质，把各个根式的根指数都化成这个最小公倍数]。
 
@@ -331,11 +341,13 @@ $ (root(n, a) dot root(n, b))^n = (root(n, a))^n dot (root(n, b))^n = a b dou $
 
 $therefore quad root(n, a b)$ 和 $root(n, a) dot root(n, b)$ 都是 $a b$ 的 $n$ 次算术根。
 
+#rule(title: [公式])[
 但是 $a b$ 的 $n$ 次算术根只有一个，所以得到下面的公式，
 
 $ root(n, a b) = root(n, a) dot root(n, b) ju $
 
 应该特别注意，这个公式只能适用于算术根。
+]
 
 根据这个公式，我们还可以推导出
 
@@ -429,11 +441,13 @@ $ (root(n, a)/root(n, b))^n = (root(n, a))^n/(root(n, b))^n = a/b dou $
 
 $therefore quad root(n, a/b)$ 和 $root(n, a)/root(n, b)$ 都是 $a/b$ 的 $n$ 次算术根。
 
+#rule(title: [公式])[
 但是 $a/b$ 的 $n$ 次算术根只有一个，所以得到下面的公式：
 
 $ root(n, a/b) = root(n, a)/root(n, b) ju $
 
 应该注意，这个公式只能适用于算术根。
+]
 
 // p.224
 这就是说，#edot[分式的算术根，等于分子的同次算术根除以分母的同次算术根]。
@@ -709,6 +723,7 @@ $ a^2 sqrt(b/a) = a^2 sqrt((a b)/a^2) = a^2 sqrt(a b)/a = a sqrt(a b) ju $
 
 观察一下根式 $3sqrt(6)$ 和 $a sqrt(a b)$，可以看出，它们都有这样的特点：被开方数的指数和根指数没有公约数，被开方数的每一个因式的指数都小于根指数，并且被开方数不含有分母。
 
+#definition[
 如果一个根式适合下面三个条件：
 
 (1) 被开方数的指数和根指数没有公约数；
@@ -718,6 +733,7 @@ $ a^2 sqrt(b/a) = a^2 sqrt((a b)/a^2) = a^2 sqrt(a b)/a = a sqrt(a b) ju $
 (3) 被开方数不含有分母；
 
 这样的根式就叫作*最简根式*。例如，根式 $3sqrt(6)$，$a sqrt(a b)$，$1/a^2 root(6, x^2 y^3)$ 等都是最简根式，而根式 $3root(4, 36)$，$sqrt(54)$，$9sqrt(2/3)$，$a root(4, a^2 b^2)$，$sqrt(a^3 b)$，$a^2 sqrt(b/a)$ 等都不是最简根式。
+]
 
 一个根式，如果不是最简根式，可以经过约简被开方数的指数和根指数，把根号里能开得尽的因式移到根号外面，化去根号里的分母以后，把它化成最简根式。
 
@@ -807,7 +823,9 @@ $ sqrt(18) &= sqrt(3^2 times 2) = 3sqrt(2) fen \
 
 观察上面化简后的三个根式 $3sqrt(2)$，$sqrt(2)$ 和 $1/14 sqrt(2)$，它们都已经是最简根式，而它们的被开方数相同（都是 $2$），根指数也相同（都是 $2$）。
 
+#definition[
 像上面所说的，几个根式化成最简根式以后，如果被开方数相同，根指数也相同，那么这几个根式就叫作*同类根式*。例如，$sqrt(18)$，$root(8, 16)$，$sqrt(1/98)$ 就是同类根式。但是像 $sqrt(x)$ 和 $root(3, x)$，$2root(3, a)$ 和 $2root(3, a^2)$ 就不是同类根式，因为这些根式都是最简根式，但是 $sqrt(x)$ 和 $root(3, x)$ 的根指数不同，$2root(3, a)$ 和 $2root(3, a^2)$ 的被开方数不同。
+]
 
 应该注意，要判别几个根式是不是同类根式，必须先把各个根式化成最简根式。
 
@@ -888,9 +906,11 @@ $ sqrt(2) + sqrt(8) = sqrt(2) + 2sqrt(2) = 3sqrt(2) ju $
 
 这里我们可以看出，为了合并同类根式，应当先把各个根式化成最简根式。
 
+#rule(title: [法则])[
 因此，根式加减法的法则是：
 
 #edot[根式相加减，先把各个根式化成最简根式，再把同类根式分别合并]。
+]
 
 #ex("例 1")[计算：$9sqrt(3) + 7sqrt(12) - 5sqrt(48)$。]
 
@@ -972,9 +992,11 @@ $ root(n, a b) = root(n, a) dot root(n, b) $
 
 $ root(n, a) dot root(n, b) = root(n, a b) ju $
 
+#rule(title: [法则])[
 从这个结果，可以得出同次根式相乘的法则：
 
 #edot[同次根式相乘，把被开方数相乘，根指数不变]。
+]
 
 如果根号前面有系数，那么把各个系数相乘，仍旧作为根号前的系数。
 
@@ -1017,9 +1039,11 @@ $ root(3, a) = root(12, a^4) dou quad root(4, a) = root(12, a^3) dou $
 
 所以 $ root(3, a) dot root(4, a) = root(12, a^4) dot root(12, a^3) = root(12, a^7) ju $]
 
+#rule(title: [法则])[
 从这个例子，可以得出*异次根式相乘的法则*：
 
 #edot[异次根式相乘，先化成同次根式，再行相乘]。
+]
 
 #ex("例 4")[计算：$root(3, a^2) dot root(6, a^5) dot root(4, 2/a^3)$。]
 
@@ -1176,15 +1200,19 @@ $ (root(n, a))^m &= underbrace(root(n, a) dot root(n, a) dot dots.c dot root(n, 
   &= root(n, underbrace(a dot a dot dots.c dot a, m "个")) \
   &= root(n, a^m) ju $
 
+#rule(title: [公式])[
 所以得到下面的公式：
 
 $ (root(n, a))^m = root(n, a^m) ju $
 
 应该注意，这个公式只适用于 $root(n, a)$ 有意义的时候。
+]
 
+#rule(title: [法则])[
 从这个公式，可以得到*根式乘方的法则*：
 
 #edot[根式乘方，把被开方数乘方，根指数不变]。
+]
 
 如果根式的乘方指数和根指数有公约数，则应该先行约简，再行计算。
 
@@ -1266,9 +1294,11 @@ $ root(n, a/b) = root(n, a)/root(n, b) $
 
 $ root(n, a)/root(n, b) = root(n, a/b) quad (b != 0) ju $
 
+#rule(title: [法则])[
 从这个结果，可以得出*同次根式相除的法则*：
 
 #edot[同次根式相除，把被开方数相除，根指数不变]。
+]
 
 和根式的乘法一样，如果根号前面有系数，那么把各个系数相除，仍旧作为根号前的系数；并且应该注意，最后结果必须化成最简根式。
 
@@ -1378,11 +1408,15 @@ $ 1/(sqrt(3) - sqrt(2)) &= (sqrt(3) + sqrt(2))/((sqrt(3) - sqrt(2))(sqrt(3) + sq
 
 这样，计算中省去了比较麻烦的除法，结果就比较简便。
 
+#definition[
 把分母中的根号化去，叫作*把分母有理化*。
+]
 
 把分母有理化的方法是：#edot[把分子和分母都乘以同一个适当的代数式，使分母不含有根号]。像上面把 $1/sqrt(2)$ 变成 $sqrt(2)/2$，$1/(sqrt(3) - sqrt(2))$ 变成 $sqrt(3) + sqrt(2)$ 都是把分母有理化。
 
+#definition[
 两个含有根式的代数式相乘，如果它们的积不含有根式，那么这两个代数式相互叫作*有理化因式*。
+]
 
 上面所说的，$sqrt(2)$ 和 $sqrt(2)$，$sqrt(3) + sqrt(2)$ 和 $sqrt(3) - sqrt(2)$，/* p.252 */$root(5, 8)$ 和 $root(5, 4)$，$a + sqrt(b)$ 和 $a - sqrt(b)$，$sqrt(a) + sqrt(b)$ 和 $sqrt(a) - sqrt(b)$，$root(3, a) + root(3, b)$ 和 $root(3, a^2) - root(3, a b) + root(3, b^2)$ 等都相互叫作有理化因式。
 
@@ -1507,15 +1541,19 @@ $therefore quad sqrt(root(3, a))$ 和 $root(2 times 3, a)$ 都是 $a$ 的 $6$ �
 
 $ therefore quad sqrt(root(3, a)) = root(2 times 3, a) ju $
 
+#rule(title: [公式])[
 一般地说，可以得到下面的公式：
 
 $ root(m, root(n, a)) = root(m n, a) ju $
 
 应该注意，这个公式只适用于算术根。
+]
 
+#rule(title: [法则])[
 从这个公式，可以得到*单项根式开方的法则*：
 
 #edot[单项根式开方，被开方数不变，把根指数相乘]。
+]
 
 #ex("例")[计算：
 
@@ -1596,9 +1634,11 @@ $ sqrt(a - 2sqrt(b)) = sqrt((sqrt(x) - sqrt(y))^2) = sqrt(y) - sqrt(x) quad (x<y
 
 从这个结果，可以看到，如果要求 $a plus.minus 2sqrt(b)$ 的算术平方根，只要找到两个数 $x$ 与 $y$，使 $x+y=a$，$x y=b$。
 
+#rule(title: [法则])[
 根据这个道理，得到求 $a plus.minus 2sqrt(b)$ 的算术平方根的法则：
 
 求 $a plus.minus 2sqrt(b)$ 的算术平方根，#edot[可以找出两个数，使它们的和等于 $a$，并且它们的积等于 $b$。那么这两个数的算术平方根的和或者差就是所要求的算术平方根]#footnote[如果找不到这样的两个有理数，那么 $a plus.minus 2sqrt(b)$ 的算术平方根就不能用两个有理数的平方根的和或者差来表示。]。
+]
 
 #note-small[1. 一定要符合 $a plus.minus 2sqrt(b)$ 的形式，特别是 $sqrt(b)$ 前面有系数 $2$。
 
@@ -1650,6 +1690,7 @@ $ sqrt(8 + 4sqrt(3)) = sqrt(8 + 2sqrt(12)) dou $
   &= sqrt(2)/2 sqrt((sqrt(9) - sqrt(3))^2) \
   &= sqrt(2)/2 (3 - sqrt(3)) = 1/2 (3sqrt(2) - sqrt(6)) ju $]
 
+#rule(title: [公式])[
 如果 $a$，$b$ 两数的数字比较大，凭观察，找不出两个数，使它们的和等于 $a$，并且积等于 $b$，那么可以用下面的公式求得。
 
 如果 $a>0$，$b>0$，$a^2 - b > 0$，那么 $a plus.minus sqrt(b)$ 的算术平方根是：
@@ -1657,6 +1698,7 @@ $ sqrt(8 + 4sqrt(3)) = sqrt(8 + 2sqrt(12)) dou $
 (1) $ sqrt(a + sqrt(b)) = sqrt((a + sqrt(a^2-b))/2) + sqrt((a - sqrt(a^2-b))/2) fen $
 
 (2) $ sqrt(a - sqrt(b)) = sqrt((a + sqrt(a^2-b))/2) - sqrt((a - sqrt(a^2-b))/2) ju $
+]
 
 #sol(label: [证])[$because quad (sqrt(a + sqrt(b)))^2 = a + sqrt(b) dou$
 
