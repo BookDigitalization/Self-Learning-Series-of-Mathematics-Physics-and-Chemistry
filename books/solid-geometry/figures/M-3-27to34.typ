@@ -178,7 +178,7 @@
 })
 
 // 图 3·34 例 3
-#let fig-M-3-34(width: 190 * k) = px-canvas(205, 305, origin: (655, 952), width: width, (p, u) => {
+#let fig-M-3-34(width: 220 * k) = px-canvas(240, 305, origin: (655, 952), width: width, (p, u) => {
   import cetz.draw: *
   let V = (700, 975)
   let O = (700, 1233)
@@ -191,7 +191,8 @@
   dseg(p, O, A)
   let rr = calc.sqrt(28 * 28 + 258 * 258)
   let a1 = M-ang(V, A)
-  let a2 = -60.3
+  // 扇形圆心角按例 3 题设 α = 36° 画；原图约 24°，与题设、与图中 r、l 之比（约 39°）都不符
+  let a2 = a1 + 36
   let S = M-ept(V, rr, rr, a2)
   M-thin(p, V, S)
   M-carc(p, V, rr, a1, a2, st: lt)
@@ -202,6 +203,6 @@
   M-L(p, 689, 1229, $O$)
   M-L(p, 713, 1229, $r$)
   M-L(p, 734, 1249, $A$)
-  M-L(p, 765, 1234, $2 pi r$)
-  M-L(p, 845, 1192, $S$)
+  M-L(p, 808, 1236, $2 pi r$)
+  M-L(p, 884, 1166, $S$)
 })

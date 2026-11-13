@@ -79,7 +79,7 @@
   lbl(p, (659, 774), $A$, dir: "c", d: 0)
   lbl(p, (821, 773), $b$, dir: "c", d: 0)
   lbl(p, (814, 697), $B$, dir: "c", d: 0)
-  lbl(p, (606, 814), $N$, dir: "c", d: 0)
+  lbl(p, (606, 814), $M$, dir: "c", d: 0) /* 原书作 N；正文与“注意”都说平面 M */
 })
 
 #let fig-E-1-103(width: 780 * k) = px-canvas(780, 140, origin: (140, 1000), width: width, (p, u) => {
