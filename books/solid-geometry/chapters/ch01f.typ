@@ -208,7 +208,7 @@ $ &∠E A B < ∠V A E + ∠V A B dou \
 
 (3) 式两边都加上 $∠A + ∠C$；得
 
-#eqn("4", $∠A + ∠A D B + ∠A B D + ∠B D C + ∠D B C + ∠C > ∠A + ∠A B C + ∠A D C + ∠C ju$)
+#eqn("4", $∠A + ∠A D B + ∠A B D + ∠B D C + ∠D B C + ∠C \ #h(4em) > ∠A + ∠A B C + ∠A D C + ∠C ju$)
 
 但在 $△A B D$ 和 $△B C D$ 中，
 
@@ -410,7 +410,7 @@ $ "三面角" S hy A B C = "三面角" S_1 hy A_1 B_1 C_1 ju $
 
 $ &∠A S C = ∠A_1 S_1 C_1 dou \
   &"二面角" B hy S A hy C = "二面角" B_1 hy S_1 A_1 hy C_1 dou \
-  &"二面角" A hy S C hy B = "二面角" A_1 hy S_1 C_1 hy B_1 dou $
+  &"二面角" A hy S C hy B = "二面角" A_1 hy S_1 C_1 hy B_1 ju $
 
 但
 
@@ -557,7 +557,7 @@ $ "三面角" S hy A C D = "三面角" S_1 hy A_1 C_1 D_1 dou $
 
     #plainfig((fig-F-rev8(), [（第 8 题）]))
   // p.120
-  + 平行四边形 $A B C D$ 的顶点 $A$、$D$ 在平面 $M$ 内，顶点 $B$、$C$ 在平面 $M$ 外。已知 $A D = 10 "cm"$，$A B = 15 "cm"$，$A C$、$B D$ 在平面 $M$ 内的射影分别等于 $13.5 "cm"$ 和 $10.5 "cm"$，求 $A C$、$B D$ 的长。
+  + 平行四边形 $A B C D$ 的顶点 $A$、$D$ 在平面 $M$ 内；顶点 $B$、$C$ 在平面 $M$ 外。已知 $A D = 10 "cm"$，$A B = 15 "cm"$，$A C$、$B D$ 在平面 $M$ 内的射影分别等于 $13.5 "cm"$ 和 $10.5 "cm"$，求 $A C$、$B D$ 的长。
 
     ［提示：应用平行四边形对角线的平方和等于各边的平方和的性质。］
   + 在三面角 $V hy A B C$ 中，$∠B V C = 90°$，$∠A V B = ∠A V C = 60°$，求 $V A$ 与平面 $B V C$ 的交角。

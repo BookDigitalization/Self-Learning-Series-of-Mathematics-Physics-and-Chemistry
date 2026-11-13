@@ -38,3 +38,5 @@
 #show: back-matter
 
 // 习题答案（含各章复习题答案）
+#include "appendix/answers.typ"    // 习题答案 p.302–306
+#include "appendix/answers-b.typ"  // 习题答案（续）p.307–311

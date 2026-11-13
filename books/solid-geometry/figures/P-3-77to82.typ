@@ -20,12 +20,12 @@
   line(p(215, 1072), p(365, 999), stroke: P-thick)
   line(p(705, 1072), p(792, 999), stroke: P-thick)
   P-hline(p, 1072, 215, 705, st: P-thick)
-  P-hline(p, 999, 365, 792, dashed: ((375, 480), (540, 700)), st: P-thick)
+  P-hline(p, 999, 365, 792, dashed: ((375, 700),), st: P-thick)
   // 平面 P
   line(p(150, 1188), p(320, 1100), stroke: P-thick)
   line(p(705, 1188), p(783, 1100), stroke: P-thick)
   P-hline(p, 1188, 150, 705, st: P-thick)
-  P-hline(p, 1100, 320, 783, dashed: ((352, 503), (540, 700)), st: P-thick)
+  P-hline(p, 1100, 320, 783, dashed: ((352, 700),), st: P-thick)
   // 球：被平面 Q 遮住的两段轮廓画虚线
   let O = (427, 1062)
   let R = 81
@@ -76,10 +76,11 @@
   // 上底（全画实线）、下底（后半虚线）
   P-ell(p, O1, Rc, 17, front: P-thick, back: P-thick)
   P-ell(p, O2, Rc, 20, front: P-thick, back: dsh)
-  // 母线：平面 Q 以上实线，以下虚线
+  // 母线：截面圆环到平面 Q 前沿之间被平面 Q 遮住画虚线，其余实线（照原图）
   for x in (ax - Rc, ax + Rc) {
     line(p(x, 985), p(x, 1032), stroke: P-thick)
-    P-tdseg(p, (x, 1032), (x, 1149))
+    P-tdseg(p, (x, 1032), (x, 1072))
+    line(p(x, 1072), p(x, 1149), stroke: P-thick)
   }
   // 两个圆锥
   for x in (ax - Rc, ax + Rc) {
