@@ -60,7 +60,7 @@ build/                     编译产物（不提交）
   - `#exercise("1·1")[+ … + …]`：习题，自动加标签 `<ex-1·1>`。
   - `#review[+ …]`：章末复习题。
   - `#answers("1·1")[+ …]`：习题答案，引用了不存在的习题时编译报错。
-  - `#definition[…]`、`#rule[…]`（`title:` 可改标签，如 `[性质]`、`[公式]`）：给定义、法则套彩色方框，只包原段落、不改字；`#note-small`、`#analysis`、`#attention`、`#ex` 已是彩色框。目前仅代数第一册做了套框（试验版式）。
+  - 彩色方框（版式，不改字；全丛书统一，细分只改标签 `title:`）：**定义类**＝`#definition[…]`（绿；定义、记号、约定、约定意义的规定）；**结论类**＝`#rule[…]`（紫；公理、定理、推论、引理、命题、性质、法则、公式、决定运算做法的规定），如 `#rule(title: [定理])[…]`；`#ex`（橙，例题）、`#exercise`（蓝）、`#note-small`/`#analysis`（提示框）、`#attention`（警示框）本身已是彩色框。套框只包成段的正式陈述，一字不增删，夹在句子里的名词解释不套。详细规则见 `.claude/skills/digitize-book/parallel-brief.md` “彩色方框”，README “版式试验”有分类表。目前仅代数第一册做了定义、法则套框（试验版式），其余分册只有提示框和例题框自动生效。
   - `#unclear[猜测]`：识别不清的字，用黄底标出。`#dnote[…]`：数字版注（脚注）。
   - `main.typ` 分区：`front-matter` → `tableofcontents` → `main-matter` → 各章 → `back-matter` → 总复习题、答案、附录（这几部分的一级标题不编号，照原书写全称）。
 - Python 3.10 + PyMuPDF（`import pymupdf`，限定 1.x）用于渲染原书页面，一律经 **uv** 运行（依赖在 `pyproject.toml`，不要直接调用 `python`/`pip`）。
