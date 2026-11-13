@@ -34,6 +34,11 @@
   primary: rgb("#1f4e79"),    // 标题、编号等强调色
   rule: rgb("#1f4e79"),
   note-bg: rgb("#f3f6fa"),
+  // 方框配色（取自 bookly/latexzero 风格：浅底 + 同色细边 + 同色标题签）
+  example: rgb("#c2570c"),     // 例题：橙
+  definition: rgb("#1e8e55"),  // 定义：绿
+  rule-box: rgb("#5b3aa6"),    // 法则、定理：紫
+  exercise: rgb("#1f6fb5"),    // 习题：蓝
 )
 
 // ───────────────────────── 编号 ─────────────────────────
@@ -212,6 +217,31 @@
 
 // ───────────────────────── 组件 ─────────────────────────
 
+// 带标题签的彩色方框：左上角实心标题签，浅色底，同色细边。
+#let titled-box(color, title, body) = {
+  set par(first-line-indent: 0em)
+  block(width: 100%, above: 0pt, below: 0pt, stroke: 0.8pt + color, fill: color.lighten(93%),
+    inset: (x: 0.9em, top: 1.05em, bottom: 0.7em), radius: 1pt, {
+    place(top + left, dx: -0.9em - 0.8pt, dy: -1.05em - 0.8pt,
+      box(fill: color, inset: (x: 0.6em, y: 0.28em),
+        text(font: fonts.hei, weight: "bold", size: 9.5pt, fill: white, title)))
+    v(0.5em)
+    body
+  })
+}
+
+// 提示框（bookly 图标 + 左线 + 浅底）：kind = "info" | "tip" | "warning" | "important"
+#let callout(kind, body) = {
+  let (icon, color) = (
+    info: ("info", rgb(29, 144, 208)),
+    tip: ("tip", rgb(0, 166, 81)),
+    warning: ("alert", rgb("#e8821a")),
+    important: ("stop", rgb("#f74242")),
+  ).at(kind)
+  block(above: 0.9em, below: 0.9em, width: 100%, breakable: false,
+    bookly.custom-box(icon: icon, color: color, body))
+}
+
 // 边注：原书正文旁的要点提示框，放在右侧页边。
 //   #sidenote[量度就是将待测量与标准量进行比较]
 #let sidenote(body) = marginalia.note(
@@ -277,11 +307,12 @@
 #let exercise-label(number) = label("ex-" + number)
 #let exercise(number, body, star: false) = {
   set par(first-line-indent: 0em)
-  block(above: 1.6em, below: 0.8em, sticky: true, box(
-    stroke: (top: 1.2pt + colors.rule, bottom: 1.2pt + colors.rule),
-    inset: (x: 0.4em, y: 0.35em),
-    text(font: fonts.hei, weight: "bold", fill: colors.primary)[#if star [\*]习题 #number],
-  ))
+  block(above: 1.8em, below: 0.8em, sticky: true, width: 100%, {
+    box(fill: colors.exercise, inset: (x: 0.8em, y: 0.35em),
+      text(font: fonts.hei, weight: "bold", fill: white)[#if star [\*]习题 #number])
+    v(-0.2em)
+    line(length: 100%, stroke: 1pt + colors.exercise)
+  })
   [#metadata(number) #exercise-label(number)]
   block(above: 0em, body)
 }
@@ -290,9 +321,10 @@
 #let review(body, title: [复习题]) = {
   set par(first-line-indent: 0em)
   block(above: 2em, below: 1em, sticky: true, width: 100%, {
-    text(font: fonts.hei, size: 12pt, weight: "bold", fill: colors.primary)[#title]
-    v(-0.6em)
-    line(length: 100%, stroke: 0.8pt + colors.rule)
+    box(fill: colors.primary, inset: (x: 0.9em, y: 0.4em),
+      text(font: fonts.hei, size: 12pt, weight: "bold", fill: white)[#title])
+    v(-0.2em)
+    line(length: 100%, stroke: 1pt + colors.primary)
   })
   body
 }
@@ -301,9 +333,10 @@
 #let unit-check(title, body) = {
   set par(first-line-indent: 0em)
   block(above: 2em, below: 1em, sticky: true, width: 100%, {
-    text(font: fonts.hei, size: 12pt, weight: "bold", fill: colors.primary)[#title]
-    v(-0.6em)
-    line(length: 100%, stroke: 0.8pt + colors.rule)
+    box(fill: colors.primary, inset: (x: 0.9em, y: 0.4em),
+      text(font: fonts.hei, size: 12pt, weight: "bold", fill: white)[#title])
+    v(-0.2em)
+    line(length: 100%, stroke: 1pt + colors.primary)
   })
   body
 }
@@ -312,9 +345,10 @@
 #let summary(body) = {
   set par(first-line-indent: 0em)
   block(above: 2em, below: 1em, sticky: true, width: 100%, {
-    text(font: fonts.hei, size: 12pt, weight: "bold", fill: colors.primary)[本章提要]
-    v(-0.6em)
-    line(length: 100%, stroke: 0.8pt + colors.rule)
+    box(fill: colors.primary, inset: (x: 0.9em, y: 0.4em),
+      text(font: fonts.hei, size: 12pt, weight: "bold", fill: white)[本章提要])
+    v(-0.2em)
+    line(length: 100%, stroke: 1pt + colors.primary)
   })
   body
 }
@@ -381,25 +415,29 @@
     kids.slice(idx).join()
   }
 }// 数学册的例题：与物理册的 example 相同，但题目与下面的“分析”“解”粘在一起，避免题目孤立在页底。
-#let ex(label, body) = block(above: 1.2em, below: 0.5em, width: 100%, sticky: true, {
-  set par(first-line-indent: 0em)
-  text(font: fonts.hei, weight: "bold")[#label]
-  h(0.8em)
-  body
-})
+#let ex(label, body) = block(above: 1.2em, below: 0.5em, width: 100%, sticky: true,
+  titled-box(colors.example, if type(label) == str { label.trim(regex("[.．]$")) } else { label }, body))
 
 // 小块说明：原书的“分析”“注”“注意”，字号略小，标题黑体。
 //   #remark[分析][这里只有第一级运算……]
-#let remark(title, body) = block(above: 0.7em, below: 0.7em, width: 100%, {
+#let remark(title, body, kind: "info") = callout(kind, {
   set par(first-line-indent: 0em)
   set text(size: 9.8pt)
   text(font: fonts.hei, weight: "bold")[#title]
   h(0.8em)
   body
 })
-#let analysis(body) = remark([分析], body)
-#let note-small(body) = remark([注], body)
-#let attention(body) = remark([注意], body)
+#let analysis(body) = remark([分析], body, kind: "tip")
+#let note-small(body) = remark([注], body, kind: "info")
+#let attention(body) = remark([注意], body, kind: "warning")
+
+// 定义、法则（定理）：与例题同款的带标题签方框，颜色不同。内容不改，只是给原书里的定义、法则套框。
+//   #definition[绝对值…]          #definition(title: [定义])[…]
+//   #rule[…]                       #rule(title: [法则])[…]
+#let definition(body, title: [定义]) = block(above: 1em, below: 1em, width: 100%, breakable: false,
+  titled-box(colors.definition, title, body))
+#let rule(body, title: [法则]) = block(above: 1em, below: 1em, width: 100%, breakable: false,
+  titled-box(colors.rule-box, title, body))
 
 // 着重点（字下加点）：原书用来标出定义、法则里的关键字。
 //   #edot[绝对值]

@@ -60,6 +60,7 @@ build/                     编译产物（不提交）
   - `#exercise("1·1")[+ … + …]`：习题，自动加标签 `<ex-1·1>`。
   - `#review[+ …]`：章末复习题。
   - `#answers("1·1")[+ …]`：习题答案，引用了不存在的习题时编译报错。
+  - `#definition[…]`、`#rule[…]`（`title:` 可改标签，如 `[性质]`、`[公式]`）：给定义、法则套彩色方框，只包原段落、不改字；`#note-small`、`#analysis`、`#attention`、`#ex` 已是彩色框。目前仅代数第一册做了套框（试验版式）。
   - `#unclear[猜测]`：识别不清的字，用黄底标出。`#dnote[…]`：数字版注（脚注）。
   - `main.typ` 分区：`front-matter` → `tableofcontents` → `main-matter` → 各章 → `back-matter` → 总复习题、答案、附录（这几部分的一级标题不编号，照原书写全称）。
 - Python 3.10 + PyMuPDF（`import pymupdf`，限定 1.x）用于渲染原书页面，一律经 **uv** 运行（依赖在 `pyproject.toml`，不要直接调用 `python`/`pip`）。
