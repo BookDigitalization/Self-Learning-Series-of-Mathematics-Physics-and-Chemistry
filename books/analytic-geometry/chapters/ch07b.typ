@@ -27,14 +27,18 @@
 $ O M = x, quad M P = y fen \
   O P = ρ, quad ∠x O P = θ ju $
 由此可得
+#rule(title: [公式])[
 #eqno([(1)], $ bold(Ycases(x = ρ cos θ \,, y = ρ sin θ ju)) $)
+]
 
 #fig("7·13", fig-Y-7-13(), [])
 
 #Y-leadno([求两式平方和，得 \ 以第一式除第二式，得], [(2)], $ bold(Ycases(ρ^2 = x^2 + y^2 \,, tan θ = y/x ju)) $)
 即
+#rule(title: [公式])[
 #eqno([(3)], $ bold(Ycases(ρ = sqrt(x^2 + y^2) \,, θ = arctan y/x ju)) $)
 #align(center)[（$ρ$ #edot[的根号前取正号]）]
+]
 
 又
 // p.439

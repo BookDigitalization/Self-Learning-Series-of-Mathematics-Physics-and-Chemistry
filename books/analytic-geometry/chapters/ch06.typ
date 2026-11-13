@@ -324,8 +324,10 @@ $ C Q = D M = x - x_1 dou \
 $ Q P = M P - M Q = y - y_1 dou \
   ∴ quad y - y_1 = r sin theta ju $
 由此可得
+#rule(title: [公式])[
 #eqno([(1)], $ cases(bold(x = x_1 + r cos theta) dou, bold(y = y_1 + r sin theta) ju) $)
 这就是已知圆心及半径的圆的参数方程，$theta$ 为参数。从(1)消去 $theta$，即得圆的标准方程：
+]
 #eqno([(2)], $ (x - x_1)^2 + (y - y_1)^2 = r^2 ju $)
 
 *3. 椭圆、双曲线、抛物线等的一般参数方程*（$phi$ 是参数）：
