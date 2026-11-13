@@ -16,7 +16,7 @@
 #import "@preview/cetz:0.5.3"
 
 // ───────────────────────── 字体 ─────────────────────────
-// 只用开源字体（见 README）。西文与数字统一用 New Computer Modern，
+// 只用开源字体（见 docs/BUILD.md）。西文与数字统一用 New Computer Modern，
 // covers: "latin-in-cjk" 让中文标点仍由中文字体负责。
 // 黑体里西文仍用 Noto Sans SC（无衬线更协调），只有中间点和 § 交给西文字体，
 // 否则 Noto 会把 · 排成全角，"§1·1" 变成 "§1 · 1"。

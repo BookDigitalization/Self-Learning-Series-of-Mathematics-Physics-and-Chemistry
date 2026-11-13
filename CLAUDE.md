@@ -44,7 +44,7 @@ build/                     编译产物（不提交）
 - **Typst 0.15**（本机 `typst` 已在 PATH）。构建：`typst compile books/physics-1/main.typ build/physics-1.pdf --root . --font-path fonts --ignore-system-fonts`；写作时用 `typst watch`。
   导出某几页 PNG 核对：在上述命令里把输出改成 `"build/check-{p}.png"` 并加 `--pages 5-8 --ppi 150`。
   `--root .` 是为了让各书能 `#import "/common/series.typ": *`。
-- 图书模板：主选 `@preview/bookly`，备选 `orange-book`、`concise-history`（理由见 README）。模板只在 `common/series.typ` 中引用，各书不得直接 import 模板。
+- 图书模板：主选 `@preview/bookly`，备选 `orange-book`、`concise-history`（理由见 docs/TYPESETTING.md）。模板只在 `common/series.typ` 中引用，各书不得直接 import 模板。
 - 字体**只用开源免费字体**（OFL），避免版权纠纷：正文宋体 `Noto Serif SC`，标题/强调黑体 `Noto Sans SC`，边注与图题楷体 `霞鶩文楷`（LXGW WenKai，Typst 只认这个中文族名），西文与公式用 Typst 内置 `New Computer Modern`。
   **禁止使用** SimSun、SimHei、KaiTi、Microsoft YaHei、Times New Roman 等商业/系统字体。
   字体文件在 `fonts/`（不入库，`just fonts` 下载：Windows 走 `scripts/get-fonts.ps1`，Linux / macOS 走 `scripts/get-fonts.sh`），编译必须带 `--font-path fonts --ignore-system-fonts`。字体选择集中在 `common/series.typ`。
@@ -60,7 +60,7 @@ build/                     编译产物（不提交）
   - `#exercise("1·1")[+ … + …]`：习题，自动加标签 `<ex-1·1>`。
   - `#review[+ …]`：章末复习题。
   - `#answers("1·1")[+ …]`：习题答案，引用了不存在的习题时编译报错。
-  - 彩色方框（版式，不改字；全丛书统一，细分只改标签 `title:`）：**定义类**＝`#definition[…]`（绿；定义、记号、约定、约定意义的规定）；**结论类**＝`#rule[…]`（紫；公理、定理、推论、引理、命题、性质、法则、公式、决定运算做法的规定），如 `#rule(title: [定理])[…]`；`#ex`（橙，例题）、`#exercise`（蓝）、`#note-small`/`#analysis`（提示框）、`#attention`（警示框）本身已是彩色框。套框只包成段的正式陈述，一字不增删，夹在句子里的名词解释不套。详细规则见 `.claude/skills/digitize-book/parallel-brief.md` “彩色方框”，README “版式：彩色方框”有分类表。数学各册（代数一至四、三角、平面解析几何、平面几何两册、立体几何）已套定义、结论框；物理第一册只有提示框和例题框自动生效。
+  - 彩色方框（版式，不改字；全丛书统一，细分只改标签 `title:`）：**定义类**＝`#definition[…]`（绿；定义、记号、约定、约定意义的规定）；**结论类**＝`#rule[…]`（紫；公理、定理、推论、引理、命题、性质、法则、公式、决定运算做法的规定），如 `#rule(title: [定理])[…]`；`#ex`（橙，例题）、`#exercise`（蓝）、`#note-small`/`#analysis`（提示框）、`#attention`（警示框）本身已是彩色框。套框只包成段的正式陈述，一字不增删，夹在句子里的名词解释不套。详细规则见 `.claude/skills/digitize-book/parallel-brief.md` “彩色方框”，docs/TYPESETTING.md “版式：彩色方框”有分类表。数学各册（代数一至四、三角、平面解析几何、平面几何两册、立体几何）已套定义、结论框；物理第一册只有提示框和例题框自动生效。
   - `#unclear[猜测]`：识别不清的字，用黄底标出。`#dnote[…]`：数字版注（脚注）。
   - `main.typ` 分区：`front-matter` → `tableofcontents` → `main-matter` → 各章 → `back-matter` → 总复习题、答案、附录（这几部分的一级标题不编号，照原书写全称）。
 - Python 3.10 + PyMuPDF（`import pymupdf`，限定 1.x）用于渲染原书页面，一律经 **uv** 运行（依赖在 `pyproject.toml`，不要直接调用 `python`/`pip`）。

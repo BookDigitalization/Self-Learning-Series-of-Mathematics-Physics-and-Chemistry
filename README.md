@@ -27,139 +27,18 @@
 
 其余各册（物理第二至第四册，化学等）尚未开始。原书扫描见 `original/`（不入库）。
 
-## 目录结构
+## 文档
 
-```
-original/            原书扫描 PDF（不入库）
-books/<分册>/        每本书的 Typst 源码，目录名为"英文学科名-册号"，如 physics-1
-  main.typ           主文件
-  chapters/          每章一个 .typ 文件
-  figures/           插图（CeTZ 源码或清理后的位图）
-  appendix/          总复习题、习题答案、附录
-common/series.typ      全丛书共用样式：封装图书模板，定义习题、复习题、边注等组件
-fonts/               开源字体（不入库，由脚本下载）
-scripts/             辅助脚本（下载字体、渲染原书页面等）
-build/               编译产物（不入库）
-```
-
-仓库只提交源码，所有 PDF（包括原书扫描和生成结果）都不提交；成书 PDF 通过 [GitHub Releases](../../releases) 发布。
-
-## 构建
-
-需要 Typst 0.15 及以上版本、[uv](https://docs.astral.sh/uv/)（运行 Python 辅助脚本，PyMuPDF 等依赖见 `pyproject.toml`，首次运行自动安装），常用操作用 [just](https://github.com/casey/just) 封装（`just` 列出所有命令，Windows 用 PowerShell，Linux / macOS 用 bash）。首次编译时会从 Typst Universe 下载所需的包，需要联网。
-
-```bash
-# 首次：下载字体到 fonts/（即 `just fonts`）
-./scripts/get-fonts.ps1    # Windows（PowerShell）
-./scripts/get-fonts.sh     # Linux / macOS
-
-typst compile books/physics-1/main.typ build/physics-1.pdf --root . --font-path fonts --ignore-system-fonts
-# 写作时自动重新编译
-typst watch   books/physics-1/main.typ build/physics-1.pdf --root . --font-path fonts --ignore-system-fonts
-
-# 其他分册同理，把 physics-1 换成目录名，例如代数第四册
-typst compile books/algebra-4/main.typ build/algebra-4.pdf --root . --font-path fonts --ignore-system-fonts
-
-# 把原书第 1–6 页渲染成 PNG（build/pages/），录入时对照看图
-uv run python scripts/render-pages.py original/数理化自学丛书物理第一册.pdf 1-6
-
-# 数学分册的扫描在合集 PDF 里：先按册切出单册（页范围登记在 scripts/math-volumes.json），再渲染
-uv run python scripts/split-volume.py algebra-4
-uv run python scripts/render-pages.py original/algebra-4.pdf 1-6 --offset 6
-```
-
-`--ignore-system-fonts` 保证只使用项目指定的开源字体，不会误用系统里的商业字体。
-
-`--root .` 让各分册可以用 `#import "/common/series.typ": *` 引用共用样式。
-
-## 字体
-
-为避免版权纠纷，全部使用开源免费字体（SIL Open Font License 1.1，可免费商用、可嵌入 PDF）：
-
-| 用途 | 字体 | Typst 中的字体名 | 来源 |
-|---|---|---|---|
-| 宋体（正文） | Noto Serif SC（思源宋体） | `Noto Serif SC` | [notofonts/noto-cjk](https://github.com/notofonts/noto-cjk) |
-| 黑体（标题、强调） | Noto Sans SC（思源黑体） | `Noto Sans SC` | [notofonts/noto-cjk](https://github.com/notofonts/noto-cjk) |
-| 楷体（边注、图题） | 霞鹜文楷 LXGW WenKai | `霞鶩文楷` | [lxgw/LxgwWenKai](https://github.com/lxgw/LxgwWenKai) |
-| 西文、公式 | New Computer Modern | `New Computer Modern` | Typst 内置 |
-
-字体文件不入库，用 `scripts/get-fonts.ps1`（Windows）或 `scripts/get-fonts.sh`（Linux / macOS）下载到 `fonts/`。使用静态字重的 OTF/TTF，不用系统自带的可变字体版本（Typst 会嵌入最细字重）。
-
-## 图书模板
-
-各分册只引用 `common/series.typ`，由它调用具体的模板。更换模板只需要改这一个文件。
-
-### 主选：[bookly](https://typst.app/universe/package/bookly)
-
-面向学术著作和科技书籍的模板，当前版本 3.1.0。
-
-- 内置公式编号、图表题注、按章编号，适合理科教材
-- 支持页边注版式（基于 marginalia），原书正文旁的要点提示可以放进页边
-- 有多套主题，包括仿 Legrand Orange Book 的主题
-- 持续维护中
-- 需要注意：这是西文模板，中文字体、首行缩进、标点挤压等可能需要在 `series.typ` 中补充设置
-
-### 版式：彩色方框（数学各册已启用，物理第一册尚未套定义、结论框）
-
-版式参考 bookly 的提示框和 latexzero 的“彩色细边 + 浅底 + 标题签”，全部是 `common/series.typ` 里的组件，不改原书内容：
-
-| 内容 | 组件 | 样式 |
-|---|---|---|
-| 边注式说明“注”“说明” | `#note-small` | 蓝色提示框（信息图标） |
-| “分析” | `#analysis` | 绿色提示框（灯泡图标） |
-| “注意” | `#attention` | 橙色提示框（警告图标） |
-| 例题题干 | `#ex` | 橙色框，左上角“例 n”标题签 |
-| 定义 | `#definition` | 绿色框，标题签“定义” |
-| 法则、规定、性质、公式 | `#rule`（`title:` 可改标签） | 紫色框，标题签默认“法则” |
-| 习题、复习题、本章提要 | `#exercise`、`#review`、`#summary` | 蓝色或深蓝色标题签加横线 |
-
-分类原则（全丛书统一，类内细分只改标题签 `title:`）：
-
-| 类别 | 包含 | 颜色与组件 |
-|---|---|---|
-| 定义类 | 定义、记号、约定、约定意义的规定 | 绿 `#definition` |
-| 结论类 | 公理、定理、推论、引理、命题、性质、法则、公式、决定运算做法的规定 | 紫 `#rule`，如 `#rule(title: [定理])[…]` |
-| 例题类 | 例、问题、练习、习题（“解”“证明”依附其后） | 橙 `#ex`、蓝 `#exercise` |
-| 提示类 | 注、说明、分析、提示 | 蓝 `#note-small`、绿 `#analysis` |
-| 警示类 | 注意、警告 | 橙 `#attention` |
-
-“规定”按用途分：约定意义的（如数的绝对值、有理数大小的规定）归定义类，决定怎样运算的（如运算顺序）归结论类。
-
-说明：
-- 提示框和例题框改的是组件，所有分册自动生效；定义、法则的方框要在源码里逐处包 `#rule[…]` / `#definition[…]`，目前代数第一至第四册、三角、平面解析几何、平面几何两册、立体几何已做，物理第一册未做。
-- 给其他分册（或其他 agent）套框的写法和判断标准，见 `.claude/skills/digitize-book/parallel-brief.md` 的“彩色方框”。
-- 套框只是在原段落外面包一层，一个字不增删。标题签上的“定义”“法则”“规定”“性质”“公式”是版式标签，原书没有。
-- 没套框的：夹在句子里的“叫作 X”名词解释、章末的内容提要和单纯的步骤清单。
-- 例题框只框题干，小题和【解】在框外。
-
-### 备选
-
-- **[orange-book](https://typst.app/universe/package/orange-book)**：仿 LaTeX 的 Legrand Orange Book 模板，有彩色章节页，现代教材风格，但可调整的余地比 bookly 小。
-- **[concise-history](https://typst.app/universe/package/concise-history)**：原生面向中文书籍的模板，中文排版规范（封面、目录、页眉、脚注、着重号）最完善，但为文史类书籍设计，没有考虑公式和习题。
-
-### 辅助包
-
-| 包 | 用途 |
+| 文档 | 内容 |
 |---|---|
-| cetz | 重绘示意图、受力图、坐标图 |
-| marginalia | 页边注 |
-| hydra | 页眉显示当前章节 |
-| i-figured | 图号、公式号按章计数 |
+| [docs/BUILD.md](docs/BUILD.md) | 自己编译：环境、字体、`just` 常用命令 |
+| [docs/GUIDELINES.md](docs/GUIDELINES.md) | 目录结构、录入原则（参与录入、校对前先读） |
+| [docs/TYPESETTING.md](docs/TYPESETTING.md) | 图书模板选型、彩色方框版式与分类原则 |
+| [common/TERMINOLOGY.md](common/TERMINOLOGY.md) | 全丛书用词对照与处理方式 |
+| `books/<分册>/REVISIONS.md`、`CHECKLIST.md` | 各册相对原书的改动、存疑处 |
+| [CLAUDE.md](CLAUDE.md) | 项目完整规则（AI 协作用） |
 
-## 录入原则
-
-- 忠实原文：不改写、不删节、不擅自“纠正”原书说法。数字版是**改订版**，改动只限已登记的三类：
-  - 原书错误、明显印刷错误：经项目负责人确认后订正，源码写 `// 原书作 xxx` 注释，并登记各册 `REVISIONS.md`；
-  - 旧用词现代化（那末→那么、象→像、模数→模、适合→满足等）：按 [common/TERMINOLOGY.md](common/TERMINOLOGY.md) 逐条登记的处理方式（替换 / 加注 / 照录）；单位、术语牵涉定义和数值换算的（公斤、尔格、马力等）正文照原书，首次出现处加“数字版注”；
-  - 句末“．”统一改为“。”，原书页码引用（“第 60 页”）改为节号引用。
-  - 改动顺序：先登记，再改源码。表里没有的词一律照原书。
-- 编号沿用原书的中间点写法：§1·1、图 4·6、习题 1·2。
-- 公式一律用 Typst 数学排版，不用图片。
-- 看不清的字不凭空补写：写 `#unclear[猜测]` 或按书末答案、算式反推，并记入各册 `CHECKLIST.md`。
-- 扫描本缺页（如物理第一册的封面、“第二版出版说明”“编者的话”）不补写，也不收录。
-- 源码中用 `// p.96` 注释标出原书页码，便于校对。
-
-详细的录入规范见 [CLAUDE.md](CLAUDE.md)。
+成书 PDF 在 [GitHub Releases](../../releases) 下载。仓库只提交源码，所有 PDF（包括原书扫描和生成结果）都不提交。
 
 ## 版权说明
 
@@ -173,20 +52,3 @@ uv run python scripts/render-pages.py original/algebra-4.pdf 1-6 --offset 6
 - **许可证**：本项目贡献者编写的部分（Typst 排版源码、样式、重绘插图源码、脚本、文档）采用 [知识共享 署名-非商业性使用-相同方式共享 4.0 国际许可协议（CC BY-NC-SA 4.0）](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans) 授权，全文见 [LICENSE](LICENSE)。该许可证**不适用于原书内容本身**，原书内容的权利仍归原权利人。
 - **字体**：`fonts/` 中的字体由各自作者以 SIL Open Font License 1.1 授权，不受本项目许可证约束。
 - **权利人联系**：如果您是相关权利人，认为本项目侵犯了您的合法权益，请通过 GitHub Issues 联系我们，我们会及时处理或删除相关内容。
-
-## 常用命令（just）
-
-装好 [just](https://github.com/casey/just) 后，在仓库根目录运行 `just` 列出全部命令。常用：
-
-```powershell
-just fonts            # 下载字体（只需一次）
-just build            # 整书编译到 build/physics-1.pdf（默认物理第一册；其他册加分册名，如 just build algebra-4）
-just check            # 整书编译，有错误或警告就失败（提交前用；其他册如 just check algebra-4）
-just chapter 7        # 只编译第 7 章，很快（输出 build/solo/ch07.pdf）
-just png 20-24        # 把成书 PDF 的 20–24 页导出成 PNG 核对
-just scan 7-9         # 渲染原书第 7–9 页（带坐标网格），用来量图
-just crop 8 "520,900,1155,1275" books/physics-1/figures/x.png   # 从原书页裁图
-just todo             # 列出 #unclear 和 TODO 的位置
-just tag-all 0.0.1   # 发版：检查全部分册后在本地打 tag v0.0.1（不推送）；推送 tag 后 GitHub Actions 编译全部分册并发布一个 Release
-just tag 0.1.0 physics-1   # 只发一册：tag physics-1-v0.1.0
-```
