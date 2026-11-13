@@ -69,6 +69,7 @@ $ a_0 = a_1 = dots.c = a_(n-1) = a_n = 0 ju $
 
 综上面所述，就可以得出：]
 
+#rule(title: [定理])[
 *定理 4*。多项式
 
 $ a_0 x^n + a_1 x^(n-1) + dots.c + a_(n-1) x + a_n $
@@ -76,9 +77,11 @@ $ a_0 x^n + a_1 x^(n-1) + dots.c + a_(n-1) x + a_n $
 恒等于零的充要条件是
 
 $ a_0 = a_1 = dots.c = a_(n-1) = a_n = 0 ju $
+]
 
 由此，还可以得出：
 
+#rule(title: [推论])[
 *推论* 两个多项式
 
 $ f(x) &= a_0 x^n + a_1 x^(n-1) + dots.c + a_(n-1) x + a_n dou \ phi(x) &= b_0 x^n + b_1 x^(n-1) + dots.c + b_(n-1) x + b_n $
@@ -86,6 +89,7 @@ $ f(x) &= a_0 x^n + a_1 x^(n-1) + dots.c + a_(n-1) x + a_n dou \ phi(x) &= b_0 x
 恒等的充要条件是
 
 $ a_0 = b_0, quad a_1 = b_1, quad dots, quad a_(n-1) = b_(n-1), quad a_n = b_n ju $
+]
 
 #sol(label: [证])[$f(x)$ 与 $phi(x)$ 恒等的充要条件是 $f(x) - phi(x)$ 恒等于零，就是
 

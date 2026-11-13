@@ -16,7 +16,9 @@ $ (a + b i)(a - b i) = a^2 + b^2 ju $
 $ z_1 / z_2 &= (a_1 + b_1 i)/(a_2 + b_2 i) = ((a_1 + b_1 i)(a_2 - b_2 i))/((a_2 + b_2 i)(a_2 - b_2 i)) \
   &= (a_1 a_2 + b_1 b_2)/(a_2^2 + b_2^2) + (a_2 b_1 - a_1 b_2)/(a_2^2 + b_2^2) i ju $
 
+#rule(title: [法则])[
 这就是说：#edot[两个复数相除（除数不为零），可以先把它们写成分式的形式，然后将分子分母同乘以分母的共轭复数，并且把结果化简]。
+]
 
 #ex("例 1")[计算 $(18 - i)/(4 - 3i) + i (3 - 5i) - (55 + 3i)/(5 + 7i)$。]
 
@@ -41,7 +43,9 @@ $ z_1 / z_2 &= (r_1 (cos theta_1 + i sin theta_1))/(r_2 (cos theta_2 + i sin the
   &quad quad + (i (sin theta_1 cos theta_2 - cos theta_1 sin theta_2))/(cos^2 theta_2 + sin^2 theta_2) ]) \
   &= r_1/r_2 [cos(theta_1 - theta_2) + i sin(theta_1 - theta_2)] ju $
 
+#rule(title: [法则])[
 这就是说：两个用三角形式表示的复数相除，#edot[商的模等于被除数的模除以除数的模，商的辐角等于被除数的辐角减去除数的辐角]。
+]
 
 #ex("例 2")[计算
 
@@ -183,11 +187,13 @@ $ z_1 = z_2 = dots.c = z_n = z dou $
 // p.125
 从而有
 
+#rule(title: [定理])[
 $ z^n = [r (cos theta + i sin theta)]^n = r^n (cos n theta + i sin n theta) ju $
 
 这里 $n$ 是自然数。这就是说，#edot[复数的 $n$ 次幂（$n$ 是正整数）的模，等于这个复数的模的 $n$ 次幂，它的辐角等于这个复数的辐角的 $n$ 倍]。
 
 这一法则称为*棣莫弗定理*。
+]
 
 #ex("例 3")[计算 $(1 + sqrt(3) i)^10$。]
 
@@ -298,7 +304,9 @@ $ therefore quad cos 5 theta &= cos^5 theta - 10 cos^3 theta sin^2 theta + 5 cos
 
 == 复数的开方
 
+#definition(title: [定义])[
 像实数开方的意义一样，如果复数 $w$ 的 $n$ 次幂等于另一个复数 $z$，即 $w^n = z$，那么 $w$ 就称为 $z$ 的 $n$ 次方根。求复数 $z$ 的 $n$ 次方根的运算，称为把复数 $z$ 开 $n$ 次方。
+]
 
 例如：因为 $i^2 = -1$、$(-i)^2 = -1$，所以 $i$ 和 $-i$ 都是 $-1$ 的二次方根；
 
@@ -379,12 +387,14 @@ $ therefore quad w_k = root(n, r) lr([cos (theta + 2 k pi)/n + i sin (theta + 2 
 
 这里 $root(n, r)$ 表示 $r$ 的 $n$ 次算术根，$k$ 只需取 $0, 1, 2, dots.c, n - 1$ 这 $n$ 个值。（想一想，这是为什么？）
 
+#rule(title: [法则])[
 为了方便起见，采用符号 $root(n, z)$ 来表示复数 $z$ 的各个 $n$ 次方根，这样就有
 
 $ root(n, z) = root(n, r) lr([cos (theta + 2 k pi)/n + i sin (theta + 2 k pi)/n]) \
   (k = 0, 1, 2, dots.c, n - 1) ju $
 
 这就是说，#edot[复数的 $n$ 次方根有 $n$ 个值，它们的模都等于这个复数的 $n$ 次算术根，而它们的辐角分别等于这个复数的辐角与 $2 pi$ 的 $0, 1, 2, dots.c, n - 1$ 倍的和的 $n$ 分之一]。
+]
 
 #attention[在实数范围内和在复数范围内，记号 $root(n, space)$ 的意义有所不同。例如：在实数范围里，$sqrt(1)$ 只表示 1 的算术根 1，在复数范围里 $sqrt(1)$/* p.131 */就表示 1 的两个平方根 $plus.minus 1$。又如：在实数范围里，$root(3, -1)$ 只表示实数 $-1$，但在复数范围里，$root(3, -1)$ 就表示 $-1$ 的三个立方根 $-1, -omega, -omega^2$。为了防止混淆，以后如要用方根符号来表示实数 $a$ 的 $n$ 个 $n$ 次方根，宁可把 $a$ 写成 $a + 0 i$ 的形式，表示成 $root(n, a + 0 i)$，而仍旧把符号 $root(n, a)$（当它有意义时）来表示唯一的实数值。]
 

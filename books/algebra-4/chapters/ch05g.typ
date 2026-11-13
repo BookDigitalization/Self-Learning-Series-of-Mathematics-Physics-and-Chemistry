@@ -14,11 +14,13 @@ $ x_1 = (-b + sqrt(b^2 - 4a c))/(2a) quad "和" quad x_2 = (-b - sqrt(b^2 - 4a c
 
 现在来证明，一般的有理系数方程 $f(x) = 0$，都具有这样的性质。
 
+#rule(title: [定理])[
 *定理 2*。如果有理系数方程
 
 $ f(x) = a_0 x^n + a_1 x^(n-1) + dots.c + a_(n-1) x + a_n = 0 quad (a_0 != 0) $
 
 有无理根 $a + sqrt(b)$，这里 $a, b$ 都是有理数，$sqrt(b)$ 是无理数，那么它一定还有一个无理根 $a - sqrt(b)$。
+]
 
 这个定理的证明，可以仿照虚根成对定理的证法。
 
@@ -53,6 +55,7 @@ $ 0 = 0 + p(a + sqrt(b)) + q ju $
 
 把上面的定理加以推广，还可以得出以下的定理#footnote[证明较繁，这里把它略去了。]：
 
+#rule(title: [定理])[
 *定理 3*。如果有理系数方程
 
 $ f(x) = a_0 x^n + a_1 x^(n-1) + dots.c + a_(n-1) x + a_n = 0 quad (a_0 != 0) $
@@ -64,6 +67,7 @@ $ f(x) = a_0 x^n + a_1 x^(n-1) + dots.c + a_(n-1) x + a_n = 0 quad (a_0 != 0) $
 (2) 有一个虚根 $sqrt(a) + sqrt(b) i$，这里 $a, b$ 是有理数，而 $sqrt(a), sqrt(b)$ 是无理数，那么它一定还有三个虚根：
 
 #align(center)[$sqrt(a) - sqrt(b) i, quad -sqrt(a) + sqrt(b) i, quad -sqrt(a) - sqrt(b) i$。]
+]
 
 #attention[定理 2 不能推广到任意无理根的情形。例如，有理系数方/* p.180 */程 $f(x) = 0$ 如具有三次不尽根 $x = a + root(3, b)$（$a$ 和 $b$ 皆有理数，$root(3, b)$ 为无理数），但推不出 $f(x) = 0$ 必具有根 $x = a - root(3, b)$。]
 
