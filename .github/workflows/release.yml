@@ -72,6 +72,14 @@ jobs:
           enable-cache: true
           cache-dependency-glob: uv.lock
 
+      # build/ 不入库，干净的 CI 机器上要先建；首次编译会下载 @preview 包，下载进度写在 stderr，
+      # 会让下面“有输出就失败”的检查误报，所以先编译一遍把包下载好（这一遍只要求能编译）
+      - name: 预下载 Typst 包
+        shell: bash
+        run: |
+          mkdir -p build
+          typst compile "books/${{ steps.meta.outputs.book }}/main.typ" build/warmup.pdf --root . --font-path fonts --ignore-system-fonts
+
       - name: 编译（有任何错误或警告就失败）
         run: just check ${{ steps.meta.outputs.book }}
 

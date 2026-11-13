@@ -30,7 +30,7 @@ check book=book:
 # 整书编译；有任何错误或警告就失败（提交前用这个）
 [unix]
 check book=book:
-    out=$(typst compile books/{{book}}/main.typ build/{{book}}.pdf {{flags}} 2>&1) || { echo "$out"; exit 1; }; if [ -n "$out" ]; then echo "$out"; exit 1; else echo "OK：无错误、无警告"; fi
+    mkdir -p build; out=$(typst compile books/{{book}}/main.typ build/{{book}}.pdf {{flags}} 2>&1) || { echo "$out"; exit 1; }; if [ -n "$out" ]; then echo "$out"; exit 1; else echo "OK：无错误、无警告"; fi
 
 # 写作时监视整书，保存即重新编译
 watch book=book:
