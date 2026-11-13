@@ -33,7 +33,7 @@ description: 《数理化自学丛书》及同类扫描教材的数字化工作�
 - **哪些要先问项目负责人**：任何改变原书数字或结论的改动（题目、答案、例题）、新的用词处理方式、推送到远程、打 tag、公开 Release。"原书错误"不要自行判断后直接改。
 - **不要凭常识补内容或猜数字。** 看不清的字写 `#unclear[猜测]`，或用答案、算式反推并在 REVISIONS 里写明依据。
 - **页码必须从源码 `/* p.N */` 标记里取，不要估。** 写进 REVISIONS 的页码要核实过。
-- 每批改动后 `just check`（必须"无错误、无警告"）再提交；提交信息用文件传入（`git commit -F`）。**不要自行 push**，用户明确说推送才推。
+- 每批改动后 `just check <分册>`（必须"无错误、无警告"）再提交；提交信息用文件传入（`git commit -F`）。**不要自行 push**，用户明确说推送才推。
 
 ## 整册流水线（数学册实践）
 
@@ -42,7 +42,7 @@ description: 《数理化自学丛书》及同类扫描教材的数字化工作�
 ## 版面通读
 
 ```powershell
-just check
+just check physics-1
 uv run python scripts/audit-pdf.py build/physics-1.pdf --sheets build/sheets
 ```
 
@@ -57,8 +57,8 @@ uv run python scripts/audit-pdf.py build/physics-1.pdf --sheets build/sheets
 
 PDF 不入库，由 GitHub Actions 编译后作为 Release 附件发布（`.github/workflows/release.yml`）。
 
-1. 本机 `just check` 通过，`just todo` 无遗留，`REVISIONS.md`、`TERMINOLOGY.md` 与源码一致，工作区干净。
-2. `just tag-all 0.0.1`（全部分册，tag `v0.0.1`）或 `just tag 0.1.0 <分册>`（单册，tag `<分册>-v0.1.0`）：检查后在本地打 tag（不推送）。
+1. 本机 `just check <分册>` 通过，`just todo <分册>` 无遗留，`REVISIONS.md`、`TERMINOLOGY.md` 与源码一致，工作区干净。
+2. `just tag-all 0.0.1`（全部分册，tag `v0.0.1`）或 `just tag <分册> 0.1.0`（单册，tag `<分册>-v0.1.0`）：检查后在本地打 tag（不推送）。
 3. 向项目负责人确认后再 `git push origin v0.0.1`。第一次建议先在 Actions 页手动运行 release 工作流（默认只生成草稿），确认流程能跑通。
 4. Release 说明模板 `.github/release-notes.md` 含"仅供非商业学习"声明，不得删除。封面和说明里不要让读者误以为是原出版社的官方版本。
 

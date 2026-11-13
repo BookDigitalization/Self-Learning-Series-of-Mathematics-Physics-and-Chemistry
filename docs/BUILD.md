@@ -45,26 +45,26 @@ uv run python scripts/render-pages.py original/algebra-4.pdf 1-6 --offset 6
 
 ## 常用命令（just）
 
-装好 [just](https://github.com/casey/just) 后，在仓库根目录运行 `just` 列出全部命令。命令默认作用于物理第一册（`justfile` 里 `book := "physics-1"`），其他分册在末尾加分册名，如 `just check algebra-4`。
+装好 [just](https://github.com/casey/just) 后，在仓库根目录运行 `just` 列出全部命令。凡是针对某一册的命令，**第一个参数都是分册目录名**（`physics-1`、`algebra-4`、`geometry-1` 等，没有默认册），如 `just check algebra-4`。
 
 ```sh
-just fonts                 # 下载字体（只需一次）
-just build                 # 整书编译到 build/<分册>.pdf
-just check                 # 整书编译，有错误或警告就失败（提交前用，只检查指定的一册）
-just watch                 # 写作时监视整书，保存即重新编译
-just chapter 7             # 只编译第 7 章，很快（输出 build/solo/ch07.pdf）
+just fonts                          # 下载字体（只需一次）
+just build algebra-4                # 整书编译到 build/algebra-4.pdf
+just check algebra-4                # 整书编译，有错误或警告就失败（提交前用，只检查指定的一册）
+just watch algebra-4                # 写作时监视整书，保存即重新编译
+just chapter algebra-4 7            # 只编译第 7 章，很快（输出 build/solo/ch07.pdf）
 just solo geometry-1 "ch01.typ ch01b.typ" --png 1-3   # 数学册单独编译若干章文件（参数见 scripts/solo-compile.py；几何册见 .claude/skills/digitize-book/geometry.md）
-just png 20-24             # 把成书 PDF 的 20–24 页导出成 PNG 核对
-just scan 7-9              # 渲染原书第 7–9 页（带坐标网格），用来量图
-just scan-plain 7-9        # 渲染原书页（不带网格）
-just crop 8 "520,900,1155,1275" books/physics-1/figures/x.png   # 从原书页裁图（其他册在末尾加分册名）
-just crop-view 112 "150,350,800,700" build/pages/f112.png geometry-1   # 裁剪放大并叠页坐标网格，量图、读小字用
-just todo                  # 列出 #unclear 和 TODO 的位置
-just stats                 # 成书页数、书签数
-just find 牛顿             # 在成书 PDF 里找一个词（验证可检索）
-just clean                 # 清理核对用的临时 PNG
-just tag-all 0.0.3         # 发版：检查全部 10 册后在本地打 tag v0.0.3（不推送）
-just tag 0.1.0 algebra-4   # 只发一册：tag algebra-4-v0.1.0
+just png algebra-4 20-24            # 把成书 PDF 的 20–24 页导出成 PNG 核对
+just scan algebra-4 7-9             # 渲染原书第 7–9 页（带坐标网格），用来量图
+just scan-plain algebra-4 7-9       # 渲染原书页（不带网格）
+just crop physics-1 8 "520,900,1155,1275" books/physics-1/figures/x.png   # 从原书页裁图
+just crop-view geometry-1 112 "150,350,800,700" build/pages/f112.png     # 裁剪放大并叠页坐标网格，量图、读小字用
+just todo algebra-4                 # 列出 #unclear 和 TODO 的位置
+just stats algebra-4                # 成书页数、书签数
+just find algebra-4 牛顿            # 在成书 PDF 里找一个词（验证可检索）
+just clean                          # 清理核对用的临时 PNG
+just tag-all 0.0.3                  # 发版：检查全部 10 册后在本地打 tag v0.0.3（不推送）
+just tag algebra-4 0.1.0            # 只发一册：tag algebra-4-v0.1.0
 ```
 
 发版只推送 tag（`git push origin v0.0.3`），由 GitHub Actions 编译全部分册并发布一个 Release；推送前请先确认 `just todo` 与各册 `REVISIONS.md`，见 `.claude/skills/digitize-book/SKILL.md` 的“发版”。

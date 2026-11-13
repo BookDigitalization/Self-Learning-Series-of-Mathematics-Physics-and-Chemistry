@@ -32,7 +32,7 @@
 ## 数学册（合集）与并行录入
 
 - **合集的书签页码不可全信，且是合集页码**：原书页码 = 合集页码 − 偏移。先用 `scripts/split-volume.py` 切出单册，核对印刷页码再登记 `scripts/math-volumes.json`（解析几何的书签就落在错位的页）。注意区分“合集页码（1 起）”“切出 PDF 的页序（0 起）”“原书页码”，三者别混。
-- `justfile` 的 `book` 默认是 physics-1：`just chapter 3` 会编到物理册，要写 `just chapter 3 algebra-1`；导出图片 `just chapter-png 3 1-4 70 algebra-1`（ppi 在册名之前）。并行 agent 更稳妥的做法是各自建 `build/solo-<代号>/main.typ`。
+- `justfile` 的命令都要先写分册名（没有默认册）：`just chapter algebra-1 3`；导出图片 `just chapter-png algebra-1 3 1-4 70`（ppi 在最后）。并行 agent 更稳妥的做法是各自建 `build/solo-<代号>/main.typ`。
 - 并行分章：**按节标题分界，不按页**（节可以从页中间开始，页首可能还是上一节的习题）；续篇文件不写章标题，测试时用 `#counter(heading).update((章, 节-1))` 和 `#counter(figure.where(kind: image)).update(K)` 对号。
 - 分工：录入 agent 与核对 agent **必须是不同的**；核对 agent 直接改能确定的录入错误，其余只上报。录入时汇报“已核对”不算数，要独立再核一遍。
 - **3 与 8、2 与 3 在低分辨率扫描里常混**：放大加算式自洽往往不够，用**书末答案反推**最可靠（本册靠它订正了十余处）。答案没有的题（习题 1·16/1·18/1·19、3·10 部分、复习题四 42–65）要在 CHECKLIST 里单列。油墨糊住时 3 的开口会闭合像 8，对照同页别处的 3 与 8。

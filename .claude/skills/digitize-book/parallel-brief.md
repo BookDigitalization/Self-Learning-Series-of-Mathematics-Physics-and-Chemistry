@@ -37,7 +37,7 @@
   // 续篇文件有编号图时再加： #counter(figure.where(kind: image)).update(K)   // K = 本文件第一幅编号图的图号 − 1
   #include "/books/<册>/chapters/<文件>.typ"
   ```
-  编译：`typst compile build/solo-<代号>/main.typ build/solo-<代号>/out.pdf --root . --font-path fonts --ignore-system-fonts`；导出 PNG 加 `"build/solo-<代号>/c-{p}.png" --ppi 80 --pages 1-4`。下载包要代理时同一条命令里先 `$env:HTTPS_PROXY="http://127.0.0.1:7897"`。**不要用 `just chapter`**（`justfile` 的册名默认是 physics-1；用就必须写 `just chapter N <册名>`）。必须无错误、无警告。
+  编译：`typst compile build/solo-<代号>/main.typ build/solo-<代号>/out.pdf --root . --font-path fonts --ignore-system-fonts`；导出 PNG 加 `"build/solo-<代号>/c-{p}.png" --ppi 80 --pages 1-4`。下载包要代理时同一条命令里先 `$env:HTTPS_PROXY="http://127.0.0.1:7897"`。**不要用 `just chapter`**（它只认 chNN.typ，不认 ch01b 这类续篇；用就必须写 `just chapter <册名> N`）。必须无错误、无警告。
 - 录完把编译出的页面导出 PNG，与原书对应页**逐段核对内容**（文字、公式、数字、图中标注），不核对版面。
 
 ## 四、不要做的事

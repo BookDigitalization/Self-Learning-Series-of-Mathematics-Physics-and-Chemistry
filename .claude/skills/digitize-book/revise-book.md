@@ -42,7 +42,7 @@
 # terms.tsv：每行"旧词<TAB>新词"，re: 开头为正则
 uv run python scripts/replace-terms.py --book physics-1 --map terms.tsv          # 先试运行看计数
 uv run python scripts/replace-terms.py --book physics-1 --map terms.tsv --apply  # 再写入
-just check
+just check physics-1
 ```
 
 - 脚本跳过 `//` 和 `/* */` 注释（保留 `原书作 xxx`），跳过标题行并报告出来。
@@ -58,5 +58,5 @@ just check
 
 ## 收尾
 
-- `just check` → 更新 `TERMINOLOGY.md` 状态（建议→已定）→ REVISIONS 加行 → 提交。
+- `just check <分册>` → 更新 `TERMINOLOGY.md` 状态（建议→已定）→ REVISIONS 加行 → 提交。
 - REVISIONS 第五节只留"原书如此、照录"的项，已改的要移走，避免新旧矛盾。

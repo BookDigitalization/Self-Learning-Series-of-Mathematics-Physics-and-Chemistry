@@ -11,7 +11,7 @@
 
 1. 渲染整页看大意：`uv run python scripts/render-pages.py original/<扫描>.pdf <原书页> --dpi 130`，输出 `build/pages/pNNNN.png`（页范围写法 `413,528-529`，不是空格分隔）。
 2. 不确定的地方**放大到 400–600 dpi** 看：用 pymupdf 对 PDF 页按比例裁剪（clip 取页宽高的比例），保存到 scratchpad 再看图。不要凭缩小的显示图估坐标或认字。
-3. 并排对照成书 PDF 对应页：`just chapter N` 出单章 PDF，`just chapter-png N 1-4` 出 PNG。
+3. 并排对照成书 PDF 对应页：`just chapter <分册> N` 出单章 PDF，`just chapter-png <分册> N 1-4` 出 PNG。
 4. 每项结论写进 `CHECKLIST.md`：✔ + "已核对：……"，写清楚是"与扫描一致""录入订正"还是"原书如此"。
 
 ## 用答案和算式反推
