@@ -49,12 +49,14 @@ $ "(II)" quad cases(k - 4 < 0 dou, k + 4 > 0 ju) $
 
 由此可知，当 $-4 < k < 4$ 时，方程(1)没有实数根。
 
+#definition[
 一般地说：含有一个未知数并且未知数的次数最高是二次的不等式叫作*一元二次不等式*，它的一般形式是
 
 $ a x^2 + b x + c > 0 quad "或" quad a x^2 + b x + c < 0 dou $
 
 // p.24
 这里 $a != 0$。
+]
 
 从上面的例子可以看到，如果这两种形式的不等式中二次三项式 $a x^2 + b x + c$ 能够分解为因式，那么解一元二次不等式的问题，就可以归结到解两个一元一次不等式组的问题。
 
@@ -233,6 +235,7 @@ $ cases(x - alpha < 0 dou, x - beta > 0) quad "就是" quad cases(x < alpha dou,
 
 #fig("1·15", fig-1-15())[]
 
+#rule(title: [法则])[
 这个例子指出了解一元二次不等式可以应用下面的一般法则：
 
 (I) 先把原不等式变形成：
@@ -251,6 +254,7 @@ $ cases(x - alpha < 0 dou, x - beta > 0) quad "就是" quad cases(x < alpha dou,
 $ "(1)的解是" quad x < alpha quad "或者" quad x > beta ju $
 
 $ "(2)的解是" quad alpha < x < beta ju $
+]
 
 #ex("例 6")[解不等式：]
 

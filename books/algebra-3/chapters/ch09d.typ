@@ -120,6 +120,7 @@ $ abs(a_n - 0) < epsilon ju $
 
 并且说 0 是这个数列的极限。
 
+#definition[
 一般地，对于无穷数列
 
 $ a_1, a_2, a_3, dots, a_n, dots dou $
@@ -129,6 +130,7 @@ $ a_1, a_2, a_3, dots, a_n, dots dou $
 $ abs(a_n - A) < epsilon ju $
 
 那么就说 $A$ 是这个无穷数列的*极限*。
+]
 
 数列 $a_1, a_2, a_3, dots, a_n, dots$ 的极限是 $A$，又常简单地记作
 
@@ -178,11 +180,15 @@ $ lim_(n -> infinity) a_n = A ju $]
 
 *2. 关于数列极限的一些定理* 在研究数列极限的时候，常常要用到下面这些定理，现在我们不加证明地加以采用#footnote[这些定理的证明，超出了本书的范围，以后在学习高等数学的时候，将会学到。]。
 
+#rule(title: [定理])[
 *定理 1.* 如果一个数列有极限，那么它只能有一个极限。
+]
 
 例如，由 §9·5 的 (2)，数列 $2, 3 / 2, 4 / 3, 5 / 4, dots, (n + 1) / n, dots$ 的极限只能是 1。
 
+#rule(title: [定理])[
 *定理 2.* 如果一个数列是递增有界数列，或者是递减有界数列，那么它一定有极限。
+]
 
 例如，上面讨论过的数列 (1) 是递增有界数列，因为各项/* p.340 */的值愈来愈大，但总不大于 1，所以它有一个极限。同样，上面讨论过的数列 (2) 是递减有界数列，因为各项的值，愈来愈小，但总不小于 1，所以它也有一个极限。
 
@@ -194,6 +200,7 @@ $ 1, -1, 1, -1, dots, (-1)^(n + 1), dots $
 
 是一个有界数列，但它却没有极限。]
 
+#rule(title: [定理])[
 *定理 3.* 如果两个数列都有极限，就是
 
 $ lim_(n -> infinity) a_n = A dou quad quad lim_(n -> infinity) b_n = B dou $
@@ -204,6 +211,7 @@ $ lim_(n -> infinity) (a_n + b_n) &= lim_(n -> infinity) a_n + lim_(n -> infinit
   lim_(n -> infinity) (a_n - b_n) &= lim_(n -> infinity) a_n - lim_(n -> infinity) b_n = A - B dou \
   lim_(n -> infinity) (a_n dot b_n) &= lim_(n -> infinity) a_n dot lim_(n -> infinity) b_n = A dot B dou \
   lim_(n -> infinity) a_n / b_n &= (Lim_(n -> infinity) a_n) / (Lim_(n -> infinity) b_n) = A / B dou quad "这里" B != 0 ju $
+]
 
 例如，数列
 
@@ -373,6 +381,7 @@ $ lim_(n -> infinity) s_n &= lim_(n -> infinity) 1 / 2 [1 - (1 / 2)^n] \
 
 上面这个数列 (1) 的公比 $q$ 的绝对值 $abs(q)$ 小于 1。我们把这样的数列叫作无穷递缩等比数列。当 $n$ 无限增大的时候，无穷递缩等比数列前 $n$ 项的和的极限，我们就叫作这个无穷递缩等比数列的和。一般地说：
 
+#definition[
 设在无穷等比数列
 
 $ a_1, a_1 q, a_1 q^2, dots, a_1 q^(n - 1), dots $
@@ -386,6 +395,7 @@ $ s_n = (a_1 (1 - q^n)) / (1 - q) $
 就叫作这个*无穷递缩等比数列各项的和*，记作
 
 $ s = lim_(n -> infinity) s_n = lim_(n -> infinity) (a_1 (1 - q^n)) / (1 - q) ju $
+]
 
 因为当 $abs(q) < 1$ 的时候，$lim_(n -> infinity) q^n = 0$，所以
 
@@ -393,11 +403,13 @@ $ s = lim_(n -> infinity) (a_1 (1 - q^n)) / (1 - q) = lim_(n -> infinity) [a_1 /
   = a_1 / (1 - q) - a_1 / (1 - q) lim_(n -> infinity) q^n = a_1 / (1 - q) ju $
 
 // p.347
+#rule(title: [公式])[
 这就是说，第 1 项是 $a_1$，公比是 $q (abs(q) < 1)$ 的无穷等比数列各项的和是
 
 #eqno([(VII)], $s = a_1 / (1 - q) quad (abs(q) < 1) ju$)
 
 这个公式叫作*无穷递缩等比数列各项的和的公式*。
+]
 
 #ex("例 1")[求无穷递缩等比数列
 

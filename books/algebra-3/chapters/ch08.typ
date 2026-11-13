@@ -14,7 +14,9 @@ $ 2^x = 8 dou quad log_10 x = 1 / 2 dou quad log_x 4 = 2 $
 
 == 指数方程
 
+#definition[
 在指数里含有未知数的方程，叫作*指数方程*。例如
+]
 
 $ 2^x = 5 dou quad 2^(2x^2 + 1) = 2^(x^2 + 2) dou \ 4^x - 3 dot 2^x + 2 = 0 dou quad 2^x - 4x = 0 $
 
@@ -41,9 +43,11 @@ $ 2^x > 0 ju $
 
 所以方程 $2^x = -1 / 2$ 没有解。]
 
+#definition[
 像上面例子里的这种指数方程，叫作*最简指数方程*。最简指数方程的一般形式是
 
 $ a^x = b quad (a > 0, a != 1) ju $
+]
 
 很明显，当 $b > 0$ 时，它有唯一的解 $x = log_a b$，在 $b <= 0$ 时，它没有解。
 
@@ -217,7 +221,9 @@ $ therefore quad x = -1 ju $]
 
 == 对数方程
 
+#definition[
 在对数记号下含有未知数的方程叫作*对数方程*。例如
+]
 
 $ log_(sqrt(2)) x = 2 dou quad lg x + lg (x - 3) = 1 dou \ 2 log_25 x + log_x 25 = 3 dou quad log_2 x - sqrt(x) = 0 dou $
 
@@ -242,9 +248,11 @@ $ log_(sqrt(2)) x = 2 dou quad lg x + lg (x - 3) = 1 dou \ 2 log_25 x + log_x 25
 #align(center)[$therefore$ #h(1em) 原方程的解是 $x = 2$。]]
 
 // p.285
+#definition[
 像这个例子里的对数方程，叫作*最简对数方程*。最简对数方程的一般形式是
 
 $ log_a x = b quad (a > 0, a != 1) ju $
+]
 
 根据对数的定义知道，不论 $b$ 是什么实数，它都有唯一的解：
 

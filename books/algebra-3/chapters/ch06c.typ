@@ -30,6 +30,7 @@ $ a^alpha dot a^beta = a^(alpha + beta) fen \
 
 在这基础上，我们可以导出计算积、商、幂的对数的法则。
 
+#rule(title: [法则])[
 *法则 1*#h(1em)两个正因数的积的对数等于这两个正因数的对数的和。
 
 $ log_a M N = log_a M + log_a N ju $
@@ -45,6 +46,7 @@ $ log_a M^alpha = alpha log_a M ju $
 在法则 3 中，如果令 $alpha = frac(1, n)$（$n$ 是大于 1 的整数），那么就得到了方根的对数计算法则：
 
 $ log_a root(n, M) = log_a M^(1/n) = frac(1, n) log_a M ju $
+]
 
 // p.239
 这些法则可以这样来证明：根据 §6·3 里的恒等式，命
