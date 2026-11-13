@@ -431,6 +431,12 @@
 #let note-small(body) = remark([注], body, kind: "info")
 #let attention(body) = remark([注意], body, kind: "warning")
 
+// 方框分类（全丛书统一，类内细分只换标题签 title:）：
+//   定义类（绿 #definition）：定义、记号、约定、约定意义的规定（如“规定向右为正”“数的绝对值的规定”）
+//   结论类（紫 #rule）    ：公理、定理、推论、引理、命题、性质、法则、公式、决定怎样运算的规定（如运算顺序）
+//   例题类（橙 #ex、蓝 #exercise）：例、问题、练习、习题；“解”“证明”依附其后，不另套框
+//   提示类（蓝 #note-small、绿 #analysis）：注、说明、分析、提示
+//   警示类（橙 #attention）：注意、警告
 // 定义、法则（定理）：与例题同款的带标题签方框，颜色不同。内容不改，只是给原书里的定义、法则套框。
 //   #definition[绝对值…]          #definition(title: [定义])[…]
 //   #rule[…]                       #rule(title: [法则])[…]
