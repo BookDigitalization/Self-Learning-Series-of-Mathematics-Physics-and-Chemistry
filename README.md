@@ -152,5 +152,6 @@ just png 20-24        # 把成书 PDF 的 20–24 页导出成 PNG 核对
 just scan 7-9         # 渲染原书第 7–9 页（带坐标网格），用来量图
 just crop 8 "520,900,1155,1275" books/physics-1/figures/x.png   # 从原书页裁图
 just todo             # 列出 #unclear 和 TODO 的位置
-just tag 0.1.0        # 发版：检查后在本地打 tag physics-1-v0.1.0（不推送）；推送 tag 后 GitHub Actions 编译并发布 Release
+just tag-all 0.0.1   # 发版：检查全部分册后在本地打 tag v0.0.1（不推送）；推送 tag 后 GitHub Actions 编译全部分册并发布一个 Release
+just tag 0.1.0 physics-1   # 只发一册：tag physics-1-v0.1.0
 ```

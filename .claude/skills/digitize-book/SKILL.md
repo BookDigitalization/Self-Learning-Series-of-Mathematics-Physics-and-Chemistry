@@ -56,8 +56,8 @@ uv run python scripts/audit-pdf.py build/physics-1.pdf --sheets build/sheets
 PDF 不入库，由 GitHub Actions 编译后作为 Release 附件发布（`.github/workflows/release.yml`）。
 
 1. 本机 `just check` 通过，`just todo` 无遗留，`REVISIONS.md`、`TERMINOLOGY.md` 与源码一致，工作区干净。
-2. `just tag 0.1.0`：检查后在本地打 tag `physics-1-v0.1.0`（不推送）。
-3. 向项目负责人确认后再 `git push origin physics-1-v0.1.0`。第一次建议先在 Actions 页手动运行 release 工作流（默认只生成草稿），确认流程能跑通。
+2. `just tag-all 0.0.1`（全部分册，tag `v0.0.1`）或 `just tag 0.1.0 <分册>`（单册，tag `<分册>-v0.1.0`）：检查后在本地打 tag（不推送）。
+3. 向项目负责人确认后再 `git push origin v0.0.1`。第一次建议先在 Actions 页手动运行 release 工作流（默认只生成草稿），确认流程能跑通。
 4. Release 说明模板 `.github/release-notes.md` 含"仅供非商业学习"声明，不得删除。封面和说明里不要让读者误以为是原出版社的官方版本。
 
 ## 新开一册时

@@ -1,22 +1,25 @@
 # 发版：编译成书 PDF，作为 GitHub Release 附件发布（PDF 不入库）。
 #
 # 触发方式
-#   1. 推送 tag：<分册>-v<版本>，例如 physics-1-v0.1.0（分册名即 books/ 下的目录名）
-#        git tag -a physics-1-v0.1.0 -m "物理第一册 v0.1.0" ; git push origin physics-1-v0.1.0
-#   2. 手动运行（Actions → release → Run workflow）：填 tag，默认只生成草稿（draft），确认后再在 Release 页面发布。
+#   1. 全部分册一起发：推送 tag  v<版本>，例如 v0.0.1
+#        git tag -a v0.0.1 -m "v0.0.1" ; git push origin v0.0.1
+#      编译 books/ 下所有有 main.typ 的分册，同一个 Release 里附 <分册>-v<版本>.pdf 等文件。
+#   2. 只发一册：推送 tag  <分册>-v<版本>，例如 physics-1-v0.1.0（分册名即 books/ 下的目录名）。
+#   3. 手动运行（Actions → release → Run workflow）：填 tag，默认只生成草稿（draft），确认后再在 Release 页面发布。
 #
-# 发版前先在本机 `just check`，并确认 books/<分册>/REVISIONS.md 与 common/TERMINOLOGY.md 已更新。
+# 发版前先在本机 `just check`，并确认各册 REVISIONS.md 与 common/TERMINOLOGY.md 已更新。
 
 name: release
 
 on:
   push:
     tags:
+      - 'v[0-9]*'
       - '*-v[0-9]*'
   workflow_dispatch:
     inputs:
       tag:
-        description: 版本号 tag，如 physics-1-v0.1.0
+        description: 版本号 tag，如 v0.0.1（全部分册）或 physics-1-v0.1.0（单册）
         required: true
         type: string
       draft:
@@ -28,11 +31,15 @@ on:
 permissions:
   contents: write
 
+env:
+  TAG: ${{ github.event.inputs.tag || github.ref_name }}
+
 jobs:
-  release:
+  plan:
     runs-on: ubuntu-latest
-    env:
-      TAG: ${{ github.event.inputs.tag || github.ref_name }}
+    outputs:
+      books: ${{ steps.meta.outputs.books }}
+      version: ${{ steps.meta.outputs.version }}
     steps:
       - uses: actions/checkout@v4
 
@@ -40,14 +47,31 @@ jobs:
         id: meta
         shell: bash
         run: |
-          book="${TAG%-v*}"
-          version="${TAG##*-v}"
-          if [ ! -f "books/${book}/main.typ" ]; then
-            echo "::error::tag ${TAG} 对应的分册 books/${book}/main.typ 不存在"
-            exit 1
+          if [[ "$TAG" =~ ^v[0-9] ]]; then
+            version="${TAG#v}"
+            books=$(for f in books/*/main.typ; do basename "$(dirname "$f")"; done | python3 -c 'import sys,json; print(json.dumps(sys.stdin.read().split()))')
+          else
+            book="${TAG%-v*}"
+            version="${TAG##*-v}"
+            if [ ! -f "books/${book}/main.typ" ]; then
+              echo "::error::tag ${TAG} 对应的分册 books/${book}/main.typ 不存在"
+              exit 1
+            fi
+            books="[\"${book}\"]"
           fi
-          echo "book=${book}" >> "$GITHUB_OUTPUT"
+          echo "分册：${books}  版本：${version}"
+          echo "books=${books}" >> "$GITHUB_OUTPUT"
           echo "version=${version}" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: plan
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        book: ${{ fromJSON(needs.plan.outputs.books) }}
+    steps:
+      - uses: actions/checkout@v4
 
       - uses: typst-community/setup-typst@v4
         with:
@@ -78,17 +102,17 @@ jobs:
         shell: bash
         run: |
           mkdir -p build
-          typst compile "books/${{ steps.meta.outputs.book }}/main.typ" build/warmup.pdf --root . --font-path fonts --ignore-system-fonts
+          typst compile "books/${{ matrix.book }}/main.typ" build/warmup.pdf --root . --font-path fonts --ignore-system-fonts
 
       - name: 编译（有任何错误或警告就失败）
-        run: just check ${{ steps.meta.outputs.book }}
+        run: just check ${{ matrix.book }}
 
       - name: 检查成书 PDF（页数、书签、可检索文本）
         shell: bash
         run: |
           uv run --locked python - <<'PY'
-          import os, sys, pymupdf
-          book = "${{ steps.meta.outputs.book }}"
+          import sys, pymupdf
+          book = "${{ matrix.book }}"
           d = pymupdf.open(f"build/{book}.pdf")
           toc = d.get_toc()
           text = "".join(d[i].get_text() for i in range(min(10, len(d))))
@@ -98,27 +122,45 @@ jobs:
           PY
 
       - name: 整理发布文件
-        id: pack
         shell: bash
         run: |
-          book="${{ steps.meta.outputs.book }}"
-          name="${book}-v${{ steps.meta.outputs.version }}"
+          book="${{ matrix.book }}"
+          name="${book}-v${{ needs.plan.outputs.version }}"
           mkdir -p dist
           cp "build/${book}.pdf" "dist/${name}.pdf"
           cp "books/${book}/REVISIONS.md" "dist/${name}-REVISIONS.md"
           (cd dist && sha256sum "${name}.pdf" > "${name}.pdf.sha256")
-          echo "name=${name}" >> "$GITHUB_OUTPUT"
           ls -l dist
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{ matrix.book }}
+          path: dist/
+          if-no-files-found: error
+
+  release:
+    # 所有分册都编译通过才发布（任何一册失败就不发）
+    needs: [plan, build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: dist-*
+          path: dist
+          merge-multiple: true
+
+      - name: 汇总
+        shell: bash
+        run: ls -l dist
 
       - name: 发布 Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.TAG }}
-          name: ${{ steps.pack.outputs.name }}
+          name: ${{ env.TAG }}
           draft: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.draft == 'true' }}
           body_path: .github/release-notes.md
           generate_release_notes: false
-          files: |
-            dist/${{ steps.pack.outputs.name }}.pdf
-            dist/${{ steps.pack.outputs.name }}.pdf.sha256
-            dist/${{ steps.pack.outputs.name }}-REVISIONS.md
+          files: dist/*

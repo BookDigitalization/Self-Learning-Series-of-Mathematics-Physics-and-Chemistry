@@ -102,12 +102,12 @@ build/                     编译产物（不提交）
 成书 PDF 由 GitHub Actions 编译并作为 **GitHub Release 附件**发布，PDF 本身不进 git。原书扫描件永远不发布。
 
 - 工作流：`.github/workflows/release.yml`；Release 说明模板：`.github/release-notes.md`（含"仅供非商业学习"的使用声明，不得删除）。
-- tag 格式：`<分册>-v<版本>`，分册名即 `books/` 下的目录名，例如 `physics-1-v0.1.0`。
+- tag 格式：`v<版本>`（所有分册一起发，一个 Release 附全部 PDF），例如 `v0.0.1`；或 `<分册>-v<版本>`（只发一册，分册名即 `books/` 下的目录名），例如 `physics-1-v0.1.0`。
 - 发版前：
   1. `just check` 无错误、无警告；`just todo` 里没有遗留的 `#unclear` 和 TODO（有就先说明）；
   2. `books/<分册>/REVISIONS.md`、`common/TERMINOLOGY.md` 已更新，与源码一致；
   3. 工作区干净，所有改动已提交。
-- 发版步骤：`just tag 0.1.0`（检查并在本地打 tag，不推送）→ 项目负责人确认 → `git push origin physics-1-v0.1.0`（推送 tag 触发发布）。也可在 Actions 页手动运行 release 工作流，手动运行默认只生成草稿。
+- 发版步骤：`just tag-all 0.0.1`（检查全部分册并在本地打 tag v0.0.1，不推送；单册用 `just tag 0.1.0 <分册>`）→ 项目负责人确认 → `git push origin v0.0.1`（推送 tag 触发发布）。也可在 Actions 页手动运行 release 工作流，手动运行默认只生成草稿。
 - 推送 tag、公开 Release 属于对外发布，**必须先得到项目负责人明确同意**，不得自行 push。
 - 工作流产出：`<分册>-v<版本>.pdf`、`.pdf.sha256`、`-REVISIONS.md`；构建时会检查页数、书签、文本层。
 

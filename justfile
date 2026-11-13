@@ -154,6 +154,22 @@ tag version book=book:
     git tag -a {{book}}-v{{version}} -m "{{book}} v{{version}}"
     @echo "已创建 tag {{book}}-v{{version}}。确认无误后推送：git push origin {{book}}-v{{version}}"
 
+# 发版（全部分册）：检查所有分册后在本地打 tag v<版本>（不推送），如 `just tag-all 0.0.1`
+[windows]
+tag-all version:
+    foreach ($b in (Get-ChildItem books -Directory).Name) { just check $b; if ($LASTEXITCODE -ne 0) { exit 1 } }
+    $s = git status --porcelain; if ($s) { "有未提交的改动，先提交再发版"; exit 1 }
+    git tag -a v{{version}} -m "v{{version}}"
+    "已创建 tag v{{version}}。确认无误后推送：git push origin v{{version}}"
+
+# 发版（全部分册）：检查所有分册后在本地打 tag v<版本>（不推送），如 `just tag-all 0.0.1`
+[unix]
+tag-all version:
+    for b in $(ls books); do just check $b || exit 1; done
+    if [ -n "$(git status --porcelain)" ]; then echo "有未提交的改动，先提交再发版"; exit 1; fi
+    git tag -a v{{version}} -m "v{{version}}"
+    @echo "已创建 tag v{{version}}。确认无误后推送：git push origin v{{version}}"
+
 # ───────────── 环境与清理 ─────────────
 
 # 下载开源字体到 fonts/（不入库）
