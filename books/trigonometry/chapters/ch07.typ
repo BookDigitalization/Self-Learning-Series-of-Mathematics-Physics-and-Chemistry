@@ -58,7 +58,9 @@ $ x = y / 7.8 ju $
 
 从这个例子可以看到，由于考虑问题的出发点不同，不仅可以把铁的重量看作是它的体积的函数，也可以把铁的体积看作是它的重量的函数。
 
+#definition[
 一般地说，对于函数 $y = f(x)$，如果把 $y$ 看作自变量，并且对于 $y$ 的每一个可以取的值，$x$ 有唯一确定的值和它对应时，我们就把新的函数 $x = phi(y)$ 叫作 $y = f(x)$ 的*反函数*。
+]
 
 在上面的例子中，$x = y / 7.8$ 就是 $y = 7.8 x$ 的反函数。
 
@@ -96,9 +98,11 @@ $ x = + sqrt(y) ju $
 
 我们可以看到，对于正弦函数来说，这样的区间就是闭区间 $[-pi/2, pi/2]$。在这个区间内，直线 $y = 1/2$ 和函数 $y = sin x$ /* p.245 */的图像只有一个交点，这个交点的横坐标是 $pi/6$。这说明，当 $sin x = 1/2$ 时，从 $-pi/2$ 到 $pi/2$ 的 $x$ 的值是 $pi/6$。我们把 $x$ 的这个值写作 $arcsin 1/2$。换句话说，$arcsin 1/2$ 是从 $-pi/2$ 到 $pi/2$ 的一个角，它的正弦等于 $1/2$。
 
+#definition[
 一般地说，当 $sin x = m med (|m| <= 1)$ 时，从 $-pi/2$ 到 $pi/2$ 的 $x$ 的值叫作 $m$ 的*反正弦*，用 $arcsin m$ 来表示。这也就是说，$arcsin m$（$|m| <= 1$）表示从 $-pi/2$ 到 $pi/2$ 的一个角，它的正弦等于 $m$。用式子来表示，就是
 
 $ sin(arcsin m) = m dou quad -pi/2 <= arcsin m <= pi/2 med (|m| <= 1) ju $
+]
 
 #ex("例")[求下列反正弦的值：
 
@@ -210,9 +214,11 @@ $ x = sin y med (-pi/2 <= y <= pi/2) ju $
 
 注意从 0 到 $pi$ 的一个区间，在这个区间内，满足 $cos x = 1/2$ 的 $x$ 的值是 $pi/3$。我们把 $x$ 的这个值写作 $arccos 1/2$。换句话说，$arccos 1/2$ 是从 0 到 $pi$ 的一个角，它的余弦等于 $1/2$。
 
+#definition[
 一般地说，当 $cos x = m med (|m| <= 1)$ 时，从 0 到 $pi$ 的 $x$ 的值叫作 $m$ 的*反余弦*，用 $arccos m$ 来表示。这就是说，$arccos m$（$|m| <= 1$）表示从 0 到 $pi$ 的一个角，它的余弦等于 $m$。用式子来表示，就是
 
 $ cos(arccos m) = m dou quad 0 <= arccos m <= pi med (|m| <= 1) ju $
+]
 
 // p.251
 #ex("例")[求下列反余弦的值：
@@ -302,9 +308,11 @@ $ x = cos y med (0 <= y <= pi) ju $
 
 当 $tan x$ 等于某一个已知数 $m$ 的时候，对应的 $x$ 的值也有无数个。从正切函数 $y = tan x$ 的图像上可以看到，和 $x$ 轴平行的任意一条直线 $y = m$ 与 $y = tan x$ 的图像相交于无数个点（图 7·8）。
 
+#definition[
 但是在正切函数的每一个单调区间，例如 $(-(3pi)/2, -pi/2)$，$(-pi/2, pi/2)$，$(pi/2, (3pi)/2)$ 内，直线 $y = m$ 与 $y = tan x$ 的图像都只相交一次。所以在正切函数的每一个单调区间内，满足 $tan x = m$ 的 $x$ 有唯一确定的值。我们把满足 $tan x = m$ 并且在 $(-pi/2, pi/2)$ 这个区间内的 $x$ 的值叫作 $m$ 的*反正切*，用 $arctan m$ 来表示。换句话说，$arctan m$ 是正切等于 $m$ 并且在/* p.255 */ $-pi/2$ 和 $pi/2$ 间的一个角。用式子来表示，就是
 
 $ tan(arctan m) = m dou quad -pi/2 < arctan m < pi/2 ju $
+]
 
 #fig("7·8", fig-7-8())[]
 
@@ -389,9 +397,11 @@ $ x = tan y med (-pi/2 < y < pi/2) ju $
 
 #fig("7·11", fig-7-11())[]
 
+#definition[
 但是在余切函数的每一个单调区间 $dots.c$，$(-pi, 0)$，$(0, pi)$，$(pi, 2pi)$，$dots.c$ 内，对于 $cot x$ 的每一个值，$x$ 都只有一个确定的值和它对应。我们把满足 $cot x = m$ 并且在 $(0, pi)$ 这个区间内的 $x$ 的值叫作 $m$ 的*反余切*，用 $arccot m$ 来表示。换句话说，$arccot m$ 是余切等于 $m$ 并且在 0 和 $pi$ 间的一个角。用式子来表示，就是
 
 $ cot(arccot m) = m dou quad 0 < arccot m < pi ju $
+]
 
 #ex("例")[求下列反余切的值：
 
@@ -577,6 +587,7 @@ $ arcsin(-sqrt(3)/2) = -arcsin sqrt(3)/2 ju $
 
 $ arccos(-1/2) = pi - arccos 1/2 ju $
 
+#rule(title: [公式])[
 现在我们来证明一般的公式：
 
 #c7-eqs(
@@ -585,6 +596,7 @@ $ arccos(-1/2) = pi - arccos 1/2 ju $
   ($arctan(-m) = -arctan m fen$, [(3)]),
   ($arccot(-m) = pi - arccot m ju$, [(4)]),
 )
+]
 
 公式 (1) 的证明可以分为两步：
 
@@ -662,12 +674,14 @@ $ arccos(-m) = pi - arccos m ju $
 
 $ arcsin 1/2 + arccos 1/2 = 90° ju $
 
+#rule(title: [公式])[
 一般地说，我们可以证明
 
 #c7-eqs(
   ($arcsin m + arccos m = pi/2 fen$, [(5)]),
   ($arctan m + arccot m = pi/2 ju$, [(6)]),
 )
+]
 
 为了证明公式 (5)，我们只要证明
 

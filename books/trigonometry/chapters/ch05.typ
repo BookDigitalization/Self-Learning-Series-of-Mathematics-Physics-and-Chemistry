@@ -99,11 +99,13 @@ $ a / b = (sin A) / (sin B) dou #h(1em) b / c = (sin B) / (sin C) ju $
 
 $ a / (sin A) = b / (sin B) dou #h(1em) b / (sin B) = c / (sin C) ju $
 
+#rule(title: [定理])[
 我们就可以连起来写成
 
 $ bold(a / (sin A) = b / (sin B) = c / (sin C)) ju $
 
 这个结论叫作*正弦定理*。它的每一个等式都表示三角形的两个角和它们的对边之间的关系。在这四个元素中，知道任意三个，就可以求出另一个未知的元素。
+]
 
 #ex("例")[在 $△A B C$ 中，求证
 
@@ -468,6 +470,7 @@ $ A D = b cos (180° - A) = - b cos A ju $
 
 $ a^2 = b^2 + c^2 - 2b c cos A ju $
 
+#rule(title: [定理])[
 上面证明了在所有的情况下，三角形一边的平方等于另外两边的平方和减去这两边与它们夹角的余弦的积的两倍。这样，在任意三角形 $A B C$ 中，可以知道
 
 $ bold(a^2 = b^2 + c^2 - 2b c cos A dou) \
@@ -476,6 +479,7 @@ bold(b^2 = c^2 + a^2 - 2c a cos B dou) \
 bold(c^2 = a^2 + b^2 - 2a b cos C ju) $
 
 这个结论叫作*余弦定理*。
+]
 
 #ex("例")[在 $△A B C$ 中，用余弦定理证明：
 
@@ -600,11 +604,13 @@ $ a^2 = b^2 + c^2 - 2b c cos A dou \
 b^2 = c^2 + a^2 - 2c a cos B dou \
 c^2 = a^2 + b^2 - 2a b cos C dou $
 
+#rule(title: [公式])[
 可以分别得到
 
 $ cos A = (b^2 + c^2 - a^2) / (2b c) dou \
 cos B = (c^2 + a^2 - b^2) / (2c a) dou \
 cos C = (a^2 + b^2 - c^2) / (2a b) ju $
+]
 
 现在举例说明如下：
 

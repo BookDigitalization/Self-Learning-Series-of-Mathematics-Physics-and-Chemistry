@@ -131,7 +131,9 @@ $ n dot 360° + alpha quad (n "是整数") ju $
 
 #fig("2·7", fig-c2a-2-7())[]
 
+#definition[
 我们把 $O x$ 叫作*横坐标轴*或者 *$bold(x)$ 轴*，$O y$ 叫作*纵坐标轴*或者 *$bold(y)$ 轴*，点 $O$ 叫作*坐标原/* p.47 */点*。$x$ 轴和 $y$ 轴把平面所分成的四个部分叫作*象限*。各象限的编号从右上方的一个开始，按照逆时针方向，分别叫作第一象限，第二象限，第三象限和第四象限（参看图 2·5）。各象限里点的坐标的符号如下表所示：
+]
 
 #c2a-tab((1fr, 1fr, 1fr), ([象限], [横坐标], [纵坐标]), (
   ([I], [$+$], [$+$]),
@@ -213,7 +215,9 @@ $ r = sqrt(x^2 + y^2) ju $
 
 #fig("2·15", fig-c2a-2-15())[]
 
+#definition(title: [定义])[
 进一步，我们还可以使公式 (1) 到 (6) 适用于任意大小的角（正角和负角）。这就是说，如果任何一个角 $alpha$ 的终边上一点 $P$ 的坐标是 $(x, y)$，原点到点 $P$ 的距离是 $r$，那么角 $alpha$ 的三角函数仍旧是公式 (1) 到 (6) 里的六个比。
+]
 
 这样，我们把三角函数的概念就从锐角推广到任意大小的角了。
 
@@ -375,6 +379,7 @@ $ cos(-30°) = cos 330° = sqrt(3)/2 dou $
 
 等等。
 
+#rule(title: [公式])[
 在 §2·1 中，我们又知道和角 $alpha$ 始边相同，终边也相同的一切角可以用 $n dot 360° + alpha$ 来表示。所以，*$bold(n dot 360° + alpha)$* 的三角函数值和 $alpha$ 的三角函数值完全相同。就是说，对于任意角 $alpha$ 和任意整数 $n$，我们都有
 
 #c2a-b($ sin(n dot 360° + alpha) &= sin alpha dou \
@@ -383,6 +388,7 @@ $ cos(-30°) = cos 330° = sqrt(3)/2 dou $
   cot(n dot 360° + alpha) &= cot alpha dou \
   sec(n dot 360° + alpha) &= sec alpha dou \
   csc(n dot 360° + alpha) &= csc alpha ju $)
+]
 
 // p.60
 利用这一组公式，我们可以化任何正角的三角函数为小于 $360°$ 的正角的三角函数。
@@ -426,6 +432,7 @@ $ tan alpha &= y/x dou quad & tan(180° - alpha) &= y/(-x) = -frac(y, x) fen \
   sec alpha &= r/x dou quad & sec(180° - alpha) &= r/(-x) = -frac(r, x) fen \
   csc alpha &= r/y dou quad & csc(180° - alpha) &= r/y ju $
 
+#rule(title: [公式])[
 所以
 
 #c2a-b($ sin(180° - alpha) &= sin alpha dou \
@@ -434,6 +441,7 @@ $ tan alpha &= y/x dou quad & tan(180° - alpha) &= y/(-x) = -frac(y, x) fen \
   cot(180° - alpha) &= -cot alpha dou \
   sec(180° - alpha) &= -sec alpha dou \
   csc(180° - alpha) &= csc alpha ju $)
+]
 
 利用这一组公式，可以把 $90°$ 与 $180°$ 间的角的三角函数，化成锐角的三角函数。
 
@@ -460,6 +468,7 @@ $ cos alpha &= x/r dou quad & cos(180° + alpha) &= (-x)/r = -frac(x, r) fen \
   sec alpha &= r/x dou quad & sec(180° + alpha) &= r/(-x) = -frac(r, x) fen \
   csc alpha &= r/y dou quad & csc(180° + alpha) &= r/(-y) = -frac(r, y) ju $
 
+#rule(title: [公式])[
 所以
 
 #c2a-b($ sin(180° + alpha) &= -sin alpha dou \
@@ -468,6 +477,7 @@ $ cos alpha &= x/r dou quad & cos(180° + alpha) &= (-x)/r = -frac(x, r) fen \
   cot(180° + alpha) &= cot alpha dou \
   sec(180° + alpha) &= -sec alpha dou \
   csc(180° + alpha) &= -csc alpha ju $)
+]
 
 // p.64
 利用这组公式，可以把 $180°$ 与 $270°$ 间的角的三角函数，化成锐角的三角函数。

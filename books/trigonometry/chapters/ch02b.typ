@@ -63,6 +63,7 @@ $ sin alpha &= y/r dou & quad sin(-alpha) &= (-y)/r = -y/r fen \
   sec alpha &= r/x dou & quad sec(-alpha) &= r/x fen \
   csc alpha &= r/y dou & quad csc(-alpha) &= r/(-y) = -r/y ju $
 
+#rule(title: [公式])[
 所以
 
 #c2b-b($ sin(-alpha) &= -sin alpha dou \
@@ -71,6 +72,7 @@ $ sin alpha &= y/r dou & quad sin(-alpha) &= (-y)/r = -y/r fen \
   cot(-alpha) &= -cot alpha dou \
   sec(-alpha) &= sec alpha dou \
   csc(-alpha) &= -csc alpha ju $)
+]
 
 #ex("例")[查表求 $cot(-1596°)$。]
 
@@ -298,12 +300,14 @@ $ cos(90° + alpha) &= cos(180° - 90° + alpha) \
 
 #c2b-b($ cos(90° + alpha) = -sin alpha ju $)
 
+#rule(title: [公式])[
 $90° + alpha$ 的其他四个三角函数，都可以仿照上面的方法化成锐角 $alpha$ 的三角函数。我们有
 
 #c2b-b($ tan(90° + alpha) &= -cot alpha dou \
   cot(90° + alpha) &= -tan alpha dou \
   sec(90° + alpha) &= -csc alpha dou \
   csc(90° + alpha) &= sec alpha ju $)
+]
 
 *2. $bold(270° - alpha)$ 与锐角 $bold(alpha)$ 的三角函数间的关系*#h(1em)我们可以把 $270°$ 写成 $180° + 90°$，然后仿照上面的方法，推得
 
@@ -316,6 +320,7 @@ $ sin(270° - alpha) &= sin(180° + 90° - alpha) \
 #c2b-b($ sin(270° - alpha) = -cos alpha ju $)
 
 // p.75
+#rule(title: [公式])[
 同样可以推得 $270° - alpha$ 的其他三角函数与锐角 $alpha$ 的三角函数间的关系
 
 #c2b-b($ cos(270° - alpha) &= -sin alpha dou \
@@ -323,15 +328,18 @@ $ sin(270° - alpha) &= sin(180° + 90° - alpha) \
   cot(270° - alpha) &= tan alpha dou \
   sec(270° - alpha) &= -csc alpha dou \
   csc(270° - alpha) &= -sec alpha ju $)
+]
 
 *3. $bold(270° + alpha)$ 与锐角 $bold(alpha)$ 的三角函数间的关系*#h(1em)我们可以把 $270° + alpha$ 写成 $360° - (90° - alpha)$，并且应用 $360° - theta$ 与锐角 $theta$ 的三角函数间的关系和 §1·3 的公式，推得 $270° + alpha$ 和锐角 $alpha$ 的三角函数间有下面的关系：
 
+#rule(title: [公式])[
 #c2b-b($ sin(270° + alpha) &= -cos alpha dou \
   cos(270° + alpha) &= sin alpha dou \
   tan(270° + alpha) &= -cot alpha dou \
   cot(270° + alpha) &= -tan alpha dou \
   sec(270° + alpha) &= csc alpha dou \
   csc(270° + alpha) &= -sec alpha ju $)
+]
 
 #ex("例")[把 $cos 235°$ 化成锐角的正弦。]
 
@@ -531,6 +539,7 @@ $ 1/(cos alpha) = 1/(x/r) = r/x = sec alpha fen $
 // p.83
 $ 1/(tan alpha) = 1/(y/x) = x/y = cot alpha ju $
 
+#rule(title: [公式])[
 就是
 
 #c2b-b[
@@ -538,22 +547,27 @@ $ 1/(tan alpha) = 1/(y/x) = x/y = cot alpha ju $
 #eqno([(2)], $sec alpha = 1/(cos alpha) fen$)
 #eqno([(3)], $cot alpha = 1/(tan alpha) ju$)
 ]
+]
 
 *2. 商数关系*#h(1em)根据任意角的三角函数的定义，可以知道
 
 $ (sin alpha)/(cos alpha) = (y/r)/(x/r) = y/x = tan alpha dou $
 
+#rule(title: [公式])[
 就是
 
 #c2b-b(eqno([(4)], $tan alpha = (sin alpha)/(cos alpha) ju$))
+]
 
 从等式 (3) 和 (4)，又可以得到
 
 $ cot alpha = 1/(tan alpha) = 1/((sin alpha)/(cos alpha)) = (cos alpha)/(sin alpha) dou $
 
+#rule(title: [公式])[
 就是
 
 #c2b-b(eqno([(5)], $cot alpha = (cos alpha)/(sin alpha) ju$))
+]
 
 *3. 平方关系*#h(1em)因为
 
@@ -568,9 +582,11 @@ $ y^2 + x^2 = r^2 dou $
 $ sin^2 alpha + cos^2 alpha = r^2/r^2 = 1 dou $
 
 // p.84
+#rule(title: [公式])[
 就是
 
 #c2b-b(eqno([(6)], $sin^2 alpha + cos^2 alpha = 1 ju$))
+]
 
 把等式 (6) 的两边都除以 $cos^2 alpha$，得
 
@@ -580,9 +596,11 @@ $ (sin^2 alpha)/(cos^2 alpha) + 1 = 1/(cos^2 alpha) dou $
 
 $ ((sin alpha)/(cos alpha))^2 + 1 = (1/(cos alpha))^2 ju $
 
+#rule(title: [公式])[
 因此，
 
 #c2b-b(eqno([(7)], $1 + tan^2 alpha = sec^2 alpha ju$))
+]
 
 把等式 (6) 的两边都除以 $sin^2 alpha$，得
 
@@ -592,9 +610,11 @@ $ 1 + (cos^2 alpha)/(sin^2 alpha) = 1/(sin^2 alpha) dou $
 
 $ 1 + ((cos alpha)/(sin alpha))^2 = (1/(sin alpha))^2 ju $
 
+#rule(title: [公式])[
 因此，
 
 #c2b-b(eqno([(8)], $1 + cot^2 alpha = csc^2 alpha ju$))
+]
 
 以上 (1) 到 (8) 这八个等式中，(1)，(2)，(3)，(4)，(6) 可以看作是基本的；(5)，(7)，(8) 可以从它们推导出来。
 

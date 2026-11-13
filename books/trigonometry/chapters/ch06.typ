@@ -572,6 +572,7 @@ $ (a + b)/(a - b) &= (2 sin (A + B)/2 cos (A - B)/2)/(2 cos (A + B)/2 sin (A - B
 
 $ (a + b)/(a - b) = (tan (A + B)/2)/(tan (A - B)/2) ju $
 
+#rule(title: [定理])[
 这样，我们证明了三角形任意两边的和与差的比，等于它们所对角的和的一半的正切与差的一半的正切的比。因此，在任意三角形 $A B C$ 中，我们可以写出六个联系任何两边与它们的对角的关系式：
 
 // p.219（第 2 行起）
@@ -580,6 +581,7 @@ $ bold((a + b)/(a - b) = (tan (A + B)/2)/(tan (A - B)/2)) fen quad bold((b + a)/
   bold((c + a)/(c - a) = (tan (C + A)/2)/(tan (C - A)/2)) fen quad bold((a + c)/(a - c) = (tan (A + C)/2)/(tan (A - C)/2)) ju $
 
 这个结论叫作*正切定理*。
+]
 
 #exercise("6·6")[
   1. 已知 $a = 2b$，$C = 120°$，求 $A$ 及 $B$。
@@ -741,6 +743,7 @@ $ a - b + c &= 2(s - b) fen \
 
 $ tan A/2 = sqrt(((2(s - b)(s - c))/(b c))/((2s(s - a))/(b c))) dou $
 
+#rule(title: [定理])[
 #eqno([(3)], $therefore quad bold(tan A/2 = sqrt(((s - b)(s - c))/(s(s - a)))) ju$)
 
 同样可以知道
@@ -751,6 +754,7 @@ $ tan A/2 = sqrt(((2(s - b)(s - c))/(b c))/((2s(s - a))/(b c))) dou $
 这里，$s = 1/2 (a + b + c)$。
 
 这三个公式叫作*半角定理*。
+]
 
 为了把上面的公式化成容易记忆的形式，我们把公式 (3) 根号中的分子和分母都乘以 $s - a$，得到
 
@@ -959,6 +963,7 @@ $ therefore quad ar = 1/2 b c sin A ju $
 
 #fig("6·8", fig-c6-6-8())[]
 
+#rule(title: [公式])[
 因此，不论 $∠A$ 是怎样的角，都有
 
 $ bold(ar = 1/2 b c sin A) ju $
@@ -967,6 +972,7 @@ $ bold(ar = 1/2 b c sin A) ju $
 
 $ bold(ar = 1/2 c a sin B) dou \
   bold(ar = 1/2 a b sin C) ju $
+]
 
 *2. 已知两个角和任意一条边*
 
@@ -989,6 +995,7 @@ $ ar = 1/2 a c sin B dou $
 
 $ ar = 1/2 a dot (a sin C)/(sin A) dot sin B = (a^2 sin B sin C)/(2 sin A) dou $
 
+#rule(title: [公式])[
 就是
 
 $ bold(ar = (a^2 sin B sin C)/(2 sin A)) ju $
@@ -997,6 +1004,7 @@ $ bold(ar = (a^2 sin B sin C)/(2 sin A)) ju $
 
 $ bold(ar = (b^2 sin C sin A)/(2 sin B)) fen \
   bold(ar = (c^2 sin A sin B)/(2 sin C)) ju $
+]
 
 作为一个特例，如果知道两个角 $A$，$B$ 和它们的夹边 $c$，那么，由于 $sin C = sin[180° - (A + B)] = sin(A + B)$，最后一个公式可以写作
 
@@ -1020,9 +1028,11 @@ $ ar = 1/2 b c sin A dou $
 
 $ ar = 1/2 b c dot 2/(b c) sqrt(s(s - a)(s - b)(s - c)) $
 
+#rule(title: [公式])[
 就是
 
 $ bold(ar = sqrt(s(s - a)(s - b)(s - c))) ju $
+]
 
 这个公式最早出现在希腊数学家海伦（约公元前三世纪到二世纪）所著的书中，所以通常把它叫作*海伦公式*。平面几何学中也可以证明这个公式。但这里的推导过程比较简便。
 
@@ -1118,6 +1128,7 @@ $ therefore quad sin D &= sin(180° - A) = sin A dou \
 
 $ a = 2R sin A dou $
 
+#rule(title: [公式])[
 因此
 
 $ bold(R = a/(2 sin A)) ju $
@@ -1125,6 +1136,7 @@ $ bold(R = a/(2 sin A)) ju $
 同样可以知道
 
 $ bold(R = b/(2 sin B)) fen quad bold(R = c/(2 sin C)) ju $
+]
 
 从上面推证出来的结果，还可以看到
 
@@ -1175,9 +1187,11 @@ $ ar = sqrt(s(s - a)(s - b)(s - c)) ju $
 
 $ therefore quad r = sqrt(s(s - a)(s - b)(s - c))/s ju $
 
+#rule(title: [公式])[
 就是
 
 $ bold(r = sqrt(((s - a)(s - b)(s - c))/s)) ju $
+]
 
 这是用三角形的边表示内切圆半径的公式。
 
@@ -1191,9 +1205,11 @@ $ tan A/2 &= 1/(s - a) sqrt(((s - a)(s - b)(s - c))/s) dou \
 
 $ tan A/2 = r/(s - a) fen quad tan B/2 = r/(s - b) fen quad tan C/2 = r/(s - c) ju $
 
+#rule(title: [公式])[
 因此，
 
 $ bold(r = (s - a) tan A/2 = (s - b) tan B/2 = (s - c) tan C/2) ju $
+]
 
 #ex("例 1.")[在 $△A B C$ 中，求证
 

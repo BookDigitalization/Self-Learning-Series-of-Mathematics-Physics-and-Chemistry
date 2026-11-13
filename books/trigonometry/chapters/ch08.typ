@@ -68,6 +68,7 @@ $ x &= 2 n pi + pi - arcsin(-2/3) \
   &= (2 n + 1) pi - arcsin(-2/3) ju $
 ]
 
+#rule(title: [公式])[
 从上面的例题，可以看到，当 $|a| <= 1$ 时，方程 $sin x = a$ 的一个解总可以写作
 
 $ x_1 = arcsin a dou $
@@ -80,6 +81,7 @@ $ x_2 = pi - arcsin a ju $
 
 #eqno([(1)], $bold(x = 2 n pi + arcsin a) fen$)
 #eqno([(2)], $bold(x = (2 n + 1) pi - arcsin a) ju$)
+]
 
 // p.276
 由于正弦的绝对值不能超过 1，所以当 $|a| > 1$ 时，方程 $sin x = a$ 没有解。
@@ -104,6 +106,7 @@ $ x = 2 n pi + arccos(-0.3) fen $
 $ x = 2 n pi - arccos(-0.3) ju $
 ]
 
+#rule(title: [公式])[
 一般地说，当 $|a| <= 1$，方程 $cos x = a$ 的一个解总可以写成
 
 $ x_1 = arccos a dou $
@@ -115,9 +118,11 @@ $ x_2 = -arccos a $
 也是方程的一个解。因此，方程 $cos x = a$ 的一切解是
 
 $ bold(x = 2 n pi plus.minus arccos a) ju $
+]
 
 当 $|a| > 1$ 时，方程 $cos x = a$ 没有解。
 
+#rule(title: [公式])[
 *3.* $bold(tan x = a)$#h(1em)不论 $a$ 是正数、负数或者零，$tan x = a$ 的一个解可以写作
 
 $ x_1 = arctan a ju $
@@ -125,6 +130,7 @@ $ x_1 = arctan a ju $
 因为正切函数的最小正周期是 $pi$，所以对于 $x_1$ 加上或者/* p.277 */减去 $pi$ 的整数倍所得的角的正切都等于 $a$。因此，方程的一切解是
 
 $ bold(x = n pi + arctan a) ju $
+]
 
 #ex([例 4.])[解方程 #h(0.5em) $tan x = sqrt(3)$。]
 
@@ -133,6 +139,7 @@ $ bold(x = n pi + arctan a) ju $
 $ x = n pi + arctan sqrt(3) = n pi + pi/3 ju $
 ]
 
+#rule(title: [公式])[
 *4.* $bold(cot x = a)$#h(1em)这个方程的一个解是
 
 $ x_1 = arccot a ju $
@@ -140,6 +147,7 @@ $ x_1 = arccot a ju $
 因为余切函数的最小正周期是 $pi$，所以方程的一切解是
 
 $ bold(x = n pi + arccot a) ju $
+]
 
 #ex([例 5.])[解方程 #h(0.5em) $cot x = -1$。]
 

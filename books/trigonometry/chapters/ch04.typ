@@ -10,7 +10,9 @@
 
 前面我们学过了含有一个自变量 $alpha$ 的三角函数。在实际应用上，我们也常常会遇到含有两个自变量 $alpha, beta$ 的三角函数。例如 $sin(alpha + beta)$，$cos(alpha + beta)$ 等等。
 
+#definition[
 函数 $sin(alpha + beta)$ 和 $cos(alpha + beta)$ 分别叫作两角 $alpha, beta$ 的和的正弦和余弦。
+]
 
 我们应该注意，两角和的正弦 $sin(alpha + beta)$，一般地与两角的正弦的和 $sin alpha + sin beta$ 是不相等的。例如我们知道
 
@@ -28,10 +30,12 @@ $ cos(60° + 30°) != cos 60° + cos 30° ju $
 
 这一节里，我们先就两个角都是锐角，并且它们的和也是锐角的情况来研究。
 
+#rule(title: [公式])[
 *1. 两角和的正弦*　我们来证明，当两个角 $alpha, beta$ 都是锐角，并且它们的和 $alpha + beta$ 也是锐角的时候，总有
 
 // p.134
 $ bold(sin(alpha + beta) = sin alpha cos beta + cos alpha sin beta) ju $
+]
 
 #sol(label: [证])[作 $∠A O B = alpha$，并且以它的终边 $O B$ 为始边，再作 $∠B O C = beta$，那么 $∠A O C$ 就等于 $alpha + beta$（图 4·1）。]
 
@@ -75,9 +79,11 @@ $ sin 75° &= sin(45° + 30°) \
   &= sqrt(2)/2 dot sqrt(3)/2 + sqrt(2)/2 dot 1/2 = (sqrt(6) + sqrt(2))/4 \
   &= (2.449 + 1.414)/4 = 3.863/4 = 0.966 ju $
 
+#rule(title: [公式])[
 *2. 两角和的余弦*　利用图 4·1，我们也很容易证明当 $alpha, beta$ 都是锐角，并且它们的和 $alpha + beta$ 也是锐角的时候，总有
 
 $ bold(cos(alpha + beta) = cos alpha cos beta - sin alpha sin beta) ju $
+]
 
 #sol(label: [证])[在图 4·1 中，我们可以看到
 
@@ -311,7 +317,9 @@ $ tan(alpha + beta) &= ((sin alpha cos beta + cos alpha sin beta)/(cos alpha cos
   &= ((sin alpha)/(cos alpha) + (sin beta)/(cos beta))/(1 - (sin alpha)/(cos alpha) dot (sin beta)/(cos beta)) \
   &= (tan alpha + tan beta)/(1 - tan alpha tan beta) ju $
 
+#rule(title: [公式])[
 就是 #h(4em) $display(bold(tan(alpha + beta) = (tan alpha + tan beta)/(1 - tan alpha tan beta)).)$
+]
 
 因为两角和的正弦公式和余弦公式是具有一般性的，所以上面的公式在 $tan(alpha + beta)$，$tan alpha$，$tan beta$ 都存在的条件下总能成立。换句话说，当 $alpha + beta$，$alpha$ 和 $beta$ 都不等于 $k pi + pi/2$（$k$ 是整数）时，上面的公式都能成立。
 
@@ -321,7 +329,9 @@ $ cot(alpha + beta) &= (cos(alpha + beta))/(sin(alpha + beta)) = (cos alpha cos 
   &= ((cos alpha cos beta - sin alpha sin beta)/(sin alpha sin beta))/((sin alpha cos beta + cos alpha sin beta)/(sin alpha sin beta)) \
   &= ((cos alpha)/(sin alpha) dot (cos beta)/(sin beta) - 1)/((cos beta)/(sin beta) + (cos alpha)/(sin alpha)) = (cot alpha cot beta - 1)/(cot beta + cot alpha) ju $
 
+#rule(title: [公式])[
 就是 #h(4em) $display(bold(cot(alpha + beta) = (cot alpha cot beta - 1)/(cot beta + cot alpha)).)$
+]
 
 当 $cot(alpha + beta)$，$cot alpha$，$cot beta$ 都存在，也就是当 $alpha + beta$，$alpha$ 和 $beta$ 都不等于 $k pi$（$k$ 是整数）时，这个公式都能成立。
 
@@ -364,9 +374,11 @@ $ sin(45° - 30°) = sin 45° cos 30° - cos 45° sin 30° ju $
 
 $ sin[alpha + (-beta)] = sin alpha cos(-beta) + cos alpha sin(-beta) dou $
 
+#rule(title: [公式])[
 把两边都化简后，就得到两角差的正弦公式
 
 $ bold(sin(alpha - beta) = sin alpha cos beta - cos alpha sin beta) ju $
+]
 
 同样，在公式
 
@@ -386,10 +398,12 @@ $ cos(alpha - beta) &= cos[alpha + (-beta)] \
   &= (cot alpha cot(-beta) - 1)/(cot(-beta) + cot alpha) = (-cot alpha cot beta - 1)/(-cot beta + cot alpha) \
   &= (cot alpha cot beta + 1)/(cot beta - cot alpha) ju $
 
+#rule(title: [公式])[
 就是
 $ bold(cos(alpha - beta)) & bold(= cos alpha cos beta + sin alpha sin beta) dou \
   bold(tan(alpha - beta)) & bold(= (tan alpha - tan beta)/(1 + tan alpha tan beta)) dou \
   bold(cot(alpha - beta)) & bold(= (cot alpha cot beta + 1)/(cot beta - cot alpha)) ju $
+]
 
 这些公式对于使它们的两边有意义的角都能成立。
 
@@ -479,7 +493,9 @@ $ sin(x + y) = sin x cos y + cos x sin y $
 $ sin(alpha + alpha) = sin alpha cos alpha + cos alpha sin alpha dou $
 
 // p.147
+#rule(title: [公式])[
 就是 #h(4em) $bold(sin 2 alpha = 2 sin alpha cos alpha) ju$
+]
 
 *2. 二倍角的余弦*　在两角和的余弦公式
 
@@ -489,15 +505,21 @@ $ cos(x + y) = cos x cos y - sin x sin y $
 
 $ cos(alpha + alpha) = cos alpha cos alpha - sin alpha sin alpha dou $
 
+#rule(title: [公式])[
 就是 #h(4em) $bold(cos 2 alpha = cos^2 alpha - sin^2 alpha) ju$
+]
 
 因为 $sin^2 alpha + cos^2 alpha = 1$，所以 $cos^2 alpha = 1 - sin^2 alpha$，代入上式得到
 
+#rule(title: [公式])[
 $ bold(cos 2 alpha = 1 - 2 sin^2 alpha) ju $
+]
 
 或者用 $sin^2 alpha = 1 - cos^2 alpha$ 代替 $cos 2 alpha = cos^2 alpha - sin^2 alpha$ 中的 $sin^2 alpha$，又得到
 
+#rule(title: [公式])[
 $ bold(cos 2 alpha = 2 cos^2 alpha - 1) ju $
+]
 
 因此，二倍角的余弦可以写成三种形式。后面两种形式用起来比较方便，因为只要知道单角的一个函数便已足够了。
 
@@ -509,10 +531,12 @@ $ tan(x + y) = (tan x + tan y)/(1 - tan x tan y) $
 
 $ cot(x + y) = (cot x cot y - 1)/(cot y + cot x) $
 
+#rule(title: [公式])[
 中，分别令 $x = y = alpha$，化简后，得
 
 $ bold(tan 2 alpha = (2 tan alpha)/(1 - tan^2 alpha)) dou \
   bold(cot 2 alpha = (cot^2 alpha - 1)/(2 cot alpha)) ju $
+]
 
 // p.148
 #ex("例 1.")[已知 $sin alpha = 0.8$，并且 $alpha$ 的终边在第二象限内，求 $sin 2 alpha$ 和 $cos 2 alpha$ 的值。]
@@ -658,7 +682,9 @@ $ cos alpha = 1 - 2 sin^2 alpha/2 ju $
 
 #eqno([(1)], $sin^2 alpha/2 = (1 - cos alpha)/2 ju$)
 
+#rule(title: [公式])[
 $ ∴ quad bold(sin alpha/2 = ± sqrt((1 - cos alpha)/2)) ju $
+]
 
 在二倍角的余弦的另一公式
 
@@ -674,13 +700,17 @@ $ cos alpha = 2 cos^2 alpha/2 - 1 ju $
 
 #eqno([(2)], $cos^2 alpha/2 = (1 + cos alpha)/2 ju$)
 
+#rule(title: [公式])[
 $ ∴ quad bold(cos alpha/2 = ± sqrt((1 + cos alpha)/2)) ju $
+]
 
 把等式 (1) 的两边分别除以等式 (2) 的两边，还可以得到
 
 $ tan^2 alpha/2 = (1 - cos alpha)/(1 + cos alpha) dou $
 
+#rule(title: [公式])[
 $ ∴ quad bold(tan alpha/2 = ± sqrt((1 - cos alpha)/(1 + cos alpha))) ju $
+]
 
 我们得到了由角 $alpha$ 的余弦来求 $display(alpha/2)$ 的正弦，余弦和正切的公式。这些公式只能确定所求的三角函数的绝对值。根号前的符号，决定于角 $display(alpha/2)$ 的终边所在的象限。因此，应用这些公式时，应当根据题目的条件，先求出 $display(alpha/2)$ 的终边所在的象限，然后决定根号前应取的符号。从下面的例 1～例 3 可以看到，/* p.154 */如果知道角 $alpha$ 的值或者它所在的范围，那么 $display(alpha/2)$ 的三角函数值可以唯一确定；但是如果只知道角 $alpha$ 的终边所在的象限，那么将得到 $display(alpha/2)$ 的两组三角函数值。
 
@@ -747,13 +777,17 @@ $ tan alpha/2 = (sin display(alpha/2))/(cos display(alpha/2)) = (2 sin display(a
 
 就是
 
+#rule(title: [公式])[
 #eqno([(3)], $bold(tan alpha/2 = (sin alpha)/(1 + cos alpha)) ju$)
+]
 
 同样，#h(2em) $display(tan alpha/2 = (sin display(alpha/2))/(cos display(alpha/2)) = (2 sin^2 display(alpha/2))/(2 sin display(alpha/2) cos display(alpha/2)) = (1 - cos alpha)/(sin alpha).)$
 
 就是
 
+#rule(title: [公式])[
 #eqno([(4)], $bold(tan alpha/2 = (1 - cos alpha)/(sin alpha)) ju$)
+]
 
 应用这两个公式时，只要知道角 $alpha$ 的终边所在的象限，可不必先分析 $display(alpha/2)$ 的终边所在的象限，就求出 $tan display(alpha/2)$ 的值。
 
@@ -805,11 +839,13 @@ $ sin(alpha + beta) = sin alpha cos beta + cos alpha sin beta dou \
 $ sin(alpha + beta) + sin(alpha - beta) = 2 sin alpha cos beta dou \
   sin(alpha + beta) - sin(alpha - beta) = 2 cos alpha sin beta ju $
 
+#rule(title: [公式])[
 把最后这两个等式的两边都除以 2，并且调过来写，得到
 
 #eqno([(1)], $bold(sin alpha cos beta = 1/2 [sin(alpha + beta) + sin(alpha - beta)]) dou$)
 
 #eqno([(2)], $bold(cos alpha sin beta = 1/2 [sin(alpha + beta) - sin(alpha - beta)]) ju$)
+]
 
 // p.159
 #ex("例 1.")[计算 $sin 105° cos 75°$ 的值。]
@@ -840,11 +876,13 @@ $ cos(alpha + beta) = cos alpha cos beta - sin alpha sin beta dou \
 $ cos(alpha + beta) + cos(alpha - beta) = 2 cos alpha cos beta dou \
   cos(alpha + beta) - cos(alpha - beta) = -2 sin alpha sin beta ju $
 
+#rule(title: [公式])[
 因此，
 
 #eqno([(3)], $bold(cos alpha cos beta = 1/2 [cos(alpha + beta) + cos(alpha - beta)]) dou$)
 
 #eqno([(4)], $bold(sin alpha sin beta = -1/2 [cos(alpha + beta) - cos(alpha - beta)]) ju$)
+]
 
 // p.160
 注意公式 (4) 前面的系数是 $-display(1/2)$。这个公式也可以写成另一种形式：
@@ -912,6 +950,7 @@ $ sin(x + y) + sin(x - y) = 2 sin x cos y fen \
 
 令 $x + y = alpha$，$x - y = beta$。解这个方程组，得 $x = display((alpha + beta)/2)$，$y = display((alpha - beta)/2)$。代入上面的四个等式中，就得到
 
+#rule(title: [公式])[
 #eqno([(1)], $bold(sin alpha + sin beta = 2 sin (alpha + beta)/2 cos (alpha - beta)/2) fen$)
 
 #eqno([(2)], $bold(sin alpha - sin beta = 2 cos (alpha + beta)/2 sin (alpha - beta)/2) fen$)
@@ -919,6 +958,7 @@ $ sin(x + y) + sin(x - y) = 2 sin x cos y fen \
 #eqno([(3)], $bold(cos alpha + cos beta = 2 cos (alpha + beta)/2 cos (alpha - beta)/2) fen$)
 
 #eqno([(4)], $bold(cos alpha - cos beta = -2 sin (alpha + beta)/2 sin (alpha - beta)/2) ju$)
+]
 
 利用这些公式，可以把两个角的正弦或者余弦的代数和化成另外两个角的三角函数的积。
 
