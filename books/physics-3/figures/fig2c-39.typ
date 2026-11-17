@@ -1,0 +1,76 @@
+// 图 2·39 液体导电实验装置（原书 p.139）、图 2·40 离子导电（p.140）、图 2·41 电解盐酸（p.141）
+// 坐标：各页 110 dpi 预览图的像素坐标（y 向下）；形状、位置按原图描。
+#import "/common/series.typ": *
+#import "fig2c-sym.typ": *
+
+#let fig-2-39(width: 5.2cm) = px-canvas(260, 290, origin: (545, 505), width: width, (p, u) => {
+  import cetz.draw: *
+  beaker(p, 570, 765, 622, 782, 655)
+  plate(p, 592, 614, 600, 755)
+  plate(p, 728, 750, 596, 755)
+  wire(p, (603, 600), (603, 543), (617, 543))
+  cell(p, 624, 543)
+  line(p(631, 543), p(649, 543), stroke: (thickness: 0.7pt, dash: "dashed"))
+  cell(p, 656, 543)
+  wire(p, (662, 543), (682, 543))
+  lamp(p, 697, 543, r: 14)
+  wire(p, (711, 543), (739, 543), (739, 596))
+  lab(p, 640, 523, $B$)
+  lab(p, 716, 527, $L$)
+  lab(p, 627, 604, $K$)
+  lab(p, 717, 599, $A$)
+})
+
+#let fig-2-40(width: 8cm) = px-canvas(400, 330, origin: (225, 830), width: width, (p, u) => {
+  import cetz.draw: *
+  beaker(p, 247, 598, 925, 1140, 945)
+  plate(p, 277, 302, 905, 1072)
+  plate(p, 543, 568, 905, 1072)
+  wire(p, (289, 905), (289, 868), (338, 868))
+  cell(p, 343, 868)
+  line(p(350, 868), p(398, 868), stroke: (thickness: 0.7pt, dash: "dashed"))
+  cell(p, 404, 868)
+  wire(p, (410, 868), (470, 868))
+  meter-needle(p, 488, 868, r: 17)
+  wire(p, (505, 868), (555, 868), (555, 905))
+  line(p(515, 868), p(535, 868), stroke: lw, mark: arr)
+  lab(p, 372, 848, $B$)
+  lab(p, 512, 848, $G$)
+  lab(p, 312, 910, $K$)
+  lab(p, 530, 912, $A$)
+  lab(p, 289, 998, $-$, size: 11pt, bg: true)
+  lab(p, 555, 997, $+$, size: 11pt, bg: true)
+  line(p(402, 972), p(340, 972), stroke: 1.8pt, mark: arr)
+  lab(p, 424, 972, $"Na"^+$, bg: true)
+  lab(p, 435, 1012, $"Cl"^-$, bg: true)
+  line(p(458, 1012), p(497, 1012), stroke: 1.8pt, mark: arr)
+  line(p(345, 1070), p(382, 1051), p(382, 1062), p(496, 1062), p(496, 1078), p(382, 1078), p(382, 1089), close: true, fill: white, stroke: lw)
+  lab(p, 510, 1070, $E$, bg: true)
+  lab(p, 430, 1125, $"NaCl"$, bg: true)
+  line(p(412, 1112), p(412, 1140), stroke: 0.5pt)
+})
+
+#let fig-2-41(width: 7.2cm) = px-canvas(370, 290, origin: (295, 900), width: width, (p, u) => {
+  import cetz.draw: *
+  beaker(p, 318, 640, 987, 1165, 1003)
+  plate(p, 351, 378, 975, 1140)
+  plate(p, 575, 602, 975, 1140)
+  // 左右引线（带小圈）
+  line(p(364, 975), p(364, 958))
+  circle(p(356, 949), radius: 7, stroke: lw)
+  line(p(350, 944), p(322, 914), stroke: lw, mark: arr)
+  line(p(588, 975), p(588, 957))
+  circle(p(597, 948), radius: 7, stroke: lw)
+  line(p(604, 943), p(634, 910), stroke: lw, mark: arr)
+  lab(p, 312, 905, $I$)
+  lab(p, 645, 902, $I$)
+  lab(p, 384, 963, $K$, size: 7.5pt)
+  lab(p, 563, 963, $A$, size: 7.5pt)
+  lab(p, 364, 1070, $-$, size: 11pt, bg: true)
+  lab(p, 588, 1070, $+$, size: 11pt, bg: true)
+  line(p(460, 1052), p(420, 1052), stroke: 1.6pt, mark: arr)
+  lab(p, 475, 1052, $"H"^+$, bg: true, size: 8pt)
+  lab(p, 468, 1082, $"Cl"^-$, bg: true, size: 8pt)
+  line(p(488, 1082), p(528, 1082), stroke: 1.6pt, mark: arr)
+  lab(p, 480, 1135, $"HCl"$, bg: true, size: 8pt)
+})

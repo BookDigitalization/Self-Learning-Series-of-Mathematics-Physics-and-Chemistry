@@ -1,0 +1,82 @@
+// 图 6·25 三极管放大器工作原理（原书 p.326）、图 6·26 四极管和五极管的符号（原书 p.327）
+// CeTZ 重绘，坐标为 150 dpi 页面像素坐标。
+#import "/common/series.typ": *
+#import "fig6-parts.typ": *
+
+#let fig-6-25(width: 7.2cm) = px-canvas(450, 340, origin: (130, 830), width: width, (p, u) => {
+  import cetz.draw: *
+  circle(p(362, 949), radius: (33, 52), stroke: 1.3pt)
+  line(p(347, 925), p(378, 925), stroke: 2.4pt)
+  wire(p, (362, 925), (362, 837), (487, 837), (487, 902))
+  line(p(330, 953), p(383, 953), stroke: (thickness: 1.4pt, dash: (6pt, 3pt)))
+  bezier(p(343, 995), p(383, 995), p(352, 986), p(374, 986), stroke: 2.4pt)
+  line(p(342, 998), p(342, 1120), stroke: sw)
+  line(p(378, 998), p(378, 1120), stroke: sw)
+  node(p, 342, 1120, r: 2.5); node(p, 378, 1120, r: 2.5)
+  // 甲电：两极板
+  line(p(353, 1110), p(353, 1130), stroke: 1.2pt)
+  line(p(363, 1114), p(363, 1126), stroke: 2.4pt)
+  wire(p, (230, 1120), (342, 1120))
+  wire(p, (378, 1120), (487, 1120), (487, 1060))
+  txt(p, 357, 1149, [甲电], size: 9pt)
+  // 屏极电路
+  res-v(p, 487, 927, h: 52, w: 20)
+  wire(p, (487, 953), (487, 1002))
+  battery(p, 487, 1005, n: 4, d: 12, long: 28, short: 14)
+  txt(p, 507, 990, text(weight: "bold")[+], size: 9pt); txt(p, 507, 1063, text(weight: "bold")[−], size: 9pt)
+  txt(p, 530, 1030, [乙电], size: 9pt)
+  txt(p, 511, 927, $R$)
+  arrow(p, (423, 850), (398, 850))
+  txt(p, 424, 872, $I_p$)
+  // 输入信号
+  wire(p, (230, 953), (330, 953))
+  wire(p, (231, 953), (231, 1008))
+  circle(p(231, 1033), radius: 25, stroke: 1.2pt)
+  content(p(231, 1033), text(size: 12pt)[$tilde$])
+  wire(p, (231, 1058), (231, 1120))
+  content(p(172, 1030), text(size: 9pt, weight: "bold")[输入 \ 信号])
+  txt(p, 285, 1030, $E_1$)
+  line(p(288, 957), p(288, 1117), stroke: sw, mark: (start: ">", end: ">", fill: black, scale: 0.5))
+})
+
+#let fig-6-26(width: 9.6cm) = px-canvas(580, 305, origin: (520, 185), width: width, (p, u) => {
+  import cetz.draw: *
+  let dash = (thickness: 1.4pt, dash: (6pt, 3pt))
+  // 四极管（左）
+  circle(p(622, 325), radius: (45, 63), stroke: 1.3pt)
+  wire(p, (622, 198), (622, 293))
+  line(p(597, 293), p(643, 293), stroke: 2.4pt)
+  line(p(590, 328), p(653, 328), stroke: dash)
+  line(p(590, 352), p(653, 352), stroke: dash)
+  line(p(540, 328), p(590, 328), stroke: sw)
+  line(p(540, 352), p(590, 352), stroke: sw)
+  bezier(p(595, 385), p(648, 385), p(605, 375), p(638, 375), stroke: 2.4pt)
+  line(p(595, 385), p(595, 465), stroke: sw)
+  line(p(648, 385), p(648, 465), stroke: sw)
+  txt(p, 660, 233, [屏极], size: 9pt); txt(p, 720, 308, [帘栅极], size: 9pt)
+  txt(p, 727, 360, [控制栅极], size: 9pt); txt(p, 693, 428, [阴极], size: 9pt)
+  line(p(625, 248), p(645, 236), stroke: 0.4pt)
+  line(p(655, 326), p(688, 311), stroke: 0.4pt)
+  line(p(650, 352), p(682, 360), stroke: 0.4pt)
+  line(p(648, 410), p(668, 420), stroke: 0.4pt)
+  // 五极管（右）
+  circle(p(918, 328), radius: (48, 64), stroke: 1.3pt)
+  wire(p, (927, 198), (927, 295))
+  line(p(907, 295), p(947, 295), stroke: 2.4pt)
+  line(p(893, 320), p(957, 320), stroke: dash)
+  line(p(893, 340), p(957, 340), stroke: dash)
+  line(p(893, 364), p(957, 364), stroke: dash)
+  line(p(837, 364), p(893, 364), stroke: sw)
+  line(p(885, 322), p(885, 385), stroke: 0.5pt)
+  bezier(p(897, 385), p(945, 385), p(905, 376), p(937, 376), stroke: 2.4pt)
+  line(p(897, 385), p(897, 465), stroke: sw)
+  line(p(945, 385), p(945, 465), stroke: sw)
+  txt(p, 963, 230, [屏极], size: 9pt); txt(p, 1030, 298, [抑制栅极], size: 9pt)
+  txt(p, 1010, 363, [帘栅极], size: 9pt); txt(p, 810, 406, [控制栅极], size: 9pt)
+  txt(p, 987, 440, [阴极], size: 9pt)
+  line(p(930, 248), p(950, 236), stroke: 0.4pt)
+  line(p(960, 320), p(992, 305), stroke: 0.4pt)
+  line(p(960, 343), p(988, 358), stroke: 0.4pt)
+  line(p(845, 366), p(830, 392), stroke: 0.4pt)
+  line(p(945, 430), p(965, 440), stroke: 0.4pt)
+})
