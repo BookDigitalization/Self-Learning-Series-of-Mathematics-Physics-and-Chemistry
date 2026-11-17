@@ -1,0 +1,38 @@
+// 图 8·39（原书 p.326）：写实图沿用原扫描裁剪的二值化位图（fig8b-39.png，已涂去标号、文字），标号和文字用真文字补回。
+// 坐标为 200 dpi 原书页面像素坐标（左上原点），画布原点在页面 (170, 150)。
+#import "/common/series.typ": *
+
+#let fig-8-39(width: 13.0cm) = px-canvas(790, 885, origin: (170, 150), width: width, (p, u) => {
+  import cetz.draw: *
+  content(p(170, 150), anchor: "north-west", image("fig8b-39.png", width: 790 * u))
+  let lab(x, y, body, fill: black) = content(p(x, y), anchor: "center", text(size: 8pt, font: fonts.hei, fill: fill, body))
+  lab(213.5, 247, [火花塞])
+  lab(521.5, 169, [排气口])
+  lab(525.5, 367.5, [进气口])
+  lab(311, 395.5, [转动轴])
+  lab(290, 248, [$A$])
+  lab(372, 244, [$C$], fill: white)
+  lab(291, 311, [$D$], fill: white)
+  lab(376, 307, [$B$])
+  lab(710, 271, [$A$])
+  lab(784, 292, [$C$], fill: white)
+  lab(692, 336, [$D$], fill: white)
+  lab(772, 350, [$B$])
+  lab(304, 558, [$A$])
+  lab(356, 594, [$C$], fill: white)
+  lab(258, 619, [$D$], fill: white)
+  lab(309, 657, [$B$])
+  lab(772, 570, [$A$])
+  lab(793, 625, [$C$], fill: white)
+  lab(692, 596, [$D$], fill: white)
+  lab(710, 647, [$B$])
+  lab(479, 867, [$B$])
+  lab(558, 871, [$D$], fill: white)
+  lab(476, 927, [$C$], fill: white)
+  lab(558, 925, [$A$])
+  lab(374, 445, [$(a)$])
+  lab(791, 444, [$(b)$])
+  lab(333, 730, [$(c)$])
+  lab(796, 729, [$(d)$])
+  lab(566, 1014, [$(e)$])
+})
