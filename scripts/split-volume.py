@@ -1,4 +1,4 @@
-"""从《数学分册合集》里按册切出单册扫描 PDF，供 render-pages.py 使用。
+"""从《数学分册合集》（物理册为《物理分册合集》，json 里用 "source" 指定）里按册切出单册扫描 PDF，供 render-pages.py 使用。
 
 用法：
     uv run python scripts/split-volume.py algebra-1
@@ -27,7 +27,7 @@ def main() -> None:
     if name not in vols:
         sys.exit(f"未登记的册：{name}。已登记：{', '.join(vols)}")
     v = vols[name]
-    src = next((ROOT / "original").glob("*数学分册合集*.pdf"))
+    src = next((ROOT / "original").glob(v.get("source", "*数学分册合集*.pdf")))
     out = ROOT / "original" / f"{name}.pdf"
     doc = pymupdf.open(src)
     new = pymupdf.open()
